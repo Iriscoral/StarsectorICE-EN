@@ -1,0 +1,20 @@
+{
+	"id":"sun_ice_fofinverter",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	
+	"aiScript":"data.shipsystems.ai.SUN_ICE_FoFInverterAI",
+	"statsScript":"data.shipsystems.SUN_ICE_FoFInverterStats",
+	"canUseWhileRightClickSystemOn":true,
+	
+	"engineGlowColor":[255,223,128,255],
+	"engineGlowContrailColor":[255,223,128,5],
+	
+	"useSound":"sun_ice_system_fofinverter_active",
+	"loopSound":"sun_ice_system_fofinverter_loop",
+	"deactivateSound":"sun_ice_system_fofinverter_deactive",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}	
+}

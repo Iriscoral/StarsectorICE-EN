@@ -1,0 +1,20 @@
+{
+	"id":"sun_ice_hypermassdriver",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":72.0,
+	"hitGlowRadius":140,
+	"width":36.0,
+	"fadeTime":0.2,
+	"coreColor":[255,255,255,255],
+	"fringeColor":[255,191,0,200],
+	"glowColor":[255,223,128,75],
+	"glowRadius":80,
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"sprite":"graphics/sun_ice/missiles/hypermassdriver.png",
+    "onHitEffect":"data.weapons.onhit.HypermassOnHitEffect",
+	"passThroughMissiles":true
+}

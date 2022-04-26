@@ -1,0 +1,58 @@
+{
+    "displayName": "Reformed",
+    "fluxCapacitors": 15,
+    "fluxVents": 35,
+    "goalVariant": true,
+    "hullId": "sun_ice_abraxas",
+    "hullMods": [
+        "targetingunit",
+        "auxiliarythrusters"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_abraxas_Reformed",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "ionpulser",
+                "WS0007": "ionpulser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "sun_ice_nova"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "hil"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "devastator",
+                "WS0005": "devastator"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0008": "vulcan",
+                "WS0009": "vulcan",
+                "WS0010": "vulcan",
+                "WS0011": "vulcan",
+                "WS0012": "flak",
+                "WS0013": "flak",
+                "WS0014": "vulcan",
+                "WS0015": "vulcan",
+                "WS0016": "vulcan",
+                "WS0017": "vulcan"
+            }
+        }
+    ]
+}

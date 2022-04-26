@@ -1,0 +1,49 @@
+{
+	"graphics":{
+		"fx":{
+			"sun_ice_trails_trail_clean":"graphics/sun_ice/fx/trails_clean.png",
+			"sun_ice_trails_trail_fuzzy":"graphics/sun_ice/fx/trails_fuzzy.png",
+			"sun_ice_trails_trail_smooth":"graphics/sun_ice/fx/trails_smooth.png",
+			"sun_ice_trails_trail_zappy":"graphics/sun_ice/fx/trails_zappy.png",
+			"sun_ice_trails_trail_contrail":"graphics/sun_ice/fx/trails_contrail.png",
+			"sun_ice_fof_edge":"graphics/fx/shields256ringd.png",
+
+			"sun_ice_doppelganger_abraxas":"graphics/sun_ice/fx/doppelganger_abraxas.png",
+			"sun_ice_doppelganger_nightseer":"graphics/sun_ice/fx/doppelganger_nightseer.png",
+
+			"sun_ice_mine_glow":"graphics/sun_ice/missiles/mine_glow.png",
+			"sun_ice_turbulence":"graphics/sun_ice/fx/turbulence.png",
+
+			"jay":"graphics/sun_ice/portraits/jay.png",
+			"priest":"graphics/sun_ice/portraits/priest.png"
+		},
+		"intel": {
+			"sun_ice_exile":"graphics/sun_ice/icons/intel/colony_fleet.png",
+		},
+		"stations":{
+			"sun_ice_idoneus_citadel":"graphics/sun_ice/stations/idoneus_citadel.png",
+			"sun_ice_idoneus_shalom":"graphics/sun_ice/stations/idoneus_shalom.png",
+		},
+		"illustrations":{
+			"cargo_loading":"graphics/illustrations/cargo_loading.jpg",
+			"fly_away":"graphics/illustrations/fly_away.jpg",
+		},
+		"blueprint_packages":{
+			"ice_package_bp":"graphics/sun_ice/icons/cargo/icon.png",
+			"ice_package_rp":"graphics/sun_ice/icons/cargo/icon.png",
+		},
+	},
+	"plugins":{
+		"sun_ice_every_frame_script":"data.scripts.plugins.SUN_ICE_EveryFramePlugin",
+		"sun_ice_proj_script":"data.scripts.plugins.SUN_ICE_ProjectilePlugin",
+	},
+	"designTypeColors":{
+		#"ICS":[255,230,163,255],
+		"ICS":[12,150,131,255],
+		"ICS [Unique]":[255,204,0,255],
+		"ICS [唯一]":[255,204,0,255],
+	},
+	"bonusXP":{
+		"sun_ice_delay":0.5,
+	}
+}

@@ -1,0 +1,34 @@
+{
+    "displayName": "Strike",
+    "fluxCapacitors": 5,
+    "fluxVents": 6,
+    "goalVariant": true,
+    "hullId": "sun_ice_specter",
+    "hullMods": ["phase_anchor"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_specter_Strike",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "sun_ice_pulserepeater",
+                "WS0004": "sun_ice_pulserepeater"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "sun_ice_boomerang",
+                "WS0002": "sun_ice_boomerang"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "sun_ice_flamebolt"}
+        }
+    ]
+}

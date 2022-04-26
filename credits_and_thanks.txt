@@ -1,0 +1,26 @@
+Credits
+##########
+Sundog - Lead, Scripting, Art, Design
+Deathfly - Lead, Scripting, Design
+AnyIDElse - Lead, Scripting, Art, Sound, Design
+Histidine - Scripting, Design
+Cycerin - Sound
+ShadowLight - Sound, Art
+Jaylyn - Art
+R.U.A - Art
+A_PIAO_JUN - Art
+fire_turtle - Art
+ZeroXenon - Translation
+Scarlet-MagicianX26 - Translation
+Tenshi - Spiritual Support
+
+
+
+Thanks
+##########
+Alex, David, and everyone else at Fractal Softworks - For making Starsector
+LazyWizard, DarkRevenant, Ashy Raven - For all mod libs and ship editor
+game-icons.net - For game icon graphics
+
+kazi, MesoTroniK, Debido, Chaos Farseer, HELMUT, Gotcha!, mendonca, CopperCoyote, zoe_zucchini, lililili, saya39, Seal, Ghost...
+and many others - For various reasons, from giving invaluable feedback to other minor helps

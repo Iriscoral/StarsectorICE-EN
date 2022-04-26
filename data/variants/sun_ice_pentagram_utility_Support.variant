@@ -1,0 +1,42 @@
+{
+    "displayName": "Support",
+    "fluxCapacitors": 4,
+    "fluxVents": 9,
+    "goalVariant": true,
+    "hullId": "sun_ice_pentagram_utility",
+    "hullMods": [
+        "advancedoptics",
+        "autorepair"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_pentagram_utility_Support",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "sun_ice_pulserepeater",
+                "WS0006": "sun_ice_pulserepeater"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "sun_ice_falx",
+                "WS0005": "sun_ice_falx"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0002": "sun_ice_pulserepeater"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "sun_ice_boomerangpod"}
+        }
+    ]
+}

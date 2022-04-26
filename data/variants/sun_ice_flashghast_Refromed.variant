@@ -1,0 +1,38 @@
+{
+    "displayName": "Reformed",
+    "fluxCapacitors": 0,
+    "fluxVents": 1,
+    "goalVariant": true,
+    "hullId": "sun_ice_flashghast",
+    "hullMods": [
+        "missleracks",
+        "heavyarmor"
+    ],
+    "modules": [{"S01": "sun_ice_flashghast_module_Standard"}],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_flashghast_Refromed",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "annihilatorpod"}
+        },
+        {
+            "autofire": true,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "lightdualmg",
+                "WS0004": "lightdualmg"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "annihilator",
+                "WS0002": "annihilator"
+            }
+        }
+    ]
+}

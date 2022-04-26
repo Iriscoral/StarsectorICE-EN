@@ -1,0 +1,38 @@
+{
+    "displayName": "Assault",
+    "fluxCapacitors": 2,
+    "fluxVents": 5,
+    "goalVariant": true,
+    "hullId": "sun_ice_flashghast",
+    "hullMods": [
+        "missleracks",
+        "sun_ice_tactical_ansible_mod"
+    ],
+    "modules": [{"S01": "sun_ice_flashghast_module_Standard"}],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_flashghast_Assualt",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "sabotpod"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "sabot",
+                "WS0002": "sabot"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "sun_ice_wisp",
+                "WS0004": "sun_ice_wisp"
+            }
+        }
+    ]
+}

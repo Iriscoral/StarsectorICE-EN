@@ -1,0 +1,120 @@
+{
+  "hullName": "Specter",
+  "hullId": "sun_ice_specter",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/sun_ice/ships/Specter.png",
+  "style": "SUN_ICE",
+  "height": 117,
+  "width": 92,
+  "center": [46, 58],
+  "collisionRadius": 70,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 71,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_specter_lights",
+    "SYSTEM": "sun_ice_specter_system"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 54,
+      "locations": [-8.5, 11.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -54,
+      "locations": [-8.5, -11.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 15,
+      "angle": 0,
+      "locations": [-2, 35]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 15,
+      "angle": 0,
+      "locations": [-2, -35]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [34, -0]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0.5, 0]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0.5, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-33.5, 10],
+      "length": 58,
+      "width": 18,
+      "angle": -177,
+      "contrailSize": 18,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-33.5, -10],
+      "length": 58,
+      "width": 18,
+      "angle": 177,
+      "contrailSize": 18,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    54.5, -6.5,
+    21, -20.5,
+    -10, -10,
+    -9, -40,
+    -47.5, -16.5,
+    -28, -10.5,
+    -56.5, -0,
+    -28, 10.5,
+    -47.5, 16.5,
+    -9, 40,
+    -10, 10,
+    21, 20.5,
+    54.5, 6.5
+  ]
+}

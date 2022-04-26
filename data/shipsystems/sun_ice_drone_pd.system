@@ -1,0 +1,41 @@
+{
+	"id":"sun_ice_drone_pd",
+	"type":"DRONE_LAUNCHER",
+	"aiType":"DRONE_LAUNCHER_STANDARD",
+	
+	"droneVariant":"sun_ice_drone_pd",
+	"statsScript":"data.shipsystems.SUN_ICE_ShiningStats",
+	
+	"allowFreeRoam":false,
+	
+	"launchSpeed":300,
+	"launchDelay":0.1,
+	"maxDrones":2,
+	"droneBehavior":[
+		{"droneIndex":[0],
+		 "defaultFacing":"MATCH_SHIP_FACING",
+		 "faceEnemy":false,
+		 "holdRoamRange":0,
+		 "freeRoamRange":0,
+		 "targetPriority":[MISSILE, FIGHTER, SHIP_TARGET, SHIP],
+		 "initialOrbitAngle":60,
+		 "orbitRadius":100,
+		 "orbitDir":1,
+		 "orbitSpeed":0,
+		},
+		{"droneIndex":[1],
+		 "defaultFacing":"MATCH_SHIP_FACING",
+		 "faceEnemy":false,
+		 "holdRoamRange":0,
+		 "freeRoamRange":0,
+		 "targetPriority":[MISSILE, FIGHTER, SHIP_TARGET, SHIP],
+		 "initialOrbitAngle":-60,
+		 "orbitRadius":100,
+		 "orbitDir":1,
+		 "orbitSpeed":0,
+		},
+	],
+	
+	"useSound":"drone_launch",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

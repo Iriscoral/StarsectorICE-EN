@@ -1,0 +1,142 @@
+id,trigger,conditions,script,text,options,notes
+,,,,,,
+greetingICEFriendly,OpenCommLink,"$faction.id == sun_ice
+$faction.friendlyToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Greetings commander. It's good to finally run into someone who doesn't want to kill us.""",,
+greetingICEHostileWeaker,OpenCommLink,"$faction.id == sun_ice
+$faction.hostileToPlayer
+$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""So, another vulture has mistaken us for carrion. You're not the first to make that mistake. Do your worst.""",cutCommLink:Cut the comm link,
+greetingICEHostileWeakerDefiantE,OpenCommLink,"$faction.id == sun_ice
+$faction.hostileToPlayer
+$relativeStrength < 0
+$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""So, another vulture has mistaken us for carrion. You're not the first to make that mistake. Do your worst.""",cutCommLink:Cut the comm link,
+greetingICEHostileStronger,OpenCommLink,"$faction.id == sun_ice
+$faction.hostileToPlayer
+$relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""I'll be frank with you. We need your cargo and I don't see much reason not to take it. Surrender now and your lives will be spared.""",cutCommLink:Cut the comm link,
+greetingICENeutral,OpenCommLink,"$faction.id == sun_ice
+$faction.neutralToPlayer",,"""Keep your fleet at a polite distance and we'll do the same. The last thing we need is another enemy.""",cutCommLink:Cut the comm link,
+,,,,,,
+greetingICIAllied,OpenCommLink,"$faction.id == sun_ici
+$faction.friendlyToPlayer
+$player.factionId == sun_ici","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Greetings, commander. It is always good to see a fellow guardian of the Citadel.""",,for Exerelin
+greetingICIFriendly,OpenCommLink,"$faction.id == sun_ici
+$faction.friendlyToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""The resources of the Citadel are at your disposal, commander, but remember; even you can overstay your welcome here. I hope you will forgive us our secrecy.""",,
+greetingICIHostileWeaker,OpenCommLink,"$faction.id == sun_ici
+$faction.hostileToPlayer
+$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""The fleets of the Idoneus Citadel do not interfere with the affairs of the sector. I suggest that you don't interfere with in ours.""",cutCommLink:Cut the comm link,
+greetingICIHostileWeakerDefiant,OpenCommLink,"$faction.id == sun_ici
+$faction.hostileToPlayer
+$relativeStrength < 0
+$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""The Citadel will not yield to outsiders, commander. We shall not succumb to you so easily.""",cutCommLink:Cut the comm link,
+greetingICIHostileStronger,OpenCommLink,"$faction.id == sun_ici
+$faction.hostileToPlayer
+$relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""You have trespassed, commander. I don't know what you're looking for near the Citadel, but your search ends here.""",cutCommLink:Cut the comm link,
+greetingICINeutral,OpenCommLink,"$faction.id == sun_ici
+$faction.neutralToPlayer",,"""The Idoneus Citadel does not deal with outsiders. You should leave before you encounter a Citadel fleet commander less forgiving than I.""",cutCommLink:Cut the comm link,
+,,,,,,
+,,,,,,
+flavorTextMarketICE,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == sun_ice","AddText ""The docking bay of the colony ship is as cavernous as any a space station might find, yet still crowded for its size with all manner of ships. Traders have covered the market section with their makeshift stalls, hoping to strike a bargain that will keep the colony going a little longer. Ever so often an exile official hustles through the crowd to meet and greet a visiting VIP, while uniformed guards stand about watchfully, ready for action at the slightest hint of disorder."" textGrayColor",,,
+flavorTextMarketICI,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == sun_ici","AddText ""Locals in all manner of clothing sift through the commercial district, a few stopping to gawk at the foreigner in their midst. The bright commercial billboards are interspersed with propaganda banners extolling the virtues of unity, national independence and a certain mistrust of outsiders. In the background, the security agent surreptitiously following you sends a clear message: visits may be permitted, but they are not encouraged."" textGrayColor",,,
+flavorTextMarketICIAllied,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == sun_ici
+$player.factionId == sun_ici","AddText ""Locals in all manner of clothing sift through the commercial district, casting only the briefest glances at your uniformed figure. The bright commercial billboards are interspersed with propaganda banners extolling the virtues of unity, national independence and a certain mistrust of outsiders. Overhead, a security aerobot sweeps over the crowd, ever watchful for suspected criminals against the state."" textGrayColor",,,for Exerelin
+,,,,,,
+,,,,,,
+aiCores_turnInOptionSelICE,DialogOptionSelected,"$option == aiCores_startTurnIn
+$faction.id == sun_ice",FireAll PopulateCoresTurnInOptions,"""These things...Yes, Idoneus technology can fully translate its potential into reality, but we can hardly afford to pay out anything more than thanks.""",,,
+aiCores_turnInResponseICE,AICoresTurnedIn,$faction.id == sun_ice,FireAll PopulateOptions,$PersonRank $personLastName thank you on behalf of all the exiles and the conversation moves on to other matters..,,,
+aiCores_turnInOptionSelICI,DialogOptionSelected,"$option == aiCores_startTurnIn
+$faction.id == sun_ici",FireAll PopulateCoresTurnInOptions,"""An amazing discovery, commander. Idoneus technology can turn its full potential into reality, turn it in to us and you'll be paid to match it.""",,,
+aiCores_turnInResponseICI,AICoresTurnedIn,$faction.id == sun_ici,FireAll PopulateOptions,$PersonRank $personLastName thank you with arms crossed and the conversation moves on to other matters..,,,
+,,,,,,
+,,,,,,
+relLevelNeutralICE,RelationshipLevelDesc,"$faction.rel == NEUTRAL
+$faction.id == sun_ice",,"$TheFaction aren't sure of your trustworthiness just yet, but at least they don't consider you a threat. Their wandering colony will welcome your trade.",,
+relLevelFavorableICE,RelationshipLevelDesc,"$faction.rel == FAVORABLE
+$faction.id == sun_ice",,"You've done a few valuable favours for $theFaction, and they are grateful. Accordingly, they are willing to sell a few specimens of their advanced technology.",,
+relLevelWelcomingICE,RelationshipLevelDesc,"$faction.rel == WELCOMING
+$faction.id == sun_ice",,"Your assistance to $theFaction has been valuable, and they have reciprocated with greater access to the much-coveted Citadel technology.",,
+relLevelFriendlyICE,RelationshipLevelDesc,"$faction.rel == FRIENDLY
+$faction.id == sun_ice",,$TheFaction already trust you like they trust virtually no other outsider. You can count on high levels of cooperation and access to even more sophisticated hardware.,,
+relLevelCooperativeICE,RelationshipLevelDesc,"$faction.rel == COOPERATIVE
+$faction.id == sun_ice",,"You are the greatest ally of $theFaction, and their colony owes you a great debt. They will support you in any way they can.",,
+relLevelSuspiciousICE,RelationshipLevelDesc,"$faction.rel == SUSPICIOUS
+$faction.id == sun_ice",,"$TheFaction trust you as much as they do most others, which is to say: not much. Given their current circumstances, they're not prepared to cut you off, but they are watching.",,
+relLevelInhospitableICE,RelationshipLevelDesc,"$faction.rel == INHOSPITABLE
+$faction.id == sun_ice",,"$TheFaction are angered by your conduct, and the colony refuses to trade with you. It may be best to leave them alone till things cool down a little.",,
+relLevelHostileICE,RelationshipLevelDesc,"$faction.rel == HOSTILE
+$faction.id == sun_ice",,"$TheFaction consider you a military threat to their colony, and their forces will engage on sight. It's going to take some work to get back in their good graces.",,
+relLevelVengefulICE,RelationshipLevelDesc,"$faction.rel == VENGEFUL
+$faction.id == sun_ice",,$TheFaction will not forget the wrongs you have committed against them in their hour of desperation. They will shoot to kill.,,
+
+
+bar_optionSel_ICE,DialogOptionSelected,"$option == marketVisitBar
+$SUN_ICE_ExileFleet
+$inHyperspace score:1000","SetShortcut barLeaveICE ""ESCAPE""","你来到了一家自认为最能打探到些消息的酒吧，但这里的人数却寥寥无几，完全没有它应有的嘈杂模样。你从和角落里某个商人的攀谈中得知，在舰队离开超空间、抵达某个星系空间之前，这种地方一直都不怎么景气。","barLeaveICE:Leave the bar",
+bar_optionLeave_ICE,DialogOptionSelected,$option == barLeaveICE,FireBest ReturnFromBar,,,
+
+
+missionFromICEEntrance,PickGreeting,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionManager","ShowPersonVisual",,,
+
+missionFromICEMissionStage1,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage1 $option",,,,
+
+missionFromICEMissionStage1Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage1Ongoing $option",,,,
+
+missionFromICEMissionStage2,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage2 $option",,,,
+
+missionFromICEMissionStage2Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage2Ongoing $option",,,,
+
+missionFromICEMissionStage3,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage3 $option",,,,
+
+missionFromICEMissionStage3Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage3Ongoing $option",,,,
+
+missionFromICEMissionStage4,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage4 $option",,,,
+
+missionFromICEMissionStage4Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage4Ongoing $option",,,,
+,,,,,,
+,,,,,,
+missionFromICECacheStart,BeginSalvage,$SUN_ICE_eventRef != null score:1000,"ShowDefaultVisual
+SUN_ICE_MissionCacheText",,
+missionFromICECacheSalvage,DialogOptionSelected,"$option == SUN_ICE_mission_cache_salvage","CallEvent $SUN_ICE_eventRef",,
+,,,,,,
+,,,,,,
+remnantWarForICE,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarUnfinished score:1000
+!$global.SUN_ICE_RemnantWarMuted
+$SUN_ICE_ExileFleet","ShowDefaultVisual
+global.SUN_ICE_MissionRemnantWarOngoing",,,
+remnantWarForICETalk1,DialogOptionSelected,"$option == SUN_ICE_remnant_war_init",,"余辉舰队似乎没有料到你的出现，它们迅速撤退并重整队形，外围准备支援的余辉也逐渐进入战斗位置，宇宙星海顷刻间变成了余辉之海。
+你的副官无奈地把通讯静音，扭头看着你：""看来我们是被关着咯，怎么办？""","SUN_ICE_remnant_war_act_1:""集结一切有生力量，越狱呗""",
+remnantWarForICETalk2,DialogOptionSelected,"$option == SUN_ICE_remnant_war_act_1",,"""你还真悠闲的下来，还越狱？""副官一边怼你一边在电脑上计算战斗力，""差距过于悬殊，而且对方是余晖，速子造出来的东西你心里有数的。如果你想指望伊甸那边的话，那我只能说这几万人大概都准备好和你共生死了。""","SUN_ICE_remnant_war_act_2:命令所有火控手锁定余辉舰船",
+remnantWarForICETalk3,DialogOptionSelected,"$option == SUN_ICE_remnant_war_act_2",,"大家一筹莫展之时，你在屏幕上看到了熟悉的船、大规模活跃信号和一个熟悉的通讯信息，是{Carobin}发来的。""嗨！你们好啊，最近什么都好，一切太平...直到我们，踏入这，该死的包围圈之前！你们能来帮忙，真的太感谢了。""","SUN_ICE_remnant_war_act_3:继续",
+remnantWarForICETalk4,DialogOptionSelected,"$option == SUN_ICE_remnant_war_act_3",,"""话不多说，舰队总指挥已经发布了最高警戒，整支舰队，都已经，准备好下一轮战斗了！下一波攻势应该快要开始了！""通讯链接切断后，伊甸流亡舰队已经趁机全员就位，而你曾经提供给他们的舰船也在其列。你压力倍增——扫描仪上那背水一战的阵容，分明带着了无后路的决然。","defaultLeave:行动开始！",
+remnantWarForICEMuted,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarMuted score:2000
+$SUN_ICE_ExileFleet","ShowDefaultVisual",舰队处于完全备战状态，所有用于对接的移动港口都被封存，市场和维修区域也被紧急关闭、征用。在解决势态之前，你无法再有任何进一步动作。,defaultLeave:离开,
+remnantWarForICEAfter,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarFinished score:3000
+$SUN_ICE_ExileFleet","ShowDefaultVisual
+SUN_ICE_MissionRemnantWarEnds",,,
+remnantWarForICEAfterAlt,PickGreeting,"$global.SUN_ICE_RemnantWarFinished score:3000
+$SUN_ICE_isMissionGiver score:3000","ShowDefaultVisual
+SUN_ICE_MissionRemnantWarEnds",,,
+remnantWarForICECompleted,DialogOptionSelected,"$option == SUN_ICE_remnant_war_ends","FireBest MarketPostOpen",,,

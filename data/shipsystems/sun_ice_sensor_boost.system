@@ -1,0 +1,18 @@
+{
+	"id":"sun_ice_sensor_boost",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	
+	"aiScript":"data.shipsystems.ai.SUN_ICE_SensorBoostAI",
+	"statsScript":"data.shipsystems.SUN_ICE_SensorBoostStats",
+	
+	"engineGlowColor":[255,223,128,255],
+	"engineGlowContrailColor":[255,223,128,5],
+	"useSound":"system_high_energy_focus_activate",
+	"loopSound":"sun_ice_system_sensorboost_loop",
+	"deactivateSound":"system_high_energy_focus_deactivate",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}	
+}

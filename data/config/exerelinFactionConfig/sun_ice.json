@@ -1,0 +1,74 @@
+{
+    "playableFaction":false,
+    "corvusCompatible":true,
+    "marketSpawnWeight":0,
+    "colonyExpeditionChance":0.5, # a few choose to find other worlds
+    "colonyTargetValuator":"exerelin.campaign.colony.LuddicColonyTargetValuator",
+
+    "baseFleetCostMultiplier":1,
+    "noHomeworld":true,
+
+    "customRebelFaction":"",
+    "customRebelFleetId":"",
+    "rebelFleetSuffix":"Collaborators",
+
+    "directoryUseShortName":true,
+    
+    "startRelationships":{
+        "cabal": -1,
+        "luddic_church": -0.4,
+        "luddic_path": -1,
+        "sun_ici": -0.4
+    },
+	"maxRelationships":{
+		"sun_ici": -0.2,
+        "pirates": -0.6,
+        "luddic_church": -0.2,
+        "luddic_path": -1,
+        "cabal": -0.6
+	},
+    "minRelationships":{
+        "sun_ici": -0.4
+    },
+    "diplomacyPositiveChance":{
+        "luddic_church":0.8,
+        "luddic_path":0.4,
+        "sun_ici":0.4
+    },
+    "diplomacyNegativeChance":{
+        "luddic_church":1.2,
+        "luddic_path":2.0
+    },
+    "alignments":{
+        "diplomatic":0.5,
+        "ideological":-0.5,
+        "technocratic":0.5,
+    },
+	"diplomacyTraits": ["stalwart", "submissive", "pacifist"],
+    
+    "freeMarket":false,
+    "allowAgentActions":false,
+    
+    "startShipsSolo":["sun_ice_flashghast_Standard"],
+    "startShipsCombatSmall":["sun_ice_shiekwraith_Standard", "sun_ice_flashghast_Standard", "sun_ice_seraph_Standard"],
+    "startShipsTradeSmall":["sun_ice_palantir_Standard", "sun_ice_palantir_Standard", "sun_ice_specter_Standard"],
+    "startShipsCombatLarge":["sun_ice_kelpie_Standard", "sun_ice_shiekwraith_Support", "sun_ice_specter_Standard"],
+    "startShipsCarrierSmall":["sun_ice_eidolon_Standard", "sun_ice_palantir_Standard", "sun_ice_seraph_Standard"],
+    "startShipsCarrierLarge":["sun_ice_apocrypha_Support", "sun_ice_shiekwraith_Support", "sun_ice_seraph_Standard"],
+    
+    "defenceStations":[
+        {"ids":["orbitalstation_high", "battlestation_high", "starfortress_high"]},
+    ],
+	
+    "startSpecialItems":[
+        [["ice_package_bp", ""]],
+    ],
+	
+	"bonusSeeds":[
+		{"id":"nanoforge_corrupted", "count":1},
+		{"id":"aiCore_station", "count":2, "mult":0.2},
+		{"id":"aiCore_military", "mult":0.5},
+		{"id":"aiCore_heavyindustry", "count":1},
+		{"id":"aiCore_any", "mult":2},
+	],
+}

@@ -1,0 +1,42 @@
+{
+    "displayName": "Reformed",
+    "fluxCapacitors": 10,
+    "fluxVents": 20,
+    "goalVariant": true,
+    "hullId": "sun_ice_soulbane",
+    "hullMods": ["heavyarmor"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_soulbane_Refromed",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0007": "autopulse"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "ioncannon",
+                "WS0004": "ioncannon"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0005": "sabot",
+                "WS0006": "sabot"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "chaingun",
+                "WS0002": "chaingun"
+            }
+        }
+    ]
+}

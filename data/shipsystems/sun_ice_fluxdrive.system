@@ -1,0 +1,28 @@
+{
+	"id":"sun_ice_fluxdrive",
+	"type":"ENGINE_MOD",
+	"aiType":"BURN_DRIVE",
+	
+	"statsScript":"data.shipsystems.SUN_ICE_FluxDriveStats",
+	
+	"engineGlowColor":[255,223,128,255],
+	"engineGlowContrailColor":[255,223,128,5],
+	"engineGlowLengthMult":2,
+	"engineGlowWidthMult":2,
+	"engineGlowGlowMult":2,
+	
+	"flameoutOnImpactChance":0,
+
+	#"clampTurnRateAfter":true,
+	#"clampMaxSpeedAfter":true,
+	"alwaysAccelerate":true,
+
+	"useSound":"sun_ice_system_fluxdrive_active",
+	"loopSound":"sun_ice_system_fluxdrive_loop",
+	"deactivateSound":"sun_ice_system_fluxdrive_deactive",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"averageSpeedIncrease":200,
+	}
+}

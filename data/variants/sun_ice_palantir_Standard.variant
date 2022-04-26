@@ -1,0 +1,14 @@
+{
+    "displayName": "Standard",
+	"quality":0.5,
+  "fluxCapacitors": 0,
+  "fluxVents": 2,
+  "goalVariant": true,
+  "hullId": "sun_ice_palantir",
+  "hullMods": [
+    "unstable_injector",
+	"insulatedengine"
+  ],
+  "variantId": "sun_ice_palantir_Standard",
+  "weaponGroups": []
+}

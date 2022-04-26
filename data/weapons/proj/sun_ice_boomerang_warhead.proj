@@ -1,0 +1,28 @@
+{
+	"id":"sun_ice_boomerang_warhead",
+	"specClass":"missile",	
+	"missileType":"MISSILE",
+	"sprite":"graphics/missiles/missile_sabot_warhead.png",
+	"glowColor":[255,223,128,100],
+	"glowRadius":30,
+	"size":[7,14],	
+	"center":[3.5,7],
+	"collisionRadius":12,
+	"collisionClass":"MISSILE_NO_FF",
+	"collisionClassAfterFlameout":"MISSILE_FF",
+	"explosionColor":[255,191,0,140],  # purely visual, will get a white additively blended core on top of this color
+	"explosionRadius":75, # purely visual
+	"flameoutTime":0.5, # total time from flameout to full fadeout
+	"noEngineGlowTime":0.2, # time spent without the engine glow being rendered
+	"fadeTime":0.2, # fadeout duration	
+	"engineSpec":{"turnAcc":600,
+				  "turnRate":300,
+				  "acc":600,
+				  "dec":0},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-7, 0],
+				    "style":"SUN_ICE_MISSILE",
+				    "width":4.0,
+				    "length":20.0,
+				    "angle":180.0}]
+}

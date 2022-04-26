@@ -1,0 +1,88 @@
+{
+  "hullName": "Stormwhisp",
+  "hullId": "sun_ice_stormwhisp_wing",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/sun_ice/ships/Stormwhisp.png",
+  "style": "SUN_ICE",
+  "height": 42,
+  "width": 38,
+  "center": [19, 21],
+  "collisionRadius": 23.632605,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 23.632605,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_stormwhisp_lights"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 60,
+      "angle": 0,
+      "locations": [11, 6]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 60,
+      "angle": 0,
+      "locations": [11, -6]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-8.5, 16.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-8.5, -16.5]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-15.5, 9],
+      "length": 40.734409,
+      "width": 16.817585,
+      "angle": -178.02507,
+      "contrailSize": 16.817585,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-15.5, -9],
+      "length": 40.734409,
+      "width": 16.817585,
+      "angle": 178.02507,
+      "contrailSize": 16.817585,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    -8, 12,
+    -12, 0,
+    -8, -12,
+    15, 0
+  ]
+}

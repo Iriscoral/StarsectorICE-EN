@@ -1,0 +1,70 @@
+{
+    "displayName": "Experimental",
+    "fluxCapacitors": 19,
+    "fluxVents": 30,
+    "hullId": "sun_ice_ihs",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor",
+        "sun_ice_turbulence_valve_mod",
+        "sun_ice_shunt_coating_mod",
+        "phase_anchor",
+        "unstable_injector",
+        "fluxbreakers"
+    ],
+    "permaMods": [
+        "targetingunit",
+        "heavyarmor",
+        "sun_ice_turbulence_valve_mod",
+        "phase_anchor",
+        "unstable_injector"
+    ],
+    "sMods": [
+        "targetingunit",
+        "heavyarmor",
+        "sun_ice_turbulence_valve_mod",
+        "phase_anchor",
+        "unstable_injector"
+    ],
+    "variantId": "sun_ice_ihs_exp",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0014": "sun_ice_bladeofalpha"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "sun_ice_nos"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "sun_ice_falx",
+                "WS0005": "sun_ice_falx"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0012": "sun_ice_scatterpd",
+                "WS0013": "sun_ice_scatterpd"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "sun_ice_hexac",
+                "WS0003": "sun_ice_hexac",
+                "WS0006": "sun_ice_lighthexac",
+                "WS0007": "sun_ice_lighthexac",
+                "WS0008": "sun_ice_lighthexac",
+                "WS0009": "sun_ice_lighthexac"
+            }
+        }
+    ]
+}

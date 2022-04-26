@@ -1,0 +1,18 @@
+{
+	"id":"sun_ice_ricochet_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",	
+	"length":15,
+	"width":15,
+	"fadeTime":0.25,
+	"fringeColor":[100,100,255,255],
+	"coreColor":[255,255,255,255],
+	"glowColor":[100,100,255,75],
+	"glowRadius":0,
+	"hitGlowRadius":75,	
+	"passThroughMissiles":true,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/fx/shields64.png"	
+}

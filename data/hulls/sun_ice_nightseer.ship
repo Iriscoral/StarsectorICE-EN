@@ -1,0 +1,141 @@
+{
+  "hullName": "Nightseer",
+  "hullId": "sun_ice_nightseer",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/sun_ice/ships/Nightseer.png",
+  "style": "SUN_ICE",
+  "height": 136,
+  "width": 90,
+  "center": [45.5, 66],
+  "collisionRadius": 71.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 71.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "high_maintenance","delicate",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "ATOP": "sun_ice_nightseer_atop",
+    "LIGHTS": "sun_ice_nightseer_lights",
+    "LIGHTS_TOP": "sun_ice_nightseer_lights_top",
+    "SYSTEM": "sun_ice_nightseer_system"
+  },
+  "weaponSlots": [
+    {
+      "id": "LIGHTS_TOP",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [1, 0.5]
+    },
+    {
+      "id": "ATOP",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [2, 0.5]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [1, 0.5]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [1, 0.5]
+    },
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-3.5, 0.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 76.5,
+      "locations": [2, 22.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -76.5,
+      "locations": [2, -21.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-35.5, 0.5],
+      "length": 78,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-44.5, 12],
+      "length": 56.410294,
+      "width": 7.517605,
+      "angle": -174.160507,
+      "contrailSize": 7.517605,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-44.5, -12],
+      "length": 56.410294,
+      "width": 7.517605,
+      "angle": 174.160507,
+      "contrailSize": 7.517605,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-58, 18.5],
+      "length": 32.563526,
+      "width": 6.889665,
+      "angle": -166.944748,
+      "contrailSize": 6.889665,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-58, -18.5],
+      "length": 32.563526,
+      "width": 6.889665,
+      "angle": 166.944748,
+      "contrailSize": 6.889665,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    -59.5, -29,
+    -48, -40,
+    63.5, -13,
+    63.5, 13,
+    -48, 40,
+    -59.5, 29,
+    -35.5, 0.5
+  ]
+}

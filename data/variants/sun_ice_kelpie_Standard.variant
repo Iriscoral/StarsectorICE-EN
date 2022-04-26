@@ -1,0 +1,55 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 8,
+    "fluxVents": 15,
+    "goalVariant": true,
+    "hullId": "sun_ice_kelpie",
+    "hullMods": [
+        "armoredweapons",
+        "auxiliarythrusters",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "variantId": "sun_ice_kelpie_Standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "sun_ice_fissionblade",
+                "WS0007": "sun_ice_fissionblade",
+                "WS0008": "sun_ice_fissionblade",
+                "WS0009": "sun_ice_fissionblade",
+                "WS0010": "sun_ice_fissionblade",
+                "WS0011": "sun_ice_fissionblade",
+                "WS0012": "sun_ice_fissionblade",
+                "WS0013": "sun_ice_fissionblade",
+                "WS0014": "sun_ice_fissionblade",
+                "WS0015": "sun_ice_fissionblade",
+                "WS0016": "sun_ice_fissionblade",
+                "WS0017": "sun_ice_fissionblade"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0020": "sun_ice_tractorbeam"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0002": "sun_ice_scatterpd",
+                "WS0003": "sun_ice_scatterpd"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "sun_ice_lighthexac",
+                "WS0005": "sun_ice_lighthexac"
+            }
+        }
+    ]
+}

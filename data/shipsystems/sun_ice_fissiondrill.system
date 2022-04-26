@@ -1,0 +1,27 @@
+{
+	"id":"sun_ice_fissiondrill_sys",
+	"type":"ENGINE_MOD",
+	"aiType":"CUSTOM",
+	
+	"aiScript":"data.shipsystems.ai.SUN_ICE_FissionDrillAI",
+	"statsScript":"data.shipsystems.SUN_ICE_FissionDrillStats",
+	
+	"engineGlowColor":[255,223,128,255],
+	"engineGlowContrailColor":[255,223,128,5],
+	"engineGlowLengthMult":2,
+	"engineGlowWidthMult":2,
+	"engineGlowGlowMult":2,
+
+	#"clampTurnRateAfter":true,
+	#"clampMaxSpeedAfter":true,
+	"alwaysAccelerate":true,
+
+	"useSound":"sun_ice_system_fissiondrill_activate",
+	"loopSound":"sun_ice_system_fissiondrill_loop",
+	"deactivateSound":"sun_ice_system_fissiondrill_deactivate",
+	"outOfUsesSound":"engine_disabled",
+	
+	"aiHints":{
+		"averageSpeedIncrease":300,
+	}
+}

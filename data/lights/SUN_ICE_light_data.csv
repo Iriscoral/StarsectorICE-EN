@@ -1,0 +1,21 @@
+id,type,size,intensity,fadeout,color,offset,hit size,hit intensity,hit fadeout,hit color,flash size,flash intensity,flash fadeout,flash color,flash offset,chance,fighter dim
+sun_ice_flamebolt_shot,projectile,180,0.3,0.1,"[255,191,0]",,240,0.7,1,"[255,191,0]",190,0.6,0.4,"[255,191,0]",,1,TRUE
+sun_ice_hellblaze_shot,projectile,240,0.5,0.1,"[255,115,0]",,280,0.8,1,"[255,115,0]",220,0.8,0.4,"[255,115,0]",,1,TRUE
+sun_ice_wisp_shot,projectile,120,0.2,0.1,"[114,247,106]",,180,0.5,1,"[114,247,106]",130,0.4,0.4,"[114,247,106]",,1,TRUE
+sun_ice_mobiusray,projectile,140,0.05,0.1,"[255,191,0]",,80,0.1,0.1,"[255,191,0]",120,0.05,0.05,"[255,191,0]",,1,TRUE
+sun_ice_hypermassdriver,projectile,350,0.4,0.1,"[255,223,128]",,450,0.6,0.7,"[255,223,128]",450,0.5,0.6,"[255,223,128]",,1,TRUE
+sun_ice_hex_shot,projectile,60,0.3,0.2,"[240,240,150]",,120,0.4,0.5,"[240,240,150]",150,0.25,0.1,"[240,240,150]",,1,TRUE
+,,,,,,,,,,,,,,,,,
+sun_ice_hypermassbomb,projectile,350,0.4,0.1,"[124,249,233]",,450,0.6,0.7,"[124,249,233]",,,,,,1,TRUE
+sun_ice_mine,projectile,50,0.6,0.1,"[124,249,233]",,250,0.5,0.4,"[124,249,233]",,,,,,1,TRUE
+sun_ice_boomerang_warhead,projectile,140,0.5,0.4,"[255,223,128]",,175,1,0.9,"[255,191,0]",,,,,,1,TRUE
+,,,,,,,,,,,,,,,,,
+sun_ice_fissiondrill,beam,240,0.6,,"[255,191,0]",,,,,,,,,,,1,TRUE
+sun_ice_fissionblademini,beam,25,0.4,,"[240,240,140]",,40,0.6,,"[240,240,140]",,,,,,1,TRUE
+sun_ice_fissionblade,beam,25,0.4,,"[240,240,140]",,40,0.6,,"[240,240,140]",,,,,,1,TRUE
+sun_ice_tractorbeam,beam,60,0.6,,"[80,240,180]",,100,0.4,,"[80,240,180]",,,,,,1,TRUE
+sun_ice_nova,beam,80,0.9,,"[81,198,183]",,150,0.9,,"[81,198,183]",,,,,,1,TRUE
+sun_ice_falx,beam,30,0.5,,"[0,255,220]",,40,0.9,,"[0,255,220]",,,,,,1,TRUE
+sun_ice_chupacabra,beam,75,0.7,,"[255,178,71]",,120,0.5,,"[255,178,71]",,,,,,1,TRUE
+sun_ice_nos,beam,120,0.7,,"[255,131,0]",,300,0.5,,"[255,131,0]",,,,"[255,131,0]",,1,TRUE
+sun_ice_bladeofalpha,beam,80,0.9,,"[255,240,165]",,150,0.9,,"[250,140,100]",,,,,,1,TRUE

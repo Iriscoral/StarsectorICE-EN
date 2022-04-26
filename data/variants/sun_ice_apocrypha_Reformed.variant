@@ -1,0 +1,58 @@
+{
+    "displayName": "Reformed",
+    "fluxCapacitors": 30,
+    "fluxVents": 36,
+    "goalVariant": true,
+    "hullId": "sun_ice_apocrypha",
+    "hullMods": [
+        "expanded_deck_crew",
+        "eccm"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_apocrypha_Reformed",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0011": "hurricane",
+                "WS0012": "hurricane"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0007": "heatseeker",
+                "WS0008": "heatseeker"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "sabotpod",
+                "WS0004": "sabotpod",
+                "WS0009": "sabotpod",
+                "WS0010": "sabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "vulcan",
+                "WS0002": "vulcan",
+                "WS0005": "vulcan",
+                "WS0006": "vulcan",
+                "WS0013": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "broadsword_wing",
+        "broadsword_wing",
+        "broadsword_wing"
+    ]
+}

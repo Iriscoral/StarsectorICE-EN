@@ -1,0 +1,26 @@
+{
+	"id":"sun_ice_pulserepeater",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"ENERGY",
+	"size":"SMALL",
+	"turretSprite":"graphics/sun_ice/weapons/pulserepeater_turret_base.png",
+	"turretGlowSprite":"graphics/sun_ice/weapons/pulserepeater_turret_glow.png",
+	"hardpointSprite":"graphics/sun_ice/weapons/pulserepeater_hardpoint_base.png",
+	"hardpointGlowSprite":"graphics/sun_ice/weapons/pulserepeater_hardpoint_glow.png",
+	"glowColor":[0,230,250,255],
+	"turretOffsets":[6, 0],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[10, 0],
+	"hardpointAngleOffsets":[0],
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
+	"animationType":"GLOW_AND_FLASH",
+	"muzzleFlashSpec":{"length":20.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":4.0,
+					   "particleSizeMin":10.0,
+					   "particleSizeRange":12.0,
+					   "particleDuration":0.08,
+					   "particleCount":6,
+					   "particleColor":[0,230,250,255]},
+	"projectileSpecId":"sun_ice_pulserepeater_shot",  # projectile that will be fired
+	"fireSoundTwo":"sun_ice_pulserepeater_fire",
+}

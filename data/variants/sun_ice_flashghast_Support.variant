@@ -1,0 +1,38 @@
+{
+    "displayName": "Support",
+    "fluxCapacitors": 4,
+    "fluxVents": 2,
+    "goalVariant": true,
+    "hullId": "sun_ice_flashghast",
+    "hullMods": [
+        "sun_ice_shunt_coating_mod",
+        "sun_ice_munitions_autofac_mod"
+    ],
+    "modules": [{"S01": "sun_ice_flashghast_module_Standard"}],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_flashghast_Support",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0005": "sun_ice_boomerangpod"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "sun_ice_falx",
+                "WS0004": "sun_ice_falx"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "sun_ice_scatterpd",
+                "WS0002": "sun_ice_scatterpd"
+            }
+        }
+    ]
+}

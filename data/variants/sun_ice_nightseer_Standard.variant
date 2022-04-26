@@ -1,0 +1,30 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 4,
+    "fluxVents": 0,
+    "goalVariant": true,
+    "hullId": "sun_ice_nightseer",
+    "hullMods": [
+        "heavyarmor",
+        "sun_ice_tactical_ansible_mod",
+        "phase_anchor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_nightseer_Standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "sun_ice_nos"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "sun_ice_lighthexac",
+                "WS0003": "sun_ice_lighthexac"
+            }
+        }
+    ]
+}

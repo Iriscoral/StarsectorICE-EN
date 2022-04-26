@@ -1,0 +1,120 @@
+{
+  "bounds": [
+    25,
+    -179,
+    76.5,
+    -166,
+    121,
+    -138,
+    148.5,
+    -123,
+    175.5,
+    -78,
+    172,
+    -64.5,
+    189.5,
+    7,
+    172.5,
+    72,
+    139.5,
+    127.5,
+    92.5,
+    168.5,
+    21.5,
+    192.5,
+    19.5,
+    170.5,
+    -25,
+    168,
+    -29,
+    190,
+    -96.5,
+    167.5,
+    -143.5,
+    130.5,
+    -136,
+    124,
+    -163.5,
+    82.5,
+    -172.5,
+    87.5,
+    -190.5,
+    28.5,
+    -188,
+    -34.5,
+    -166.5,
+    -98.5,
+    -119.5,
+    -152,
+    -61.5,
+    -183.5,
+    -58,
+    -174
+  ],
+  "builtInMods": [
+    #"sun_ice_gravitonic_sensors_mod",
+    "sun_ice_nutrition_resynth"
+  ],
+  "builtInWeapons": {
+    "LIGHTS1": "sun_ice_shalom_lights1",
+    "LIGHTS2": "sun_ice_shalom_lights2",
+    "LIGHTS3": "sun_ice_shalom_lights3"
+  },
+  "center": [
+    200,
+    200
+  ],
+  "collisionRadius": 200.324738,
+  "engineSlots": [],
+  "height": 400,
+  "hullId": "sun_ice_shalom",
+  "hullName": "Shalom",
+  "hullSize": "CAPITAL_SHIP",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 211.060425,
+  "spriteName": "graphics/sun_ice/ships/Shalom.png",
+  "style": "SUN_ICE",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "LIGHTS1",
+      "locations": [
+        0,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "LIGHTS2",
+      "locations": [
+        0,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "LIGHTS3",
+      "locations": [
+        0,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 400
+}

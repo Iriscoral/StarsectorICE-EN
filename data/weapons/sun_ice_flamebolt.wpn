@@ -1,0 +1,29 @@
+{
+	"id":"sun_ice_flamebolt",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"BALLISTIC",
+	"size":"MEDIUM",
+	"turretSprite":"graphics/sun_ice/weapons/flamebolt_turret_base.png",
+	"turretGunSprite":"graphics/sun_ice/weapons/flamebolt_turret_recoil.png",
+	"turretGlowSprite":"graphics/sun_ice/weapons/flamebolt_turret_glow.png",
+	"hardpointSprite":"graphics/sun_ice/weapons/flamebolt_hardpoint_base.png",
+	"hardpointGunSprite":"graphics/sun_ice/weapons/flamebolt_hardpoint_recoil.png",
+	"hardpointGlowSprite":"graphics/sun_ice/weapons/flamebolt_hardpoint_glow.png",
+	"visualRecoil":7.0,  
+	"turretOffsets":[10, 0],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[10, 0],
+	"hardpointAngleOffsets":[0],	
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
+	"glowColor":[255,200,70,255],
+	"animationType":"GLOW_AND_FLASH",  # NONE, GLOW, MUZZLE_FLASH, SMOKE
+	"muzzleFlashSpec":{"length":40.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":5.0,
+					   "particleSizeMin":12.0,
+					   "particleSizeRange":14.0,
+					   "particleDuration":0.5,
+					   "particleCount":12,
+					   "particleColor":[255,240,165,200]},	
+	"projectileSpecId":"sun_ice_flamebolt_shot",  # projectile that will be fired
+	"fireSoundTwo":"sun_ice_flamebolt_fire",	
+}

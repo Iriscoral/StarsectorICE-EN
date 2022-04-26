@@ -1,0 +1,28 @@
+{
+    "displayName": "Reformed",
+    "fluxCapacitors": 9,
+    "fluxVents": 5,
+    "goalVariant": true,
+    "hullId": "sun_ice_nightseer",
+    "hullMods": [
+        "magazines",
+        "hardened_subsystems"
+    ],
+    "permaMods": [],
+    "variantId": "sun_ice_nightseer_Reformed",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "autopulse"}
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "amblaster",
+                "WS0003": "amblaster"
+            }
+        }
+    ]
+}

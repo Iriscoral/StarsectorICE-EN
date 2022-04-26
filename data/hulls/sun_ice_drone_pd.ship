@@ -1,0 +1,41 @@
+{
+  "hullName": "PD Drone",
+  "hullId": "sun_ice_drone_pd_wing",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/sun_ice/ships/drones/drone_pd.png",
+  "style": "SUN_ICE",
+  "height": 40,
+  "width": 30,
+  "center": [15, 20],
+  "collisionRadius": 25,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 23,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS 001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HIDDEN",
+      "arc": 10,
+      "angle": 0,
+      "locations": [8, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-8.5, -0],
+      "length": 50,
+      "width": 8,
+      "angle": 180,
+      "contrailSize": 8,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    -8, -3.5,
+    9.5, -8,
+    9.5, 8,
+    -8, 3.5
+  ]
+}

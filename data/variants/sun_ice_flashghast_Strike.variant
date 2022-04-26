@@ -1,0 +1,38 @@
+{
+    "displayName": "Strike",
+    "fluxCapacitors": 3,
+    "fluxVents": 4,
+    "goalVariant": true,
+    "hullId": "sun_ice_flashghast",
+    "hullMods": [
+        "missleracks",
+        "sun_ice_tactical_ansible_mod"
+    ],
+    "modules": [{"S01": "sun_ice_flashghast_module_Standard"}],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_flashghast_Strike",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "sun_ice_lighthexac",
+                "WS0004": "sun_ice_lighthexac"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {"WS0005": "sun_ice_spitfire"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "sabot",
+                "WS0002": "sabot"
+            }
+        }
+    ]
+}

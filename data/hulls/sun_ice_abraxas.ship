@@ -1,0 +1,358 @@
+{
+  "hullName": "Abraxas",
+  "hullId": "sun_ice_abraxas",
+  "hullSize": "CAPITAL_SHIP",
+  "spriteName": "graphics/sun_ice/ships/Abraxas.png",
+  "style": "SUN_ICE",
+  "height": 385,
+  "width": 306,
+  "center": [153, 187],
+  "collisionRadius": 223,
+  "shieldCenter": [24.5, -0],
+  "shieldRadius": 210,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "sun_ice_nova_reactor",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_abraxas_lights",
+    "SYSTEM": "sun_ice_abraxas_system",
+    "WS0001": "sun_ice_nova"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [62, -0]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -80,
+      "locations": [-23.5, -67]
+    },
+    {
+      "id": "WS0004",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": 16,
+      "locations": [34, 111]
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 60,
+      "angle": -16,
+      "locations": [34, -111]
+    },
+    {
+      "id": "WS0006",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [170.5, -44]
+    },
+    {
+      "id": "WS0007",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [170.5, 44]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [98, -49.5]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -90,
+      "locations": [98, 49.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": 90,
+      "locations": [-48, 113.5]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": -90,
+      "locations": [-48, -113.5]
+    },
+    {
+      "id": "WS0012",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": 115,
+      "locations": [-149, 132.5]
+    },
+    {
+      "id": "WS0013",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 145,
+      "angle": -115,
+      "locations": [-149, -132.5]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [-77, 42]
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -90,
+      "locations": [-77, -42]
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 80,
+      "locations": [23.5, 74]
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -80,
+      "locations": [23.5, -74]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [6, 0]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [6, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [23.5, -0],
+      "length": 212,
+      "width": 52,
+      "angle": 180,
+      "contrailSize": 52,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-59, 62.5],
+      "length": 152.551651,
+      "width": 23.494228,
+      "angle": -173.440796,
+      "contrailSize": 23.494228,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-59, -62.5],
+      "length": 152.551651,
+      "width": 23.494228,
+      "angle": 173.440796,
+      "contrailSize": 23.494228,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-73, 80],
+      "length": 126.105957,
+      "width": 19.420345,
+      "angle": -170.607544,
+      "contrailSize": 19.420345,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-73, -80],
+      "length": 126.105957,
+      "width": 19.420345,
+      "angle": 170.607544,
+      "contrailSize": 19.420345,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-95.5, 89],
+      "length": 95.870949,
+      "width": 17.089191,
+      "angle": -167.74498,
+      "contrailSize": 17.089191,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-95.5, -89],
+      "length": 95.870949,
+      "width": 17.089191,
+      "angle": 167.74498,
+      "contrailSize": 17.089191,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-182.5, 89.5],
+      "length": 48.136688,
+      "width": 12.224422,
+      "angle": -160.935455,
+      "contrailSize": 128,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-182.5, -89.5],
+      "length": 48.136688,
+      "width": 12.224422,
+      "angle": 160.935455,
+      "contrailSize": 128,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-172.5, 110.5],
+      "length": 39.389255,
+      "width": 13.488762,
+      "angle": -158.014755,
+      "contrailSize": 128,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-172.5, -110.5],
+      "length": 39.389255,
+      "width": 13.488762,
+      "angle": 158.014755,
+      "contrailSize": 128,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-14, 125],
+      "length": 24.160419,
+      "width": 10.251667,
+      "angle": -170.607544,
+      "contrailSize": 128,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-14, -125],
+      "length": 24.160419,
+      "width": 10.251667,
+      "angle": 170.607544,
+      "contrailSize": 128,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-20, 136.5],
+      "length": 32.872856,
+      "width": 11.423709,
+      "angle": -170.607544,
+      "contrailSize": 128,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-20, -136.5],
+      "length": 32.872856,
+      "width": 11.423709,
+      "angle": 170.607544,
+      "contrailSize": 128,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    36.5, -17,
+    -131, -15.5,
+    -146, -32,
+    -38.5, -49,
+    -47.5, -72.5,
+    -109, -112,
+    -136.5, -91,
+    -181.5, -88.5,
+    -181, -97.5,
+    -150, -143,
+    -107, -138,
+    -40, -105.5,
+    6, -120.5,
+    -13, -144.5,
+    42, -135.5,
+    35.5, -94,
+    174.5, -61.5,
+    171, -38,
+    53, -60.5,
+    71, -29,
+    119.5, -28,
+    113, -16,
+    56, -14,
+    56, 14,
+    113, 16,
+    119.5, 28,
+    71, 29,
+    53, 60.5,
+    171, 38,
+    174.5, 61.5,
+    35.5, 94,
+    42, 135.5,
+    -13, 144.5,
+    6, 120.5,
+    -40, 105.5,
+    -107, 138,
+    -150, 143,
+    -181, 97.5,
+    -181.5, 88.5,
+    -136.5, 91,
+    -109, 112,
+    -47.5, 72.5,
+    -38.5, 49,
+    -146, 32,
+    -131, 15.5,
+    36.5, 17
+  ]
+}

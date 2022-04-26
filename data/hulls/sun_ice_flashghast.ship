@@ -1,0 +1,131 @@
+{
+  "hullName": "Flashghast",
+  "hullId": "sun_ice_flashghast",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/sun_ice/ships/Flashghast.png",
+  "style": "SUN_ICE",
+  "height": 114,
+  "width": 80,
+  "center": [40, 56],
+  "collisionRadius": 71.043999,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 71,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_flashghast_lights",
+    "SYSTEM": "sun_ice_flashghast_system"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 10,
+      "locations": [17.5, 10]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -10,
+      "locations": [17.5, -10]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [49.5, 7]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [49.5, -7]
+    },
+    {
+      "id": "WS0005",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-24, -0]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [1, 0]
+    },
+    {
+      "id": "S01",
+      "size": "LARGE",
+      "type": "STATION_MODULE",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [1, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-47.5, 19.5],
+      "length": 53.227371,
+      "width": 14.879107,
+      "angle": -175.601288,
+      "contrailSize": 14.879107,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-47.5, -19.5],
+      "length": 53.227371,
+      "width": 14.879107,
+      "angle": 175.601288,
+      "contrailSize": 14.879107,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-47, -0],
+      "length": 105.5,
+      "width": 31,
+      "angle": 180,
+      "contrailSize": 31,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    45, -10.5,
+    -48, -38.5,
+    -51, -32.5,
+    -44.5, -0,
+    -51, 32.5,
+    -48, 38.5,
+    45, 10.5
+  ]
+}

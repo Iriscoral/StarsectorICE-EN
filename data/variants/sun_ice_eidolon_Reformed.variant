@@ -1,0 +1,38 @@
+{
+    "displayName": "Reformed",
+    "fluxCapacitors": 6,
+    "fluxVents": 10,
+    "goalVariant": true,
+    "hullId": "sun_ice_eidolon",
+    "hullMods": ["eccm"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_eidolon_Reformed",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {"WS0005": "hurricane"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0001": "sabotpod",
+                "WS0002": "sabotpod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "vulcan",
+                "WS0004": "vulcan"
+            }
+        }
+    ],
+    "wings": [
+        "broadsword_wing",
+        "broadsword_wing"
+    ]
+}

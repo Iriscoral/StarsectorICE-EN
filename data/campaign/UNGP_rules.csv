@@ -1,0 +1,5 @@
+id,name,short,desc,cost,isBonus,isGolden,spritePath,effectPlugin,extra1,extra2,source,tags,spriteAuthor
+
+SUN_ICE_dimensional_flow,半维滑流,提高旗舰相位能力,旗舰处于相位状态时，时流增幅程度+{%s},-4,TRUE,TRUE,graphics/sun_ice/icons/rules/SUN_ICE_dimensional_flow.png,data.scripts.ungprules.SUN_ICE_DimensionalFlow,,,伊甸堡垒的外流科技,,
+SUN_ICE_abnormal_anchor,异常锚点,看好你的时空门!,舰队中每一艘正常运行的相位舰船每天有{%s}几率引发相位混乱，使其余非相位舰船{CR}降低。越大的相位舰船倾向于造成更频繁、更严重的情况，{CR}降低幅度大致为双方部署点比值的{%s},2,FALSE,,graphics/sun_ice/icons/rules/SUN_ICE_abnormal_anchor.png,data.scripts.ungprules.SUN_ICE_AbnormalAnchor,时空异常波及你的舰队，总共降低了{%s}点{CR.,,伊甸堡垒的安全守则,,
+SUN_ICE_letter_opener,空渊开信刀,提高敌方背刺能力,我方舰船被命中的角度与舰船朝向偏离超过{%s}度时将受到额外伤害，偏离越大则额外伤害越大，被背击时达到最大值{%s},3,FALSE,,graphics/sun_ice/icons/rules/SUN_ICE_letter_opener.png,data.scripts.ungprules.SUN_ICE_LetterOpener,,,伊甸堡垒的奔袭战术,,

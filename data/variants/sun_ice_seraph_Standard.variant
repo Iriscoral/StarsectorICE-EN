@@ -1,0 +1,15 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 0,
+    "fluxVents": 4,
+    "goalVariant": true,
+    "hullId": "sun_ice_seraph",
+    "hullMods": [
+        "unstable_injector",
+        "insulatedengine",
+        "efficiency_overhaul"
+    ],
+    "permaMods": [],
+    "variantId": "sun_ice_seraph_Standard",
+    "weaponGroups": []
+}

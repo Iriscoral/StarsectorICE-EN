@@ -1,0 +1,53 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 22,
+    "fluxVents": 33,
+    "goalVariant": true,
+    "hullId": "sun_ice_apocrypha",
+    "hullMods": [
+        "expanded_deck_crew",
+        "sun_ice_shunt_coating_mod",
+        "sun_ice_munitions_autofac_mod"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_apocrypha_Standard",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "sun_ice_boomerangpod",
+                "WS0004": "sun_ice_boomerangpod",
+                "WS0007": "sun_ice_boomerang",
+                "WS0008": "sun_ice_boomerang",
+                "WS0009": "sun_ice_boomerangpod",
+                "WS0010": "sun_ice_boomerangpod"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0011": "sun_ice_minepod",
+                "WS0012": "sun_ice_minepod"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "sun_ice_lighthexac",
+                "WS0002": "sun_ice_lighthexac",
+                "WS0005": "sun_ice_lighthexac",
+                "WS0006": "sun_ice_lighthexac",
+                "WS0013": "sun_ice_lighthexac"
+            }
+        }
+    ],
+    "wings": [
+        "sun_ice_poltergeist_wing",
+        "sun_ice_poltergeist_wing",
+        "sun_ice_poltergeist_wing"
+    ]
+}

@@ -1,0 +1,156 @@
+{
+  "hullName": "Soulbane",
+  "hullId": "sun_ice_soulbane",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/sun_ice/ships/Soulbane.png",
+  "style": "SUN_ICE",
+  "height": 183,
+  "width": 154,
+  "center": [77, 89.5],
+  "collisionRadius": 98,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 98,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_soulbane_lights",
+    "SYSTEM": "sun_ice_soulbane_system"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 15,
+      "angle": -10,
+      "locations": [-21.5, 62]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "HARDPOINT",
+      "arc": 15,
+      "angle": 10,
+      "locations": [-21.5, -62]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 15,
+      "angle": -10,
+      "locations": [8.5, 37]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 15,
+      "angle": 10,
+      "locations": [8.5, -37]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 40,
+      "locations": [1.5, 17]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": -40,
+      "locations": [1.5, -17]
+    },
+    {
+      "id": "WS0007",
+      "size": "LARGE",
+      "type": "ENERGY",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [51.5, -0]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [2, 0]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [2, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-50.5, -0],
+      "length": 73,
+      "width": 14,
+      "angle": 180,
+      "contrailSize": 14,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-52.5, 30.5],
+      "length": 90,
+      "width": 25,
+      "angle": -172,
+      "contrailSize": 20,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-52.5, -30.5],
+      "length": 90,
+      "width": 25,
+      "angle": 172,
+      "contrailSize": 20,
+      "style": "CUSTOM",
+      "styleId": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    72.5, -0,
+    88, -7.5,
+    38.5, -25.5,
+    3, -11,
+    -11, -24,
+    10.5, -49,
+    -34.5, -50,
+    -29.5, -73,
+    -68, -43,
+    -41, -33,
+    -79, -8,
+    -33.5, -0,
+    -79, 8,
+    -41, 33,
+    -68, 43,
+    -29.5, 73,
+    -34.5, 50,
+    10.5, 49,
+    -11, 24,
+    3, 11,
+    38.5, 25.5,
+    88, 7.5
+  ]
+}

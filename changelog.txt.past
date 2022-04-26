@@ -1,0 +1,275 @@
+----<  ICE version 0.3.5 LTS2 >--------------------------------------------------------------------------
+
+CONTENT CHANGES
+- Exile fleet is now enabled completely
+
+BALANCE CHANGES
+- Seraph:
+	- Increase deployment cost from 2 to 5
+- Maintenance Drone:
+	- Decrease CR recover ability from 3 to 2
+
+BUGS FIXED
+- Fix a fatal bug which exists for almost 3 years
+
+----<  ICE version 0.3.5 LTS1a >--------------------------------------------------------------------------
+
+BUGS FIXED
+- Fix some bugs
+
+----<  ICE version 0.3.5 >--------------------------------------------------------------------------
+
+BALANCE CHANGES
++ Pentagram:
+	+ Increased acceleration from 80 to 100
+	+ Increased deceleration from 80 to 100
+
+ADDITIONS
+- Full compatibility with Starsector 0.91a-RC8
+
+----<  ICE version 0.3.4 LTS1c >--------------------------------------------------------------------------
+
+CONTENT CHANGES
+- Exile fleet should be enabled from a csv file in config
+
+----<  ICE version 0.3.4 LTS1b >--------------------------------------------------------------------------
+
+BUGS FIXED
+- Fix various issues with fleet battles
+
+----<  ICE version 0.3.4 LTS1a >--------------------------------------------------------------------------
+
+ADDITIONS
+- Compatibility with Nexerelin 0.9b RC2
+
+BUGS FIXED
+- Fix a major bug that will make some ships totally invincible
+
+----<  ICE version 0.3.4 >--------------------------------------------------------------------------
+
+ADDITIONS
+- Full compatibility with Starsector 0.9a-RC10
+
+CONTENT CHANGES
+- Do not support Version Checker again
+
+BALANCE CHANGES
+- Weapon rebalance.
+ -> Hypermass Bomb DPH reduce to 2500
+
+----<  ICE version 0.3.3 LTS1c >--------------------------------------------------------------------------
+
+CONTENT CHANGES
+- Flashghast(missile frigate) and Pentagram(melee frigate) rejoin ICE fleets.
+- Gandiva LRM(Large high speed LRM) back to ICE armory.
+- Some adjustment on the melee AI. To make them don't try to kill friendly ships by accident.
+- Add more variants to ICE and ICI fleets. ICI will stick on Idoneus tech while ICE will mix up with vanilla weapons.
+- Support Version Checker again
+
+BALANCE CHANGES
+- A balance pass was goes thought all ICE ships.
+ -> OP count reduce to vanilla level.
+ -> Flux state more clost to vanilla level. Most ships vanilla level dissipation rate but about 20%-10% lower capacity.
+ -> Max speed slightly increased.
+ -> Supplies usage more close to vanilla level.
+ -> Aromr rating rebalanced. 
+
+- Weapon rebalance.
+ -> Hex AC line flux per shot increase to 15, AOE reduced. Light Hex AC range increase to 250, Hex Autocannon  range increase to 350
+ -> Flamebolt Cannon range increase to 400. DPH reduce to 500. Flux per shot increase to 750. CD increase to 2.5.(And will shot fire balls)
+ -> Scatter PD DPH reduce to 100
+ -> Boomerang SRM missile speed increase to 500
+ -> Mobius Ray flux per shot increase to 90.
+ -> Chupacabra Fusor flux per second reduce to 300
+ -> Hypermass Driver shot a 4x1000 brust instead of one 6000 shot. Cost 4x1500 per shot. After shoot overload time reduce to 5 seconds.
+
+- Ship systems
+ -> Phase Warp will no longer cost flux after actived. (still cost flux to use.)
+ -> Armor Repair Mataix will cost more flux to repair armor. (As well as Nova Reactor).
+
+----<  ICE version 0.3.3 LTS1b >--------------------------------------------------------------------------
+
+CONTENT CHANGES
+- Armor repair effect will make the armor looks like...er, repaired.
+
+BUGS FIXED
+- Fix a major bug that will interrupt the trade with refugee fleet
+
+----<  ICE version 0.3.3 LTS1a >--------------------------------------------------------------------------
+
+ADDITIONS
+- Full compatibility with Starsector 0.7.2a-RC3
+
+CONTENT CHANGES
+- Rework the ICE refugee fleet interactive
+
+BALANCE CHANGES
+- Balance ships' brun speed to fit 0.7.2a's level
+- Reduce most ships' fuel usage
+
+----<  ICE version 0.3.3   >------------------------------------------------------------------------------
+
+CONTENT CHANGES
+- Remove ammo from ballistic weapons
+- Remove reference to ammo in Flamebolt description
+- Support for Nexerelin's Corvus mode
+- rules.csv with flavour text. Includes comm dialogue, trade panel texts, and exile relationship texts
+- Add ExileMarket console command (for debugging)
+
+BALANCE CHANGES
+- Fighter wings cost more to buy from store; less to deploy
+- Citadel market size 5 -> 4 (less distortion of overall economy)
+- Random mission: use quality factors by faction; maps scale better with battle size; code tweaks
+- Colony fleet market meets about half its own demand from built-in supply
+
+BUGS FIXED
+- Fix various issues with Exile colony fleet, Ulterius
+- Fix Umbra having decorative weapons in non-decorative mounts
+- Typos fixed
+- Apocrypha teleporter weapon mount is decorative as it should be
+- Decorative weapons use blank image for ShaderLib maps (fixes super brightness)
+- Random mission doesn't use certain special factions. Said factions being: player_npc (Nexerelin), merc_hostile
+and famous_bounty (SS+)
+
+
+----<  ICE version 0.3.2   >------------------------------------------------------------------------------
+
+BUGS FIXED
+- All events associated with the colony fleet are now forced to end when it is destroyed, which should prevent
+many issues, including a crash
+- Notifications about the exiled colony fleet event will no longer be displayed in the intel screen when they
+are older than the week/month/cycle filter allows
+
+
+----<  ICE version 0.3.1   >------------------------------------------------------------------------------
+
+CONTENT CHANGES
+- Idoneus Citadel is now located in Eos
+
+BALANCE CHANGES
+- Reduced ammo regeneration rate of maintenance drones to one third of previous rate
+
+BUGS FIXED
+- No longer corrupts save files
+
+
+----<  ICE version 0.3.0   >------------------------------------------------------------------------------
+
+Please Note: This version of ICE corrupts save files...
+
+ADDITIONS
+- New mechanic added for the Exiled Idoneus Colony Fleet allowing it to merge with and detach smaller fleets
+	- Pursuit fleets will now detach from the colony fleet to run down enemy fleets it can't catch
+	- Vagrant fleets will now spawn from Idoneus Citadel, make their way to the colony fleet, and merge with it
+	- Lone duellists will occasionally branch off and terrorize the locals for a while
+	- These merges and separations follow the Law of Conservation of Matter and Energy, meaning the destruction
+	of ships in these smaller fleets weakens the colony fleet because those ships won't be able to merge with it
+- The two randomized missions have been re-added
+
+CONTENT CHANGES
+- The Recall Teleporter is now a streamlined hullmod rather than an obtuse weapon
+- Exiled Idoneus Colony Fleets now spawns with vanilla logistics ships
+- Maintenance drones are now bigger and easier to hit, with a new sprite
+
+BALANCE CHANGES
+- Maintenance drone phase cloaks now have a 2 second warm-up and cooldown time, during which they are vulnerable
+- Increased phase warp cooldown of Stormwhisps from 1 to 3 seconds
+- Abraxas armor regeneration now scales proportionally to CR, meaning an Abraxas with 0% CR won't regen at all
+
+BUGS FIXED
+- Exiled Idoneus Colony Fleet will no longer send trade notifications while in a system other than the player
+- Idoneus factions now offer bounties for both general enemies and specific fleets
+- Loaded missiles now become semi-transparent with the rest of the ship during phase jaunt
+
+
+----<  ICE version 0.2.0   >------------------------------------------------------------------------------
+
+Please Note: This version of ICE is completely broken
+
+ADDITIONS
+- Full compatibility with Starsector 0.65
+- A huge nomadic colony fleet with a fully functional market
+- A custom event with multiple stages concerning aforementioned colony fleet
+- A custom market condition that increases the stability of the colony fleet based on it's size
+- New custom sounds for Chapucabra and Nosferatu Fusor weapons
+
+BUGS FIXED
+- Weapon barrels now become semi-transparent with the rest of the ship during phase jaunt
+- Damage decals are now rendered on the top section the Nightseer's armor
+
+AI IMPROVEMENTS
+- Autofire AI for the Recall Teleporter should now be much more responsive to new assignments
+
+BALANCE CHANGES
+- Doubled the price of all ships to reflect Starsector 0.65 changes
+- Greatly increased the deployment cost of all fighter wings to reflect Starsector 0.65 changes
+
+
+----<  ICE version 0.1.0   >------------------------------------------------------------------------------
+
+CONTENT ADDITIONS
+- Two new Missions added
+
+CONTENT CHANGES
+- Updated the ICE ships that appear in the simulator
+- Fleets with many fighters and no carriers now spawn less frequently
+- Seraphs (tugs) have been removed from the Refugee fleet to limit its maximum burn
+- Notifications about the Idoneus Refugee Fleet have been added to Campaign mode
+
+BALANCE CHANGES
++ Seraph fuel/ly reduced from 12 to 9
+- Nosferatu Fusor ammo regen rate reduced from 0.25 to 0.18 ammo per second
++ Eidolon deceleration increased from 30 to 45
++ Abraxas hitpoints increased from 3750 to 6500
+= Apocrypha:
+	+ deceleration increased from 9 to 14
+	- Max burn reduced from 3 to 2
++ Soulbane deceleration increased from 60 to 75
+- Shalom:
+	- Max burn reduced from 2 to 1
+	- OP reduced from 40 to 30
+	- Unstable Injector replaced with Blast Doors on standard variant
+- Tactical Ansible base CP regeneration rate decreased from 3 per minute to 1 per minute
++ Athame:
+	+ Removed increase to weapon damage taken while Fission Drill is active
+	+ Increased armor from 200 to 250
+	+ Increased flux dissipation from 200 to 250
+	+ Fission Drill flux build-up reduced by 25%
+
+BUGS FIXED
+- Idoneus Citadel and Refugee Fleets now restock ships and items again. This feature was accidentally removed
+- Maintenance Drones no longer have an unused LR PD Laser
+- Maintenance Drones no longer prioritize drones or fighters when targeted by their mother ship
+- Ships hit by falx beams will now dissipate hard flux as originally intended, rather than instantly gaining 100% hard flux dissipation
+- A few typos have been corrected. Apparently I'm predisposed to putting an 'e' where there should be an 'i'
+- Stormwhisp description no longer erroneously lists Boomerang SRMs as one of its weapons
+- Removed minor artefacts from Kelpie and Abraxas sprites
+- Base value of Nosferatu Fusor increased from 1500  to 18000
+- Phase Jaunt shadows/doppelgangers now push away nearby objects as originally intended.
+
+AI IMPROVEMENTS
+- ICE ships should now be smarter about when to use phase cloaks to speed up travel
+- Phase Jaunt AI:
+	- Should now be smarter about avoiding damage
+	- Will now try to line up an enemy in front of the jaunting ship during flameout
+
+
+----<  ICE version 0.0.2   >------------------------------------------------------------------------------
+
+BALANCE CHANGES
+- Ship prices adjusted. Notably, the value of the Palantir was reduced from 15000 to 1250
+- Nerfed Palantir a bit to make it easier to kill
+
+BUGS FIXED
+- Transferring command to an Athame no longer has a risk of reducing its top speed
+- Fission Drill AI is better about committing to a charge. It won't toggle off at inopportune times as often
+- Removed mechanic from the Palantir that caused to to generate flux more quickly while cloaked near objectives
+- Randomized missions no longer try to select factions without ships, which would previously cause the game to freeze
+- Stability improvements. Should prevent a crash that I couldn't reproduce
+
+
+----<  ICE version 0.0.1   >------------------------------------------------------------------------------
+
+BUGS FIXED
+- Randomized missions no longer crash when Interstellar Imperium is selected as one of the factions
+- Phase cloak cooldown sound effect no longer plays for non-ICE ships

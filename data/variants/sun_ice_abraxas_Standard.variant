@@ -1,0 +1,48 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 25,
+    "fluxVents": 38,
+    "goalVariant": true,
+    "hullId": "sun_ice_abraxas",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+    "variantId": "sun_ice_abraxas_Standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "sun_ice_nos",
+                "WS0005": "sun_ice_nos"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "sun_ice_nova"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0003": "sun_ice_mobiusray"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "sun_ice_hexac",
+                "WS0007": "sun_ice_hexac",
+                "WS0008": "sun_ice_lighthexac",
+                "WS0009": "sun_ice_lighthexac",
+                "WS0010": "sun_ice_lighthexac",
+                "WS0011": "sun_ice_lighthexac",
+                "WS0012": "sun_ice_hexac",
+                "WS0013": "sun_ice_hexac",
+                "WS0014": "sun_ice_lighthexac",
+                "WS0015": "sun_ice_lighthexac",
+                "WS0016": "sun_ice_lighthexac",
+                "WS0017": "sun_ice_lighthexac"
+            }
+        }
+    ]
+}

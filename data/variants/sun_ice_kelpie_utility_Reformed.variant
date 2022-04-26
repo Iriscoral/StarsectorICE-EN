@@ -1,0 +1,55 @@
+{
+    "displayName": "Reformed",
+    "fluxCapacitors": 13,
+    "fluxVents": 30,
+    "goalVariant": true,
+    "hullId": "sun_ice_kelpie_utility",
+    "hullMods": [
+        "targetingunit",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_kelpie_utility_Reformed",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0020": "heavyneedler"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0002": "atropos",
+                "WS0003": "atropos"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "taclaser",
+                "WS0007": "taclaser",
+                "WS0008": "taclaser",
+                "WS0009": "taclaser",
+                "WS0010": "taclaser",
+                "WS0011": "taclaser",
+                "WS0012": "taclaser",
+                "WS0013": "taclaser",
+                "WS0014": "taclaser",
+                "WS0015": "taclaser",
+                "WS0016": "taclaser",
+                "WS0017": "taclaser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "vulcan",
+                "WS0005": "vulcan"
+            }
+        }
+    ]
+}

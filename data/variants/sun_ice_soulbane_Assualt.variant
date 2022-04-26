@@ -1,0 +1,45 @@
+{
+    "displayName": "Assault",
+    "fluxCapacitors": 9,
+    "fluxVents": 16,
+    "goalVariant": true,
+    "hullId": "sun_ice_soulbane",
+    "hullMods": [
+        "sun_ice_turbulence_valve_mod",
+        "phase_anchor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_soulbane_Assualt",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0007": "sun_ice_ricochet"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0005": "sun_ice_boomerang",
+                "WS0006": "sun_ice_boomerang"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "sun_ice_pulserepeater",
+                "WS0004": "sun_ice_pulserepeater"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "sun_ice_gravity",
+                "WS0002": "sun_ice_gravity"
+            }
+        }
+    ]
+}

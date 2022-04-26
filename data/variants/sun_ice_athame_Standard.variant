@@ -1,0 +1,24 @@
+{
+    "displayName": "Standard",
+	"quality":0.85,
+	"goalVariant": true,
+  "fluxCapacitors": 0,
+  "fluxVents": 9,
+  "hullId": "sun_ice_athame",
+    "hullMods": [
+        "unstable_injector",
+        "armoredweapons",
+        "reinforcedhull",
+        "insulatedengine"
+    ],
+  "variantId": "sun_ice_athame_Standard",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sun_ice_fissiondrill"
+      }
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+伊甸圣宣构架,sun_ice_gravitonic_sensors_mod,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_GravimetricSensors,"伊甸堡垒所发掘出的一系列科技水平远超人们想象的技术应用规格，将舰船设计所展示的成果提升到了艺术层次。
+
+非传统传感器以 %s 为基准值调整武器阵列，具体算法为将射程先减少 %s 然后再增加 %s 。
+
+内嵌式六角相位器的效果笼罩整个战场，若拥有相位能力，则当在受到致死伤害时 CR 不小于部署所需的 CR ，则消耗其并强制跃迁撤退。其它 ICS 舰船的撤退将不受干扰。
+结束战斗后立刻修复自身船体和装甲损伤的 %s 。",ICS内置插件,graphics/sun_ice/hullmods/gravimetric_sensors.png
+流式修复,sun_ice_stream_repair_mod,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_StreamRepair,"当舰船处于相位状态，减少维修武器与引擎所需的时间 %s 。
+
+""相态稳定，固件扰动率已抑制至负，加速易损组件维修进程。""",提升修复速率,graphics/sun_ice/hullmods/stream_repair.png
+Vast Bulk,sun_ice_vastbulk_mod,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.SUN_ICE_VastBulk,"Hidden.",,graphics/hullmods/vast_bulk.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+引力偏转器,sun_ice_graviton_deflector_mod,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_GravitonDeflector,"偏转正前方 %s 度内来袭的炮火，幅能水平较低时效率最高。
+主动排幅/相位/战术系统激活时失效。",偏转来袭炮火,graphics/sun_ice/hullmods/graviton_deflector.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+阻尼减震器,sun_ice_reverb_dampeners_mod,1,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_ReverbDampeners,"减免装甲和结构受到的动能伤害 %s 。
+
+与绝大多数影响射程的插件不兼容。",减少船体受到的动能伤害,graphics/sun_ice/hullmods/reverb_dampeners.png
+召回传送器,sun_ice_recall_teleport_mod,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_RecallTeleporter,"允许友军相位舰船传送到这艘船附近的位置，传送只有当这会让被传送船只接近被指派地点的时候才会生效。",允许友军舰船传送,graphics/sun_ice/hullmods/recall_teleport.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+新星反应堆,sun_ice_nova_reactor,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_NovaReactor,"连通全局扫描器的反应堆，提供能量迅速修复舰船的装甲。
+最高可每秒修复 %s 装甲，但装甲受损越轻速率越慢。
+在通常战斗受损情况下的修复速率，往往远低于最大速率。
+靠近新星泄能阀的装甲格无法被维修。
+
+过度活跃的粒子特征使武器和引擎的修复时间减少 %s 。",修复装甲和武器和引擎,graphics/sun_ice/hullmods/nova_reactor.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+错乱的新星反应堆,sun_ice_failed_reactor,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_FailedReactor,"与其他子系统连接错误的反应堆，异常构架使之效率大幅降低。
+尽管能使武器和引擎的修复时间减少 %s ，但无法像正常反应堆那样维修护甲。",维修武器和引擎,graphics/sun_ice/hullmods/failed_reactor.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+物质再生组件,sun_ice_nutrition_resynth,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_NutritionResynth,"不间断生产大量补给，每日生产量等同于每日舰队总补给消耗的 %s 。
+每一个D插件都会导致每日生产量降低 %s ，最低降至 %s 。
+
+当前每日生产量为每日舰队总补给消耗的 %s ",减少补给消耗,graphics/sun_ice/hullmods/nutrition_resynth.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+禁用相位,sun_ice_phase_bypass,1,,ICS,"phase, special",特殊,2500,,,,2,4,6,10,data.hullmods.SUN_ICE_PhaseBypass,"将六角相位器和相关子系统调整为装甲维修模式。
+最高可每秒修复 %s 个装甲格，但装甲受损越轻速率越慢。
+在通常战斗受损情况下的修复速率，往往远低于最大速率。
+CR归零后修复能力失效。
+
+[仅适用于ICS相位舰船]",禁用相位，维修护甲,graphics/sun_ice/hullmods/phase_bypass.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+分流镀层,sun_ice_shunt_coating_mod,2,,ICS,"defensive, special, merc",特殊,3000,,,,4,8,12,20,data.hullmods.SUN_ICE_ShuntCoating,"击中舰体的光束将提升舰船耗散，幅度等于其伤害的 %s 。光束 EMP 的 %s 也会算入耗散提升。
+
+[仅适用于ICS舰船]",将受到的光束伤害转为耗散,graphics/sun_ice/hullmods/shunt_coating.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+湍流滑阀,sun_ice_turbulence_valve_mod,3,,ICS,"phase, defensive, special, merc",相位,6000,,,,6,12,18,30,data.hullmods.SUN_ICE_TurbulenceValve,"在相位线圈冷却时释放大量亚空间湍流，对附近的敌方单位每秒造成最多 %s/%s/%s/%s 能量伤害，伤害与范围随相位线圈冷却而线性减弱。
+对于安装了渐进式相位的舰船，时流倍率达到 %s 后才可触发效果。
+
+[仅适用于ICS相位舰船]",反小型目标,graphics/sun_ice/hullmods/turbulence_valve.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+弹药整备线,sun_ice_munitions_autofac_mod,2,,ICS,"offensive, special, merc",特殊,5000,,,,8,12,20,32,data.hullmods.SUN_ICE_MunitionsAutoFac,"配备专用整备线，进一步提高武器的弹药恢复速率，幅度与 弹药上限与武器装配消耗的比 正相关。
+为补充本舰武器弹药的维修无人机减轻 %s 冷却时间负担。
+
+[仅适用于ICS舰船]",重装弹药,graphics/sun_ice/hullmods/munitions_autofac.png
+战术分析模块,sun_ice_tactical_ansible_mod,2,,ICS,"offensive, special, merc",特殊,8000,,,,4,8,15,25,data.hullmods.SUN_ICE_TacticalAnsible," %s/%s/%s/%s 距离内的友方舰船单位越少/越小、敌方舰船单位越多/越大，就可对舰船等级与自身相同或更小的目标造成更多伤害。
+额外伤害的上限是 %s 。
+
+[仅适用于ICS舰船]",提升武器伤害,graphics/sun_ice/hullmods/tactical_ansible.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,

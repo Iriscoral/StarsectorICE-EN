@@ -1,0 +1,30 @@
+{
+    "displayName": "Standard",
+	"quality":0.65,
+    "fluxCapacitors": 0,
+    "fluxVents": 9,
+	"goalVariant": true,
+    "hullId": "sun_ice_pentagram",
+    "hullMods": [
+        "heavyarmor",
+        "armoredweapons"
+    ],
+    "variantId": "sun_ice_pentagram_Standard",
+    "weaponGroups": [{
+        "autofire": false,
+        "mode": "LINKED",
+        "weapons": {
+            "WS0001": "sun_ice_tractorbeam",
+            "WS0002": "sun_ice_fissionblademini",
+            "WS0003": "sun_ice_fissionblademini",
+            "WS0004": "sun_ice_fissionblademini",
+            "WS0005": "sun_ice_fissionblademini",
+            "WS0006": "sun_ice_fissionblademini",
+            "WS0007": "sun_ice_fissionblademini",
+            "WS0008": "sun_ice_fissionblademini",
+            "WS0009": "sun_ice_fissionblademini",
+            "WS0010": "sun_ice_fissionblademini",
+            "WS0011": "sun_ice_fissionblademini"
+        }
+    }]
+}

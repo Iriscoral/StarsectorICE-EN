@@ -1,0 +1,274 @@
+{
+  "hullName": "Kelpie",
+  "hullId": "sun_ice_kelpie_utility",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/sun_ice/ships/Kelpie.png",
+  "style": "SUN_ICE",
+  "height": 237,
+  "width": 220,
+  "center": [110, 139],
+  "collisionRadius": 150,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 150,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_kelpie_lights",
+    "SYSTEM": "sun_ice_kelpie_system"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0020",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-40, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-10, 31]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-10, -31]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [-34.5, 104.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -90,
+      "locations": [-34.5, -104.5]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": -10,
+      "locations": [4.5, 80.5]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": 10,
+      "locations": [4.5, -80.5]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": -10,
+      "locations": [21.5, 83.5]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": 10,
+      "locations": [21.5, -83.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": -10,
+      "locations": [38.5, 86.5]
+    },
+    {
+      "id": "WS0011",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": 10,
+      "locations": [38.5, -86.5]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": -10,
+      "locations": [55.5, 89.5]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": 10,
+      "locations": [55.5, -89.5]
+    },
+    {
+      "id": "WS0014",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": -10,
+      "locations": [72.5, 92.5]
+    },
+    {
+      "id": "WS0015",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": 10,
+      "locations": [72.5, -92.5]
+    },
+    {
+      "id": "WS0016",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": -10,
+      "locations": [89.5, 95.5]
+    },
+    {
+      "id": "WS0017",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 10,
+      "angle": 10,
+      "locations": [89.5, -95.5]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-20.5, 0]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-20.5, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-82, 20.5],
+      "length": 105,
+      "width": 23,
+      "angle": -178,
+      "contrailSize": 23,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-82, -20.5],
+      "length": 105,
+      "width": 23,
+      "angle": 178,
+      "contrailSize": 23,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-69.5, 58.5],
+      "length": 87,
+      "width": 17,
+      "angle": -174,
+      "contrailSize": 17,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-69.5, -58.5],
+      "length": 87,
+      "width": 17,
+      "angle": 174,
+      "contrailSize": 17,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-88.5, 87],
+      "length": 46,
+      "width": 13,
+      "angle": -167,
+      "contrailSize": 13,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-88.5, -87],
+      "length": 46,
+      "width": 13,
+      "angle": 167,
+      "contrailSize": 13,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    23.5, -0,
+    9, -17.5,
+    -16.5, -21,
+    -3.5, -34,
+    -2.5, -81,
+    92.5, -97.5,
+    84.5, -105,
+    -65, -105,
+    -85.5, -76,
+    -56, -51.5,
+    -107, -44,
+    -112.5, -34.5,
+    -56.5, -20.5,
+    -132.5, -4,
+    -132.5, 4,
+    -56.5, 20.5,
+    -112.5, 34.5,
+    -107, 44,
+    -56, 51.5,
+    -85.5, 76,
+    -65, 105,
+    84.5, 105,
+    92.5, 97.5,
+    -2.5, 81,
+    -3.5, 34,
+    -16.5, 21,
+    9, 17.5
+  ]
+}

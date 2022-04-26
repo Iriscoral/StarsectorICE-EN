@@ -1,0 +1,140 @@
+{
+	# should be a copy of "combatSmall", minus variants that are annoying to fight in low numbers
+	# for example, no Hyperions or fast beam-based kiting loadouts, or ships with damper field
+	"combatSmallForSmallFleet":{
+	},
+	"combatSmall":{
+			"sun_ice_athame_Standard":3,
+
+			"sun_ice_seraph_Standard":3,
+	},
+	"combatMedium":{
+	},
+	"combatLarge":{
+	},
+	"combatCapital":{
+	},
+	
+	# hybrid ships with good combat and cargo capacity
+	"combatFreighterSmall":{	
+			"sun_ice_palantir_Standard":5,
+	},
+	"combatFreighterMedium":{
+	},
+	"combatFreighterLarge":{
+			"sun_ice_eidolon_Reformed":5,
+	},
+	
+	"civilianRandom":{
+			"sun_ice_palantir_Standard":5,
+			"sun_ice_seraph_Standard":5,
+	},
+
+	# carriers
+	"carrierSmall":{
+			"sun_ice_eidolon_Standard":3,
+			"sun_ice_eidolon_Support":1,
+
+			"sun_ice_seraph_Standard":1,
+	},
+	"carrierMedium":{
+			"sun_ice_eidolon_Standard":3,
+			"sun_ice_eidolon_Support":1,
+	},
+	"carrierLarge":{
+			"sun_ice_apocrypha_Standard":3,
+			"sun_ice_apocrypha_Support":1,
+	},
+
+	# phase ships
+	"phaseSmall":{
+			"sun_ice_nightseer_Standard":2.5,
+			"sun_ice_nightseer_Assualt":1.5,
+			"sun_ice_nightseer_Reformed":1,
+
+			"sun_ice_specter_Standard":3.5,
+			"sun_ice_specter_Reformed":0.5,
+			"sun_ice_specter_Assualt":2.5,
+			"sun_ice_specter_Support":1,
+
+			"sun_ice_flashghast_Standard":3.5,
+			"sun_ice_flashghast_Support":1,
+			"sun_ice_flashghast_Refromed":0.5,
+			"sun_ice_flashghast_Assualt":2.5,
+
+			"sun_ice_pentagram_Standard":0.5,
+
+			"sun_ice_pentagram_utility_Reformed":1,
+			"sun_ice_pentagram_utility_Standard":3.5,
+			"sun_ice_pentagram_utility_Support":2.5,
+	},
+	"phaseMedium":{
+			"sun_ice_soulbane_Standard":3.5,
+			"sun_ice_soulbane_Strike":1,
+			"sun_ice_soulbane_Refromed":0.5,
+			"sun_ice_soulbane_Assualt":2.5,
+			"sun_ice_soulbane_Support":1,
+
+			"sun_ice_shiekwraith_Standard":3.5,
+			"sun_ice_shiekwraith_Reformed":1.5,
+			"sun_ice_shiekwraith_Support":2.5,
+	},
+	"phaseLarge":{
+			"sun_ice_voidreaver_Standard":2,
+			"sun_ice_voidreaver_Strike":1,
+
+			"sun_ice_kelpie_Standard":1.5,
+
+			"sun_ice_kelpie_utility_Standard":3.5,
+			"sun_ice_kelpie_utility_Reformed":2.5,
+	},
+	"phaseCapital":{
+			"sun_ice_abraxas_Assault":3.5,
+			"sun_ice_abraxas_Standard":2.5,
+
+			"sun_ice_apocrypha_Standard":1.5,
+			"sun_ice_apocrypha_Support":1,
+	},
+
+	# freighters and such
+	"freighterSmall":{
+			"sun_ice_palantir_Standard":3,
+	},
+	"freighterMedium":{
+	},
+	"freighterLarge":{
+	},
+	
+	"tankerSmall":{
+			"sun_ice_palantir_Standard":1,
+	},
+	"tankerMedium":{
+	},
+	"tankerLarge":{
+	},
+	
+	"personnelSmall":{
+	},
+	"personnelMedium":{
+	},
+	"personnelLarge":{
+	},
+	
+	"linerSmall":{
+	},
+	"linerMedium":{
+	},
+	"linerLarge":{
+	},
+	
+	# utility ships
+	"tug":{
+		"sun_ice_seraph_Standard":3,
+	},
+	"crig":{
+	},
+
+	# Seems like we can still hind some rare hull here :)
+	"utility":{
+	}
+}

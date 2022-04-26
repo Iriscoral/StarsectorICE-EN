@@ -1,0 +1,101 @@
+{
+  "hullName": "Athame",
+  "hullId": "sun_ice_athame",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/sun_ice/ships/Athame.png",
+  "style": "SUN_ICE",
+  "height": 90,
+  "width": 49,
+  "center": [24.5, 43.5],
+  "collisionRadius": 54.057838,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 54.230987,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_athame_lights",
+    "SYSTEM": "sun_ice_athame_system",
+    "WS0001": "sun_ice_fissiondrill"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "TURRET",
+      "arc": 5,
+      "angle": 0,
+      "locations": [41.5, -0]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [2, 0]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [2, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-42, -0],
+      "length": 78.5,
+      "width": 22,
+      "angle": 180,
+      "contrailSize": 22,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-41, 9.5],
+      "length": 57.70615,
+      "width": 17.029419,
+      "angle": 174,
+      "contrailSize": 17.029419,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-41, -9.5],
+      "length": 57.70615,
+      "width": 17.029419,
+      "angle": -174,
+      "contrailSize": 17.029419,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-37.5, 17.5],
+      "length": 43.288689,
+      "width": 12.424085,
+      "angle": 166,
+      "contrailSize": 12.424085,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-37.5, -17.5],
+      "length": 43.288689,
+      "width": 12.424085,
+      "angle": -166,
+      "contrailSize": 12.424085,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    42, -4.5,
+    -31, -22.5,
+    -40, -0.5,
+    -31, 22.5,
+    42, 4.5
+  ]
+}

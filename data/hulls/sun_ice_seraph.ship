@@ -1,0 +1,79 @@
+{
+  "hullName": "Seraph",
+  "hullId": "sun_ice_seraph",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/sun_ice/ships/Seraph.png",
+  "style": "SUN_ICE",
+  "height": 72,
+  "width": 76,
+  "center": [38, 36],
+  "collisionRadius": 43.142208,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 43.026154,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "drive_field_stabilizer",
+    "phasefield",
+    "high_maintenance"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_seraph_lights"
+  },
+  "weaponSlots": [
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-13, -20],
+      "length": 34.435448,
+      "width": 14.758053,
+      "angle": 153.434952,
+      "contrailSize": 14.758053,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-13, 20],
+      "length": 34.435448,
+      "width": 14.758053,
+      "angle": -153.434952,
+      "contrailSize": 14.758053,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-18.5, -25.5],
+      "length": 30,
+      "width": 10,
+      "angle": 152.318939,
+      "contrailSize": 30,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-18.5, 25.5],
+      "length": 30,
+      "width": 10,
+      "angle": -152.318939,
+      "contrailSize": 30,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    23.5, -0,
+    30.5, -16,
+    -16.5, -36,
+    -19.5, -32.5,
+    4, -14,
+    -31, -0,
+    4, 14,
+    -18, 34.5,
+    30.5, 16
+  ]
+}

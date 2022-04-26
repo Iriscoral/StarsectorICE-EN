@@ -1,0 +1,6 @@
+command,class,tags,syntax,help
+ExileMarket,data.console.commands.SUN_ICE_ExileMarket,"campaign,ICE",exilemarket,Open an interaction dialog with the Exile market.
+ExileLocation,data.console.commands.SUN_ICE_ExileLocation,"campaign,ICE",exilelocation,Teleport player to Exiled Fleet location.
+ExileMoveIfInStay,data.console.commands.SUN_ICE_ExileMoveIfInStay,"campaign,ICE",exilemoveifinstay,Force making Exiled Fleet to move to next location if it is valid.
+ExileArriveIfInMove,data.console.commands.SUN_ICE_ExileArriveIfInMove,"campaign,ICE",exilearriveifinmove,Force making Exiled Fleet to teleport to next location if it is in moving.
+ExileEvolveMissionDelay,data.console.commands.SUN_ICE_ExileEvolveMissionDelay,"campaign,ICE",exileevolvemissiondelay,Evolve mission delay between stages if there exists one.

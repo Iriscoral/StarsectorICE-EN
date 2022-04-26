@@ -1,0 +1,25 @@
+{
+  "hullName": "sun_ice_flashghast_module",
+  "hullId": "sun_ice_flashghast_module",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/sun_ice/invisible.png",
+  "style": "SUN_ICE",
+  "height": 1,
+  "width": 1,
+  "center": [0.5, 0.5],
+  "collisionRadius": 1.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 1,
+  "viewOffset": 0,
+  "weaponSlots": [],
+  "engineSlots": [],
+  "builtInMods": [
+    "sun_ice_vastbulk_mod"
+  ],
+  "bounds": [
+    0.5, 0.5,
+    -0.5, 0.5,
+    -0.5, -0.5,
+    0.5, -0.5
+  ]
+}

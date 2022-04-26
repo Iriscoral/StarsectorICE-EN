@@ -1,0 +1,17 @@
+{
+	"id":"sun_ice_limiter_control",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	
+	"aiScript":"data.shipsystems.ai.SUN_ICE_LimiterControlAI",
+	"statsScript":"data.shipsystems.SUN_ICE_LimiterControlStats",
+	
+	"engineGlowColor":[255,223,128,255],
+	"engineGlowContrailColor":[255,223,128,5],
+	
+	"useSound":"sun_ice_system_limitercontrol_active",
+	"outOfUsesSound":"gun_out_of_ammo",
+	
+	"aiHints":{
+	}	
+}

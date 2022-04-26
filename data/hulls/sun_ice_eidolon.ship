@@ -1,0 +1,171 @@
+{
+  "hullName": "Eidolon",
+  "hullId": "sun_ice_eidolon",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/sun_ice/ships/Eidolon.png",
+  "style": "SUN_ICE",
+  "height": 280,
+  "width": 110,
+  "center": [55, 141.5],
+  "collisionRadius": 140,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 140,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_eidolon_lights"
+  },
+  "weaponSlots": [
+    {
+      "id": "LB 1",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        7.5, 27,
+        8.5, 26
+      ]
+    },
+    {
+      "id": "LB 2",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY",
+      "mount": "HIDDEN",
+      "arc": 360,
+      "angle": 0,
+      "locations": [
+        7.5, -27,
+        8.5, -26
+      ]
+    },
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [65.5, -24.5]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [65.5, 24.5]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 220,
+      "angle": -20,
+      "locations": [93.5, -26.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 220,
+      "angle": 20,
+      "locations": [93.5, 26.5]
+    },
+    {
+      "id": "WS0005",
+      "size": "LARGE",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [86, -0]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [-1.5, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-107, 34.5],
+      "length": 107,
+      "width": 28,
+      "angle": -175,
+      "contrailSize": 28,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-107, -34.5],
+      "length": 107,
+      "width": 28,
+      "angle": 175,
+      "contrailSize": 28,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-97.5, 18.5],
+      "length": 68.5,
+      "width": 18,
+      "angle": -175,
+      "contrailSize": 18,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-97.5, -18.5],
+      "length": 68.5,
+      "width": 18,
+      "angle": 175,
+      "contrailSize": 18,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-92.5, 6],
+      "length": 42,
+      "width": 13,
+      "angle": -175,
+      "contrailSize": 13,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-92.5, -6],
+      "length": 42,
+      "width": 13,
+      "angle": 175,
+      "contrailSize": 13,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    78.5, -10.5,
+    115.5, -26.5,
+    91, -41.5,
+    46.5, -41.5,
+    6, -26,
+    -44.5, -48,
+    -107, -47.5,
+    -121, -14,
+    -91.5, -4.5,
+    -91.5, 4.5,
+    -121, 14,
+    -107, 47.5,
+    -44.5, 48,
+    6, 26,
+    46.5, 41.5,
+    91, 41.5,
+    115.5, 26.5,
+    78.5, 10.5
+  ]
+}

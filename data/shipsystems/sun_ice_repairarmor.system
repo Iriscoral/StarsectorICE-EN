@@ -1,0 +1,21 @@
+{
+	"id":"sun_ice_repairarmor",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	
+	#"weaponDataId":"sun_ice_soulbane_repair",
+	
+	"aiScript":"data.shipsystems.ai.SUN_ICE_RepairArmorAI",
+	"statsScript":"data.shipsystems.SUN_ICE_RepairArmorStats",
+	
+	"engineGlowColor":[255,223,128,255],
+	"engineGlowContrailColor":[255,223,128,5],
+	"engineGlowLengthMult":0.5,
+	"engineGlowWidthMult":0.5,
+	"engineGlowGlowMult":0.5,
+
+	"useSound":"sun_ice_system_repairarmor_active",
+	"loopSound":"sun_ice_system_repairarmor_loop",
+	"deactivateSound":"sun_ice_system_repairarmor_deactive",
+	"outOfUsesSound":"gun_out_of_ammo",
+}

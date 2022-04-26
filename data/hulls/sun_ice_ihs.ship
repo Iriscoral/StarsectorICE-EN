@@ -1,0 +1,274 @@
+{
+  "hullName": "IHS",
+  "hullId": "sun_ice_ihs",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/sun_ice/ships/IHS.png",
+  "style": "SUN_ICE",
+  "height": 238,
+  "width": 196,
+  "center": [98, 105],
+  "collisionRadius": 155,
+  "shieldCenter": [22, -0],
+  "shieldRadius": 138.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "sun_ice_failed_reactor",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_ihs_lights",
+    "SYSTEM": "sun_ice_ihs_system",
+    "WS0014": "sun_ice_bladeofalpha"
+  },
+  "weaponSlots": [
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [14, -0]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [14, -0]
+    },
+    {
+      "id": "WS0001",
+      "size": "LARGE",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 0,
+      "locations": [-6, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 30,
+      "locations": [18, 38]
+    },
+    {
+      "id": "WS0003",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -30,
+      "locations": [18, -38]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": 0,
+      "locations": [48, 33]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 120,
+      "angle": -0,
+      "locations": [48, -33]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": 120,
+      "locations": [-23, 79]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 135,
+      "angle": -120,
+      "locations": [-23, -79]
+    },
+    {
+      "id": "WS0008",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": 90,
+      "locations": [-55.5, 19]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 180,
+      "angle": -90,
+      "locations": [-55.5, -19]
+    },
+    {
+      "id": "WS0012",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": 0,
+      "locations": [99.5, 47]
+    },
+    {
+      "id": "WS0013",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 10,
+      "angle": -0,
+      "locations": [99.5, -47]
+    },
+    {
+      "id": "WS0014",
+      "size": "LARGE",
+      "type": "BUILT_IN",
+      "mount": "HARDPOINT",
+      "arc": 0,
+      "angle": 0,
+      "locations": [13, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-44, -0],
+      "length": 108.5,
+      "width": 15,
+      "angle": 180,
+      "contrailSize": 15,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-35, 64.5],
+      "length": 86.419556,
+      "width": 8.464212,
+      "angle": -176.5,
+      "contrailSize": 8.464212,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-35, -64.5],
+      "length": 86.419556,
+      "width": 8.464212,
+      "angle": 176.5,
+      "contrailSize": 8.464212,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-65.5, 39],
+      "length": 102,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-65.5, -39],
+      "length": 102,
+      "width": 13,
+      "angle": -180,
+      "contrailSize": 13,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-79.5, 20.5],
+      "length": 138.460693,
+      "width": 26.354239,
+      "angle": -175.5,
+      "contrailSize": 26.354239,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-79.5, -20.5],
+      "length": 138.460693,
+      "width": 26.354239,
+      "angle": 175.5,
+      "contrailSize": 26.354239,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-39, 82],
+      "length": 128.542892,
+      "width": 17.801817,
+      "angle": -173,
+      "contrailSize": 17.801817,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-39, -82],
+      "length": 128.542892,
+      "width": 17.801817,
+      "angle": 173,
+      "contrailSize": 17.801817,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    42, -7,
+    130.5, -7.5,
+    124.5, -20,
+    51, -23.5,
+    58.5, -34,
+    106, -28.5,
+    128, -38.5,
+    89, -52.5,
+    13.5, -60.5,
+    49, -69,
+    -36, -96,
+    -31.5, -76,
+    -41.5, -68,
+    -23, -57.5,
+    -31.5, -45.5,
+    -47, -62.5,
+    -103.5, -49,
+    -97.5, -40.5,
+    -39, -37,
+    -72, -31.5,
+    -88, -8.5,
+    -29, -16.5,
+    -46, -8.5,
+    -46, 8.5,
+    -29, 16.5,
+    -88, 8.5,
+    -72, 31.5,
+    -39, 37,
+    -97.5, 40.5,
+    -103.5, 49,
+    -47, 62.5,
+    -31.5, 45.5,
+    -23, 57.5,
+    -41.5, 68,
+    -31.5, 76,
+    -36, 96,
+    49, 69,
+    13.5, 60.5,
+    89, 52.5,
+    128, 38.5,
+    106, 28.5,
+    58.5, 34,
+    51, 23.5,
+    124.5, 20,
+    130.5, 7.5,
+    42, 7
+  ]
+}

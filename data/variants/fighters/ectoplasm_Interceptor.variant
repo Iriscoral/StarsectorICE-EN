@@ -1,0 +1,32 @@
+{
+  "displayName": "拦截机",
+	"quality":0.75,
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "hullId": "sun_ice_ectoplasm_wing",
+  "hullMods": [],
+  "variantId": "sun_ice_ectoplasm_Interceptor",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sun_ice_gravity_fighter"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "sun_ice_lighthexac"
+      }
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "vulcan"
+      }
+    }
+  ]
+}

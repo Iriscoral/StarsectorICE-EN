@@ -1,0 +1,59 @@
+{
+	"sun_ice_entity_hack":{
+		"defaultName":"Idoneus Temporary Habitat", # used if name=null in addCustomEntity()
+		"defaultRadius":0, # used if radius<0 in addCustomEntity()
+		"interactionImage":"graphics/illustrations/city_from_above.jpg",
+		"icon":"graphics/sun_ice/invisible.png",
+		"sprite":"graphics/sun_ice/invisible.png",
+		"renderShadow":false,
+		"useLightColor":true,
+		"showInCampaign":false,
+		"showIconOnMap":false,
+		"showNameOnMap":false,
+		#"interactable":false,
+		"tags":["station"],
+		"layers":[TERRAIN_1], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	
+	"sun_ice_idoneus_shalom":{
+		"defaultName":"Idoneus Colony Station", # used if name=null in addCustomEntity()
+		"defaultRadius":40, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"sun_ice_idoneus_citadel",
+		"interactionImage":"graphics/illustrations/city_from_above.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":24,
+		"iconHeight":24,
+		"sprite":"graphics/sun_ice/stations/idoneus_shalom.png",
+		"spriteWidth":50,
+		"spriteHeight":50,
+		"renderShadow":false,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"tags":["station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+	
+	"sun_ice_idoneus_citadel":{
+		"defaultName":"Idoneus Citadel", # used if name=null in addCustomEntity()
+		"defaultRadius":70, # used if radius<0 in addCustomEntity()
+		"customDescriptionId":"sun_ice_idoneus_citadel",
+		"interactionImage":"graphics/illustrations/industrial_megafacility.jpg",
+		"icon":"graphics/icons/station0.png",
+		"iconWidth":24,
+		"iconHeight":24,
+		"sprite":"graphics/sun_ice/stations/idoneus_citadel.png",
+		"spriteWidth":90,
+		"spriteHeight":90,
+		"renderShadow":true,
+		"useLightColor":true,
+		"showInCampaign":true,
+		"showIconOnMap":true,
+		"showNameOnMap":false,
+		"scaleNameWithZoom":false,
+		"tags":["station"],
+		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
+	},
+}

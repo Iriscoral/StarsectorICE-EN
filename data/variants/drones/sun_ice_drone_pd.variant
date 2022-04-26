@@ -1,0 +1,17 @@
+{
+  "displayName": "无人机",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "hullId": "sun_ice_drone_pd_wing",
+  "hullMods": [],
+  "variantId": "sun_ice_drone_pd",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS 001": "sun_ice_scatterpd_fighter"
+      }
+    }
+  ]
+}

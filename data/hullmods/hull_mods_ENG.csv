@@ -1,0 +1,73 @@
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
+ICS Framework,sun_ice_gravitonic_sensors_mod,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_GravimetricSensors,"A series of technical application specifications explored by Idoneus Citadel far beyond what most of the Sector is capable of, promoting results of ship design to an almost artistic level.
+- Unconventional sensors adjust the range of all weapons to center around %s units, via shortening non-missile weapon range by %s, before extending by %s.
+
+- Able to initiate an emergency dive deep into p-space before suffering critical damage at the CR cost of its deployment cost, for phase ship only.
+- %s of hull and armor damage taken repaired after combat ends at no cost.",ICS Built-in hullmod,graphics/sun_ice/hullmods/gravimetric_sensors.png
+Stream Repair,sun_ice_stream_repair_mod,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_StreamRepair,"Reduces the time required to repair disabled weapons and engines when in phase by %s.
+
+""Phaser stable, firmware disturbance rate suppressed to negative, maintenance process of vulnerable components has been accelerated.""",Increases weapon repair rate.,graphics/sun_ice/hullmods/stream_repair.png
+Vast Bulk,sun_ice_vastbulk_mod,,,,,,,,TRUE,TRUE,0,0,0,0,data.hullmods.SUN_ICE_VastBulk,"Hidden.",,graphics/hullmods/vast_bulk.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Graviton Deflector,sun_ice_graviton_deflector_mod,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_GravitonDeflector,"Deflects oncoming ordnance within %s degrees. Most effective with low flux.
+Disabled during venting, phasing, and while ship systems are active.",Deflects oncoming ordnance,graphics/sun_ice/hullmods/graviton_deflector.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Reverberation Dampeners,sun_ice_reverb_dampeners_mod,1,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_ReverbDampeners,"Reduces kinetic damage taken by hull and armor by %s .
+
+Incompatible with most hullmods that affect weapon range.",Reduces damage from kinetic source,graphics/sun_ice/hullmods/reverb_dampeners.png
+Recall Teleporter,sun_ice_recall_teleport_mod,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_RecallTeleporter,Allows friendly phase ships to teleport to a nearby location. Ships will only teleport if it brings them closer to their designated assignment.,Allows friendly ships to teleport,graphics/sun_ice/hullmods/recall_teleport.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Nova Reactor,sun_ice_nova_reactor,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_NovaReactor,"A reactor system designed as part of the ICS Framework, which provides energy for the rapidly reconstruction of the ship's armor.
+- Reconstructs %s armor per sec in maximum rate, but the rate will be slower as armor integrity increases.
+
+- The actual reconstruct rate is often far below the maximum rate.
+- Armor blocks near the nova discharger cannot be reconstructed.","Reconstruct armor, increase repair rate",graphics/sun_ice/hullmods/nova_reactor.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Failed Reactor,sun_ice_failed_reactor,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_FailedReactor,"The horrible structure of this ship design has resulted in a poorly interfaced configuration with the framework and other subsystems, drastically reducing the effectiveness of its Nova Reactor.
+- Reduces the time required to repair disabled weapons and engines by %s, but can not reconstruct armor like a valid nova reactor.",Increase repair rate,graphics/sun_ice/hullmods/failed_reactor.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Nutrition Resynthesis Annex,sun_ice_nutrition_resynth,,,ICS,,,,,TRUE,,0,0,0,0,data.hullmods.SUN_ICE_NutritionResynth,"Continuous production of bulk supplies, daily production equivalent to %s of total fleet supply consumption.
+Each D-hullmod will reduce the production by %s of total fleet supply consumption, minimum to %s.
+
+The current production is %s of total fleet supply consumption.",Reduces personell supply usage,graphics/sun_ice/hullmods/nutrition_resynth.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Phase Bypass,sun_ice_phase_bypass,1,,ICS,special,Special,2500,,,,2,4,6,10,data.hullmods.SUN_ICE_PhaseBypass,"Alters the hex phaser and related subsystems to focus on maintaining armor integrity.
+- Reconstruct %s armor blocks per sec in maximum rate, but the rate will be slower as armor integrity increases.
+
+- The actual reconstruct rate is often far below the maximum rate.
+- Armor reconstruction disabled when CR reaches zero.
+
+[Only compatible with ICS phase ships]",Bypass phase clock to reconstruct armor,graphics/sun_ice/hullmods/phase_bypass.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Shunt Coating,sun_ice_shunt_coating_mod,2,,ICS,"defensive, special, merc",Special,3000,,,,4,8,12,20,data.hullmods.SUN_ICE_ShuntCoating,"Beams hitting on hull or armor will increase ship's flux dissipation by %s of beam's damage.
+Beam's EMP per second also contribute to the increase by %s.
+
+[Only compatible with ICS ships]",Turns incoming beam damage into flux dissipation,graphics/sun_ice/hullmods/shunt_coating.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+湍流滑阀,sun_ice_turbulence_valve_mod,3,,ICS,"defensive, special, merc",特殊,6000,,,,6,12,18,30,data.hullmods.SUN_ICE_TurbulenceValve,"在相位线圈冷却时释放大量亚空间湍流，对附近的敌方单位每秒造成最多 %s/%s/%s/%s 能量伤害，伤害与范围随相位线圈冷却而线性减弱。
+对于安装了 Progressive Phase 的舰船，时流倍率达到{%s}后才可触发效果。
+只能安装于拥有相位线圈的舰船上。
+
+[Only compatible with ICS phase ships]",反小型目标,graphics/sun_ice/hullmods/turbulence_valve.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,
+Munitions AutoFac,sun_ice_munitions_autofac_mod,2,,ICS,"offensive, special, merc",Special,5000,,,,8,12,20,32,data.hullmods.SUN_ICE_MunitionsAutoFac,"Minor autofactory, increases ammo regen rate of all weapons that auto-regen ammo. The increase is positively correlated with the ratio of max ammo to weapon's OP cost.
+- Relieves %s cooldown burden for MX drones that replenishing ship's ammunition.
+
+[Only compatible with ICS ships]",Refills ammo,graphics/sun_ice/hullmods/munitions_autofac.png
+Tactical Ansible,sun_ice_tactical_ansible_mod,2,,ICS,special,Special,8000,,,,30,35,40,45,data.hullmods.SUN_ICE_TacticalAnsible,"The fewer/smaller friendly ship units and more/larger enemy ship units within {%s/%s/%s/%s} range, the more damage dealt to targets with the same or smaller hullsize as self.
+- Damage increases up to %s.
+
+[Only compatible with ICS ships]",Increases weapon damage,graphics/sun_ice/hullmods/tactical_ansible.png
+,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,

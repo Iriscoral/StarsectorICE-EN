@@ -1,0 +1,30 @@
+{
+	"id":"sun_ice_hexac",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"BALLISTIC",
+	"size":"MEDIUM",
+	"displayArcRadius":300,
+	"turretSprite":"graphics/sun_ice/weapons/hexac_turret_base.png",
+	"turretGunSprite":"graphics/sun_ice/weapons/hexac_turret_recoil.png",
+	"hardpointSprite":"graphics/sun_ice/weapons/hexac_hardpoint_base.png",
+	"hardpointGunSprite":"graphics/sun_ice/weapons/hexac_hardpoint_recoil.png",
+	"renderHints":[RENDER_BARREL_BELOW],
+	"visualRecoil":3.0,  # the gun sprites are only used if this is non-0
+	"turretOffsets":[14, -5, 14, 5],
+	"turretAngleOffsets":[0, 0],
+	"hardpointOffsets":[15, -5, 15, 5],
+	"hardpointAngleOffsets":[0, 0],
+	"specialWeaponGlowWidth":15,
+	"specialWeaponGlowHeight":25,
+	"barrelMode":"ALTERNATING_BURST", # or LINKED.  whether barrels fire at the same time or alternate.
+	"animationType":"MUZZLE_FLASH",
+	"muzzleFlashSpec":{"length":30.0,   # only used if animationType = MUZZLE_FLASH
+					   "spread":16.0,
+					   "particleSizeMin":8.0,
+					   "particleSizeRange":10.0,
+					   "particleDuration":0.35,
+					   "particleCount":12,
+					  "particleColor":[255,255,150,185]},
+	"projectileSpecId":"sun_ice_hex_shot",  # projectile that will be fired
+	"fireSoundTwo":"sun_ice_hexgun_fire"
+}

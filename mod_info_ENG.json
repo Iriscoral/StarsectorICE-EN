@@ -1,0 +1,27 @@
+{
+	"id":"nbj_ice",
+	"name":"ICE",
+	"author":"Main Maintainers : Sundog, Deathfly, AnyIDElse.\nFor all staff, see credits_and_thanks.txt",
+	"version":{"major":0, "minor":4, "patch":3},
+	"gameVersion":"0.95.1a-RC6",
+	"description":"Adds the Idoneus Citadel Exiles faction to the game. \nICE ships and weapons feature unconventional gimmicks centered around mobility, phase cloaks, armor repair, and ammo regeneration.",
+	"dependencies": [
+		{
+			"id": "lw_lazylib",
+			"name": "LazyLib",
+			#"version": "xxx"
+		},
+		{
+			"id": "shaderLib",
+			"name": "GraphicLib",
+			#"version": "xxx"
+		},
+		{
+			"id": "MagicLib",
+			"name": "MagicLib",
+			#"version": "xxx"
+		},
+	],
+	"jars":["jars/ICE.jar"],
+	"modPlugin":"data.scripts.ICEModPlugin"
+}

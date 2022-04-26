@@ -1,0 +1,32 @@
+{
+    "displayName": "Reformed",
+    "fluxCapacitors": 5,
+    "fluxVents": 9,
+    "goalVariant": true,
+    "hullId": "sun_ice_pentagram_utility",
+    "hullMods": [
+        "turretgyros",
+        "sun_ice_tactical_ansible_mod"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_pentagram_utility_Reformed",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "chaingun"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "pdlaser",
+                "WS0003": "pdlaser",
+                "WS0004": "pdlaser",
+                "WS0005": "pdlaser",
+                "WS0006": "pdlaser"
+            }
+        }
+    ]
+}

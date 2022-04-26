@@ -1,0 +1,22 @@
+{
+	"id":"sun_ice_mobiusray",  # this id must match what's in the spreadsheet
+	"specClass":"projectile",
+	"type":"ENERGY",
+	"size":"LARGE",
+	"everyFrameEffect":"data.weapons.MobiusRayEffect",
+	"turretSprite":"graphics/sun_ice/weapons/fissionbeam_turret_base.png",
+	"turretGlowSprite":"graphics/sun_ice/weapons/fissionbeam_turret_glow.png",
+	"hardpointSprite":"graphics/sun_ice/weapons/fissionbeam_hardpoint_base.png",
+	"hardpointGlowSprite":"graphics/sun_ice/weapons/fissionbeam_hardpoint_glow.png",
+	"turretOffsets":[5, 0],
+	"turretAngleOffsets":[0],
+	"hardpointOffsets":[5, 0],
+	"hardpointAngleOffsets":[0],
+	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
+	"animationType":"GLOW",
+	"glowColor":[255,191,0,255],
+	#"interruptibleBurst":true,	
+	"autocharge":false,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
+	"projectileSpecId":"sun_ice_mobiusray",  # projectile that will be fired
+	"fireSoundOne":"sun_ice_mobiusfire_fire",
+}

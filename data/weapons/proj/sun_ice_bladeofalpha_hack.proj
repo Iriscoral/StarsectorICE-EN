@@ -1,0 +1,20 @@
+{
+	"id":"sun_ice_bladeofalpha_hack",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"NONE",
+	"collisionClassByFighter":"NONE",
+	"length":60.0,
+	"hitGlowRadius":150,
+	"width":30.0,
+	"fadeTime":0.5,
+	"fringeColor":[255,165,125,175],
+	"coreColor":[255,255,255,200],
+	"glowColor":[255,165,100,55],
+	"glowRadius":10,
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"passThroughMissiles":true,
+	"bulletSprite":"graphics/sun_ice/missiles/bladeofalpha.png"
+	#"bulletSprite":"graphics/missiles/shell_round_lrg.png"
+}

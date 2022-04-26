@@ -1,0 +1,38 @@
+{
+	"id":"sun_ice_scatterpd",
+	"specClass":"missile",
+	"missileType":"ROCKET",
+	"sprite":"graphics/sun_ice/missiles/missile_scatterpd.png",
+	"size":[4,18],	
+	"center":[2,9],
+	"collisionRadius":15,
+	#"collisionClass":"MISSILE_FF",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"explosionColor":[255,223,128,200],
+	"explosionRadius":75, # purely visual	
+	"engineSpec":{"turnAcc":150,
+				  "turnRate":150,
+				  "acc":200,
+				  "dec":0},
+	"engineSlots":[{"id":"ES1",
+					"loc":[-11, 0],
+				    "style":"SUN_ICE_MISSILE",
+				    "width":8.0,
+				    "length":30.0,
+				    "angle":180.0}],
+	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
+		"range":100,
+		"explosionSpec":{"duration":0.1f,
+						 "radius":100,
+						 "coreRadius":50, # full damage within core radius - also equal to proximity fuse range
+						 "collisionClass":PROJECTILE_FF,
+						 "collisionClassByFighter":PROJECTILE_FIGHTER,
+						 "particleSizeMin":3.0,
+						 "particleSizeRange":3.0,
+						 "particleDuration":1,
+						 "particleCount":6,
+						 "particleColor":[120,120,75,255],
+						 "sound":"explosion_flak"}
+	}
+}

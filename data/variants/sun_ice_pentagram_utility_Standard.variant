@@ -1,0 +1,38 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 6,
+    "fluxVents": 10,
+    "goalVariant": true,
+    "hullId": "sun_ice_pentagram_utility",
+    "hullMods": [
+        "sun_ice_turbulence_valve_mod",
+        "sun_ice_shunt_coating_mod"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_pentagram_utility_Standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "sun_ice_pulserepeater",
+                "WS0003": "sun_ice_pulserepeater",
+                "WS0006": "sun_ice_pulserepeater"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "sun_ice_pulserepeater",
+                "WS0005": "sun_ice_pulserepeater"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "sun_ice_hexac"}
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 15,
+    "fluxVents": 30,
+    "goalVariant": true,
+    "hullId": "sun_ice_kelpie_utility",
+    "hullMods": [
+        "targetingunit",
+        "sun_ice_shunt_coating_mod",
+        "heavyarmor"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_kelpie_utility_Standard",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0020": "sun_ice_flamebolt"}
+        },
+        {
+            "autofire": true,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0002": "sun_ice_scatterpd",
+                "WS0003": "sun_ice_scatterpd"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "sun_ice_pulserepeater",
+                "WS0007": "sun_ice_pulserepeater",
+                "WS0008": "sun_ice_pulserepeater",
+                "WS0009": "sun_ice_pulserepeater",
+                "WS0010": "sun_ice_pulserepeater",
+                "WS0011": "sun_ice_pulserepeater",
+                "WS0012": "sun_ice_pulserepeater",
+                "WS0013": "sun_ice_pulserepeater",
+                "WS0014": "sun_ice_pulserepeater",
+                "WS0015": "sun_ice_pulserepeater",
+                "WS0016": "sun_ice_pulserepeater",
+                "WS0017": "sun_ice_pulserepeater"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0004": "sun_ice_lighthexac",
+                "WS0005": "sun_ice_lighthexac"
+            }
+        }
+    ]
+}

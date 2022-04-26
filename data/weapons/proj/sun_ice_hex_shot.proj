@@ -1,0 +1,17 @@
+{
+	"id":"sun_ice_hex_shot",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":26.0,
+	"hitGlowRadius":4,
+	"width":4.5,
+	"fadeTime":0.1,
+	"fringeColor":[240,240,150,250],
+	"coreColor":[240,240,240,250],
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/sun_ice/missiles/shell_small.png",
+    "onHitEffect":"data.weapons.onhit.HexOnHitEffect",
+}

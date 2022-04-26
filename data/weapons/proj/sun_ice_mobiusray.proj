@@ -1,0 +1,18 @@
+{
+	"id":"sun_ice_mobiusray",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY_FIGHTER",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":70,
+	"width":60,
+	"fadeTime":0.3,
+	"fringeColor":[255,191,0,0],
+	#160
+	"coreColor":[255,255,255,0],
+	#255
+	"textureType":"ROUGH",
+	"textureScrollSpeed":100,
+	"pixelsPerTexel":1.0,
+	"passThroughMissiles":true
+}

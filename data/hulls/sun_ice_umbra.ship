@@ -1,0 +1,73 @@
+{
+  "hullName": "Umbra",
+  "hullId": "sun_ice_umbra_wing",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/sun_ice/ships/Umbra.png",
+  "style": "SUN_ICE",
+  "height": 57,
+  "width": 30,
+  "center": [15, 28.5],
+  "collisionRadius": 34.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 34.532593,
+  "viewOffset": 0,
+  "builtInWeapons": {
+    "WS0002": "sun_ice_umbra_shell_left",
+    "WS0003": "sun_ice_umbra_shell_right"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 5,
+      "angle": 0,
+      "locations": [-0.5, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-14.5, -0]
+    },
+    {
+      "id": "WS0003",
+      "size": "LARGE",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [-14.5, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-27, 7],
+      "length": 53.817875,
+      "width": 17.422558,
+      "angle": -178.712677,
+      "contrailSize": 17.422558,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-27, -7],
+      "length": 53.817875,
+      "width": 17.422558,
+      "angle": 178.712677,
+      "contrailSize": 17.422558,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    24, 2.5,
+    -9, 13,
+    -24.5, 8,
+    -24.5, -8,
+    -9, -13,
+    24, -2.5
+  ]
+}

@@ -1,0 +1,48 @@
+{
+    "displayName": "Support",
+    "fluxCapacitors": 11,
+    "fluxVents": 20,
+    "goalVariant": true,
+    "hullId": "sun_ice_shiekwraith",
+    "hullMods": ["heavyarmor"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_shiekwraith_Support",
+    "weaponGroups": [
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "sun_ice_wisp",
+                "WS0004": "sun_ice_wisp"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "sun_ice_falx",
+                "WS0008": "sun_ice_falx",
+                "WS0009": "sun_ice_falx",
+                "WS0010": "sun_ice_falx",
+                "WS0011": "sun_ice_falx"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "sun_ice_hexac",
+                "WS0002": "sun_ice_hexac"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "sun_ice_lighthexac",
+                "WS0006": "sun_ice_lighthexac"
+            }
+        }
+    ]
+}

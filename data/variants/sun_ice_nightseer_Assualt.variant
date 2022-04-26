@@ -1,0 +1,30 @@
+{
+    "displayName": "Assault",
+    "fluxCapacitors": 5,
+    "fluxVents": 8,
+    "goalVariant": true,
+    "hullId": "sun_ice_nightseer",
+    "hullMods": [
+        "heavyarmor",
+        "sun_ice_turbulence_valve_mod",
+        "fluxbreakers"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_nightseer_Assualt",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0002": "sun_ice_lighthexac",
+                "WS0003": "sun_ice_lighthexac"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "LINKED",
+            "weapons": {"WS0001": "sun_ice_hellblaze"}
+        }
+    ]
+}

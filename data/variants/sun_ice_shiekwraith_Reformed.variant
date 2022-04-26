@@ -1,0 +1,48 @@
+{
+    "displayName": "Reformed",
+    "fluxCapacitors": 10,
+    "fluxVents": 20,
+    "goalVariant": true,
+    "hullId": "sun_ice_shiekwraith",
+    "hullMods": ["targetingunit"],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_shiekwraith_Reformed",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "heavymauler",
+                "WS0002": "heavymauler"
+            }
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0003": "heatseeker",
+                "WS0004": "heatseeker"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0007": "sun_ice_falx",
+                "WS0008": "sun_ice_falx",
+                "WS0009": "sun_ice_falx",
+                "WS0010": "sun_ice_falx",
+                "WS0011": "sun_ice_falx"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0005": "vulcan",
+                "WS0006": "vulcan"
+            }
+        }
+    ]
+}

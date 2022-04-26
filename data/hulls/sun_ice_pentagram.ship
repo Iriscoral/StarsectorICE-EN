@@ -1,0 +1,277 @@
+{
+  "bounds": [
+    -36,
+    16,
+    -23,
+    30.5,
+    2.5,
+    37.5,
+    20.5,
+    30,
+    35.5,
+    8.5,
+    35.5,
+    -8.5,
+    20.5,
+    -30,
+    2.5,
+    -37.5,
+    -23,
+    -30.5,
+    -36,
+    -16
+  ],
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "sun_ice_reverb_dampeners_mod",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_pentagram_lights",
+    "SYSTEM": "sun_ice_pentagram_system",
+    "WS0001": "sun_ice_tractorbeam",
+    "WS0002": "sun_ice_fissionblademini",
+    "WS0003": "sun_ice_fissionblademini",
+    "WS0004": "sun_ice_fissionblademini",
+    "WS0005": "sun_ice_fissionblademini",
+    "WS0006": "sun_ice_fissionblademini",
+    "WS0007": "sun_ice_fissionblademini",
+    "WS0008": "sun_ice_fissionblademini",
+    "WS0009": "sun_ice_fissionblademini",
+    "WS0010": "sun_ice_fissionblademini",
+    "WS0011": "sun_ice_fissionblademini"
+  },
+  "center": [
+    42.5,
+    42.5
+  ],
+  "collisionRadius": 45,
+  "engineSlots": [
+    {
+      "angle": 72,
+      "contrailSize": 10,
+      "length": 0,
+      "location": [
+        9.5,
+        30.5
+      ],
+      "style": "SUN_ICE",
+      "width": 10
+    },
+    {
+      "angle": 0,
+      "contrailSize": 10,
+      "length": 0.5,
+      "location": [
+        32,
+        -0.5
+      ],
+      "style": "SUN_ICE",
+      "width": 10
+    },
+    {
+      "angle": 144,
+      "contrailSize": 10,
+      "length": 0,
+      "location": [
+        -26.5,
+        18.5
+      ],
+      "style": "SUN_ICE",
+      "width": 10
+    },
+    {
+      "angle": -144,
+      "contrailSize": 10,
+      "length": 0,
+      "location": [
+        -26.5,
+        -19.5
+      ],
+      "style": "SUN_ICE",
+      "width": 10
+    },
+    {
+      "angle": -72,
+      "contrailSize": 10,
+      "length": 0,
+      "location": [
+        9.5,
+        -31.5
+      ],
+      "style": "SUN_ICE",
+      "width": 10
+    }
+  ],
+  "height": 84,
+  "hullId": "sun_ice_pentagram",
+  "hullName": "Pentagram",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 45,
+  "spriteName": "graphics/sun_ice/ships/Pentagram.png",
+  "style": "SUN_ICE",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "WS0001",
+      "locations": [
+        0,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 128,
+      "arc": 0,
+      "id": "WS0002",
+      "locations": [
+        -34,
+        4
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 56,
+      "arc": 0,
+      "id": "WS0003",
+      "locations": [
+        -6,
+        33
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -16,
+      "arc": 0,
+      "id": "WS0004",
+      "locations": [
+        29,
+        16
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -88,
+      "arc": 0,
+      "id": "WS0005",
+      "locations": [
+        24,
+        -24
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 200,
+      "arc": 0,
+      "id": "WS0006",
+      "locations": [
+        -15.5,
+        -31.5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 16,
+      "arc": 0,
+      "id": "WS0007",
+      "locations": [
+        29,
+        -17
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 88,
+      "arc": 0,
+      "id": "WS0008",
+      "locations": [
+        25,
+        22
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 160,
+      "arc": 0,
+      "id": "WS0009",
+      "locations": [
+        -14,
+        30
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -128,
+      "arc": 0,
+      "id": "WS0010",
+      "locations": [
+        -34,
+        -4
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -56,
+      "arc": 0,
+      "id": "WS0011",
+      "locations": [
+        -9,
+        -35
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "LIGHTS",
+      "locations": [
+        0.5,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "SYSTEM",
+      "locations": [
+        0.5,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 84
+}

@@ -1,0 +1,150 @@
+{
+  "hullName": "Pentagram",
+  "hullId": "sun_ice_pentagram_utility",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/sun_ice/ships/Pentagram.png",
+  "style": "SUN_ICE",
+  "height": 84,
+  "width": 84,
+  "center": [42.5, 42.5],
+  "collisionRadius": 45,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 45,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_pentagram_lights",
+    "SYSTEM": "sun_ice_pentagram_system"
+  },
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "UNIVERSAL",
+      "mount": "TURRET",
+      "arc": 360,
+      "angle": 0,
+      "locations": [0, -0]
+    },
+    {
+      "id": "WS0002",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 180,
+      "locations": [-34, -0]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 108,
+      "locations": [-10, 32]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": 36,
+      "locations": [27, 19]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -36,
+      "locations": [27, -19]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 90,
+      "angle": -108,
+      "locations": [-10, -32]
+    },
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0.5, 0]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0.5, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [9.5, 30.5],
+      "length": 0,
+      "width": 10,
+      "angle": 72,
+      "contrailSize": 10,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [32, -0.5],
+      "length": 0.5,
+      "width": 10,
+      "angle": 0,
+      "contrailSize": 10,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-26.5, 18.5],
+      "length": 0,
+      "width": 10,
+      "angle": 144,
+      "contrailSize": 10,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-26.5, -19.5],
+      "length": 0,
+      "width": 10,
+      "angle": -144,
+      "contrailSize": 10,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [9.5, -31.5],
+      "length": 0,
+      "width": 10,
+      "angle": -72,
+      "contrailSize": 10,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    -36, 16,
+    -23, 30.5,
+    2.5, 37.5,
+    20.5, 30,
+    35.5, 8.5,
+    35.5, -8.5,
+    20.5, -30,
+    2.5, -37.5,
+    -23, -30.5,
+    -36, -16
+  ]
+}

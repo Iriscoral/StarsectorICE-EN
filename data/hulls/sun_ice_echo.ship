@@ -1,0 +1,40 @@
+{
+  "hullName": "Echo",
+  "hullId": "sun_ice_echo_wing",
+  "hullSize": "FIGHTER",
+  "spriteName": "graphics/sun_ice/ships/Echo.png",
+  "style": "SUN_ICE",
+  "height": 24,
+  "width": 24,
+  "center": [12, 12],
+  "collisionRadius": 13,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 13,
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "SMALL",
+      "type": "BUILT_IN",
+      "mount": "HIDDEN",
+      "arc": 30,
+      "angle": 0,
+      "locations": [6, -0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-7, -0],
+      "length": 25.5,
+      "width": 12,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    4.5, -7,
+    4.5, 7,
+    -5.5, 0
+  ]
+}

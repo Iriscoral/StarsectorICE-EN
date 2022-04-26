@@ -1,0 +1,45 @@
+{
+    "displayName": "Support",
+    "fluxCapacitors": 10,
+    "fluxVents": 15,
+    "hullId": "sun_ice_soulbane",
+    "hullMods": [
+        "fluxbreakers",
+        "auxiliarythrusters",
+        "sun_ice_shunt_coating_mod"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_soulbane_Support",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0007": "sun_ice_mobiusray"}
+        },
+        {
+            "autofire": false,
+            "mode": "ALTERNATING",
+            "weapons": {
+                "WS0005": "sun_ice_boomerang",
+                "WS0006": "sun_ice_boomerang"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "sun_ice_falx",
+                "WS0004": "sun_ice_falx"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "sun_ice_hexac",
+                "WS0002": "sun_ice_hexac"
+            }
+        }
+    ]
+}

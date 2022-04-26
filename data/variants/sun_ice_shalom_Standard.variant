@@ -1,0 +1,14 @@
+{
+    "displayName": "Standard",
+    "fluxCapacitors": 5,
+    "fluxVents": 0,
+    "hullId": "sun_ice_shalom",
+    "hullMods": [
+        "augmentedengines",
+        "insulatedengine"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "sun_ice_shalom_Standard",
+    "weaponGroups": []
+}

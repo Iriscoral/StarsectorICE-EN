@@ -1,0 +1,330 @@
+{
+	"music":{
+		"ici_encounter_interaction_neutral":[
+		{"file":"ici_encounter_interaction_neutral.ogg","source":"sounds/sun_ice/music/","volume":0.5,"randomStart":true}
+		],
+		"ici_encounter_interaction_hostile":[
+		{"file":"ici_encounter_interaction_hostile.ogg","source":"sounds/sun_ice/music/","volume":0.5,"randomStart":true}
+		],
+		"ici_encounter_interaction_friendly":[
+		{"file":"ici_encounter_interaction_friendly.ogg","source":"sounds/sun_ice/music/","volume":0.5,"randomStart":true}
+		],
+		"ice_encounter_interaction_neutral":[
+		{"file":"ice_encounter_interaction_neutral.ogg","source":"sounds/sun_ice/music/","volume":0.5,"randomStart":true}
+		],
+		"ice_encounter_interaction_hostile":[
+		{"file":"ice_encounter_interaction_hostile.ogg","source":"sounds/sun_ice/music/","volume":0.5,"randomStart":true}
+		],
+		"ice_encounter_interaction_friendly":[
+		{"file":"ice_encounter_interaction_friendly.ogg","source":"sounds/sun_ice/music/","volume":0.5,"randomStart":true}
+		],
+	},
+
+
+	"ice_engine_loop":{
+		"sounds":[
+			{"file":"sounds/sun_ice/engines/engine_normal_fighter.ogg","pitch":1,"volume":1}, # index:  0
+			{"file":"sounds/sun_ice/engines/engine_normal_frigate.ogg","pitch":1,"volume":1},    # index:  1
+			{"file":"sounds/sun_ice/engines/engine_normal_destroyer.ogg","pitch":1,"volume":1},  # index:  2
+			{"file":"sounds/sun_ice/engines/engine_normal_cruiser.ogg","pitch":1,"volume":1},    # index:  3
+			{"file":"sounds/sun_ice/engines/engine_normal_capital.ogg","pitch":1,"volume":1},    # index:  4
+			],
+		"FIGHTER":{"sounds":[0], "pitch":1, "volume":0.2},
+		"FRIGATE":{"sounds":[1], "pitch":1, "volume":0.35},
+		"DESTROYER":{"sounds":[2], "pitch":1, "volume":0.55},
+		"CRUISER":{"sounds":[3], "pitch":1, "volume":0.6},
+		"CAPITAL_SHIP":{"sounds":[4], "pitch":1, "volume":0.65},
+	},
+
+	"ice_engine_boost":{
+		"sounds":[
+			{"file":"sounds/sun_ice/engines/engine_boost.ogg","pitch":1,"volume":1}, # index:  0
+			],
+		"FIGHTER":{"sounds":[0], "pitch":1, "volume":0.2},
+		"FRIGATE":{"sounds":[0], "pitch":1, "volume":0.35},
+		"DESTROYER":{"sounds":[0], "pitch":1, "volume":0.4},
+		"CRUISER":{"sounds":[0], "pitch":1, "volume":0.45},
+		"CAPITAL_SHIP":{"sounds":[0], "pitch":1, "volume":0.5},
+	},
+
+	"ice_shield_raise":{
+		"sounds":[
+			{"file":"sounds/sun_ice/systems/system_shield_raise.ogg","pitch":1,"volume":1},
+		],
+		"FIGHTER":{"sounds":[0], "pitch":1, "volume":0.5},
+		"FRIGATE":{"sounds":[0], "pitch":1, "volume":0.6},
+		"DESTROYER":{"sounds":[0], "pitch":1, "volume":0.7},
+		"CRUISER":{"sounds":[0], "pitch":1, "volume":0.8},
+		"CAPITAL_SHIP":{"sounds":[0], "pitch":1, "volume":1},
+	},
+
+	"ice_vent_flux":{ # played once when a ship starts venting flux
+		"sounds":[
+			{"file":"sounds/sun_ice/flux/vent.ogg","pitch":1,"volume":1},
+		],
+		"FIGHTER":{"sounds":[0], "pitch":1, "volume":0.4},
+		"FRIGATE":{"sounds":[0], "pitch":1, "volume":0.7},
+		"DESTROYER":{"sounds":[0], "pitch":1, "volume":0.8},
+		"CRUISER":{"sounds":[0], "pitch":1, "volume":0.9},
+		"CAPITAL_SHIP":{"sounds":[0], "pitch":1, "volume":1},		
+	},
+
+
+	"exiles_intel_call":{
+		"sounds":[
+			{"file":"sounds/sun_ice/charscreen/intel_call.ogg","pitch":1,"volume":0.4},
+		],
+	},
+
+	"sun_ice_right_click_cooldown":{
+		"sounds":[
+			{"file":"sounds/sun_ice/systems/right_click_cooldown.ogg","pitch":1.0,"volume":1.0},
+		],
+	},
+
+	"sun_ice_chupacabra_loop":[
+		{"file":"sounds/sun_ice/weapons/chupacabra_loop.ogg", "pitch":1.0, "volume":0.8}
+	],
+	"sun_ice_nos_loop":[
+		{"file":"sounds/sun_ice/weapons/nos_loop.ogg", "pitch":1.0, "volume":1.0}
+	],
+	"sun_ice_nos_fire":[
+		{"file":"sounds/sun_ice/weapons/nos_fire.ogg", "pitch":1.0, "volume":0.8},
+		{"file":"sounds/sun_ice/weapons/nos_fire.ogg", "pitch":1.2, "volume":0.8},
+		{"file":"sounds/sun_ice/weapons/nos_fire.ogg", "pitch":0.8, "volume":0.8}
+	],
+	"sun_ice_falx_fire":[
+		{"file":"sounds/sun_ice/weapons/falx_fire.ogg", "pitch":1.2, "volume":0.8},
+	],
+	"sun_ice_falx_loop":[
+		{"file":"sounds/sun_ice/weapons/falx_loop.ogg", "pitch":0.8, "volume":0.8},
+	],
+	"sun_ice_nova_loop":[
+		{"file":"sounds/sun_ice/weapons/nova_loop.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_tractorbeam_loop":[
+		{"file":"sounds/sun_ice/weapons/tractorbeam_loop.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_fissionblade_loop":[
+		{"file":"sounds/sun_ice/weapons/fissionblade_loop.ogg", "pitch":1.0, "volume":1.0},
+	],
+	
+	"sun_ice_hellblaze_fire":[
+		{"file":"sounds/sun_ice/weapons/hellblaze_fire.ogg", "pitch":1, "volume":1},
+		{"file":"sounds/sun_ice/weapons/hellblaze_fire.ogg", "pitch":1.1, "volume":1.2},
+		{"file":"sounds/sun_ice/weapons/hellblaze_fire.ogg", "pitch":1.2, "volume":1.2},
+		{"file":"sounds/sun_ice/weapons/hellblaze_fire.ogg", "pitch":1.2, "volume":1},
+	],
+	"sun_ice_flamebolt_fire":[
+		{"file":"sounds/sun_ice/weapons/flamebolt_fire.ogg", "pitch":1, "volume":0.8},
+		{"file":"sounds/sun_ice/weapons/flamebolt_fire.ogg", "pitch":1.1, "volume":1},
+		{"file":"sounds/sun_ice/weapons/flamebolt_fire.ogg", "pitch":1.2, "volume":1},
+		{"file":"sounds/sun_ice/weapons/flamebolt_fire.ogg", "pitch":1.2, "volume":0.8},
+	],
+	"sun_ice_wisp_fire":[
+		{"file":"sounds/sun_ice/weapons/wisp_fire.ogg", "pitch":1.1, "volume":1.2},
+		{"file":"sounds/sun_ice/weapons/wisp_fire.ogg", "pitch":1.2, "volume":1},
+		{"file":"sounds/sun_ice/weapons/wisp_fire.ogg", "pitch":1, "volume":1},
+		{"file":"sounds/sun_ice/weapons/wisp_fire.ogg", "pitch":1, "volume":1.2},
+	],
+	"sun_ice_pulserepeater_fire":[
+		{"file":"sounds/sun_ice/weapons/pulserepeater_fire.ogg", "pitch":1, "volume":0.6},
+		{"file":"sounds/sun_ice/weapons/pulserepeater_fire.ogg", "pitch":1.1, "volume":0.5},
+		{"file":"sounds/sun_ice/weapons/pulserepeater_fire.ogg", "pitch":1.2, "volume":0.4},
+		{"file":"sounds/sun_ice/weapons/pulserepeater_fire.ogg", "pitch":1.2, "volume":0.5},
+	],
+	"sun_ice_gravity_fire":[
+		{"file":"sounds/sun_ice/weapons/gravity_fire1.ogg", "pitch":1.0, "volume":0.8},
+		{"file":"sounds/sun_ice/weapons/gravity_fire1.ogg", "pitch":1.0, "volume":0.8},
+		{"file":"sounds/sun_ice/weapons/gravity_fire1.ogg", "pitch":1.0, "volume":0.8},
+		{"file":"sounds/sun_ice/weapons/gravity_fire1.ogg", "pitch":1.0, "volume":0.8},
+	],
+	"sun_ice_mobiusfire_fire":[
+		{"file":"sounds/sun_ice/weapons/mobiusray_fire1.ogg", "pitch":1.0, "volume":1.0},
+		{"file":"sounds/sun_ice/weapons/mobiusray_fire2.ogg", "pitch":1.0, "volume":1.0},
+		{"file":"sounds/sun_ice/weapons/mobiusray_fire1.ogg", "pitch":0.8, "volume":1.0},
+		{"file":"sounds/sun_ice/weapons/mobiusray_fire2.ogg", "pitch":0.8, "volume":1.0},
+	],
+	"sun_ice_hexchain_fire":[
+		{"file":"sounds/sun_ice/weapons/ich_fire1.ogg", "pitch":1.4, "volume":0.42},
+		{"file":"sounds/sun_ice/weapons/ich_fire2.ogg", "pitch":1.4, "volume":0.42},
+		{"file":"sounds/sun_ice/weapons/ich_fire3.ogg", "pitch":1.4, "volume":0.42},
+		{"file":"sounds/sun_ice/weapons/ich_fire4.ogg", "pitch":1.4, "volume":0.42},
+	],
+	"sun_ice_hexgun_fire":[
+		{"file":"sounds/sun_ice/weapons/ich_fire1.ogg", "pitch":1.4, "volume":0.42},
+		{"file":"sounds/sun_ice/weapons/ich_fire2.ogg", "pitch":1.4, "volume":0.42},
+		{"file":"sounds/sun_ice/weapons/ich_fire3.ogg", "pitch":1.4, "volume":0.42},
+		{"file":"sounds/sun_ice/weapons/ich_fire4.ogg", "pitch":1.4, "volume":0.42},
+	],
+	"sun_ice_lighthexac_fire":[
+		{"file":"sounds/sun_ice/weapons/ich_fire1.ogg", "pitch":1.6, "volume":0.34},
+		{"file":"sounds/sun_ice/weapons/ich_fire2.ogg", "pitch":1.6, "volume":0.34},
+		{"file":"sounds/sun_ice/weapons/ich_fire3.ogg", "pitch":1.6, "volume":0.34},
+		{"file":"sounds/sun_ice/weapons/ich_fire4.ogg", "pitch":1.6, "volume":0.34},
+	],
+	"sun_ice_ricochet_fire":[
+		{"file":"sounds/sun_ice/weapons/ricochet_fire.ogg", "pitch":1, "volume":0.5},
+		{"file":"sounds/sun_ice/weapons/ricochet_fire.ogg", "pitch":1.1, "volume":0.4},
+		{"file":"sounds/sun_ice/weapons/ricochet_fire.ogg", "pitch":1.2, "volume":0.5},
+		{"file":"sounds/sun_ice/weapons/ricochet_fire.ogg", "pitch":1.3, "volume":0.4},
+	],
+	"sun_ice_scatterpd_fire":[
+		{"file":"sounds/sun_ice/weapons/scatterpd_fire.ogg", "pitch":1, "volume":0.7},
+		{"file":"sounds/sun_ice/weapons/scatterpd_fire.ogg", "pitch":0.9, "volume":0.8},
+		{"file":"sounds/sun_ice/weapons/scatterpd_fire.ogg", "pitch":1.2, "volume":0.6},
+		{"file":"sounds/sun_ice/weapons/scatterpd_fire.ogg", "pitch":1.3, "volume":0.8},
+	],
+	"sun_ice_boomerang_fire":[
+		{"file":"sounds/sun_ice/weapons/boomerang_fire.ogg", "pitch":1.5, "volume":1},
+		{"file":"sounds/sun_ice/weapons/boomerang_fire.ogg", "pitch":1.8, "volume":0.8},
+		{"file":"sounds/sun_ice/weapons/boomerang_fire.ogg", "pitch":1.4, "volume":0.8},
+		{"file":"sounds/sun_ice/weapons/boomerang_fire.ogg", "pitch":1.6, "volume":1},
+	],
+	"sun_ice_minepod_fire":[
+		{"file":"sounds/sun_ice/weapons/minepod_fire.ogg", "pitch":1.5, "volume":1},
+		{"file":"sounds/sun_ice/weapons/minepod_fire.ogg", "pitch":1.8, "volume":1},
+		{"file":"sounds/sun_ice/weapons/minepod_fire.ogg", "pitch":1.6, "volume":1.1},
+	],
+	"sun_ice_spitfire_fire":[
+		{"file":"sounds/sun_ice/weapons/spitfire_fire.ogg", "pitch":1, "volume":1},
+		{"file":"sounds/sun_ice/weapons/spitfire_fire.ogg", "pitch":0.9, "volume":1.1},
+		{"file":"sounds/sun_ice/weapons/spitfire_fire.ogg", "pitch":1.2, "volume":0.9},
+		{"file":"sounds/sun_ice/weapons/spitfire_fire.ogg", "pitch":1.3, "volume":1.1},
+	],
+	"sun_ice_gandiva_fire":[
+		{"file":"sounds/sun_ice/weapons/gandiva_fire.ogg", "pitch":1, "volume":1},
+		{"file":"sounds/sun_ice/weapons/gandiva_fire.ogg", "pitch":0.8, "volume":1.1},
+		{"file":"sounds/sun_ice/weapons/gandiva_fire.ogg", "pitch":0.8, "volume":0.9},
+		{"file":"sounds/sun_ice/weapons/gandiva_fire.ogg", "pitch":0.9, "volume":1.1},
+	],
+	"sun_ice_bladeofalpha_beam":[
+		{"file":"sounds/sun_ice/weapons/bladeofalpha_beam.ogg", "pitch":1, "volume":0.5},
+	],
+	"sun_ice_bladeofalpha_proj":[
+		{"file":"sounds/sun_ice/weapons/bladeofalpha_proj.ogg", "pitch":1.5, "volume":1.5},
+	],
+
+
+	"sun_ice_system_fissiondrill_activate":[
+		{"file":"sounds/sun_ice/systems/system_fissiondrill_activate.ogg", "pitch":1.5, "volume":0.5},
+	],
+	"sun_ice_system_fissiondrill_deactivate":[
+		{"file":"sounds/sun_ice/systems/system_fissiondrill_deactivate.ogg", "pitch":1.0, "volume":0.8},
+	],
+	"sun_ice_system_fissiondrill_loop":[
+		{"file":"sounds/sun_ice/systems/system_fissiondrill_loop.ogg", "pitch":1.0, "volume":0.8},
+	],
+	"sun_ice_system_fluxdrive_active":[
+		{"file":"sounds/sun_ice/systems/system_fluxdrive_active.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_fluxdrive_loop":[
+		{"file":"sounds/sun_ice/systems/system_fluxdrive_loop.ogg", "pitch":1.0, "volume":1.2},
+	],
+	"sun_ice_system_fluxdrive_deactive":[
+		{"file":"sounds/sun_ice/systems/system_fluxdrive_deactive.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_sensorboost_loop":[
+		{"file":"sounds/sfx_systems/temporal_shell_loop.ogg","pitch":1.5,"volume":0.8},
+	],
+	"sun_ice_system_phasecloak_activate":[
+		{"file":"sounds/sun_ice/systems/system_phasecloak_activate.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_phasecloak_loop_large":[
+		{"file":"sounds/sun_ice/systems/system_phasecloak_loop1.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_phasecloak_loop_small":[
+		{"file":"sounds/sun_ice/systems/system_phasecloak_loop2.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_phasecloak_deactivate":[
+		{"file":"sounds/sun_ice/systems/system_phasecloak_deactivate.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_phasewarp_active":[
+		{"file":"sounds/sun_ice/systems/system_phasewarp_active1.ogg", "pitch":1.0, "volume":1.0},
+		{"file":"sounds/sun_ice/systems/system_phasewarp_active2.ogg", "pitch":1.0, "volume":1.0},
+		{"file":"sounds/sun_ice/systems/system_phasewarp_active3.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_phasewarp_fighter_active":[
+		{"file":"sounds/sun_ice/systems/system_phasewarp_active1.ogg", "pitch":1.5, "volume":0.5},
+		{"file":"sounds/sun_ice/systems/system_phasewarp_active2.ogg", "pitch":1.5, "volume":0.5},
+		{"file":"sounds/sun_ice/systems/system_phasewarp_active3.ogg", "pitch":1.5, "volume":0.5},
+	],
+	"sun_ice_system_advphasewarp_active":[
+		{"file":"sounds/sun_ice/systems/system_advphasewarp_active1.ogg", "pitch":1.0, "volume":1.0},
+		{"file":"sounds/sun_ice/systems/system_advphasewarp_active2.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_advphasewarp_deactive":[
+		{"file":"sounds/sun_ice/systems/system_advphasewarp_deactive.ogg", "pitch":1.2, "volume":1.0},
+		{"file":"sounds/sun_ice/systems/system_advphasewarp_deactive.ogg", "pitch":1.0, "volume":1.0},
+		{"file":"sounds/sun_ice/systems/system_advphasewarp_deactive.ogg", "pitch":0.8, "volume":1.0},
+	],
+	"sun_ice_system_phaseshift_active":[
+		{"file":"sounds/sun_ice/systems/system_phaseshift_active1.ogg", "pitch":1.0, "volume":1.2},
+		{"file":"sounds/sun_ice/systems/system_phaseshift_active2.ogg", "pitch":1.0, "volume":1.2},
+		{"file":"sounds/sun_ice/systems/system_phaseshift_active3.ogg", "pitch":1.0, "volume":1.2},
+	],
+	"sun_ice_system_phaseshift_deactive":[
+		{"file":"sounds/sun_ice/systems/system_phaseshift_deactive.ogg", "pitch":1.4, "volume":0.8},
+		{"file":"sounds/sun_ice/systems/system_phaseshift_deactive.ogg", "pitch":1.5, "volume":0.8},
+		{"file":"sounds/sun_ice/systems/system_phaseshift_deactive.ogg", "pitch":1.7, "volume":0.8},
+	],
+	"sun_ice_system_jaunt_heavy_activate":[
+		{"file":"sounds/sun_ice/systems/system_jaunt_heavy_activate.ogg", "pitch":1.0, "volume":1.0},
+		{"file":"sounds/sun_ice/systems/system_jaunt_heavy_activate.ogg", "pitch":0.8, "volume":1.0},
+	],
+	"sun_ice_system_jaunt_heavy_deactivate":[
+		{"file":"sounds/sun_ice/systems/system_jaunt_heavy_deactivate.ogg", "pitch":1.0, "volume":1.0},
+		{"file":"sounds/sun_ice/systems/system_jaunt_heavy_deactivate.ogg", "pitch":0.8, "volume":1.0},
+	],
+	"sun_ice_system_jaunt_light_activate":[
+		{"file":"sounds/sun_ice/systems/system_jaunt_heavy_activate.ogg", "pitch":2.4, "volume":0.8},
+		{"file":"sounds/sun_ice/systems/system_jaunt_heavy_activate.ogg", "pitch":2.0, "volume":0.8},
+	],
+	"sun_ice_system_jaunt_light_deactivate":[
+		{"file":"sounds/sun_ice/systems/system_jaunt_heavy_deactivate.ogg", "pitch":2.4, "volume":0.8},
+		{"file":"sounds/sun_ice/systems/system_jaunt_heavy_deactivate.ogg", "pitch":2.0, "volume":0.8},
+	],
+	"sun_ice_system_fofinverter":[
+		{"file":"sounds/sun_ice/systems/system_fofinverter.ogg", "pitch":1.0, "volume":0.8},
+	],
+	"sun_ice_system_fofinverter_active":[
+		{"file":"sounds/sun_ice/systems/system_fofinverter_active.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_fofinverter_deactive":[
+		{"file":"sounds/sun_ice/systems/system_fofinverter_deactive.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_fofinverter_loop":[
+		{"file":"sounds/sun_ice/systems/system_fofinverter_loop.ogg", "pitch":2.0, "volume":1.0},
+	],
+	"sun_ice_system_inversionmatrix_active":[
+		{"file":"sounds/sun_ice/systems/system_inversionmatrix_active.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_inversionmatrix_loop":[
+		{"file":"sounds/sun_ice/systems/system_inversionmatrix_loop.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_inversionmatrix_deactive":[
+		{"file":"sounds/sun_ice/systems/system_inversionmatrix_deactive.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_repairarmor_active":[
+		{"file":"sounds/sun_ice/systems/system_repairarmor_active.ogg", "pitch":1.0, "volume":0.8},
+	],
+	"sun_ice_system_repairarmor_deactive":[
+		{"file":"sounds/sun_ice/systems/system_repairarmor_deactive.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_repairarmor_loop":[
+		{"file":"sounds/sun_ice/systems/system_repairarmor_loop.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_limitercontrol_active":[
+		{"file":"sounds/sun_ice/systems/system_limitercontrol_active.ogg", "pitch":1.0, "volume":1.0},
+	],
+	"sun_ice_system_limitercontrol_jump":[
+		{"file":"sounds/sun_ice/systems/system_limitercontrol_jump.ogg", "pitch":1.0, "volume":2.0},
+	],
+	"sun_ice_system_limitercontrol_charge":[
+		{"file":"sounds/sun_ice/systems/system_limitercontrol_charge.ogg", "pitch":1.0, "volume":3.0},
+	],
+	
+	"sun_ice_deploy_mine_pod":[
+		{"file":"sounds/sfx_interface/ui_channel_intel_assessment_01.ogg", "pitch":1.0, "volume":1.0},
+	],
+}

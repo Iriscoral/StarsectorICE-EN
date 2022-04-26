@@ -1,0 +1,271 @@
+2022.4.25 0.4.3
+-舰船/Ships
+普遍增加部署所需CR
+Generally increased CR to deploy
+灵魂祸根 部署消耗 12 → 13
+Soulbane-Class DP cost 12 → 13
+
+-武器/Weapons
+回力镖 SRM 装配消耗 4 → 3，弹体血量略微减少
+Boomerang SRM op cost 4 → 3, proj hitpoints slightly reduced
+回力镖 SRM 发射仓 装配消耗 10 → 7，弹体血量略微减少
+Boomerang SRM Pod op cost 10 → 7, proj hitpoints slightly reduced
+重做了绝大部分武器的音效
+HUGE sound tweaks for almost every single weapon
+
+-战术系统/Shipsystems
+各类曲速相位、渐进式相位 适配了游戏的降速机制
+All Warps and Progressive Phase now adapted to the speed reduction mechanism
+给所有ICS舰船适配了新的旅行引擎
+New travel engines for all ICS ships
+
+-插件/Hullmods
+召回传送器现在只对相位舰船起效
+Recall Teleporter now no longer recall non-phase ships
+
+-其他/Others
+适配了0.95.1
+For 0.95.1 now
+适配了Comm Crew
+For Comm Crew now
+调整了事件链细节
+Adjusted story event chain
+
+
+
+2021.10.17 0.4.2
+-舰船/Ships
+维修无人机无法离开母舰3000范围，而且只恢复不自动恢复弹药的武器
+Set roam range of MX drone to 3000(from Inf), and only recover weapons that do not automatically recover ammunition
+维修无人机恢复导弹的冷却时长提升
+MX drone's cooldown of recovering missile ammos increased
+增加了大部分护卫舰和驱逐舰的装配点并降低了装甲
+Increased most frigates' and destroyers' ordnance points, and decreased armor
+调整了大部分舰船的幅能容量与耗散，使之与相位消耗匹配
+Adjusted flux capacity and dissipation of most ships, to match their phase consumption
+真知 现在是货舰
+Palantir is now a Freighter
+五芒星(和它的S型) 结构 3000 → 2500
+Pentagram-Class(and its S) hullpoints 3000 → 2500
+闪魂 部署消耗 5 → 6
+Flashghast DP cost 5 → 6
+灵魂祸根 速度 90 → 95，部署消耗 10 → 12
+Soulbane-Class speed 90 → 95, DP cost 10 → 12
+佑安 结构 12000 → 20000
+Shalom-Class hullpoints 12000 → 20000
+外典 结构 8000 → 12000
+Apocrypha-Class hullpoints 8000 → 12000
+某些微小的其他数据调整
+Some minor stat adjustments
+幻翼英文名调整
+Phantom-Class Wing name changed to Ectoplasm-Class Wing
+
+-武器/Weapons
+布雷机发射架 部分回调
+Mine Pod adjusted
+简并炸弹 伤害 4000 → 3500，移除EMP效果
+Hypermass Bomb damage 4000 → 3500, removed EMP effect
+引力冲击 伤害 150 → 200，幅能产生 100 → 150，冷却时间 3 → 4
+Gravity Charge damage 150 → 200, flux per shoot 100 → 150, cooldown 3 → 4
+正弦偏转炮 幅能产生 250 → 200
+Sine Ricochet flux per shoot 250 → 200
+牵引射线拉力略微下降
+Tractor Beam pulling force decreases slightly
+
+-战术系统/Shipsystems
+各类曲速相位、渐进式相位 冷却时间 1s/0.1s → 2s
+All Warps and Progressive Phase cooldown 1s/0.1s → 2s
+各类曲速相位 持续时间 1s → 2s
+All Warps active duration 1s → 2s
+
+-插件/Hullmods
+新插件 湍流滑阀
+New hullmod Turbulence Valve
+战术分析模块装配效果重做，现意在加强ICS舰船分散情况下的战力
+Tactical Ansible, reworked, now intended to strengthen the firepower of ICS ships when they are scattered
+物质再生组件基础效果提升至30%，但佑安每存在一个D插都将导致效果下降10%
+Nutrition Resynthesis Annex basic effect increased to 30% from 25%, but every d-hullmod of the ship will cause the effect to decrease by 10%
+弹药整备线重做，现在和维修无人机联动
+Munitions AutoFac reworked, now should be used combine with MX Drone
+又把阻尼减震器回调了
+Re-reworked Reverberation Dampeners
+
+-其他/Others
+适配了0.95
+For 0.95 now
+现在使用新的版本号格式
+Now use new format of mod version
+下调ICE对于AI核心收购价格倍率至0.5
+Value mult for buying AI core decreased to 0.5 from 2.5(ICE)
+上调ICE对于AI核心收购关系倍率至1.5
+Rep mult for buying AI core increased to 1.5 from 0.4(ICE)
+全新的超长事件链，帮助ICE获得足以安息的逆旅
+A new extra-long event chain to help ICE get a home in their endlessly journey
+为UNGP添加规则
+Rules for UNGP
+
+
+
+2020.9.5 0.41 RC-2
+-其他/Others
+修复bug
+Hot fixes
+
+
+
+2020.8.25 0.41 RC-1
+-介绍/Introduction
+ICE的武器将在本次更新后按射程被划分为250/350/600三个层次，并且提升它们的强度
+Most of ICE's weapons will be divided into three levels by range 250/350/600 after this update, and their strength will be slightly increased after these "range nerf"
+除此之外，各种相位现在将有时流效果，这表示它们不再那么善于逃跑了
+Besides, the various phases(warps, special phases) will now have timestream effect, which means they're not so good at running away anymore
+
+-舰船/Ships
+私语风暴 内置武器调整
+Stormwhisp-Class Wing built-in weapon adjusted
+灵魂祸根 幅能耗散 500 → 450
+Soulbane-Class flux dissipation 500 → 450
+
+-武器/Weapons
+突然发现这个mod没有大实弹，于是加入新武器 六源链炮、狱烬加农炮
+Suuddenly realized there is no large ballistic weapon here, so we add Hex Chaingun and Hellblaze Cannon
+然后既然有大火中火，为什么没有小火呢？于是加入新武器 磷火加农炮
+Then, we have large sized fire cannon, medium sized fire cannon, why there isn't a small sized one? so we add Wisp Cannon
+
+绝大部分武器价格下降
+Most weapons' price reduced
+莫比乌斯雷火 现在弹体不超出射程就不会消失，射程 1000 → 800，伤害 60 → 75 冷却时间 4.4 → 3
+Mobius Ray's energy jet will not fade out as long as in weapon's range, range 1000 → 800, damage 60 → 75, cooldown 4.4 → 3
+布雷机发射架 放出的雷是现代空雷了
+Mine Pod deployed mine reworked
+正弦偏转炮 现在是能量伤害，装配消耗 30 → 18
+Sine Ricochet now deals energy damage, op cost 30 → 18
+焰束加农炮 射程 500 → 350，装配消耗 14 → 9
+Flamebolt Cannon range 500 → 350, op cost 14 → 9
+脉冲连弩 射程 300 → 250，装配消耗 4 → 3
+Pulse Repeater range 300 → 250, op cost 4 → 3
+引力冲击 射程 400 → 350，冷却时间 4 → 3
+Gravity Charge range 400 → 350, cooldown 4 → 3
+镰刀射线 射程 400 → 350，幅能产生 60 → 30
+Falx Beam range 400 → 350, flux per sec 60 → 30
+各种六源自动炮 装配消耗降低
+Hex ACs reduced op cost(slightly increased flux per shot for Heavy Hex Ac)
+血噬聚变射线 射程回调至600
+Chupacabra Fusor range reincreased to 600
+回旋镖 SRM 一段弹体减速，二段弹体加速
+Boomerang SRM first stage missile reduced speed, second stage warhead increased speed
+简并驱动器 射程 800 → 600，幅能产生 1390 → 1200，移除EMP效果
+Hypermass Driver range 800 → 600, flux per shoot 1390 → 1200, removed EMP effect
+
+-战术系统/Shipsystems
+各种回闪穿梭不能按V了
+Flash Jaunts now prevent venting
+曲速相位、以太相位之类的暂时相位现在三倍时流
+Warps now 3x ship's time
+常时流相位重做，现在初始常时流，随着使用时间持续而无上限地增加时流倍率
+Shallow Phase reworked to Progressive Phase, starts with 1x timeflow and increased without limit as it lasts
+
+-其他/Others
+出埃及记 战役规模缩小
+Mission "Exdus" reduced both fleets' size
+小的其他调整
+Other minor updates
+
+
+
+2020.8.5 0.4 RC-4
+-武器/Weapons
+调整了撒播者PD的代码实现
+Scatter PD's code reworked
+修复了新星反应堆的空指针
+Fixed a NPE about Nova Discharger
+简并炸弹 伤害 5000 → 4000
+Hypermass Bomb Damage 5000 → 4000
+引力冲击 冷却时间 5 → 4
+Gravity Charge cooldown 5 → 4
+各种聚变射线 射程降低，幅能效率提升
+Fusors reduced range, increased damage/flux
+布雷机发射架 装配需求 22 → 18，载弹量 20 → 10
+Mine Pod op cost 22 → 18, ammo 20 → 10
+修复了 轻型六源自动炮 幅能产生不一致的问题
+Fixed Light Hex AC flux per shot error, and fusion blade range error
+
+-舰船/Ships
+维修无人机对非ICE舰船效率减半，但是对ICE船效率略微提升
+Mx Drone effects for non-ICS ships halved, but slightly increased for ICS ships
+刀刃船现在内置不稳定推进器，但是速度也相应减少了
+Blade ships now have built-in Unstable Injector hullmod, but their speed were reduced equally
+削了一些，又加强了一些
+Nerfed annoying ships, buffed not-annoying ships
+文本调整
+Strings tweaks
+视觉调整
+Visual tweaks
+音效调整
+Sound tweaks
+
+-插件/Hullmods
+新插件 分流镀层
+New hullmod Shunt Coating
+阻尼减震器 改为小幅减少高爆伤害
+Reverberation Dampeners now slightly reduce HE damage rather than KE
+
+-战术系统/Shipsystems
+曲速相位幅能消耗普遍减少，特殊相位幅能消耗普遍提升
+Phase Warp reduced flux per use, special warps increased flux per use
+泄能相位调整，现在是类似于曲速相位的短暂加速而非减速
+Phase Shift largely changed, now acting more like Phase Warp with EMP
+修复了熵逆变矩阵不正常的装甲恢复
+Fixed Entropic Inversion Matrix's abnormal armor recovery
+熵逆变矩阵影响的导弹将被重置为满射程
+FoF Inverter ECM now refuel captured missiles
+
+-其他/Others
+补充了credits_and_thanks.txt里的制作名单，并去除了credits和thanks里的重复
+Supplemented credits_and_thanks.txt and removed the duplications between credits and thanks.
+修复了摧毁流亡舰队所导致的一些bug
+Fixes about exiles fleet destruction
+
+
+
+2020.5.21 0.4 RC-3
+-其他/Others
+实装了两个势力的小幅旗帜
+Correct crest flags for ICE and ICI factions
+新增了一些视觉效果或视觉效果调整
+Added some new visual effects or effects change
+可能修复了一些bug
+Hot fixes
+
+
+
+2020.5.9 0.4 RC-2
+-其他/Others
+ICE的好感更好刷了一点点
+Make it easier to improve ICE's reputation
+修复bug
+Hot fixes
+
+
+
+2020.5.8 0.4 RC-1
+-其他/Others
+修复bug
+Hot fixes
+
+
+
+2020.5.2 0.4 RC-0
+-其他/Others
+中英文同步更新
+Updates in both Chinese and English
+无法计数的大量数据调整
+Uncountable amount of data adjustments
+极大量新音效或音效调整
+Extremely large number of new sound effects or sound adjustments
+某些已经忘记具体内容的新机制
+Some new mechanisms that have forgotten specific elements
+流亡舰队全漏洞修复并延长事件链
+Exiled Fleet full vulnerability fixed and event chain extended
+此前更新记录被存放于同目录下changelog.txt.past中
+Previously updated records are stored in changelog.txt.past

@@ -1,0 +1,77 @@
+{
+  "hullName": "Palantir",
+  "hullId": "sun_ice_palantir",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/sun_ice/ships/Palantir.png",
+  "style": "SUN_ICE",
+  "height": 78,
+  "width": 60,
+  "center": [30, 33.5],
+  "collisionRadius": 37,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 36.503426,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sun_ice_gravitonic_sensors_mod",
+    "hiressensors",
+    "phasefield"
+  ],
+  "builtInWeapons": {
+    "LIGHTS": "sun_ice_palantir_lights",
+    "SYSTEM": "sun_ice_palantir_system"
+  },
+  "weaponSlots": [
+    {
+      "id": "LIGHTS",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [6, 0]
+    },
+    {
+      "id": "SYSTEM",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "TURRET",
+      "arc": 0,
+      "angle": 0,
+      "locations": [6, 0]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-32, 4],
+      "length": 38,
+      "width": 23,
+      "angle": 180,
+      "contrailSize": 23,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-25, 13.5],
+      "length": 36,
+      "width": 23,
+      "angle": -178,
+      "contrailSize": 23,
+      "style": "SUN_ICE"
+    },
+    {
+      "location": [-29, -17.5],
+      "length": 33,
+      "width": 24,
+      "angle": 176,
+      "contrailSize": 24,
+      "style": "SUN_ICE"
+    }
+  ],
+  "bounds": [
+    27.5, 7,
+    12.5, 23,
+    -10, 24.5,
+    -25, -3,
+    -14, -24.5,
+    8.5, -27
+  ]
+}

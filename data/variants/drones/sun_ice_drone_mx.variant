@@ -1,0 +1,12 @@
+{
+	"displayName":"Standard",
+	"hullId":"sun_ice_drone_mx",
+	"variantId":"sun_ice_drone_mx",
+	"fluxVents":0,
+	"fluxCapacitors":0,
+	"mods":[], # array of strings
+	
+	# mode is either LINKED or ALTERNATING
+	# slot ids (WS ***) must match what's in the .ship file
+	"weaponGroups":[ ],
+}

@@ -1,0 +1,15 @@
+{
+	"id":"sun_ice_kermess_space",
+	"governingAptitude":"leadership",
+	"compressHullmods":false,
+	"scope":"GOVERNED_OUTPOST",
+	"effectGroups":[
+		{
+			"requiredSkillLevel":1,
+			"effectBasedOnLevel":false,
+			"effects":[
+				{"type":"GOVERNED_OUTPOST", "script":"data.scripts.campaign.skills.SUN_ICE_KermessSpace$Level1"},
+			]
+		},
+	],
+}

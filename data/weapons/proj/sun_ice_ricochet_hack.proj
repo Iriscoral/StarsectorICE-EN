@@ -1,0 +1,18 @@
+{
+	"id":"sun_ice_ricochet_hack",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"NONE",
+	"collisionClassByFighter":"NONE",	
+	"length":15,
+	"width":15,
+	"fadeTime":0.25,
+	"fringeColor":[100,100,255,0],
+	"coreColor":[255,255,255,0],
+	"glowColor":[100,100,255,0],
+	"glowRadius":0,
+	"hitGlowRadius":0,	
+	"passThroughMissiles":true,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":""	
+}

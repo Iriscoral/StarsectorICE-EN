@@ -1,0 +1,72 @@
+{
+    "playableFaction":true,
+    "corvusCompatible":true,
+    "marketSpawnWeight":0.5,
+    "colonyExpeditionChance":0,	# no thanks
+
+    "baseFleetCostMultiplier":1,
+
+    "customRebelFaction":"",
+    "customRebelFleetId":"",
+    "rebelFleetSuffix":"Rebels",
+
+    "directoryUseShortName":true,
+    
+    "startRelationships":{
+        "luddic_church": -0.6,
+        "luddic_path": -1,
+        "sun_ice": -0.4
+    },
+	"maxRelationships":{
+		"sun_ice": -0.2,
+        "pirates": -0.6,
+        "luddic_church": -0.4,
+        "luddic_path": -1,
+        "cabal": -0.6
+	},
+    "minRelationships":{
+        "sun_ice": -0.4
+    },
+    "diplomacyPositiveChance":{
+        "luddic_church":0.8,
+        "luddic_path":0.4,
+        "sun_ice":0.4
+    },
+    "diplomacyNegativeChance":{
+        "luddic_church":1.2,
+        "luddic_path":2.0
+    },
+    "alignments":{
+        "militarist":1,
+        "diplomatic":-0.5,
+        "technocratic":1,
+    },
+	"diplomacyTraits": ["selfrighteous", "law_and_order"],
+    
+    "freeMarket":false,
+    "allowPrisonerActions":false,
+    
+    "startShipsSolo":["sun_ice_flashghast_Standard"],
+    "startShipsCombatSmall":["sun_ice_shiekwraith_Standard", "sun_ice_flashghast_Standard", "sun_ice_seraph_Standard"],
+    "startShipsTradeSmall":["sun_ice_palantir_Standard", "sun_ice_palantir_Standard", "sun_ice_specter_Standard"],
+    "startShipsCombatLarge":["sun_ice_kelpie_Standard", "sun_ice_shiekwraith_Support", "sun_ice_specter_Standard"],
+    "startShipsCarrierSmall":["sun_ice_eidolon_Standard", "sun_ice_palantir_Standard", "sun_ice_seraph_Standard"],
+    "startShipsCarrierLarge":["sun_ice_apocrypha_Support", "sun_ice_shiekwraith_Support", "sun_ice_seraph_Standard"],
+    "startShipsSuper":["sun_ice_nightseer_Assualt"],
+    
+    "defenceStations":[
+        {"ids":["orbitalstation_high", "battlestation_high", "starfortress_high"]},
+    ],
+	
+    "startSpecialItems":[
+        [["ice_package_bp", ""]],
+    ],
+	
+	"bonusSeeds":[
+		{"id":"nanoforge_pristine", "count":1},
+		{"id":"aiCore_station", "count":2, "mult":0.2},
+		{"id":"aiCore_military", "mult":0.5},
+		{"id":"aiCore_heavyindustry", "count":1},
+		{"id":"aiCore_any", "mult":2},
+	],
+}
