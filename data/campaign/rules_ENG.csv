@@ -76,7 +76,7 @@ $faction.id == sun_ice",,$TheFaction will not forget the wrongs you have committ
 
 bar_optionSel_ICE,DialogOptionSelected,"$option == marketVisitBar
 $SUN_ICE_ExileFleet
-$inHyperspace score:1000","SetShortcut barLeaveICE ""ESCAPE""","你来到了一家自认为最能打探到些消息的酒吧，但这里的人数却寥寥无几，完全没有它应有的嘈杂模样。你从和角落里某个商人的攀谈中得知，在舰队离开超空间、抵达某个星系空间之前，这种地方一直都不怎么景气。","barLeaveICE:Leave the bar",
+$SUN_ICE_Hyperspace score:1000","SetShortcut barLeaveICE ""ESCAPE""","你来到了一家自认为最能打探到些消息的酒吧，但这里的人数却寥寥无几，完全没有它应有的嘈杂模样。你从和角落里某个商人的攀谈中得知，在舰队离开超空间、抵达某个星系空间之前，这种地方一直都不怎么景气。","barLeaveICE:Leave the bar",
 bar_optionLeave_ICE,DialogOptionSelected,$option == barLeaveICE,FireBest ReturnFromBar,,,
 
 

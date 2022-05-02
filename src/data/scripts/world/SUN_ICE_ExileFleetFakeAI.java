@@ -188,7 +188,12 @@ public class SUN_ICE_ExileFleetFakeAI {
 
 		if (exiles.isInHyperspace()) {
 			hasEnteredHyperspace = true;
+
+			exiles.getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", true); // do not trust inHyperspace
+			exiles.getMarket().getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", true);
 		} else {
+			exiles.getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", false);
+			exiles.getMarket().getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", false);
 
 			if (exiles.getCargo().getFuel() < 100) {
 				exiles.getCargo().addFuel(exiles.getCargo().getMaxFuel() * 0.3f);
@@ -704,16 +709,20 @@ public class SUN_ICE_ExileFleetFakeAI {
 			fakeAI.manager.setFinishedSettle(true);
 			fakeAI.state = ExileState.FINISHED;
 
-			fakeAI.finalSettle.getMarket().removePerson(SUN_ICE_MissionManager.getMissionGiver());
-			fakeAI.finalSettle.getMarket().removePerson(SUN_ICE_MissionManager.getPriest());
-
 			List<MarketConditionAPI> conditions = new ArrayList<>();
 			if (fakeAI.finalSettle.getMarket() != null) {
 				fakeAI.finalSettle.getMarket().setSurveyLevel(MarketAPI.SurveyLevel.FULL);
 				conditions.addAll(fakeAI.finalSettle.getMarket().getConditions());
+
+				if (!fakeAI.finalSettle.getMarket().isPlanetConditionMarketOnly()) {
+					SUN_ICE_IceUtils.decivilize(fakeAI.finalSettle.getMarket());
+				}
 			}
 
 			MarketAPI exileMarket = fakeAI.manager.getExiledFleet().getMarket();
+			exileMarket.removePerson(SUN_ICE_MissionManager.getMissionGiver());
+			exileMarket.removePerson(SUN_ICE_MissionManager.getPriest());
+
 			exileMarket.getConnectedEntities().clear();
 			exileMarket.setPrimaryEntity(fakeAI.finalSettle);
 			exileMarket.removeCondition("sun_ice_colony_fleet");

@@ -180,6 +180,7 @@ public class SUN_ICE_ExileFleetManager implements EveryFrameScript {
 
 		fleet.getMemoryWithoutUpdate().set(EXILE_FLEET_KEY, true);
 		fakeSource.getMemoryWithoutUpdate().set(EXILE_FLEET_KEY, true);
+		fakeSource.getMarket().getMemoryWithoutUpdate().set(EXILE_FLEET_KEY, true);
 
 		newsIntel = new SUN_ICE_ExileFleetIntel(this);
 	}
