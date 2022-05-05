@@ -166,7 +166,7 @@ public class SUN_ICE_ExileFleetManager implements EveryFrameScript {
 		fleet.getStats().getSensorRangeMod().modifyMult("fleet", 10f);
 		fleet.getStats().getSensorProfileMod().modifyFlat("fleet", 1000000f);
 		fleet.getDetectedRangeMod().modifyFlat("fleet", 1000000f);
-		loc.spawnFleet(source, 0, 0, fleet);
+		loc.spawnFleet(source, 0f, 0f, fleet);
 
 		fleet.setInteractionImage("illustrations", "cargo_loading");
 		SectorEntityToken fakeSource = applyMarketToColonyFleet(fleet);
@@ -232,7 +232,7 @@ public class SUN_ICE_ExileFleetManager implements EveryFrameScript {
 
 		newMarket.getTariff().modifyFlat("sun_ice_colony_fleet_market", 0.3f);
 
-		SectorEntityToken hack = Global.getSector().getEntityById("sun_ice_entity_hack");
+		SectorEntityToken hack = SUN_ICE_Data.getFakeMarketEntity();
 		hack.setMarket(newMarket);
 		hack.setFaction("sun_ice");
 

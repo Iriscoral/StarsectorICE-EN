@@ -8,6 +8,7 @@ import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactory;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
+import com.fs.starfarer.api.impl.campaign.ids.Abilities;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
@@ -316,6 +317,7 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 		if (fleet != null) {
 			fleet.setTransponderOn(false);
 			fleet.getStats().getDetectedRangeMod().modifyFlat("REM", 2000f);
+			fleet.getStats().getFleetwideMaxBurnMod().modifyMult("REM", 0.5f);
 
 			fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_FIGHT_TO_THE_LAST, true);
 			fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PURSUE_PLAYER, false); // let's see these 2's co-work
@@ -324,6 +326,10 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 			fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_IGNORE_PLAYER_COMMS, true);
 			fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_LOW_REP_IMPACT, true);
 			fleet.getMemoryWithoutUpdate().set(REMNANT_WAR_ATTACKER_KEY, true);
+
+			fleet.removeAbility(Abilities.INTERDICTION_PULSE);
+			fleet.removeAbility(Abilities.SUSTAINED_BURN);
+			fleet.removeAbility(Abilities.EMERGENCY_BURN);
 
 			Vector2f loc = Misc.getPointAtRadius(victim.getLocation(), 400f + (float) Math.random() * 400f);
 			victim.getContainingLocation().addEntity(fleet);

@@ -31,6 +31,10 @@ public class SUN_ICE_Data {
 		return Global.getSector().getEntityById("sun_ice_idoneus_citadel");
 	}
 
+	public static SectorEntityToken getFakeMarketEntity() {
+		return Global.getSector().getEntityById("sun_ice_entity_hack");
+	}
+
 	public static SUN_ICE_ExileFleetManager getExileManager() {
 		for (EveryFrameScript script : Global.getSector().getScripts()) {
 			if (script instanceof SUN_ICE_ExileFleetManager) {

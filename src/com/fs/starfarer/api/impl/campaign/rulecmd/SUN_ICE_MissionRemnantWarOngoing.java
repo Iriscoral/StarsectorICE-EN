@@ -5,6 +5,7 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
 import com.fs.starfarer.api.campaign.rules.MemKeys;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
+import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_ExileRemnantWarIntel;
 
@@ -34,10 +35,7 @@ public class SUN_ICE_MissionRemnantWarOngoing extends BaseCommandPlugin {
 			SUN_ICE_ExileRemnantWarIntel exileRemnantWarIntel = (SUN_ICE_ExileRemnantWarIntel)intel;
 
 			for (CampaignFleetAPI fleet : exileRemnantWarIntel.remnantBattleGroup) {
-				fleet.clearAssignments();
-				fleet.addAssignment(FleetAssignment.ATTACK_LOCATION, dialog.getInteractionTarget(), 10000f);
-
-				fleet.setInteractionTarget(dialog.getInteractionTarget());
+				fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_NON_AGGRESSIVE, false);
 			}
 
 			break;

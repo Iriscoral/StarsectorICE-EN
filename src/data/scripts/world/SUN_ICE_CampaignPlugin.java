@@ -89,7 +89,7 @@ public class SUN_ICE_CampaignPlugin extends BaseCampaignPlugin {
 
 		@Override
 		public void advance(float amount) {
-			Global.getSector().getCampaignUI().showInteractionDialog(Global.getSector().getEntityById("sun_ice_entity_hack"));
+			Global.getSector().getCampaignUI().showInteractionDialog(SUN_ICE_Data.getFakeMarketEntity());
 		}
 	}
 }

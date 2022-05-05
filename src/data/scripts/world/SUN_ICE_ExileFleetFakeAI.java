@@ -81,7 +81,7 @@ public class SUN_ICE_ExileFleetFakeAI {
 	private boolean wantToTravelingToAnotherSystem = true;
 	public boolean hasEnteredHyperspace = false;
 	private boolean waitingPlayerRespond = false;
-	private PlanetAPI tmpSettle = null;
+	public PlanetAPI tmpSettle = null;
 	private PlanetAPI finalSettle = null;
 	private StarSystemAPI destination = null;
 	private ExileState state = ExileState.NULL;
@@ -191,9 +191,11 @@ public class SUN_ICE_ExileFleetFakeAI {
 
 			exiles.getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", true); // do not trust inHyperspace
 			exiles.getMarket().getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", true);
+			SUN_ICE_Data.getFakeMarketEntity().getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", true);
 		} else {
 			exiles.getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", false);
 			exiles.getMarket().getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", false);
+			SUN_ICE_Data.getFakeMarketEntity().getMemoryWithoutUpdate().set("$SUN_ICE_Hyperspace", false);
 
 			if (exiles.getCargo().getFuel() < 100) {
 				exiles.getCargo().addFuel(exiles.getCargo().getMaxFuel() * 0.3f);
@@ -264,7 +266,7 @@ public class SUN_ICE_ExileFleetFakeAI {
 			if (tmpSettle != null) {
 				waitingPlayerRespond = true;
 				SUN_ICE_Data.put(SUN_ICE_ExileFleetFinalDialog.EXILE_FLEET_FINAL_DIALOG_ASKED_KEY, true);
-				Global.getSector().getCampaignUI().showInteractionDialog(new SUN_ICE_ExileFleetFinalDialog(exiles, tmpSettle), null);
+				Global.getSector().getCampaignUI().showInteractionDialog(new SUN_ICE_ExileFleetFinalDialog(exiles, this), null);
 			}
 		}
 

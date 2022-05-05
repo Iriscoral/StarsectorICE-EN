@@ -1,7 +1,7 @@
 package data.console.commands;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
+import data.scripts.tools.SUN_ICE_Data;
 import org.jetbrains.annotations.NotNull;
 import org.lazywizard.console.BaseCommand;
 import org.lazywizard.console.CommonStrings;
@@ -16,7 +16,7 @@ public class SUN_ICE_ExileMarket implements BaseCommand {
 			return CommandResult.WRONG_CONTEXT;
 		}
 
-		SectorEntityToken token = Global.getSector().getEntityById("sun_ice_entity_hack");
+		SectorEntityToken token = SUN_ICE_Data.getFakeMarketEntity();
 		if (token == null) {
 			Console.showMessage("Unable to find market entity!");
 			return CommandResult.ERROR;

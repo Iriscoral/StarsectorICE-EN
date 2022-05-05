@@ -45,5 +45,6 @@
 	},
 	"bonusXP":{
 		"sun_ice_delay":0.5,
+		"sun_ice_select":0,
 	}
 }

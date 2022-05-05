@@ -1,3 +1,12 @@
+2022.5.4 0.4.4
+-其他/Others
+改善了任务线完全完成时的某些体验
+Improvement for planet selection in a certain story line stage
+修复了最终战役时敌人可能逃脱的问题
+Fixed issue about enemies may escape on final battle
+
+
+
 2022.4.25 0.4.3
 -舰船/Ships
 普遍增加部署所需CR
