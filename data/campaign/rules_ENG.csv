@@ -6,7 +6,7 @@ FireAll PopulateOptions","""Greetings commander. It's good to finally run into s
 greetingICEHostileWeaker,OpenCommLink,"$faction.id == sun_ice
 $faction.hostileToPlayer
 $relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""So, another vulture has mistaken us for carrion. You're not the first to make that mistake. Do your worst.""",cutCommLink:Cut the comm link,
-greetingICEHostileWeakerDefiantE,OpenCommLink,"$faction.id == sun_ice
+greetingICEHostileWeakerDefiantE,OpenCommLink,"$faction.id == sun_ice,
 $faction.hostileToPlayer
 $relativeStrength < 0
 $weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""So, another vulture has mistaken us for carrion. You're not the first to make that mistake. Do your worst.""",cutCommLink:Cut the comm link,
