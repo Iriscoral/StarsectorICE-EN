@@ -19,7 +19,7 @@ $faction.neutralToPlayer",,"""Keep your fleet at a polite distance and we'll do 
 greetingICIAllied,OpenCommLink,"$faction.id == sun_ici
 $faction.friendlyToPlayer
 $player.factionId == sun_ici","$menuState = fleetConvMain 0
-FireAll PopulateOptions","""Greetings, commander. It is always good to see a fellow guardian of the Citadel.""",,for Exerelin
+FireAll PopulateOptions","""Greetings, commander. It is always good to see a fellow guardian of the Citadel.""",for Exerelin
 greetingICIFriendly,OpenCommLink,"$faction.id == sun_ici
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""The resources of the Citadel are at your disposal, commander, but remember; even you can overstay your welcome here. I hope you will forgive us our secrecy.""",,
