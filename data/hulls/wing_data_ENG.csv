@@ -1,7 +1,0 @@
-id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,attackPositionOffset,num,role,role desc,refit,base value,Column,Column [1],Column [2],Column [3],Column [4],Column [5],Column [6],Column [7],Column [8],Column [9],Column [10],Column [11],number
-sun_ice_poltergeist_wing,sun_ice_poltergeist_Escort,"supportr4, fighter, high, merc, ice_bp, ice_p",2,,,11,CLAW,4000,500,,2,SUPPORT,Support,8,12500,,,,,,,,,,,,,
-sun_ice_ectoplasm_wing,sun_ice_ectoplasm_Interceptor,"interceptor4, interceptor, high, merc, ice_bp, ice_p",1,,,14,V,4000,200,,3,INTERCEPTOR,Interceptor,15,14000,,,,,,,,,,,,,
-sun_ice_stormwhisp_wing,sun_ice_stormwhisp_Heavy,"fighter4, fighter, high, rare_bp, merc, ice_bp, ice_p",2,,,13,BOX,4000,500,,2,FIGHTER,Fighter,12,20000,,,,,,,,,,,,,
-sun_ice_umbra_wing,sun_ice_umbra_Bomber,"bomber4, bomber, high, rare_bp, merc, ice_bp, ice_p",3,,,18,V,4000,2000,400,2,BOMBER,Bomber,20,25000,,,,,,,,,,,,,
-sun_ice_echo_wing,sun_ice_echo_Interceptor,"interceptor2, interceptor, high, merc, ice_bp, ice_p, auto_fighter",1,,,6,V,6000,500,,5,INTERCEPTOR,Attack Drone,8,8000,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,

@@ -1,0 +1,35 @@
+name,id,designation,tech/manufacturer,system id,fleet pts,hitpoints,armor rating,max flux,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,max burn,base value,supplies/mo,supplies/rec,CR %/day,CR to deploy,peak CR sec,CR loss/sec,hints,tags,rarity,breakProb,minPieces,maxPieces,travel drive,number
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+检修无人机,sun_ice_drone_mx,,ICS,,,200,120,30,10,0,,400,500,300,250,500,5,PHASE,sun_ice_phasecloak_drone,,,,0,0,,,,,,,,,,,,,,,,,0,,,,9267.01
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+幻翼(Ectoplasm),sun_ice_ectoplasm_wing,,ICS,,,450,100,500,120,0,,175,180,25,100,180,30,NONE,,,,,,,1,1,,,,,,,,,,,,,,,0,,,,9267.02
+鬼驱人(Poltergeist),sun_ice_poltergeist_wing,,ICS,,,600,200,300,100,0,,140,230,50,150,360,50,NONE,,,,,,,1,1,,,,,,,,,,,,,,,0,,,,9267.03
+私语风暴(Stormwhisp),sun_ice_stormwhisp_wing,,ICS,,,500,150,400,150,0,,120,120,80,130,200,70,PHASE,sun_ice_phasewarp_fighter,,,,0.2,0,2,2,,,,,,,,,,,,,,,0,,,,9267.04
+全影(Umbra),sun_ice_umbra_wing,,ICS,sun_ice_divebomb,,300,300,100,20,0,,130,120,60,90,120,100,NONE,,,,,,,2,2,,,,,,,,,,,,,,,0,,,,9267.05
+回响(Echo),sun_ice_echo_wing,,ICS,,,100,30,100,25,0,,400,520,360,270,180,20,NONE,,,,,,,0,0,,,,,,,,,,,,,,,0,,,,9267.06
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+闪灵(Shining),sun_ice_drone_pd_wing,,ICS,,,500,150,100,40,0,,600,1800,1200,210,720,25,NONE,,,,,,,1,1,,,,,,,,,,,,,,,0,,,,9267.07
+闪灵机库,sun_ice_flashghast_module,,ICS,sun_ice_drone_pd,,500,200,1000,100,0,,0,0,0,10,10,10,NONE,,0,0,0,,,0,0,,,,,,,,,,,,"UNBOARDABLE, HIDE_IN_CODEX","module_unselectable, module_hull_bar_only",,0,,,,9267.08
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+魔影(Specter),sun_ice_specter,护卫舰,ICS,sun_ice_repairarmor,4,1500,200,1600,175,42,,140,220,125,110,210,250,PHASE,sun_ice_phasewarp,,,,0.1,0.03,15,40,45,30,1.5,10,14000,4,4,8,25,180,0.25,PHASE,"rare_bp, merc, ice_bp, ice_p",,1,2,3,sun_ice_traveldrive,9267.08
+闪魂(Flashghast),sun_ice_flashghast,护卫舰,ICS,sun_ice_fluxdrive,6,1800,150,1200,150,45,,140,320,180,90,180,220,PHASE,sun_ice_phasewarp,,,,0.1,0.03,15,30,50,35,1.5,10,20000,6,6,8,25,180,0.25,"PHASE, SHIP_WITH_MODULES","rare_bp, merc, ice_bp, ice_p",,1,2,3,sun_ice_traveldrive,9267.09
+封仪祭剑(Athame),sun_ice_athame,钻机,ICS,sun_ice_fissiondrill_sys,5,900,250,2500,125,25,,150,200,80,60,50,200,NONE,,,,,,,4,4,0,0,1.5,10,24000,2,2,5,35,240,0.25,,"ice_bp, ice_p",,1,2,3,sun_ice_traveldrive,9267.1
+夜觅者(Nightseer),sun_ice_nightseer,护卫舰,ICS,sun_ice_jaunt_light,15,600,350,3500,250,60,,160,250,120,120,420,230,PHASE,sun_ice_advphasewarp,,,,0.05,0.05,6,10,10,15,1,10,50000,15,15,6,45,120,0.25,PHASE,"rare_bp, ice_rp, ice_p",,1,2,3,sun_ice_traveldrive,9267.11
+五芒星(S),sun_ice_pentagram,刀刃护卫舰,ICS,sun_ice_inversionmatrix,5,2500,250,1400,150,20,,200,100,100,240,500,350,PHASE,sun_ice_phasewarp,,,,0.1,0.03,8,12,15,20,1.5,10,24000,3,3,10,25,180,0.25,PHASE,"rare_bp, ice_rp, ice_p",,1,2,3,sun_ice_traveldrive,9267.12
+五芒星(Pentagram),sun_ice_pentagram_utility,护卫舰,ICS,sun_ice_inversionmatrix,5,2500,200,2200,200,50,,200,100,100,240,500,350,PHASE,sun_ice_phasewarp,,,,0.1,0.03,8,12,15,20,1.5,10,20000,5,5,10,25,180,0.25,PHASE,"merc, ice_bp, ice_p",,1,2,3,sun_ice_traveldrive,9267.12
+真知(Palantir),sun_ice_palantir,货舰,ICS,sun_ice_sensor_boost,2,650,150,800,50,10,,180,100,70,100,90,150,PHASE,sun_ice_phasecloak,,,,0.1,0.1,2,6,60,20,1,11,5000,2,2,8,10,240,0.25,"CIVILIAN, FREIGHTER, PHASE, ALWAYS_PANIC","ice_bp, ice_p",,1,2,3,sun_ice_traveldrive,9267.13
+炽天使(Seraph),sun_ice_seraph,护卫舰,ICS,sun_ice_drone_mx,5,800,200,500,50,15,,90,150,120,100,80,200,NONE,,,,,,,20,55,30,40,4,9,24000,6,6,10,25,240,0.25,"CIVILIAN, CARRIER","merc, ice_bp, ice_p",,1,2,3,sun_ice_traveldrive,9267.14
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+灵魂祸根(Soulbane),sun_ice_soulbane,驱逐舰,ICS,sun_ice_repairarmor,12,4500,500,6000,450,105,,95,90,75,30,60,400,PHASE,sun_ice_phasewarp,,,,0.1,0.03,40,60,90,100,4,9,70000,13,13,5,25,240,0.25,PHASE,"rare_bp, merc, ice_rp, ice_p",,1,3,4,sun_ice_traveldrive,9267.15
+尖叫怨灵(Shiekwraith),sun_ice_shiekwraith,驱逐舰,ICS,sun_ice_fofinverter,10,3000,350,4000,300,80,,80,90,110,20,20,350,PHASE,sun_ice_phasecloak,,,,0.05,0.03,50,120,80,120,3,8,45000,8,8,6,25,300,0.25,PHASE,"rare_bp, merc, ice_bp, ice_p",,1,3,4,sun_ice_traveldrive,9267.16
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+幻像精灵(Eidolon),sun_ice_eidolon,航母,ICS,sun_ice_drone_mx,16,4500,400,4500,250,100,2,60,45,45,20,20,900,PHASE,sun_ice_phasecloak,,,,0.05,0.04,120,240,350,300,6,8,180000,20,20,3,25,360,0.25,"PHASE, CARRIER","rare_bp, merc, ice_bp, ice_p",,1,3,5,sun_ice_traveldrive,9267.19
+洪灾鬼马(S),sun_ice_kelpie,刀刃巡洋舰,ICS,sun_ice_inversionmatrix,14,9000,1000,4000,250,85,,75,30,20,15,20,2200,PHASE,sun_ice_phasecloak,,,,0.05,0.03,100,180,200,300,8,8,150000,15,15,4,25,420,0.25,PHASE,"rare_bp, ice_rp, ice_p",,1,3,5,sun_ice_traveldrive,9267.2
+洪灾鬼马(Kelpie),sun_ice_kelpie_utility,巡洋舰,ICS,sun_ice_inversionmatrix,15,9000,1200,10000,600,155,,75,30,20,15,20,2200,PHASE,sun_ice_phasecloak,,,,0.05,0.03,100,180,200,300,8,8,200000,25,25,4,25,420,0.25,PHASE,"merc, ice_bp, ice_p",,1,3,5,sun_ice_traveldrive,9267.21
+虚空劫掠者(Voidreaver),sun_ice_voidreaver,巡洋舰,ICS,sun_ice_repairarmor,20,7000,800,10000,750,140,,70,60,30,25,25,1200,PHASE,sun_ice_phaseshift,,,,0.05,0.05,120,160,200,300,10,8,350000,35,35,4,35,360,0.25,PHASE,"rare_bp, merc, ice_rp, ice_p",,1,3,5,sun_ice_traveldrive,9267.22
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+佑安(Shalom),sun_ice_shalom,殖民母舰,ICS,sun_ice_drone_mx,40,20000,1500,20000,500,60,,20,5,2,3,2,6000,NONE,,,,,,,1000,12000,6500,5000,25,5,420000,100,100,2,60,900,0.5,"CIVILIAN, FREIGHTER, TANKER, LINER, UNBOARDABLE, HIDE_IN_CODEX","ice_exp, ice_p",,1,6,8,,9267.23
+外典(Apocrypha),sun_ice_apocrypha,指挥舰,ICS,sun_ice_drone_mx,26,12000,900,8000,600,250,3,30,15,14,5,4,2200,PHASE,sun_ice_phasecloak,,,,0.05,0.04,380,750,500,750,15,7,550000,60,60,3,25,360,0.25,"PHASE, CARRIER","rare_bp, merc, ice_rp, ice_p",,1,4,5,sun_ice_traveldrive,9267.24
+祝死秘神(Abraxas),sun_ice_abraxas,战列巡洋舰,ICS,sun_ice_jaunt_heavy,28,6500,1200,18000,1200,230,,45,20,15,6,6,2000,FRONT,,30,0.1,1,,,350,400,200,1000,20,7,400000,45,45,3,25,420,0.25,PHASE,"rare_bp, merc, ice_rp, ice_p",,1,4,5,sun_ice_traveldrive,9267.25
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+伊甸学者(I.H.S.),sun_ice_ihs,Mod-轻型巡洋舰,ICS [唯一],sun_ice_limiter_control,20,7000,600,8500,700,150,,80,50,30,25,25,1800,PHASE,sun_ice_advphasewarp,,,,0.03,0.03,75,200,150,90,3,8,500000,35,35,4,35,360,0.25,"PHASE, HIDE_IN_CODEX","no_autofit, no_drop, no_bp_drop",,1,2,3,sun_ice_traveldrive,9268
