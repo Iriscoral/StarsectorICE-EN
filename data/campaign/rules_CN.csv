@@ -1,0 +1,142 @@
+id,trigger,conditions,script,text,options,notes
+,,,,,,
+greetingICEFriendly,OpenCommLink,"$faction.id == sun_ice
+$faction.friendlyToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""你好指挥官，终于找到一个不想干掉我们的舰队了。""",,
+greetingICEHostileWeaker,OpenCommLink,"$faction.id == sun_ice
+$faction.hostileToPlayer
+$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""好吧，又一只秃鹰带走了我们的腐肉。你不是第一次犯那样的错误了，请做好最坏的打算。""",cutCommLink:切断通讯链接,
+greetingICEHostileWeakerDefiantE,OpenCommLink,"$faction.id == sun_ice
+$faction.hostileToPlayer
+$relativeStrength < 0
+$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""好吧，又一只秃鹰带走了我们的腐肉。你不是第一次犯那样的错误了，请做好最坏的打算。""",cutCommLink:切断通讯链接,
+greetingICEHostileStronger,OpenCommLink,"$faction.id == sun_ice
+$faction.hostileToPlayer
+$relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""我坦白跟你讲，我们需要你的货物，我没有多少理由不把它拿走。现在就投降吧，你们将会幸免遇难。""",cutCommLink:切断通讯链接,
+greetingICENeutral,OpenCommLink,"$faction.id == sun_ice
+$faction.neutralToPlayer",,"""请保持一个礼貌的距离，我们最不想要的就是敌人。""",cutCommLink:切断通讯链接,
+,,,,,,
+greetingICIAllied,OpenCommLink,"$faction.id == sun_ici
+$faction.friendlyToPlayer
+$player.factionId == sun_ici","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""你好指挥官，很高兴见到一位追随伊甸的保卫者。""",,for Exerelin
+greetingICIFriendly,OpenCommLink,"$faction.id == sun_ici
+$faction.friendlyToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""伊甸的各种资源可供您随意选择，指挥官。但尽管您随时受到伊甸军方欢迎，也请遵守您签署的保密协议。""",,
+greetingICIHostileWeaker,OpenCommLink,"$faction.id == sun_ici
+$faction.hostileToPlayer
+$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""伊甸舰队并不会介入这片星区的内务，我也建议您放弃对我们的干涉。""",cutCommLink:切断通讯链接,
+greetingICIHostileWeakerDefiant,OpenCommLink,"$faction.id == sun_ici
+$faction.hostileToPlayer
+$relativeStrength < 0
+$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""伊甸从不屈服于外来者，指挥官。同样，我们不会轻易屈服于你。""",cutCommLink:切断通讯链接,
+greetingICIHostileStronger,OpenCommLink,"$faction.id == sun_ici
+$faction.hostileToPlayer
+$relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""你有非法入侵的记录，指挥官。我不知道你正在伊甸要塞附近寻找什么，但是请立即终止搜索。""",cutCommLink:切断通讯链接,
+greetingICINeutral,OpenCommLink,"$faction.id == sun_ici
+$faction.neutralToPlayer",,"""伊甸要塞并不与外界打交道，请迅速离开。否则将会有另一个缺乏宽容心的伊甸舰队指挥官请您离开。""",cutCommLink:切断通讯链接,
+,,,,,,
+,,,,,,
+flavorTextMarketICE,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == sun_ice","AddText ""殖民船码头与其他地方一样有着若干随处可见的对接口，其间充斥着大小风格迥异的船只。交易员已覆盖了市场部分临时摊位，希望更多的达成买卖协议，让殖民区多撑一段时间。 经常可以看到一个舰队官员穿过熙熙攘攘的人群迎接来访的贵宾，而其身边穿制服的警卫则警惕着周围可能发生的骚动。"" textGrayColor",,,
+flavorTextMarketICI,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == sun_ici","AddText ""当地人在商业区通过各种方式遴选着服装，一些人停下脚步呆呆的打量着他们之间的外籍人。明亮的广告牌中穿插着歌颂团结，民族独立美德和怀疑外人的宣传横幅。在暗中跟踪着你的安全特工发出了一个明确的信息，访问可能被允许，但他们不鼓励这样。"" textGrayColor",,,
+flavorTextMarketICIAllied,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == sun_ici
+$player.factionId == sun_ici","AddText ""当地人在商业区通过各种方式遴选着服装，仅用最简短的目光扫了一眼你的制服。明亮的广告牌中穿插着歌颂团结，民族独立美德和怀疑外人的宣传横幅。头顶上一个安全巡逻机器人扫过人群，警惕着可能危害国家安全的罪犯。"" textGrayColor",,,for Exerelin
+,,,,,,
+,,,,,,
+aiCores_turnInOptionSelICE,DialogOptionSelected,"$option == aiCores_startTurnIn
+$faction.id == sun_ice",FireAll PopulateCoresTurnInOptions,"""这些东西...是的，伊甸科技能充分把它的潜能化为实际，但我们除了感谢之外，已经很难再出的起什么补偿了。""",,,
+aiCores_turnInResponseICE,AICoresTurnedIn,$faction.id == sun_ice,FireAll PopulateOptions,$PersonRank $personLastName 代表所有流亡者感谢了你，然后把话题转移到了其他事上。.,,,
+aiCores_turnInOptionSelICI,DialogOptionSelected,"$option == aiCores_startTurnIn
+$faction.id == sun_ici",FireAll PopulateCoresTurnInOptions,"""令人惊叹的发现，指挥官。伊甸科技能充分把它的潜能化为实际，把它上缴给我们，你会得到与之相配的报酬的。""",,,
+aiCores_turnInResponseICI,AICoresTurnedIn,$faction.id == sun_ici,FireAll PopulateOptions,$PersonRank $personLastName 双手交叉端坐着感谢了你，然后把话题转移到了其他事上。.,,,
+,,,,,,
+,,,,,,
+relLevelNeutralICE,RelationshipLevelDesc,"$faction.rel == NEUTRAL
+$faction.id == sun_ice",,"$TheFaction 不确定你的可信度，但至少他们不认为你是一个威胁。他们的殖民地会欢迎你的贸易。",,
+relLevelFavorableICE,RelationshipLevelDesc,"$faction.rel == FAVORABLE
+$faction.id == sun_ice",,"你为 $TheFaction 当局带来了不少好处，他们表示十分感激。因此，他们愿意出售几个先进的技术样本给你。",,
+relLevelWelcomingICE,RelationshipLevelDesc,"$faction.rel == WELCOMING
+$faction.id == sun_ice",,"你对于 $TheFaction 的协助是十分有价值的，所以他们打算和你分享一项令世人垂涎已久的科技。",,
+relLevelFriendlyICE,RelationshipLevelDesc,"$faction.rel == FRIENDLY
+$faction.id == sun_ice",,"$TheFaction 当局已经完全相信了你，你可以与他们展开更高层面的合作并访问更多的高端硬件。",,
+relLevelCooperativeICE,RelationshipLevelDesc,"$faction.rel == COOPERATIVE
+$faction.id == sun_ice",,"你是 $TheFaction 当局最强有力的盟友，他们的殖民舰队受到了你无数的帮助，当局会在方方面面支援你的行动。",,
+relLevelSuspiciousICE,RelationshipLevelDesc,"$faction.rel == SUSPICIOUS
+$faction.id == sun_ice",,"$TheFaction 像相信其他人那样相信你，也就是说，你还没有完全获得信任。考虑到当前形势，当局并不打算打断你的势头，他们密切关注着你的行动。",,
+relLevelInhospitableICE,RelationshipLevelDesc,"$faction.rel == INHOSPITABLE
+$faction.id == sun_ice",,"$TheFaction 当局被你的行为完全激怒了，他们决绝与你交易。你最好别去打搅他们，直到事件平息下来。",,
+relLevelHostileICE,RelationshipLevelDesc,"$faction.rel == HOSTILE
+$faction.id == sun_ice",,"$TheFaction 觉得你对他们来说是一个军事威胁，他们的舰队可能与你交火，你需要展开一些行动缓和你们之间的关系。",,
+relLevelVengefulICE,RelationshipLevelDesc,"$faction.rel == VENGEFUL
+$faction.id == sun_ice",,"$TheFaction 当局不会忘记你对他们犯下的罪行，他们将会消灭你。",,
+,,,,,,
+,,,,,,
+bar_optionSel_ICE,DialogOptionSelected,"$option == marketVisitBar
+$SUN_ICE_ExileFleet
+$SUN_ICE_Hyperspace score:100","SetShortcut barLeaveICE ""ESCAPE""","你来到了一家自认为最能打探到些消息的酒吧，但这里的人数却寥寥无几，完全没有它应有的嘈杂模样。你从和角落里某个商人的攀谈中得知，在舰队离开超空间、抵达某个星系空间之前，这种地方一直都不怎么景气。","barLeaveICE:离开酒吧",
+bar_optionLeave_ICE,DialogOptionSelected,$option == barLeaveICE,FireBest ReturnFromBar,,,
+,,,,,,
+,,,,,,
+missionFromICEEntrance,PickGreeting,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionManager","ShowPersonVisual",,,
+
+missionFromICEMissionStage1,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage1 $option",,,,
+
+missionFromICEMissionStage1Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage1Ongoing $option",,,,
+
+missionFromICEMissionStage2,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage2 $option",,,,
+
+missionFromICEMissionStage2Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage2Ongoing $option",,,,
+
+missionFromICEMissionStage3,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage3 $option",,,,
+
+missionFromICEMissionStage3Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage3Ongoing $option",,,,
+
+missionFromICEMissionStage4,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage4 $option",,,,
+
+missionFromICEMissionStage4Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
+$global.SUN_ICE_isMissionOnGoing
+SUN_ICE_MissionStage4Ongoing $option",,,,
+,,,,,,
+,,,,,,
+missionFromICECacheStart,BeginSalvage,$SUN_ICE_eventRef != null score:1000,"ShowDefaultVisual
+SUN_ICE_MissionCacheText",,
+missionFromICECacheSalvage,DialogOptionSelected,"$option == SUN_ICE_mission_cache_salvage","CallEvent $SUN_ICE_eventRef",,
+,,,,,,
+,,,,,,
+remnantWarForICE,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarUnfinished score:1000
+!$global.SUN_ICE_RemnantWarMuted
+$SUN_ICE_ExileFleet","ShowDefaultVisual
+SUN_ICE_MissionRemnantWarOngoing",,,
+remnantWarForICETalk1,DialogOptionSelected,"$option == SUN_ICE_remnant_war_init",,"余辉舰队似乎没有料到你的出现，它们迅速撤退并重整队形，外围准备支援的余辉也逐渐进入战斗位置，宇宙星海顷刻间变成了余辉之海。
+你的副官无奈地把通讯静音，扭头看着你：""看来我们是被关着咯，怎么办？""","SUN_ICE_remnant_war_act_1:""集结一切有生力量，越狱呗。""",
+remnantWarForICETalk2,DialogOptionSelected,"$option == SUN_ICE_remnant_war_act_1",,"""你还真悠闲的下来，还越狱？""副官一边怼你一边在电脑上计算战斗力，""差距过于悬殊，而且对方是余晖，速子造出来的东西你心里有数的。如果你想指望伊甸那边的话，那我只能说这几万人大概都准备好和你共生死了。""","SUN_ICE_remnant_war_act_2:命令所有火控手锁定余辉舰船",
+remnantWarForICETalk3,DialogOptionSelected,"$option == SUN_ICE_remnant_war_act_2",,"大家一筹莫展之时，你在屏幕上看到了熟悉的船、大规模活跃信号和一个熟悉的通讯信息，是{Carobin}发来的。""嗨！你们好啊，最近什么都好，一切太平...直到我们，踏入这，该死的包围圈之前！你们能来帮忙，真的太感谢了。""","SUN_ICE_remnant_war_act_3:继续",
+remnantWarForICETalk4,DialogOptionSelected,"$option == SUN_ICE_remnant_war_act_3",,"""话不多说，舰队总指挥已经发布了最高警戒，整支舰队，都已经，准备好下一轮战斗了！下一波攻势应该快要开始了！""通讯链接切断后，伊甸流亡舰队已经趁机全员就位，而你曾经提供给他们的舰船也在其列。你压力倍增——扫描仪上那背水一战的阵容，分明带着了无后路的决然。","defaultLeave:行动开始！",
+remnantWarForICEMuted,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarMuted score:2000
+$SUN_ICE_ExileFleet","ShowDefaultVisual",舰队处于完全备战状态，所有用于对接的移动港口都被封存，市场和维修区域也被紧急关闭、征用。在解决势态之前，你无法再有任何进一步动作。,defaultLeave:离开,
+remnantWarForICEAfter,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarFinished score:3000
+$SUN_ICE_ExileFleet","ShowDefaultVisual
+SUN_ICE_MissionRemnantWarEnds",,,
+remnantWarForICEAfterAlt,PickGreeting,"$global.SUN_ICE_RemnantWarFinished score:3000
+$SUN_ICE_isMissionGiver score:3000","ShowDefaultVisual
+SUN_ICE_MissionRemnantWarEnds",,,
+remnantWarForICECompleted,DialogOptionSelected,"$option == SUN_ICE_remnant_war_ends","FireBest MarketPostOpen",,,

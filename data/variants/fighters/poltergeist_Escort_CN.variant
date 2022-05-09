@@ -1,11 +1,11 @@
 {
-  "displayName": "Escort",
+  "displayName": "护航机",
 	"quality":0.5,
   "fluxCapacitors": 0,
   "fluxVents": 0,
   "hullId": "sun_ice_poltergeist_wing",
   "hullMods": [],
-  "variantId": "sun_ice_poltergeist_Escort_ENG",
+  "variantId": "sun_ice_poltergeist_Escort",
   "weaponGroups": [
     {
       "autofire": false,

@@ -1,8 +1,8 @@
-地点: 伊甸堡垒封锁线边界
-时间: 203.05.12
+Location: On the blockade perimeter of the Idoneus Citadel
+Date: 203.05.12
 
-距离你上次决斗已经过去几个月了。一个掌舵的佣兵队长认为你的邀约实在可笑，他接受你的挑战似乎只是出于厌倦，但仅仅几分钟后你的护卫舰就把他的巡洋舰变成了融化的碎片，那是一次光荣的爆炸。
+It's been months since your last duel. A mercenary captain at the helm of an Eagle had thought your invitation laughable. He accepted, but seemingly only out of boredom. Mere minutes later the hull of your frigate was pelted with the molten debris of his midline cruiser as it exploded gloriously.
 
-没有其他外来者接受你的挑战，其他被流放的决斗者也同样渴望有价值的对手，但奈何在这种严峻的环境下，他们只被允许与那些想被流亡者锤的人战斗，然而，那些外来者并不在乎荣誉，只要有机会，他们就会避免单打独斗。
+No other outsiders had accepted your challenge. The other exiled duellists were just as eager for worthy opponents, but, due to austere circumstances, they were permitted only to fight those who wished the Exiles harm. The outsiders cared little for glory, however, and would avoid single combat whenever possible.
 
-其他人已经放弃，加入了掠夺者的舰队，更糟的一些是签约去护送补给舰队，而这都与你无关，你决定回归你的本源，经过长途跋涉至伊甸堡垒，并立即向你遇到的第一支封锁舰队的司令发起了挑战，跟之前那个佣兵队长一样，这位上将似乎对你的挑战毫不在意，但这次你似乎意识到对手的冷漠是有原因的。
+Others have given up, joining raiding fleets or, worse yet, signing up to escort supply convoys. You, on the other hand, had decided to go back to your roots, making the long pilgrimage to Idoneus Citadel itself and summarily challenging the Admiral of the first blockade fleet you encountered. Like the mercenary, this admiral seems unconcerned by your challenge, but this time you suspect your opponent's nonchalance is justified.

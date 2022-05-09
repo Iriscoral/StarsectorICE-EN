@@ -4,10 +4,10 @@
    "secondaryUIColor":[255,255,255,255],
    "secondarySegments":2,
 
-   "displayName":"伊甸流亡者",
-   "displayNameWithArticle":"伊甸流亡者(Idoneus Exiled)",
-   "displayNameLong":"伊甸堡垒流亡者",
-   "displayNameLongWithArticle":"伊甸堡垒流亡者(Idoneus Exiled)",
+   "displayName":"Exiled Idoneus",
+   "displayNameWithArticle":"the Idoneus Exiles",
+   "displayNameLong":"Idoneus Citadel Exiles",
+   "displayNameLongWithArticle":"the Idoneus Citadel Exiles",
    "logo":"graphics/sun_ice/factions/ice_flag.png",
    "crest":"graphics/sun_ice/factions/crest_ice_flag.png",
    "showInIntelTab":false,
@@ -184,7 +184,7 @@
 
 			"adaptive_coils",
 			"phase_anchor",
-
+			
 			"sun_ice_munitions_autofac_mod",
 			"sun_ice_tactical_ansible_mod",
 			"sun_ice_reverb_dampeners_mod",
@@ -193,13 +193,13 @@
 		],
 	},
 	"fleetTypeNames":{
-		"patrolSmall":"寻道者 Zayin",
-		"patrolMedium":"寻道者 Vav",
-		"patrolLarge":"寻道者 Aleph",
-		"inspectionFleet":"寻道者 Teth",
-		"taskForce":"寻道者 He",
-		"mercScout":"探秘者",
-		"mercBountyHunter":"威胁排查",
+		"patrolSmall":"Seeker Zayin",
+		"patrolMedium":"Seeker Vav",
+		"patrolLarge":"Seeker Aleph",
+		"inspectionFleet":"Seeker Teth",
+		"taskForce":"Seeker He",
+		"mercScout":"Prospector",
+		"mercBountyHunter":"Threat Clearance",
 	},
 	"voices":{
 		"LOW":{

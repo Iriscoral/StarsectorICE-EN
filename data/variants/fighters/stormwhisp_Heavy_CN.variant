@@ -1,11 +1,11 @@
 {
-  "displayName": "Heavy Fighter",
+  "displayName": "重型战斗机",
 	"quality":0.95,
   "fluxCapacitors": 0,
   "fluxVents": 0,
   "hullId": "sun_ice_stormwhisp_wing",
   "hullMods": [],
-  "variantId": "sun_ice_stormwhisp_Heavy_ENG",
+  "variantId": "sun_ice_stormwhisp_Heavy",
   "weaponGroups": [
 #    {
 #      "autofire": false,

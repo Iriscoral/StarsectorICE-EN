@@ -1,11 +1,11 @@
 {
-  "displayName": "Interceptor",
+  "displayName": "拦截机",
 	"quality":0.75,
   "fluxCapacitors": 0,
   "fluxVents": 0,
   "hullId": "sun_ice_ectoplasm_wing",
   "hullMods": [],
-  "variantId": "sun_ice_ectoplasm_Interceptor_ENG",
+  "variantId": "sun_ice_ectoplasm_Interceptor",
   "weaponGroups": [
     {
       "autofire": false,

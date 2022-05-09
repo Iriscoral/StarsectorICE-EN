@@ -1,11 +1,11 @@
 {
-  "displayName": "轰炸机",
+  "displayName": "Bomber",
 	"quality":0.75,
   "fluxCapacitors": 0,
   "fluxVents": 0,
   "hullId": "sun_ice_umbra_wing",
   "hullMods": [],
-  "variantId": "sun_ice_umbra_Bomber",
+  "variantId": "sun_ice_umbra_Bomber_ENG",
   "weaponGroups": [
     {
       "autofire": false,

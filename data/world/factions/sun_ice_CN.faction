@@ -1,33 +1,32 @@
 {
-   "id":"sun_ici",
-   "color":[255,230,163,255],
-   "secondaryUIColor":[50,50,50,255],
+   "id":"sun_ice",
+   "color":[12,150,131,255],
+   "secondaryUIColor":[255,255,255,255],
    "secondarySegments":2,
 
-   "displayName":"Idoneus Garrison",
-   "displayNameWithArticle":"the Idoneus Garrison",
-   "displayNameLong":"Idoneus Citadel Garrison",
-   "displayNameLongWithArticle":"the Idoneus Citadel Garrison",
-   "logo":"graphics/sun_ice/factions/ici_flag.png",
-   "crest":"graphics/sun_ice/factions/crest_ici_flag.png",
+   "displayName":"伊甸流亡者",
+   "displayNameWithArticle":"伊甸流亡者(Idoneus Exiled)",
+   "displayNameLong":"伊甸堡垒流亡者",
+   "displayNameLongWithArticle":"伊甸堡垒流亡者(Idoneus Exiled)",
+   "logo":"graphics/sun_ice/factions/ice_flag.png",
+   "crest":"graphics/sun_ice/factions/crest_ice_flag.png",
+   "showInIntelTab":false,
    "shipNamePrefix":"ICS",
-	"tariffFraction":0.35,
-	"tollFraction":0.1,
-	"fineFraction":0.5,
+	"tariffFraction":0.25,
+	"tollFraction":0.2,
+	"fineFraction":0.3,
 	"music":{
-		"theme":"ici_encounter_interaction_neutral",
-		"market_neutral":"ici_encounter_interaction_neutral",
-		"market_hostile":"ici_encounter_interaction_hostile",
-		"market_friendly":"ici_encounter_interaction_friendly",
-		"encounter_neutral":"ici_encounter_interaction_neutral",
-		"encounter_hostile":"ici_encounter_interaction_hostile",
-		"encounter_friendly":"ici_encounter_interaction_friendly",
+		"theme":"ice_encounter_interaction_neutral",
+		"market_neutral":"ice_encounter_interaction_neutral",
+		"market_hostile":"ice_encounter_interaction_hostile",
+		"market_friendly":"ice_encounter_interaction_friendly",
+		"encounter_neutral":"ice_encounter_interaction_neutral",
+		"encounter_hostile":"ice_encounter_interaction_hostile",
+		"encounter_friendly":"ice_encounter_interaction_friendly",
 	},
 	"illegalCommodities":[
 		"drugs",
 		"organs",
-		"hand_weapons",	
-		"ai_cores"
 	],
    "shipNameSources":{
 		"ANGELS":1,
@@ -55,20 +54,21 @@
 			"graphics/portraits/portrait_mercenary02.png",	 
       ],
    },
-      "custom":{
+   "custom":{
 		"exemptFromFoodShortages":true,
 		#"noPatrols":true,
 		"ignoreTradeWithEnemiesForReputation":true,
-		"offersCommissions":true,
+		"offersCommissions":false,
 		"buysAICores":true,
-		"AICoreValueMult":2,
-		"AICoreRepMult":0.5,
+		"AICoreValueMult":0.5,
+		"AICoreRepMult":1.5,
+		"buysSurveyData":true,
 		"hostilityImpactOnGrowth":true,
-		"caresAboutAtrocities":false,
+		"caresAboutAtrocities":true,
 		"punitiveExpeditionData":{
 			"vsCompetitors":false,
 			"vsFreePort":false,
-			"canBombard":true,
+			"canBombard":false,
 			"territorial":false,
 		},
 	},
@@ -78,11 +78,11 @@
 	# multiplier for how often hulls show up in the faction's fleets
 	"hullFrequency":{
 		"tags":{
-			"ice_rp":0.5,
-			"hightech_bp":0.1,
+			"ice_rp":0.3,
+			"hightech_bp":0.05,
 		},
 		"hulls":{
-			"sun_ice_specter":3,
+			"sun_ice_specter":5,
 		},
 	},
 	# ships the faction gets access to when importing S&W out-of-faction
@@ -120,7 +120,7 @@
 		],
 	},
 	"priorityFighters":{
-		"tags":["ice_bp"],
+		"tags":["ice_bp", "ice_rp"],
 		"fighters":[
 		],
 	},
@@ -153,7 +153,7 @@
 		],
 	},
 	"priorityWeapons":{
-		"tags":["ice_bp"],
+		"tags":["ice_bp", "ice_rp"],
 		"weapons":[
 		],
 	},
@@ -184,50 +184,52 @@
 
 			"adaptive_coils",
 			"phase_anchor",
-			
+
 			"sun_ice_munitions_autofac_mod",
 			"sun_ice_tactical_ansible_mod",
 			"sun_ice_reverb_dampeners_mod",
 			"sun_ice_shunt_coating_mod",
+			"sun_ice_phase_bypass",
 		],
 	},
 	"fleetTypeNames":{
-		"patrolSmall":"Monitoring Group",
-		"patrolMedium":"Passive Blockade Fleet",
-		"patrolLarge":"Blockade Fleet",
-		"inspectionFleet":"Investigation Group",
-		"taskForce":"Cruise Fleet",
-		"mercScout":"Special Blockade Fleet",
-		"mercBountyHunter":"Special Execute Fleet",
+		"patrolSmall":"寻道者 Zayin",
+		"patrolMedium":"寻道者 Vav",
+		"patrolLarge":"寻道者 Aleph",
+		"inspectionFleet":"寻道者 Teth",
+		"taskForce":"寻道者 He",
+		"mercScout":"探秘者",
+		"mercBountyHunter":"威胁排查",
 	},
 	"voices":{
 		"LOW":{
-			"soldier":10,
-			"spacer":5,
-			"faithful":5,
+			"soldier":5,
+			"spacer":10,
+			"faithful":10,
 		},
 		"MEDIUM":{
-			"soldier":10,
-			"business":5,
-			"official":10,
+			"spacer":10,
+			"business":10,
+			"official":5,
 		},
 		"HIGH":{
+			"business":5,
 			"official":10,
-			"scientist":1,
+			"spacer":5,
 		},
 	},
 	"factionDoctrine":{
 		"warships":1,
-		"carriers":1,
-		"phaseShips":5,
+		"carriers":2,
+		"phaseShips":4,
 		
-		"officerQuality":2,
+		"officerQuality":1,
 		"shipQuality":5,
 		"numShips":1,
 		
-		"shipSize":4,
+		"shipSize":2,
 		
-		"aggression":5,
+		"aggression":3,
 		
 		"combatFreighterProbability":0,     				# instead of some portion of the freighters in a fleet
 		"combatFreighterCombatUseFraction":0,  				# as part of the normal combat lineup

@@ -1,16 +1,16 @@
 {
-  "displayName": "Attack Drone",
+  "displayName": "无人机",
   "fluxCapacitors": 0,
   "fluxVents": 0,
-  "hullId": "sun_ice_echo_wing",
+  "hullId": "sun_ice_drone_pd_wing",
   "hullMods": [],
-  "variantId": "sun_ice_echo_Interceptor",
+  "variantId": "sun_ice_drone_pd",
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "sun_ice_pulserepeater"
+        "WS 001": "sun_ice_scatterpd_fighter"
       }
     }
   ]

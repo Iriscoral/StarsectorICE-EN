@@ -1,16 +1,17 @@
 {
-  "displayName": "Attack Drone",
+  "displayName": "轰炸机",
+	"quality":0.75,
   "fluxCapacitors": 0,
   "fluxVents": 0,
-  "hullId": "sun_ice_echo_wing",
+  "hullId": "sun_ice_umbra_wing",
   "hullMods": [],
-  "variantId": "sun_ice_echo_Interceptor",
+  "variantId": "sun_ice_umbra_Bomber",
   "weaponGroups": [
     {
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "sun_ice_pulserepeater"
+        "WS0001": "sun_ice_hypermassbomb"
       }
     }
   ]
