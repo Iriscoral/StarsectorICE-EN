@@ -125,7 +125,7 @@ missionFromICECacheSalvage,DialogOptionSelected,$option == SUN_ICE_mission_cache
 remnantWarForICE,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarUnfinished score:1000
 !$global.SUN_ICE_RemnantWarMuted
 $SUN_ICE_ExileFleet","ShowDefaultVisual
-global.SUN_ICE_MissionRemnantWarOngoing",,,
+SUN_ICE_MissionRemnantWarOngoing",,,
 remnantWarForICETalk1,DialogOptionSelected,$option == SUN_ICE_remnant_war_init,,"The Remnant fleet seems to have been unprepared for your appearance, as they quickly retreat and regroup, with their reinforcements on the periphery gradually moving into battle position, turning the battlefield into a sea of Remnants in no time.
 Your adjutant reluctantly mutes his comms and turns to look at you, ""Looks like we're trapped, your orders?""
 ","SUN_ICE_remnant_war_act_1:""Gather all your remaining forces and break out""",
