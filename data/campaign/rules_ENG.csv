@@ -6,7 +6,7 @@ FireAll PopulateOptions","""Greetings commander. It's good to finally run into s
 greetingICEHostileWeaker,OpenCommLink,"$faction.id == sun_ice
 $faction.hostileToPlayer
 $relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""So, another vulture has mistaken us for carrion. You're not the first to make that mistake. Do your worst.""",cutCommLink:Cut the comm link,
-greetingICEHostileWeakerDefiantE,OpenCommLink,"$faction.id == sun_ice
+greetingICEHostileWeakerDefiantE,OpenCommLink,"$faction.id == sun_ice,
 $faction.hostileToPlayer
 $relativeStrength < 0
 $weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""So, another vulture has mistaken us for carrion. You're not the first to make that mistake. Do your worst.""",cutCommLink:Cut the comm link,
@@ -47,11 +47,11 @@ $player.factionId == sun_ici","AddText ""Locals in all manner of clothing sift t
 ,,,,,,
 ,,,,,,
 aiCores_turnInOptionSelICE,DialogOptionSelected,"$option == aiCores_startTurnIn
-$faction.id == sun_ice",FireAll PopulateCoresTurnInOptions,"""These things...Yes, Idoneus technology can fully translate its potential into reality, but we can hardly afford to pay out anything more than thanks.""",,,
-aiCores_turnInResponseICE,AICoresTurnedIn,$faction.id == sun_ice,FireAll PopulateOptions,$PersonRank $personLastName thank you on behalf of all the exiles and the conversation moves on to other matters..,,,
+$faction.id == sun_ice",FireAll PopulateCoresTurnInOptions,"""These things...Yes, Idoneus technology can fully translate its potential into reality, but we can hardly afford to pay out anything more than thanks.""",,
+aiCores_turnInResponseICE,AICoresTurnedIn,$faction.id == sun_ice,FireAll PopulateOptions,$PersonRank $personLastName thank you on behalf of all the exiles and the conversation moves on to other matters..,,
 aiCores_turnInOptionSelICI,DialogOptionSelected,"$option == aiCores_startTurnIn
-$faction.id == sun_ici",FireAll PopulateCoresTurnInOptions,"""An amazing discovery, commander. Idoneus technology can turn its full potential into reality, turn it in to us and you'll be paid to match it.""",,,
-aiCores_turnInResponseICI,AICoresTurnedIn,$faction.id == sun_ici,FireAll PopulateOptions,$PersonRank $personLastName thank you with arms crossed and the conversation moves on to other matters..,,,
+$faction.id == sun_ici",FireAll PopulateCoresTurnInOptions,"""An amazing discovery, commander. Idoneus technology can turn its full potential into reality, turn it in to us and you'll be paid to match it.""",,
+aiCores_turnInResponseICI,AICoresTurnedIn,$faction.id == sun_ici,FireAll PopulateOptions,$PersonRank $personLastName thank you with arms crossed and the conversation moves on to other matters..,,
 ,,,,,,
 ,,,,,,
 relLevelNeutralICE,RelationshipLevelDesc,"$faction.rel == NEUTRAL
@@ -72,71 +72,72 @@ relLevelHostileICE,RelationshipLevelDesc,"$faction.rel == HOSTILE
 $faction.id == sun_ice",,"$TheFaction consider you a military threat to their colony, and their forces will engage on sight. It's going to take some work to get back in their good graces.",,
 relLevelVengefulICE,RelationshipLevelDesc,"$faction.rel == VENGEFUL
 $faction.id == sun_ice",,$TheFaction will not forget the wrongs you have committed against them in their hour of desperation. They will shoot to kill.,,
-
-
+,,,,,,
+,,,,,,
 bar_optionSel_ICE,DialogOptionSelected,"$option == marketVisitBar
 $SUN_ICE_ExileFleet
-$SUN_ICE_Hyperspace score:1000","SetShortcut barLeaveICE ""ESCAPE""","你来到了一家自认为最能打探到些消息的酒吧，但这里的人数却寥寥无几，完全没有它应有的嘈杂模样。你从和角落里某个商人的攀谈中得知，在舰队离开超空间、抵达某个星系空间之前，这种地方一直都不怎么景气。","barLeaveICE:Leave the bar",
+$SUN_ICE_Hyperspace score:1000","SetShortcut barLeaveICE ""ESCAPE""","You arrive at a bar where you think you can get the most information, but the place is sparsely populated and not at all as noisy as it should be. You learn from talking to one of the merchants in the corner that such places were not very popular until the fleet left hyperspace and arrived in some galactic space.",barLeaveICE:Leave the bar,
 bar_optionLeave_ICE,DialogOptionSelected,$option == barLeaveICE,FireBest ReturnFromBar,,,
-
-
+,,,,,,
+,,,,,,
 missionFromICEEntrance,PickGreeting,"$SUN_ICE_isMissionGiver score:100
 $global.SUN_ICE_isMissionOnGoing
-SUN_ICE_MissionManager","ShowPersonVisual",,,
-
+SUN_ICE_MissionManager",ShowPersonVisual,,,
+,,,,,,
 missionFromICEMissionStage1,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
 $global.SUN_ICE_isMissionOnGoing
 SUN_ICE_MissionStage1 $option",,,,
-
+,,,,,,
 missionFromICEMissionStage1Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
 $global.SUN_ICE_isMissionOnGoing
 SUN_ICE_MissionStage1Ongoing $option",,,,
-
+,,,,,,
 missionFromICEMissionStage2,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
 $global.SUN_ICE_isMissionOnGoing
 SUN_ICE_MissionStage2 $option",,,,
-
+,,,,,,
 missionFromICEMissionStage2Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
 $global.SUN_ICE_isMissionOnGoing
 SUN_ICE_MissionStage2Ongoing $option",,,,
-
+,,,,,,
 missionFromICEMissionStage3,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
 $global.SUN_ICE_isMissionOnGoing
 SUN_ICE_MissionStage3 $option",,,,
-
+,,,,,,
 missionFromICEMissionStage3Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
 $global.SUN_ICE_isMissionOnGoing
 SUN_ICE_MissionStage3Ongoing $option",,,,
-
+,,,,,,
 missionFromICEMissionStage4,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
 $global.SUN_ICE_isMissionOnGoing
 SUN_ICE_MissionStage4 $option",,,,
-
+,,,,,,
 missionFromICEMissionStage4Ongoing,DialogOptionSelected,"$SUN_ICE_isMissionGiver score:100
 $global.SUN_ICE_isMissionOnGoing
 SUN_ICE_MissionStage4Ongoing $option",,,,
 ,,,,,,
 ,,,,,,
 missionFromICECacheStart,BeginSalvage,$SUN_ICE_eventRef != null score:1000,"ShowDefaultVisual
-SUN_ICE_MissionCacheText",,
-missionFromICECacheSalvage,DialogOptionSelected,"$option == SUN_ICE_mission_cache_salvage","CallEvent $SUN_ICE_eventRef",,
+SUN_ICE_MissionCacheText",,,
+missionFromICECacheSalvage,DialogOptionSelected,$option == SUN_ICE_mission_cache_salvage,CallEvent $SUN_ICE_eventRef,,,
 ,,,,,,
 ,,,,,,
 remnantWarForICE,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarUnfinished score:1000
 !$global.SUN_ICE_RemnantWarMuted
 $SUN_ICE_ExileFleet","ShowDefaultVisual
-global.SUN_ICE_MissionRemnantWarOngoing",,,
-remnantWarForICETalk1,DialogOptionSelected,"$option == SUN_ICE_remnant_war_init",,"余辉舰队似乎没有料到你的出现，它们迅速撤退并重整队形，外围准备支援的余辉也逐渐进入战斗位置，宇宙星海顷刻间变成了余辉之海。
-你的副官无奈地把通讯静音，扭头看着你：""看来我们是被关着咯，怎么办？""","SUN_ICE_remnant_war_act_1:""集结一切有生力量，越狱呗""",
-remnantWarForICETalk2,DialogOptionSelected,"$option == SUN_ICE_remnant_war_act_1",,"""你还真悠闲的下来，还越狱？""副官一边怼你一边在电脑上计算战斗力，""差距过于悬殊，而且对方是余晖，速子造出来的东西你心里有数的。如果你想指望伊甸那边的话，那我只能说这几万人大概都准备好和你共生死了。""","SUN_ICE_remnant_war_act_2:命令所有火控手锁定余辉舰船",
-remnantWarForICETalk3,DialogOptionSelected,"$option == SUN_ICE_remnant_war_act_2",,"大家一筹莫展之时，你在屏幕上看到了熟悉的船、大规模活跃信号和一个熟悉的通讯信息，是{Carobin}发来的。""嗨！你们好啊，最近什么都好，一切太平...直到我们，踏入这，该死的包围圈之前！你们能来帮忙，真的太感谢了。""","SUN_ICE_remnant_war_act_3:继续",
-remnantWarForICETalk4,DialogOptionSelected,"$option == SUN_ICE_remnant_war_act_3",,"""话不多说，舰队总指挥已经发布了最高警戒，整支舰队，都已经，准备好下一轮战斗了！下一波攻势应该快要开始了！""通讯链接切断后，伊甸流亡舰队已经趁机全员就位，而你曾经提供给他们的舰船也在其列。你压力倍增——扫描仪上那背水一战的阵容，分明带着了无后路的决然。","defaultLeave:行动开始！",
+SUN_ICE_MissionRemnantWarOngoing",,,
+remnantWarForICETalk1,DialogOptionSelected,$option == SUN_ICE_remnant_war_init,,"The Remnant fleet seems to have been unprepared for your appearance, as they quickly retreat and regroup, with their reinforcements on the periphery gradually moving into battle position, turning the battlefield into a sea of Remnants in no time.
+Your adjutant reluctantly mutes his comms and turns to look at you, ""Looks like we're trapped, your orders?""
+","SUN_ICE_remnant_war_act_1:""Gather all your remaining forces and break out.""",
+remnantWarForICETalk2,DialogOptionSelected,$option == SUN_ICE_remnant_war_act_1,,"""You know, you're really taking it easy, breaking out like this?"" The adjutant does not mask his disapproval of you as he calculates the combat strength on the computer, ""the disparity in force strength is too great and our opponents are Remmnants, and you know how fast these things are. If you are going to trust the word of the Idonians, then I hope you are prepared to risk everyone's lives.""",SUN_ICE_remnant_war_act_2:Order fire control to lock on onto the Remnants.,
+remnantWarForICETalk3,DialogOptionSelected,$option == SUN_ICE_remnant_war_act_2,,"Out of nowhere, a massive signature pops up on the sensors, sending everyone into a panic - until a familiar face pops up on the screen. ""Hey,"" Carobin says, ""We've been doing fine...until we ran into this goddamned siege. If you are here to help, you have my thanks!""",SUN_ICE_remnant_war_act_3:Continue,
+remnantWarForICETalk4,DialogOptionSelected,$option == SUN_ICE_remnant_war_act_3,,"""Enough said; the Fleet Admiral has declared maximum alert and the whole fleet is, well, its marshalling for battle!"" As the comm link cuts, reports come in; ther Idonean Exile fleet has leveraged the opportunity to take up positions, with the ships you've provided among them. The tension builds; as the sensorscape paints a picture of greatly forming force, the determination of your allies puts more and more presure on you.",defaultLeave:Begin the operation！,
 remnantWarForICEMuted,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarMuted score:2000
-$SUN_ICE_ExileFleet","ShowDefaultVisual",舰队处于完全备战状态，所有用于对接的移动港口都被封存，市场和维修区域也被紧急关闭、征用。在解决势态之前，你无法再有任何进一步动作。,defaultLeave:离开,
+$SUN_ICE_ExileFleet",ShowDefaultVisual,"The fleet is in a state of complete readiness, all mobile ports used for docking have been sealed off and market and repair areas have been urgently closed and requisitioned. You are unable to make any further moves until the situation is resolved.",defaultLeave:Leave,
 remnantWarForICEAfter,OpenInteractionDialog,"$global.SUN_ICE_RemnantWarFinished score:3000
 $SUN_ICE_ExileFleet","ShowDefaultVisual
 SUN_ICE_MissionRemnantWarEnds",,,
 remnantWarForICEAfterAlt,PickGreeting,"$global.SUN_ICE_RemnantWarFinished score:3000
 $SUN_ICE_isMissionGiver score:3000","ShowDefaultVisual
 SUN_ICE_MissionRemnantWarEnds",,,
-remnantWarForICECompleted,DialogOptionSelected,"$option == SUN_ICE_remnant_war_ends","FireBest MarketPostOpen",,,
+remnantWarForICECompleted,DialogOptionSelected,$option == SUN_ICE_remnant_war_ends,FireBest MarketPostOpen,,,

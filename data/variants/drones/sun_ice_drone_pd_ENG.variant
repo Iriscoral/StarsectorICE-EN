@@ -4,7 +4,7 @@
   "fluxVents": 0,
   "hullId": "sun_ice_drone_pd_wing",
   "hullMods": [],
-  "variantId": "sun_ice_drone_pd_ENG",
+  "variantId": "sun_ice_drone_pd",
   "weaponGroups": [
     {
       "autofire": false,
