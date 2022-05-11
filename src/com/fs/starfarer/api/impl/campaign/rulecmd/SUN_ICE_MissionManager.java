@@ -233,8 +233,7 @@ public class SUN_ICE_MissionManager extends BaseCommandPlugin implements EveryFr
 
 	public static void evolveSpecialTag() {
 		FactionAPI targetFaction = SUN_ICE_Data.getICE();
-		Object tryAmount = targetFaction.getMemoryWithoutUpdate().get(MISSION_SPECIAL_TAG_KEY);
-		int stage = tryAmount == null ? 0 : (Integer)tryAmount;
+		int stage = getSpecialTagCompletedCount();
 
 		int newStage = stage + 1;
 		targetFaction.getMemoryWithoutUpdate().set(MISSION_SPECIAL_TAG_KEY, newStage);
