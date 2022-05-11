@@ -1,7 +1,7 @@
 {
 	"id":"nbj_ice",
 	"name":"ICE",
-	"author":"Main Maintainers: Sundog, Deathfly, AnyIDElse.\nFor all staff, see credits_and_thanks.txt",
+	"author":"\nCurrent Maintainers:\nAnyIDElse\n\nSound Design:\nShadowLight\n\nGraphic Support:\nShadowLight\nJaylyn\nA_PIAO_JUN\nR.U.A\nfire_turtle\n\nIcon:game-icons.net\n\nFormal Maintainers:\nSundog\nHistidine\nCycerin\nDeathfly\n\nTranslation:\nScarlet-MagicianX26\nZeroXenon",
 	"version":{"major":0, "minor":4, "patch":3},
 	"gameVersion":"0.95.1a-RC6",
 	"description":"Adds the Idoneus Citadel Exiles faction to the game.\nICE ships and weapons feature unconventional gimmicks centered around mobility, phase cloaks, armor repair, and ammo regeneration.",
