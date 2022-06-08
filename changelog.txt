@@ -8,6 +8,8 @@ Fixed a bug about Recall Teleporter
 Improvement for planet selection in a certain story line stage
 修复了最终战役时敌人可能逃脱的问题
 Fixed issue about enemies may escape on final battle
+补全了汉化，其实有些文本一开始是用英语写的结果忘了翻译了
+Minor text fixes
 
 
 
