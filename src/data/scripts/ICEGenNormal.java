@@ -6,30 +6,22 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Items;
 import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import data.scripts.tools.SUN_ICE_Data;
-import data.scripts.world.SUN_ICE_CampaignListener;
-import data.scripts.world.SUN_ICE_CampaignPlugin;
-import data.scripts.world.SUN_ICE_ExileFleetManager;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ICEGen {
+public class ICEGenNormal implements SectorGeneratorPlugin {
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Misc", "SUN_ICE_" + key);
+	public static final I18nSection strings = I18nSection.getInstance("Misc", "SUN_ICE_");
+
+	@Override
+	public void generate(SectorAPI sector) {
+		generateInEOS(sector);
+		relationAdj(sector);
 	}
 
-	public static void generateInNewGame(SectorAPI sector) {
-		ICEGen.generateInEOS();
-		ICEGen.relationAdj(sector);
-
-		Global.getSector().registerPlugin(new SUN_ICE_CampaignPlugin());
-		Global.getSector().addListener(new SUN_ICE_CampaignListener(true));
-		Global.getSector().addScript(new SUN_ICE_ExileFleetManager());
-	}
-
-	private static void generateInEOS() {
-		SectorAPI sector = Global.getSector();
+	private void generateInEOS(SectorAPI sector) {
 		SharedData.getData().getPersonBountyEventData().addParticipatingFaction("sun_ici");
 
 		StarSystemAPI system = sector.getStarSystem("Eos Exodus");
@@ -37,13 +29,13 @@ public class ICEGen {
 			return;
 		}
 
-		system.addCustomEntity("sun_ice_entity_hack", getString("exiled_name"), "sun_ice_entity_hack", "neutral");
+		system.addCustomEntity("sun_ice_entity_hack", strings.get("exiled_name"), "sun_ice_entity_hack", "neutral");
 
 		spawnCitadel(system);
 		spawnUlterius(system);
 	}
 
-	private static void spawnCitadel(StarSystemAPI system) {
+	private void spawnCitadel(StarSystemAPI system) {
 		CustomCampaignEntityAPI idoneusCitadel = system.addCustomEntity(SUN_ICE_Data.IdoneusCitadelId, "Idoneus Citadel", "sun_ice_idoneus_citadel", "sun_ici");
 		idoneusCitadel.setCircularOrbit(system.getStar(), 76f, 16500f, 900f);
 		idoneusCitadel.setCustomDescriptionId("sun_ice_idoneus_citadel");
@@ -76,7 +68,7 @@ public class ICEGen {
 		Global.getSector().getEconomy().addMarket(citadelMarket, false);
 	}
 
-	private static void spawnUlterius(StarSystemAPI system) {
+	private void spawnUlterius(StarSystemAPI system) {
 		CustomCampaignEntityAPI idoneusUlterius = system.addCustomEntity(SUN_ICE_Data.IdoneusUlteriusId, "Ulterius", "sun_ice_idoneus_citadel", "sun_ici");
 		idoneusUlterius.setCircularOrbit(system.getStar(), 80f, 15000f, 900f);
 		idoneusUlterius.setCustomDescriptionId("sun_ice_idoneus_ulterius");
@@ -108,7 +100,7 @@ public class ICEGen {
 		Global.getSector().getEconomy().addMarket(ulteriusMarket, false);
 	}
 
-	private static void relationAdj(SectorAPI sector) {
+	private void relationAdj(SectorAPI sector) {
 		FactionAPI ice = SUN_ICE_Data.getICE();
 		FactionAPI ici = SUN_ICE_Data.getICI();
 

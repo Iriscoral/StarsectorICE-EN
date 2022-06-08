@@ -57,11 +57,11 @@ public class SUN_ICE_RecallTeleporter extends BaseHullMod {
 			recallQueue.clear();
 
 			for (ShipAPI ally : AIUtils.getAlliesOnMap(ship)) {
+
 				if (ally.isFighter() || ally.isDrone()) continue;
 				if (ally.isStation() || ally.isStationModule()) continue;
 				if (ally.getFleetMember() != null && !SUN_ICE_IceUtils.isConsideredPhaseShip(ally.getFleetMember())) continue;
 
-				if (ally.isPhased()) continue;
 				if (ally.getAI() == null) continue;
 				if (ally.getTravelDrive() != null && ally.getTravelDrive().isActive()) continue;
 
@@ -72,7 +72,7 @@ public class SUN_ICE_RecallTeleporter extends BaseHullMod {
 
 				if (!ally.isRetreating() && asgnmt.getTarget() != null) {
 					Vector2f targetLocation = asgnmt.getTarget().getLocation();
-					if (targetLocation != null && MathUtils.getDistance(ship, targetLocation) < 400f) continue;
+					if (targetLocation != null && MathUtils.getDistance(ally, targetLocation) < 500f) continue;
 				}
 
 				SUN_ICE_RecallTracker t = new SUN_ICE_RecallTracker(ally, ship);

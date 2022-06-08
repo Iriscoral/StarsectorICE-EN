@@ -85,11 +85,9 @@
 		"SUN_ICE_special_cache_received":"%s received",
 		"SUN_ICE_special_cache_location":"Location: %s",
 		"SUN_ICE_special_cache_brief":"Deliver special item to %s.",
-		"SUN_ICE_special_cache_brief_sub":"%s units of %s",
 		"SUN_ICE_special_cache_reward":"%s reward",
 		"SUN_ICE_special_cache_to_respond":"to complete",
 
-		"SUN_ICE_special_cache_detail":"You've accepted a contract to deliver a quantity of goods to %s.",
 		"SUN_ICE_special_cache_succeed":"You have made this contract.",
 		"SUN_ICE_special_cache_failed":"You have failed this contract.",
 		"SUN_ICE_special_cache_information_1":"You've learned that there is a special cache to be found in the %s.",
@@ -121,7 +119,7 @@
 		"SUN_ICE_goods_procurement_received":"%s received",
 		"SUN_ICE_goods_procurement_faction":"Faction: %s",
 		"SUN_ICE_goods_procurement_brief":"Everything %s required:",
-		"SUN_ICE_goods_procurement_brief_sub":"%s units of %s",
+		"SUN_ICE_goods_procurement_brief_sub":"%s/%s units of %s",
 		"SUN_ICE_goods_procurement_reward":"%s reward",
 		"SUN_ICE_goods_procurement_to_respond":"to complete",
 
@@ -396,7 +394,11 @@
 		"SUN_ICE_mission4_response_hint":"\"Hmmm...That was pretty unexpected.\" The logistics officer looked embarrassed, \"OK, they're going to make a big move anyway. It's just that I just went to investigate their money flow and found that their actions are too reckless, the list is too long and too big and too fast, and it's likely that they will suffer a downturn after the payment due to this blind purchase. Anyway, we've helped them so far, how about... showing them another favor?\"",
 		
 		"SUN_ICE_mission4_ongoing_init":"You prepare the audio noise reduction process on your comms unit in advance.\n\n\"You're back, ready for supplies?\"",
-		"SUN_ICE_mission4_ongoing_deliver":"View inventory and sell supplies",
+		"SUN_ICE_mission4_ongoing_picker_title":"Select materials",
+		"SUN_ICE_mission4_ongoing_picker_ensure":"Confirm",
+		"SUN_ICE_mission4_ongoing_picker_cancle":"Cancel",
+		"SUN_ICE_mission4_ongoing_check":"View inventory",
+		"SUN_ICE_mission4_ongoing_deliver":"Sell the materials",
 		"SUN_ICE_mission4_ongoing_response_deliver":"Carobin tries suppressing his joy, but it quite evidently shows. He directs the freighter with a fumbling that did not match his level of professionalism, while trying to express his gratitude in a normal sequence of words.",
 		"SUN_ICE_mission4_ongoing_act_bye_1":"Clap your hands to make a sound",
 		"SUN_ICE_mission4_ongoing_act_bye_2":"\"Watch out, those ships are about to collide.\"",

@@ -23,6 +23,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.population.CoreImmigrationPluginImpl;
 import com.fs.starfarer.api.impl.campaign.submarkets.BaseSubmarketPlugin;
 import com.fs.starfarer.api.util.Misc;
+import com.sun.istack.internal.Nullable;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,12 +34,11 @@ import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
 import java.util.*;
 
 public class SUN_ICE_IceUtils {
@@ -120,16 +120,12 @@ public class SUN_ICE_IceUtils {
 		Global.getCombatEngine().addFloatingText(at, text, 25f, Color.RED, anchor, 1f, 1f);
 	}
 
-	public static int getPlayerOrAllyOwner() {
-		return 0;
-	}
-
 	public static boolean isPlayerOrAllyOwner(CombatEntityAPI entity) {
-		return entity.getOwner() == getPlayerOrAllyOwner();
+		return entity.getOwner() == Misc.OWNER_PLAYER;
 	}
 
 	public static boolean isExactlyPlayerOwner(ShipAPI ship) {
-		return ship.getOwner() == getPlayerOrAllyOwner() && !ship.isAlly();
+		return ship.getOwner() == Misc.OWNER_PLAYER && !ship.isAlly();
 	}
 
 	public static boolean isPlayerShipOwner(ShipAPI ship) {
@@ -804,5 +800,70 @@ public class SUN_ICE_IceUtils {
 		}
 
 		return sb.toString();
+	}
+
+	public static class I18nSection {
+		private final String category;
+		private final String keyPrefix;
+
+		public I18nSection(String category, String keyPrefix) {
+			this.category = category;
+			if (keyPrefix != null) {
+				this.keyPrefix = keyPrefix;
+			} else {
+				this.keyPrefix = "";
+			}
+
+			SECTIONS.add(this);
+		}
+
+		public I18nSection(String category) {
+			this(category, null);
+		}
+
+		public String format(String keyMainBody, @Nullable Object... args) {
+			if (args != null && args.length > 0) {
+				return absFormat(keyMainBody, args);
+			}
+			return get(keyMainBody);
+		}
+
+		public String get() {
+			try {
+				return Global.getSettings().getString(category, keyPrefix);
+			} catch (Exception e) {
+				return "[NULL]";
+			}
+		}
+
+		public String get(String key) {
+			try {
+				return Global.getSettings().getString(category, keyPrefix + key);
+			} catch (Exception e) {
+				return "[NULL]";
+			}
+		}
+
+		private String absFormat(String key, Object... args) {
+			String result;
+			try {
+				result = String.format(get(key), args);
+			} catch (Exception e) {
+				return "[NULL]";
+			}
+
+			return result;
+		}
+
+		private static final List<I18nSection> SECTIONS = new ArrayList<>();
+		public static I18nSection getInstance(String category, String keyPrefix) {
+			for (I18nSection section : SECTIONS) {
+				if (section.category.contentEquals(category) && section.keyPrefix.contentEquals(keyPrefix)) {
+					return section;
+				}
+			}
+
+			return new I18nSection(category, keyPrefix);
+		}
 	}
 }

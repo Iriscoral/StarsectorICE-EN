@@ -1,4 +1,8 @@
-2022.5.4 0.4.4
+2022.6.8 0.4.4
+-插件/Hullmods
+召回传送器错误修复
+Fixed a bug about Recall Teleporter
+
 -其他/Others
 改善了任务线完全完成时的某些体验
 Improvement for planet selection in a certain story line stage

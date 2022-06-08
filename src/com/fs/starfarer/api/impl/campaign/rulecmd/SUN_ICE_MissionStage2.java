@@ -10,6 +10,7 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_MissionSalvageAICoreIntel;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 import java.util.List;
 import java.util.Map;
@@ -25,9 +26,7 @@ public class SUN_ICE_MissionStage2 extends SUN_ICE_MissionManager {
 
 	private static final int DELAY = 10;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_mission2_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_mission2_");
 
 	@Override
 	public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
@@ -56,18 +55,18 @@ public class SUN_ICE_MissionStage2 extends SUN_ICE_MissionManager {
 		switch (string) {
 			case "after_act_1_A":
 			case "after_act_1_B":
-				textPanel.addPara(getString("response_1"));
-				optionPanel.addOption(getString("act_2_progress_1"), "after_act_2");
+				textPanel.addPara(strings.get("response_1"));
+				optionPanel.addOption(strings.get("act_2_progress_1"), "after_act_2");
 				break;
 			case "after_act_2":
-				textPanel.addPara(getString("response_2"), Misc.getHighlightColor(), String.valueOf(TIME_OUT));
-				optionPanel.addOption(getString("accept"), "accept");
-				optionPanel.addOption(getString("ask"), "ask");
-				optionPanel.addOption(getString("delay"), "delay");
+				textPanel.addPara(strings.get("response_2"), Misc.getHighlightColor(), String.valueOf(TIME_OUT));
+				optionPanel.addOption(strings.get("accept"), "accept");
+				optionPanel.addOption(strings.get("ask"), "ask");
+				optionPanel.addOption(strings.get("delay"), "delay");
 				break;
 			case "accept":
-				textPanel.addPara(getString("response_accept"));
-				optionPanel.addOption(getString("get_hint"), "hint");
+				textPanel.addPara(strings.get("response_accept"));
+				optionPanel.addOption(strings.get("get_hint"), "hint");
 				setStage(MissionStage.STAGE_ONGOING_CORE);
 
 				int timeOut = TIME_OUT;
@@ -78,40 +77,40 @@ public class SUN_ICE_MissionStage2 extends SUN_ICE_MissionManager {
 				endGoToFleetIntel(true);
 				break;
 			case "ask":
-				textPanel.addPara(getString("response_ask"));
-				optionPanel.addOption(getString("accept"), "accept");
-				optionPanel.addOption(getString("information"), "information");
-				optionPanel.addOption(getString("refuse"), "refuse");
+				textPanel.addPara(strings.get("response_ask"));
+				optionPanel.addOption(strings.get("accept"), "accept");
+				optionPanel.addOption(strings.get("information"), "information");
+				optionPanel.addOption(strings.get("refuse"), "refuse");
 				break;
 			case "information":
-				textPanel.addPara(getString("response_information"));
+				textPanel.addPara(strings.get("response_information"));
 
-				optionPanel.addOption(getString("accept"), "accept");
-				optionPanel.addOption(getString("delay"), "delay");
-				optionPanel.addOption(getString("refuse"), "refuse");
+				optionPanel.addOption(strings.get("accept"), "accept");
+				optionPanel.addOption(strings.get("delay"), "delay");
+				optionPanel.addOption(strings.get("refuse"), "refuse");
 				break;
 			case "delay":
-				textPanel.addPara(getString("response_delay"), Misc.getPositiveHighlightColor(), String.valueOf(DELAY));
+				textPanel.addPara(strings.get("response_delay"), Misc.getPositiveHighlightColor(), String.valueOf(DELAY));
 				setKey(AFTER_DELAY_KEY);
 
-				optionPanel.addOption(getString("accept"), "accept");
-				optionPanel.addOption(getString("refuse"), "refuse");
+				optionPanel.addOption(strings.get("accept"), "accept");
+				optionPanel.addOption(strings.get("refuse"), "refuse");
 				break;
 			case "refuse":
-				textPanel.addPara(getString("response_refuse"));
-				optionPanel.addOption(getCutLink(), "cutCommLink");
+				textPanel.addPara(strings.get("response_refuse"));
+				optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				SUN_ICE_MissionManager.doomStages();
 				break;
 			case "hint":
-				textPanel.addPara(getString("response_hint"));
-				optionPanel.addOption(getCutLink(), "cutCommLink");
+				textPanel.addPara(strings.get("response_hint"));
+				optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				break;
 			case "init_re":
 			case "init":
 			default:
-				textPanel.addPara(getString("init"));
-				optionPanel.addOption(getString("act_1_progress_1"), "after_act_1_A");
-				optionPanel.addOption(getString("act_1_progress_2"), "after_act_1_B");
+				textPanel.addPara(strings.get("init"));
+				optionPanel.addOption(strings.get("act_1_progress_1"), "after_act_1_A");
+				optionPanel.addOption(strings.get("act_1_progress_2"), "after_act_1_B");
 				setKey(AFTER_INIT_KEY);
 				break;
 		}

@@ -12,8 +12,7 @@ import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
-import java.util.List;
+import java.awt.Color;
 import java.util.*;
 
 public class SUN_ICE_JauntSession {

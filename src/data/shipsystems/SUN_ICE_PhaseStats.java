@@ -4,8 +4,9 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
 import com.fs.starfarer.api.impl.combat.PhaseCloakStats;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class SUN_ICE_PhaseStats extends PhaseCloakStats {
 
@@ -157,13 +158,13 @@ public class SUN_ICE_PhaseStats extends PhaseCloakStats {
 
 		if (getDisruptionLevel(playerShip) <= 0f) {
 			Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY3,
-					cloak.getSpecAPI().getIconSpriteName(), getString("PhaseStableStats1"), getString("PhaseStableStats2"), false);
+					cloak.getSpecAPI().getIconSpriteName(), strings.get("PhaseStableStats1"), strings.get("PhaseStableStats2"), false);
 		} else {
 			String speedPercentStr = Math.round(getSpeedMult(playerShip, effectLevel) * 100f) + "%";
 			Global.getCombatEngine().maintainStatusForPlayerShip(STATUSKEY3,
 					cloak.getSpecAPI().getIconSpriteName(),
-					getString("PhaseStressStats1"),
-					getString("PhaseStressStats2") + speedPercentStr, true);
+					strings.get("PhaseStressStats1"),
+					strings.get("PhaseStressStats2") + speedPercentStr, true);
 		}
 	}
 
@@ -175,7 +176,5 @@ public class SUN_ICE_PhaseStats extends PhaseCloakStats {
 		return 0.25f;
 	}
 
-	public static String getString(String key) {
-		return Global.getSettings().getString("ShipSystem", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("ShipSystem", "SUN_ICE_");
 }

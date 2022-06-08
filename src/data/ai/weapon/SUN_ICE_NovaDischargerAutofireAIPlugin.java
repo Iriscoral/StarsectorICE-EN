@@ -14,9 +14,6 @@ public class SUN_ICE_NovaDischargerAutofireAIPlugin implements AutofireAIPlugin 
 	private ShipAPI target;
 	private final SUN_ICE_IntervalTracker timer = new SUN_ICE_IntervalTracker(UPDATE_FREQUENCY);
 
-	public SUN_ICE_NovaDischargerAutofireAIPlugin() {
-	}
-
 	public SUN_ICE_NovaDischargerAutofireAIPlugin(WeaponAPI weapon) {
 		this.weapon = weapon;
 		this.ship = weapon.getShip();
@@ -25,7 +22,7 @@ public class SUN_ICE_NovaDischargerAutofireAIPlugin implements AutofireAIPlugin 
 	private ShipAPI findTarget() {
 		target = SUN_ICE_IceUtils.getShipInLineOfFire(weapon);
 
-		if (target != null && target.getOwner() != ship.getOwner() && target.getShield() != null && target.getShield().isOn() && !target.isPhased()) {
+		if (target != null && target.isAlive() && target.getOwner() != ship.getOwner() && target.getShield() != null && target.getShield().isOn() && !target.isPhased()) {
 			return target;
 		} else {
 			return target = null;

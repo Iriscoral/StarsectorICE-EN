@@ -1,20 +1,19 @@
 package data.scripts.campaign.econ;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.impl.campaign.econ.BaseMarketConditionPlugin;
+import com.fs.starfarer.api.impl.campaign.ids.Stats;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SUN_ICE_ColonyFleet extends BaseMarketConditionPlugin {
 
-	static List<String> toRemove = new ArrayList<>();
+	transient static List<String> toRemove = new ArrayList<>();
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Misc", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Misc", "SUN_ICE_");
 
 	@Override
 	public void advance(float amount) {
@@ -33,14 +32,19 @@ public class SUN_ICE_ColonyFleet extends BaseMarketConditionPlugin {
 
 	@Override
 	public void apply(String id) {
-		float stabilityModification = 1;
 
+		float effect = 0f;
 		if (market.getPrimaryEntity() instanceof CampaignFleetAPI) {
-			stabilityModification += ((CampaignFleetAPI)market.getPrimaryEntity()).getFleetPoints() * 0.01f;
+			effect = ((CampaignFleetAPI)market.getPrimaryEntity()).getEffectiveStrength();
 		}
 
+		float stabilityModification = 1f + effect * 0.01f;
+		float defenseModification = 500f + effect * 3f;
+
 		market.getAccessibilityMod().modifyFlat(id, 1f, getName());
-		market.getStability().modifyFlat(id, (int) stabilityModification, getString("fleetSize"));
+		market.getStability().modifyFlat(id, (int)stabilityModification, strings.get("fleetSize"));
+		market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).modifyFlat(id, defenseModification, strings.get("fleetSize"));
+
 		market.setImmigrationClosed(true);
 	}
 
@@ -48,5 +52,6 @@ public class SUN_ICE_ColonyFleet extends BaseMarketConditionPlugin {
 	public void unapply(String id) {
 		market.getAccessibilityMod().unmodifyFlat(id);
 		market.getStability().unmodifyFlat(id);
+		market.getStats().getDynamic().getMod(Stats.GROUND_DEFENSES_MOD).unmodifyFlat(id);
 	}
 }

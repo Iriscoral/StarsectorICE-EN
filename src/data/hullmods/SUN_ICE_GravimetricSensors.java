@@ -14,12 +14,13 @@ import com.fs.starfarer.api.util.FaderUtil;
 import com.fs.starfarer.api.util.Misc;
 import data.ai.ship.SUN_ICE_PhaseCruiseTempAI;
 import data.scripts.tools.SUN_ICE_IceUtils;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import data.scripts.tools.SUN_ICE_IntervalTracker;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -110,9 +111,7 @@ public class SUN_ICE_GravimetricSensors extends BaseHullMod {
 		return null;
 	}
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("HullMod", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("HullMod", "SUN_ICE_");
 
 	public static class SUN_ICE_PhaseAnchorScript implements AdvanceableListener, HullDamageAboutToBeTakenListener {
 
@@ -151,7 +150,7 @@ public class SUN_ICE_GravimetricSensors extends BaseHullMod {
 					ship.setHitpoints(1f);
 
 					if (ship.getFleetMember() != null) { // fleet member is fake during simulation, so this is fine
-						ship.getFleetMember().getRepairTracker().applyCREvent(-crLoss, getString("GravimetricSensorsTEXT"));
+						ship.getFleetMember().getRepairTracker().applyCREvent(-crLoss, strings.get("GravimetricSensorsTEXT"));
 					}
 
 					emergencyDive = true;
@@ -180,7 +179,7 @@ public class SUN_ICE_GravimetricSensors extends BaseHullMod {
 				if (diveProgress == 0f) {
 					if (ship.getFluxTracker().showFloaty()) {
 						float timeMult = ship.getMutableStats().getTimeMult().getModifiedValue();
-						Global.getCombatEngine().addFloatingTextAlways(ship.getLocation(), getString("GravimetricSensorsTEXT2"),
+						Global.getCombatEngine().addFloatingTextAlways(ship.getLocation(), strings.get("GravimetricSensorsTEXT2"),
 								NeuralLinkScript.getFloatySize(ship), c, ship, 16f * timeMult, 3.2f / timeMult, 1f / timeMult, 0f, 0f,
 								1f);
 					}

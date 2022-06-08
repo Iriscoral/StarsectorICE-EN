@@ -24,9 +24,10 @@ import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.Misc.Token;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -69,13 +70,8 @@ public class SUN_ICE_MissionSalvageAICoreIntel extends BaseIntelPlugin {
 		Global.getSector().getIntelManager().addIntel(this, false, dialog.getTextPanel());
 	}
 
-	private String getString(String key) {
-		return Global.getSettings().getString("Intel", "SUN_ICE_special_cache_" + key);
-	}
-
-	private static String getCacheString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Intel", "SUN_ICE_special_cache_");
+	public static final I18nSection cacheString = I18nSection.getInstance("Event", "SUN_ICE_");
 
 	private boolean isMissionValid() {
 		return market != null && market.isInEconomy() && market.getFaction().getId().contentEquals("sun_ice") && market.getFaction().isAtWorst(Global.getSector().getPlayerFaction(), RepLevel.NEUTRAL) && timeLeft > 0f;
@@ -158,13 +154,13 @@ public class SUN_ICE_MissionSalvageAICoreIntel extends BaseIntelPlugin {
 		CargoAPI salvage = Global.getFactory().createCargo(true);
 		salvage.addCommodity(Commodities.ALPHA_CORE, requiredAmount + extraAmount);
 
-		thisDialog.getVisualPanel().showLoot(getCacheString("cache_title"), salvage, false, true, true, new CoreInteractionListener() {
+		thisDialog.getVisualPanel().showLoot(cacheString.get("cache_title"), salvage, false, true, true, new CoreInteractionListener() {
 			@Override
 			public void coreUIDismissed() {
 				//thisDialog.dismiss();
 				//thisDialog.hideTextPanel();
 				//thisDialog.hideVisualPanel();
-				thisDialog.getTextPanel().addPara(getCacheString("cache_salvage_text"));
+				thisDialog.getTextPanel().addPara(cacheString.get("cache_salvage_text"));
 				Misc.fadeAndExpire(cache);
 
 				looted = true;
@@ -172,7 +168,7 @@ public class SUN_ICE_MissionSalvageAICoreIntel extends BaseIntelPlugin {
 		});
 
 		options.clearOptions();
-		options.addOption(getCacheString("leave"), "defaultLeave");
+		options.addOption(cacheString.get("leave"), "defaultLeave");
 		thisDialog.setPromptText("");
 		return true;
 	}
@@ -196,7 +192,7 @@ public class SUN_ICE_MissionSalvageAICoreIntel extends BaseIntelPlugin {
 			if (!isMissionValid()) {
 				return;
 			} else if (isEnding()) {
-				info.addPara(getString("received"), initPad, tc, h, Misc.getDGSCredits(reward));
+				info.addPara(strings.get("received"), initPad, tc, h, Misc.getDGSCredits(reward));
 				if (repGot > 0f) {
 					CoreReputationPlugin.addAdjustmentMessage(repGot, faction, null, null, null, info, tc, isUpdate, 0f);
 				}
@@ -204,22 +200,22 @@ public class SUN_ICE_MissionSalvageAICoreIntel extends BaseIntelPlugin {
 		} else {
 			// either in small description, or in tooltip/intel list
 			if (isEnding()) {
-				info.addPara(getString("received"), initPad, tc, h, Misc.getDGSCredits(reward));
+				info.addPara(strings.get("received"), initPad, tc, h, Misc.getDGSCredits(reward));
 				initPad = 0f;
 				if (repGot > 0f) {
 					CoreReputationPlugin.addAdjustmentMessage(repGot, faction, null, null, null, info, tc, isUpdate, initPad);
 				}
 			} else if (isMissionValid()) {
 				if (mode != ListInfoMode.IN_DESC) {
-					info.addPara(getString("location"), initPad, tc, h, cacheSystem.getNameWithLowercaseType());
+					info.addPara(strings.get("location"), initPad, tc, h, cacheSystem.getNameWithLowercaseType());
 					initPad = 0f;
 				}
 
-				LabelAPI label = info.addPara(String.format(getString("brief"), market.getName()), initPad, tc, h);
+				LabelAPI label = info.addPara(String.format(strings.get("brief"), market.getName()), initPad, tc, h);
 				label.setHighlight(market.getName());
 				label.setHighlightColors(market.getFaction().getBaseUIColor());
-				info.addPara(getString("reward"), 0f, tc, h, Misc.getDGSCredits(reward));
-				addDays(info, getString("to_respond"), timeLeft, tc, 0f);
+				info.addPara(strings.get("reward"), 0f, tc, h, Misc.getDGSCredits(reward));
+				addDays(info, strings.get("to_respond"), timeLeft, tc, 0f);
 			}
 		}
 
@@ -247,16 +243,16 @@ public class SUN_ICE_MissionSalvageAICoreIntel extends BaseIntelPlugin {
 		addBulletPoints(info, ListInfoMode.IN_DESC);
 
 		if (!isMissionValid()) {
-			info.addPara(getString("failed"), opad);
+			info.addPara(strings.get("failed"), opad);
 		} else if (isEnding()) {
-			info.addPara( getString("succeed"), opad);
+			info.addPara( strings.get("succeed"), opad);
 		} else {
 			if (!looted) {
-				info.addPara(getString("information_1"), opad, tc, h, cacheSystem.getNameWithLowercaseType());
+				info.addPara(strings.get("information_1"), opad, tc, h, cacheSystem.getNameWithLowercaseType());
 			}
 
-			info.addPara(getString("information_2"), opad, tc, h, cacheSystem.getNameWithLowercaseType());
-			info.addPara(getString("information_3"), opad, tc, market.getFaction().getBaseUIColor(), market.getName());
+			info.addPara(strings.get("information_2"), opad, tc, h, cacheSystem.getNameWithLowercaseType());
+			info.addPara(strings.get("information_3"), opad, tc, market.getFaction().getBaseUIColor(), market.getName());
 		}
 	}
 
@@ -281,13 +277,13 @@ public class SUN_ICE_MissionSalvageAICoreIntel extends BaseIntelPlugin {
 
 	@Override
 	public String getSortString() {
-		return getString("title");
+		return strings.get("title");
 	}
 
 	@Override
 	public String getSmallDescriptionTitle() {
 		if (isEnded() || isEnding()) {
-			return getString("title_finished");
+			return strings.get("title_finished");
 		}
 		return getSortString();
 	}

@@ -1,10 +1,13 @@
 package data.ai.missile;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.CollisionClass;
+import com.fs.starfarer.api.combat.MissileAIPlugin;
+import com.fs.starfarer.api.combat.MissileAPI;
+import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Random;
 
 public class SUN_ICE_ScatterPdMissileAI implements MissileAIPlugin {

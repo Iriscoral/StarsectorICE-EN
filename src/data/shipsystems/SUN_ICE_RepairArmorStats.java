@@ -5,10 +5,11 @@ import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import data.scripts.tools.SUN_ICE_IceUtils;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Map;
 import java.util.Random;
 import java.util.WeakHashMap;
@@ -30,9 +31,7 @@ public class SUN_ICE_RepairArmorStats extends BaseShipSystemScript {
 
 	private static final Map<ShipAPI, Float> potencies = new WeakHashMap<>();
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("ShipSystem", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("ShipSystem", "SUN_ICE_");
 
 	public static float getPotency(ShipAPI ship) {
 		return potencies.containsKey(ship) ? potencies.get(ship) : 0.0f;
@@ -141,8 +140,8 @@ public class SUN_ICE_RepairArmorStats extends BaseShipSystemScript {
 
 	@Override
 	public StatusData getStatusData(int index, State state, float effectLevel) {
-		if (index == 0) return new StatusData(getString("RepairArmorStats1"), false);
-		if (index == 1) return new StatusData(getString("RepairArmorStats2"), false);
+		if (index == 0) return new StatusData(strings.get("RepairArmorStats1"), false);
+		if (index == 1) return new StatusData(strings.get("RepairArmorStats2"), false);
 		return null;
 	}
 }

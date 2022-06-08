@@ -2,11 +2,11 @@ package data.ai.ship;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
+import data.scripts.tools.SUN_ICE_IntervalTracker;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
-import data.scripts.tools.SUN_ICE_IntervalTracker;
 
 public abstract class SUN_ICE_BaseShipAI implements ShipAIPlugin {
 	protected final ShipAPI ship;

@@ -12,10 +12,11 @@ import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import data.scripts.world.SUN_ICE_ExileFleetFakeAI.ExileState;
 import data.scripts.world.SUN_ICE_ExileFleetManager;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Set;
 
 public class SUN_ICE_ExileFleetIntel extends BaseIntelPlugin {
@@ -89,7 +90,7 @@ public class SUN_ICE_ExileFleetIntel extends BaseIntelPlugin {
 			stateForInfo = ExileState.START;
 		}
 
-		return getString("title" + stateForInfo.getId());
+		return strings.get("title" + stateForInfo.getId());
 	}
 
 	@Override
@@ -114,22 +115,22 @@ public class SUN_ICE_ExileFleetIntel extends BaseIntelPlugin {
 		String key = "intel" + stateForInfo.getId();
 		switch (stateForInfo) {
 			case START:
-				info.addPara(getString(key), pad, t, h, manager.getICE().getDisplayNameWithArticle());
+				info.addPara(strings.get(key), pad, t, h, manager.getICE().getDisplayNameWithArticle());
 				break;
 			case STAY:
-				info.addPara(getString(key), pad, t, h, manager.getICE().getDisplayNameWithArticle(), manager.getCurrentSystemDestination().getName());
+				info.addPara(strings.get(key), pad, t, h, manager.getICE().getDisplayNameWithArticle(), manager.getCurrentSystemDestination().getName());
 				break;
 			case TRAVELING:
-				info.addPara(getString(key), pad, t, h, manager.getICE().getDisplayNameWithArticle(), manager.getCurrentSystemDestination().getName());
+				info.addPara(strings.get(key), pad, t, h, manager.getICE().getDisplayNameWithArticle(), manager.getCurrentSystemDestination().getName());
 				break;
 			case DEAD:
-				info.addPara(getString(key), pad, t, h, manager.getICE().getDisplayNameWithArticle());
+				info.addPara(strings.get(key), pad, t, h, manager.getICE().getDisplayNameWithArticle());
 				break;
 			case SETTLE:
-				info.addPara(getString(key), pad, t, h, manager.getICE().getDisplayNameWithArticle(), manager.getFinalSettle().getName());
+				info.addPara(strings.get(key), pad, t, h, manager.getICE().getDisplayNameWithArticle(), manager.getFinalSettle().getName());
 				break;
 			case FINISHED:
-				info.addPara(getString(key), pad, t, h, manager.getICE().getDisplayNameWithArticle(), manager.getFinalSettle().getName());
+				info.addPara(strings.get(key), pad, t, h, manager.getICE().getDisplayNameWithArticle(), manager.getFinalSettle().getName());
 				break;
 			default:
 				break;
@@ -152,25 +153,25 @@ public class SUN_ICE_ExileFleetIntel extends BaseIntelPlugin {
 		String key = "des" + stateForInfo.getId();
 		switch (stateForInfo) {
 			case START:
-				info.addPara(getString(key), opad, h, currentSystem.getName());
+				info.addPara(strings.get(key), opad, h, currentSystem.getName());
 				if (player.isAtWorst(faction, SUN_ICE_Data.REP_FOR_FLEET_INFO_STAGE1)) {
-					info.addPara(getString(key + "_high"), opad, h, manager.getCurrentSystemDestination().getName());
+					info.addPara(strings.get(key + "_high"), opad, h, manager.getCurrentSystemDestination().getName());
 				}
 				break;
 			case STAY:
-				info.addPara(getString(key), opad, h, currentSystem.getName());
+				info.addPara(strings.get(key), opad, h, currentSystem.getName());
 				break;
 			case TRAVELING:
-				info.addPara(getString(key), opad, h, currentSystem.getName());
+				info.addPara(strings.get(key), opad, h, currentSystem.getName());
 				break;
 			case DEAD:
-				info.addPara(getString(key), opad, h, currentSystem.getName());
+				info.addPara(strings.get(key), opad, h, currentSystem.getName());
 				break;
 			case SETTLE:
-				info.addPara(getString(key), opad, h, currentSystem.getName());
+				info.addPara(strings.get(key), opad, h, currentSystem.getName());
 				break;
 			case FINISHED:
-				info.addPara(getString(key), opad, h, currentSystem.getName());
+				info.addPara(strings.get(key), opad, h, currentSystem.getName());
 				break;
 			default:
 				break;
@@ -178,17 +179,15 @@ public class SUN_ICE_ExileFleetIntel extends BaseIntelPlugin {
 
 		if (stateForInfo.isEnd()) return;
 		if (player.isAtWorst(faction, SUN_ICE_Data.REP_FOR_FLEET_INFO_STAGE2)) {
-			info.addPara(getString("rep"), opad * 2f, h, faction.getDisplayName(), faction.getRelationshipLevel(player).getDisplayName(), manager.getExiledFleet().getName());
+			info.addPara(strings.get("rep"), opad * 2f, h, faction.getDisplayName(), faction.getRelationshipLevel(player).getDisplayName(), manager.getExiledFleet().getName());
 
-			ButtonAPI button = info.addButton(getString("track"), TRACK_KEY, 200f, 25f, opad);
+			ButtonAPI button = info.addButton(strings.get("track"), TRACK_KEY, 200f, 25f, opad);
 			button.setEnabled(manager.getExiledFleet() != null && manager.getExiledFleet().isAlive());
 		}
 
 	}
 
-	private String getString(String key) {
-		return Global.getSettings().getString("Intel", "SUN_ICE_fleet_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Intel", "SUN_ICE_fleet_");
 
 	@Override
 	public void buttonPressConfirmed(Object buttonId, IntelUIAPI ui) {

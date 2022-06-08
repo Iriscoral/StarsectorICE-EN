@@ -23,9 +23,6 @@ public class SUN_ICE_HypermassDriverAutofireAIPlugin implements AutofireAIPlugin
 	private float overloadBalance;
 	private float fpRatio;
 
-	public SUN_ICE_HypermassDriverAutofireAIPlugin() {
-	}
-
 	public SUN_ICE_HypermassDriverAutofireAIPlugin(WeaponAPI weapon) {
 		this.weapon = weapon;
 		this.ship = weapon.getShip();
@@ -34,7 +31,7 @@ public class SUN_ICE_HypermassDriverAutofireAIPlugin implements AutofireAIPlugin
 	private ShipAPI findTarget() {
 		target = SUN_ICE_IceUtils.getShipInLineOfFire(weapon);
 
-		if (target != null && target.getOwner() != ship.getOwner()) {
+		if (target != null && target.isAlive() && target.getOwner() != ship.getOwner()) {
 			return target;
 		} else {
 			return target = null;

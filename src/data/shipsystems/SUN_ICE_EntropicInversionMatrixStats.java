@@ -1,19 +1,17 @@
 package data.shipsystems;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.ArmorGridAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import data.scripts.tools.SUN_ICE_IceUtils;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 public class SUN_ICE_EntropicInversionMatrixStats extends BaseShipSystemScript {
 	private float[][] prev = null;
 	private float initialFlux = Float.MIN_VALUE;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("ShipSystem", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("ShipSystem", "SUN_ICE_");
 
 	@Override
 	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -66,7 +64,7 @@ public class SUN_ICE_EntropicInversionMatrixStats extends BaseShipSystemScript {
 
 	@Override
 	public StatusData getStatusData(int index, State state, float effectLevel) {
-		if (index == 0) return new StatusData(getString("EntropicInversionMatrixStats1"), false);
+		if (index == 0) return new StatusData(strings.get("EntropicInversionMatrixStats1"), false);
 
 		return null;
 	}

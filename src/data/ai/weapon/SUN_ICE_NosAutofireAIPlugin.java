@@ -26,9 +26,6 @@ public class SUN_ICE_NosAutofireAIPlugin implements AutofireAIPlugin {
 		return MathUtils.getDistance(weapon.getLocation(), edgePoint);
 	}
 
-	public SUN_ICE_NosAutofireAIPlugin() {
-	}
-
 	public SUN_ICE_NosAutofireAIPlugin(WeaponAPI weapon) {
 		this.weapon = weapon;
 		this.ship = weapon.getShip();

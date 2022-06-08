@@ -1,10 +1,6 @@
 package data.weapons.beam;
 
-import com.fs.starfarer.api.combat.BeamAPI;
-import com.fs.starfarer.api.combat.BeamEffectPlugin;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.CombatEntityAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.*;
 import data.ai.ship.SUN_ICE_MeleeTempAI;
 import data.ai.ship.SUN_ICE_MeleeTempAI.MeleeAIFlags;
 import data.scripts.tools.SUN_ICE_IntervalTracker;

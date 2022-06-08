@@ -12,11 +12,15 @@ import data.ai.drone.SUN_ICE_ICEMxDroneAI;
 import data.ai.missile.*;
 import data.ai.weapon.*;
 import data.scripts.campaign.bar.SUN_ICE_EventChainStarterBarEventCreator;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
+import data.scripts.world.SUN_ICE_CampaignListener;
+import data.scripts.world.SUN_ICE_CampaignPlugin;
+import data.scripts.world.SUN_ICE_ExileFleetManager;
 import org.dark.shaders.light.LightData;
 import org.dark.shaders.util.ShaderLib;
 import org.dark.shaders.util.TextureData;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,9 +29,7 @@ public class ICEModPlugin extends BaseModPlugin {
 	public static final boolean SMILE_FOR_CAMERA = false;
 	public static final Color HEAL_TEXT_COLOR = new Color(0, 255, 100);
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Misc", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Misc", "SUN_ICE_");
 
 	@Override
 	public void onApplicationLoad() {
@@ -38,7 +40,7 @@ public class ICEModPlugin extends BaseModPlugin {
 
 		for (String id : ICEBlackList.getBlackListModId()) {
 			if (Global.getSettings().getModManager().isModEnabled(id)) {
-				throw new RuntimeException(String.format(getString("incMod"), Global.getSettings().getModManager().getModSpec("nbj_ice").getName(), Global.getSettings().getModManager().getModSpec(id).getName()));
+				throw new RuntimeException(String.format(strings.get("incMod"), Global.getSettings().getModManager().getModSpec("nbj_ice").getName(), Global.getSettings().getModManager().getModSpec(id).getName()));
 			}
 		}
 
@@ -51,7 +53,7 @@ public class ICEModPlugin extends BaseModPlugin {
 			weaponIds.add(weapon.getWeaponId());
 		}
 		if (!intersectionConfirm(ICEBlackList.getBlackListShipId(), hullIds) || !intersectionConfirm(ICEBlackList.getBlackListWeaponId(), weaponIds)) {
-			throw new RuntimeException(Global.getSettings().getModManager().getModSpec("nbj_ice").getName() + " " + getString("imMod"));
+			throw new RuntimeException(Global.getSettings().getModManager().getModSpec("nbj_ice").getName() + " " + strings.get("imMod"));
 		}
 
 		if (Global.getSettings().getModManager().isModEnabled("ungp")) {
@@ -90,11 +92,14 @@ public class ICEModPlugin extends BaseModPlugin {
 	public void onNewGame() {
 
 		if (EXERELIN_ENABLED) {
-			ICEGenWhenNEX.generateIfCorvus(Global.getSector());
-			ICEGenWhenNEX.setNotTransfer();
+			new ICEGenWhenNEX().generate(Global.getSector());
 		} else {
-			ICEGen.generateInNewGame(Global.getSector());
+			new ICEGenNormal().generate(Global.getSector());
 		}
+
+		Global.getSector().registerPlugin(new SUN_ICE_CampaignPlugin());
+		Global.getSector().addListener(new SUN_ICE_CampaignListener(true));
+		Global.getSector().addScript(new SUN_ICE_ExileFleetManager());
 	}
 
 	@Override
@@ -102,7 +107,7 @@ public class ICEModPlugin extends BaseModPlugin {
 		String id = drone.getHullSpec().getHullId();
 
 		if (id.contentEquals("sun_ice_drone_mx")) {
-			return new PluginPick<ShipAIPlugin>(new SUN_ICE_ICEMxDroneAI(drone, mothership, system), CampaignPlugin.PickPriority.MOD_GENERAL);
+			return new PluginPick<ShipAIPlugin>(new SUN_ICE_ICEMxDroneAI(drone, mothership, system), CampaignPlugin.PickPriority.MOD_SET);
 		}
 
 		return super.pickDroneAI(drone, mothership, system);
@@ -114,17 +119,17 @@ public class ICEModPlugin extends BaseModPlugin {
 
 		switch (id) {
 			case "sun_ice_scatterpd":
-				return new PluginPick<MissileAIPlugin>(new SUN_ICE_ScatterPdMissileAI(missile), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<MissileAIPlugin>(new SUN_ICE_ScatterPdMissileAI(missile), CampaignPlugin.PickPriority.MOD_SET);
 			case "sun_ice_boomerang":
-				return new PluginPick<MissileAIPlugin>(new SUN_ICE_BoomerangMissileAI(missile), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<MissileAIPlugin>(new SUN_ICE_BoomerangMissileAI(missile), CampaignPlugin.PickPriority.MOD_SET);
 			case "sun_ice_gandiva":
-				return new PluginPick<MissileAIPlugin>(new SUN_ICE_GandivaMissileAI(missile), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<MissileAIPlugin>(new SUN_ICE_GandivaMissileAI(missile), CampaignPlugin.PickPriority.MOD_SET);
 			// case "sun_ice_spitfire":
-				// return new PluginPick<MissileAIPlugin>(new SUN_ICE_SpitfireMissileAI(missile), CampaignPlugin.PickPriority.MOD_GENERAL);
+				// return new PluginPick<MissileAIPlugin>(new SUN_ICE_SpitfireMissileAI(missile), CampaignPlugin.PickPriority.MOD_SET);
 			case "sun_ice_mine_pod":
-				return new PluginPick<MissileAIPlugin>(new SUN_ICE_MinePodAI(missile), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<MissileAIPlugin>(new SUN_ICE_MinePodAI(missile), CampaignPlugin.PickPriority.MOD_SET);
 			case "sun_ice_mine":
-				return new PluginPick<MissileAIPlugin>(new SUN_ICE_MineAI(missile), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<MissileAIPlugin>(new SUN_ICE_MineAI(missile), CampaignPlugin.PickPriority.MOD_SET);
 		}
 
 		return super.pickMissileAI(missile, launchingShip);
@@ -136,17 +141,17 @@ public class ICEModPlugin extends BaseModPlugin {
 
 		switch (id) {
 			case "sun_ice_mobiusray":
-				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_MobiusRayAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_MobiusRayAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_SET);
 			case "sun_ice_hypermassdriver":
-				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_HypermassDriverAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_HypermassDriverAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_SET);
 			case "sun_ice_nova":
-				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_NovaDischargerAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_NovaDischargerAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_SET);
 			case "sun_ice_fissiondrill":
-				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_FissionDrillAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_FissionDrillAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_SET);
 			case "sun_ice_nos":
-				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_NosAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_NosAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_SET);
 			case "sun_ice_chupacabra":
-				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_ChupacabraAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_GENERAL);
+				return new PluginPick<AutofireAIPlugin>(new SUN_ICE_ChupacabraAutofireAIPlugin(weapon), CampaignPlugin.PickPriority.MOD_SET);
 		}
 
 		return super.pickWeaponAutofireAI(weapon);

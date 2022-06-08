@@ -5,7 +5,7 @@ import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
-import data.scripts.campaign.specialist.UNGP_SpecialistSettings.*;
+import data.scripts.campaign.specialist.UNGP_SpecialistSettings.Difficulty;
 import data.scripts.ungprules.impl.UNGP_BaseRuleEffect;
 import data.scripts.ungprules.tags.UNGP_CombatTag;
 import org.lazywizard.lazylib.MathUtils;

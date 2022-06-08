@@ -10,7 +10,7 @@ import com.fs.starfarer.api.util.FaderUtil;
 import com.fs.starfarer.api.util.Misc;
 import data.hullmods.SUN_ICE_GravimetricSensors;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class SUN_ICE_TravelDriveStats extends BaseShipSystemScript {
 

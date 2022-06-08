@@ -10,15 +10,14 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_ExileRemnantWarIntel;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 import java.util.List;
 import java.util.Map;
 
 public class SUN_ICE_MissionRemnantWarEnds extends BaseCommandPlugin {
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_");
 
 	@Override
 	public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
@@ -31,7 +30,7 @@ public class SUN_ICE_MissionRemnantWarEnds extends BaseCommandPlugin {
 		optionPanel.clearOptions();
 
 		TextPanelAPI textPanel = dialog.getTextPanel();
-		textPanel.addPara(getString("war_ends"));
+		textPanel.addPara(strings.get("war_ends"));
 
 		for (IntelInfoPlugin intel : Global.getSector().getIntelManager().getIntel(SUN_ICE_ExileRemnantWarIntel.class)) {
 			SUN_ICE_ExileRemnantWarIntel remnantWarIntel = (SUN_ICE_ExileRemnantWarIntel)intel;
@@ -44,7 +43,7 @@ public class SUN_ICE_MissionRemnantWarEnds extends BaseCommandPlugin {
 
 		Misc.makeUnimportant(dialog.getInteractionTarget(), "REM_WAR");
 		SUN_ICE_MissionManager.finishMission();
-		optionPanel.addOption(getString("continue"), "SUN_ICE_remnant_war_ends");
+		optionPanel.addOption(strings.get("continue"), "SUN_ICE_remnant_war_ends");
 		return true;
 	}
 }

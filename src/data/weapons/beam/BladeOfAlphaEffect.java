@@ -6,7 +6,7 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import data.shipsystems.SUN_ICE_LimiterControlStats;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class BladeOfAlphaEffect implements BeamEffectPlugin {
 	private static final Color SHIFT_COLOR = new Color(0, 0, 0, 0);

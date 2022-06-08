@@ -1,14 +1,17 @@
 package data.scripts.tools;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.CombatEntityAPI;
+import com.fs.starfarer.api.combat.CombatFleetManagerAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.fleet.FleetGoal;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -115,6 +118,10 @@ public class SUN_ICE_RecallTracker {
 				ally.getMutableStats().getMaxSpeed().modifyMult("sun_ice_recall", 0f);
 				ally.setAngularVelocity(0f);
 				ally.setFacing(VectorUtils.getAngle(teleporter.getLocation(), recallLoc));
+
+				if (ally.getPhaseCloak() != null && ally.getPhaseCloak().isActive()) {
+					ally.getPhaseCloak().deactivate();
+				}
 
 				if (SUN_ICE_JauntSession.hasSession(ally)) {
 					SUN_ICE_JauntSession.getSession(ally).endNow();

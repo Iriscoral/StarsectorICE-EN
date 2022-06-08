@@ -25,9 +25,6 @@ public class SUN_ICE_ChupacabraAutofireAIPlugin implements AutofireAIPlugin {
 		return MathUtils.getDistance(weapon.getLocation(), edgePoint);
 	}
 
-	public SUN_ICE_ChupacabraAutofireAIPlugin() {
-	}
-
 	public SUN_ICE_ChupacabraAutofireAIPlugin(WeaponAPI weapon) {
 		this.weapon = weapon;
 		this.ship = weapon.getShip();

@@ -16,6 +16,7 @@ import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_ExileRemnantWarIntel;
 import data.scripts.campaign.intel.SUN_ICE_GoToFleetIntel;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import data.scripts.world.SUN_ICE_ExileFleetFakeAI;
 import data.scripts.world.SUN_ICE_ExileFleetManager;
 import org.lwjgl.input.Keyboard;
@@ -97,13 +98,8 @@ public class SUN_ICE_MissionManager extends BaseCommandPlugin implements EveryFr
 		this.messageDelay = messageDelay;
 	}
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_mission_" + key);
-	}
-
-	public static String getCutLink() {
-		return Global.getSettings().getString("Event", "SUN_ICE_cutlink");
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_mission_");
+	public static final I18nSection cutlinkStrings = I18nSection.getInstance("Event", "SUN_ICE_cutlink");
 
 	@Override
 	public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
@@ -120,7 +116,7 @@ public class SUN_ICE_MissionManager extends BaseCommandPlugin implements EveryFr
 		memoryLocal.set(MISSION_STAGE_KEY, stage);
 
 		TextPanelAPI textPanel = dialog.getTextPanel();
-		textPanel.addPara(getString("entrance"));
+		textPanel.addPara(strings.get("entrance"));
 
 		OptionPanelAPI optionPanel = dialog.getOptionPanel();
 		optionPanel.clearOptions();
@@ -131,7 +127,7 @@ public class SUN_ICE_MissionManager extends BaseCommandPlugin implements EveryFr
 		switch (stage) {
 			case STAGE_NOT_STARTED: {
 				if (fleetStateCheck(dialog, manager) && repStateCheck(dialog, RepLevel.NEUTRAL)) {
-					optionPanel.addOption(getString("option"), "init");
+					optionPanel.addOption(strings.get("option"), "init");
 					return true;
 				}
 				break;
@@ -140,28 +136,28 @@ public class SUN_ICE_MissionManager extends BaseCommandPlugin implements EveryFr
 			case STAGE_ONGOING_CORE:
 			case STAGE_ONGOING_SHIPS:
 			case STAGE_ONGOING_GOODS: {
-				optionPanel.addOption(getString("option"), "init");
+				optionPanel.addOption(strings.get("option"), "init");
 				break;
 			}
 			case STAGE_PREVIEW_CORE:
 			case STAGE_PREVIEW_SHIPS:
 			case STAGE_PREVIEW_GOODS: {
 				if (fleetStateCheck(dialog, manager) && messageStateCheck(dialog)) {
-					optionPanel.addOption(getString("option"), "init");
+					optionPanel.addOption(strings.get("option"), "init");
 					return true;
 				}
 				break;
 			}
 			case STAGE_AFTER_ALL:
 			case STAGE_FINALE: {
-				textPanel.addPara(getString("after_all_missions"));
-				optionPanel.addOption(getCutLink(), "cutCommLink");
+				textPanel.addPara(strings.get("after_all_missions"));
+				optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				optionPanel.setShortcut("cutCommLink", Keyboard.KEY_ESCAPE, false, false, false, false);
 				return true;
 			}
 			default:
-				dialog.getTextPanel().addPara(getString("no_enough_reputation"));
-				dialog.getOptionPanel().addOption(getCutLink(), "cutCommLink");
+				dialog.getTextPanel().addPara(strings.get("no_enough_reputation"));
+				dialog.getOptionPanel().addOption(cutlinkStrings.get(), "cutCommLink");
 				dialog.getOptionPanel().setShortcut("cutCommLink", Keyboard.KEY_ESCAPE, false, false, false, false);
 				break;
 		}
@@ -309,8 +305,8 @@ public class SUN_ICE_MissionManager extends BaseCommandPlugin implements EveryFr
 
 	private boolean fleetStateCheck(InteractionDialogAPI dialog, SUN_ICE_ExileFleetManager manager) {
 		if (manager.getCurrentState() != SUN_ICE_ExileFleetFakeAI.ExileState.STAY) {
-			dialog.getTextPanel().addPara(getString("state_incorrect"));
-			dialog.getOptionPanel().addOption(getCutLink(), "cutCommLink");
+			dialog.getTextPanel().addPara(strings.get("state_incorrect"));
+			dialog.getOptionPanel().addOption(cutlinkStrings.get(), "cutCommLink");
 			dialog.getOptionPanel().setShortcut("cutCommLink", Keyboard.KEY_ESCAPE, false, false, false, false);
 			return false;
 		}
@@ -324,8 +320,8 @@ public class SUN_ICE_MissionManager extends BaseCommandPlugin implements EveryFr
 			if (!intel.isEnded() && !intel.isEnding()) return true;
 		}
 
-		dialog.getTextPanel().addPara(getString("no_enough_reputation"));
-		dialog.getOptionPanel().addOption(getCutLink(), "cutCommLink");
+		dialog.getTextPanel().addPara(strings.get("no_enough_reputation"));
+		dialog.getOptionPanel().addOption(cutlinkStrings.get(), "cutCommLink");
 		dialog.getOptionPanel().setShortcut("cutCommLink", Keyboard.KEY_ESCAPE, false, false, false, false);
 		return false;
 	}
@@ -338,8 +334,8 @@ public class SUN_ICE_MissionManager extends BaseCommandPlugin implements EveryFr
 			return true;
 		}
 
-		dialog.getTextPanel().addPara(getString("no_enough_reputation"));
-		dialog.getOptionPanel().addOption(getCutLink(), "cutCommLink");
+		dialog.getTextPanel().addPara(strings.get("no_enough_reputation"));
+		dialog.getOptionPanel().addOption(cutlinkStrings.get(), "cutCommLink");
 		dialog.getOptionPanel().setShortcut("cutCommLink", Keyboard.KEY_ESCAPE, false, false, false, false);
 		return false;
 	}

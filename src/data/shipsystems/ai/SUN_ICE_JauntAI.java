@@ -1,9 +1,9 @@
 package data.shipsystems.ai;
 
 import com.fs.starfarer.api.combat.*;
-import data.shipsystems.SUN_ICE_JauntHeavyStats;
 import data.scripts.tools.SUN_ICE_IceUtils;
 import data.scripts.tools.SUN_ICE_IntervalTracker;
+import data.shipsystems.SUN_ICE_JauntHeavyStats;
 import org.lwjgl.util.vector.Vector2f;
 
 import java.util.Map;
