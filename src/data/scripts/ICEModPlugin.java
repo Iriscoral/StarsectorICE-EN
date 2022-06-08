@@ -2,7 +2,6 @@ package data.scripts;
 
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.ModSpecAPI;
 import com.fs.starfarer.api.PluginPick;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
 import com.fs.starfarer.api.combat.*;
@@ -54,13 +53,6 @@ public class ICEModPlugin extends BaseModPlugin {
 		}
 		if (!intersectionConfirm(ICEBlackList.getBlackListShipId(), hullIds) || !intersectionConfirm(ICEBlackList.getBlackListWeaponId(), weaponIds)) {
 			throw new RuntimeException(Global.getSettings().getModManager().getModSpec("nbj_ice").getName() + " " + strings.get("imMod"));
-		}
-
-		if (Global.getSettings().getModManager().isModEnabled("ungp")) {
-			ModSpecAPI spec = Global.getSettings().getModManager().getModSpec("ungp");
-			if (Integer.parseInt(spec.getVersionInfo().getMinor()) < 6) {
-				throw new RuntimeException("Your UNGP is too old, get a new one in fossic.org!");
-			}
 		}
 
 		ShaderLib.init();
