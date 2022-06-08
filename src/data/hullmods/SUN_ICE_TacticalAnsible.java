@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class SUN_ICE_TacticalAnsible extends BaseHullMod {
 
 	private static final String id = "sun_ice_tactical_ansible_mod";
-	public static final I18nSection strings = I18nSection.getInstance("Hullmod", "SUN_ICE_");
+	public static final I18nSection strings = I18nSection.getInstance("HullMod", "SUN_ICE_");
 
 	private static final float DAMAGE_EFFECT = 20f;
 	private static final HashMap<HullSize, Float> DETECT_RADIUS = new HashMap<>();
