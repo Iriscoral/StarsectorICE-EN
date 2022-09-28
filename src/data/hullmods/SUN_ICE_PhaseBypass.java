@@ -10,7 +10,7 @@ import com.fs.starfarer.api.impl.campaign.ids.HullMods;
 import data.scripts.tools.SUN_ICE_IceUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

@@ -7,7 +7,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import data.shipsystems.SUN_ICE_LimiterControlStats;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class SystemVisualEffect implements EveryFrameWeaponEffectPlugin {
 	private static final Color SPECIAL_LIGHT = new Color(255, 221, 127);

@@ -1,7 +1,10 @@
 package data.ai.missile;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.CombatEngineLayers;
+import com.fs.starfarer.api.combat.CombatEntityAPI;
+import com.fs.starfarer.api.combat.MissileAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import data.scripts.plugins.MagicRenderPlugin;
 import data.scripts.tools.SUN_ICE_IceUtils;
@@ -9,7 +12,7 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class SUN_ICE_MineAI extends SUN_ICE_BaseMissileAI {
 	private static final float ATTACK_RANGE = 600f;

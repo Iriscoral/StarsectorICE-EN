@@ -1,7 +1,7 @@
 {
     "displayName": "Experimental",
-    "fluxCapacitors": 19,
-    "fluxVents": 30,
+    "fluxCapacitors": 11,
+    "fluxVents": 20,
     "hullId": "sun_ice_ihs",
     "hullMods": [
         "targetingunit",
@@ -16,14 +16,14 @@
         "targetingunit",
         "heavyarmor",
         "sun_ice_turbulence_valve_mod",
-        "phase_anchor",
+        "sun_ice_shunt_coating_mod",
         "unstable_injector"
     ],
     "sMods": [
         "targetingunit",
         "heavyarmor",
         "sun_ice_turbulence_valve_mod",
-        "phase_anchor",
+        "sun_ice_shunt_coating_mod",
         "unstable_injector"
     ],
     "variantId": "sun_ice_ihs_exp",

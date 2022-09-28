@@ -1,10 +1,6 @@
 package data.weapons.beam;
 
-import com.fs.starfarer.api.combat.BeamAPI;
-import com.fs.starfarer.api.combat.BeamEffectPlugin;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.ShieldAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.*;
 import data.scripts.plugins.SUN_ICE_EveryFramePlugin;
 
 public class FalxBeamEffect implements BeamEffectPlugin {

@@ -1,7 +1,10 @@
 package data.weapons;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.*;
+import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
+import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import data.shipsystems.SUN_ICE_LimiterControlStats;
 import org.lwjgl.util.vector.Vector2f;
 

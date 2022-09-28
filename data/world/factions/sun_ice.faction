@@ -65,6 +65,7 @@
 		"buysSurveyData":true,
 		"hostilityImpactOnGrowth":true,
 		"caresAboutAtrocities":true,
+		"allowsTransponderOffTrade":true,
 		"punitiveExpeditionData":{
 			"vsCompetitors":false,
 			"vsFreePort":false,

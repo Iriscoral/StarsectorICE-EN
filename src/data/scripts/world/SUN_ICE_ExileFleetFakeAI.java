@@ -8,17 +8,17 @@ import com.fs.starfarer.api.campaign.econ.MarketConditionAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
-import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.Submarkets;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.rulecmd.SUN_ICE_GetJay;
 import com.fs.starfarer.api.impl.campaign.rulecmd.SUN_ICE_MissionManager;
 import com.fs.starfarer.api.impl.campaign.submarkets.StoragePlugin;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
-import data.scripts.campaign.intel.SUN_ICE_ExileRemnantWarIntel;
 import data.scripts.ICEGenWhenNEX;
+import data.scripts.campaign.intel.SUN_ICE_ExileRemnantWarIntel;
 import data.scripts.tools.SUN_ICE_Data;
 import data.scripts.tools.SUN_ICE_IceUtils;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
@@ -29,9 +29,7 @@ import java.util.Random;
 
 public class SUN_ICE_ExileFleetFakeAI {
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Misc", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Misc", "SUN_ICE_");
 
 	public enum ExileState {
 		NULL(0), START(1), STAY(2), TRAVELING(3), DEAD(4), SETTLE(5), FINISHED(6);
@@ -128,17 +126,6 @@ public class SUN_ICE_ExileFleetFakeAI {
 			homeCheckerDays -= days;
 		}
 
-		if (!(exiles.getInflater() instanceof SUN_ICE_ExileFleetInflater)) {
-			exiles.setInflater(new SUN_ICE_ExileFleetInflater());
-			exiles.setInflated(true);
-		}
-
-		SectorEntityToken target = exiles.getInteractionTarget();
-		if (target != null && exiles.isHostileTo(target)) {
-			if (!target.getFaction().getId().contentEquals(Factions.REMNANTS))
-			exiles.getAI().doNotAttack(target, 10f); // So be passive, maybe
-		}
-
 		if (!exiles.isAlive() || isColonyShipDied(exiles) || isMarketDied(exiles)) {
 			state = ExileState.DEAD;
 
@@ -146,7 +133,7 @@ public class SUN_ICE_ExileFleetFakeAI {
 			SUN_ICE_MissionManager.doomStages();
 
 			exiles.setMarket(null);
-			exiles.setName(getString("exiled_name_failed"));
+			exiles.setName(strings.get("exiled_name_failed"));
 			if (exiles.isAlive()) {
 				orderDespawn(exiles);
 			}
@@ -163,7 +150,7 @@ public class SUN_ICE_ExileFleetFakeAI {
 			daysToStayInSystem = 30f + (float) Math.random() * 50f;
 
 			exiles.clearAssignments();
-			exiles.addAssignment(FleetAssignment.PATROL_SYSTEM, destination.getStar(), 10f, getString("exiled_wander"), new WardingScript(destination, exiles));
+			exiles.addAssignment(FleetAssignment.PATROL_SYSTEM, destination.getStar(), 10f, strings.get("exiled_wander"), new WardingScript(destination, exiles));
 			if (!warSpawned && warSpawning) {
 				warSpawned = true;
 				daysToStayInSystem = 999999f;
@@ -184,6 +171,10 @@ public class SUN_ICE_ExileFleetFakeAI {
 			chooseNewTargetToTravel(exiles);
 			wantToTravelingToAnotherSystem = true;
 			state = ExileState.TRAVELING;
+
+			if (exiles.getInflater() != null) {
+				exiles.getInflater().inflate(exiles);
+			}
 		}
 
 		if (exiles.isInHyperspace()) {
@@ -233,19 +224,19 @@ public class SUN_ICE_ExileFleetFakeAI {
 	private static String getTravelString(StarSystemAPI target) {
 		FactionAPI player = Global.getSector().getPlayerFaction();
 		if (player.isAtWorst(SUN_ICE_Data.getICE(), SUN_ICE_Data.REP_FOR_FLEET_INFO_STAGE1)) {
-			return getString("exiled_travel") + target.getName();
+			return strings.get("exiled_travel") + target.getName();
 		}
 
-		return getString("exiled_traveling");
+		return strings.get("exiled_traveling");
 	}
 
 	private static String getTravelString(SectorEntityToken target) {
 		FactionAPI player = Global.getSector().getPlayerFaction();
 		if (player.isAtWorst(SUN_ICE_Data.getICE(), SUN_ICE_Data.REP_FOR_FLEET_INFO_STAGE1)) {
-			return getString("exiled_travel") + target.getName();
+			return strings.get("exiled_travel") + target.getName();
 		}
 
-		return getString("exiled_traveling");
+		return strings.get("exiled_traveling");
 	}
 
 	private boolean noMissionStageToPreventMakingHome(CampaignFleetAPI exiles) {
@@ -339,7 +330,7 @@ public class SUN_ICE_ExileFleetFakeAI {
 	private void setFinalSettle(CampaignFleetAPI exiles, PlanetAPI tmpSettle, boolean withPlayer) {
 		exiles.clearAssignments();
 		exiles.addAssignment(FleetAssignment.GO_TO_LOCATION, tmpSettle, 9999, getTravelString(tmpSettle));
-		exiles.addAssignment(FleetAssignment.ORBIT_PASSIVE, tmpSettle, getDaysToOrbit(exiles), getString("exiled_settle") + tmpSettle.getName());
+		exiles.addAssignment(FleetAssignment.ORBIT_PASSIVE, tmpSettle, getDaysToOrbit(exiles), strings.get("exiled_settle") + tmpSettle.getName());
 		exiles.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN, tmpSettle, 9999, new SettleAndBuildColonyScript(this, withPlayer));
 		destination = tmpSettle.getStarSystem();
 		finalSettle = tmpSettle;
@@ -380,7 +371,7 @@ public class SUN_ICE_ExileFleetFakeAI {
 		exiles.getDetectedRangeMod().unmodify("fleet");
 		exiles.clearAssignments();
 		exiles.addAssignment(FleetAssignment.GO_TO_LOCATION, token, 9999);
-		exiles.addAssignment(FleetAssignment.ORBIT_PASSIVE, token, getDaysToOrbit(exiles), getString("exiled_dismiss") + token.getName());
+		exiles.addAssignment(FleetAssignment.ORBIT_PASSIVE, token, getDaysToOrbit(exiles), strings.get("exiled_dismiss") + token.getName());
 		exiles.addAssignment(FleetAssignment.GO_TO_LOCATION_AND_DESPAWN, selectedMarket.getPrimaryEntity(), 9999);
 	}
 
@@ -437,10 +428,10 @@ public class SUN_ICE_ExileFleetFakeAI {
 		WeightedRandomPicker<StarSystemAPI> picker = new WeightedRandomPicker<>(random);
 		for (StarSystemAPI system : Global.getSector().getStarSystems()) {
 
-			if (system.hasPulsar()) continue;
 			if (system.getStar() == null) continue;
 			if (system.hasPulsar()) continue;
 			if (system.hasBlackHole()) continue;
+			if (system.getPlanets().size() < 3) continue;
 
 			if (system.hasTag(Tags.THEME_CORE_POPULATED)) continue;
 			if (system.hasTag(Tags.THEME_HIDDEN)) continue;
@@ -476,7 +467,6 @@ public class SUN_ICE_ExileFleetFakeAI {
 	}
 
 	private boolean isSystemValidForSettle(StarSystemAPI system, FactionAPI settler) {
-		if (system.hasPulsar()) return false;
 		if (system.getStar() == null) return false;
 		if (system.hasPulsar()) return false;
 		if (system.hasBlackHole()) return false;
@@ -667,7 +657,7 @@ public class SUN_ICE_ExileFleetFakeAI {
 
 			float seed = (float) Math.random();
 			if (seed < 0.1f) {
-				fleet.addAssignment(FleetAssignment.PATROL_SYSTEM, system.getStar(), 10f, getString("exiled_wander"), this);
+				fleet.addAssignment(FleetAssignment.PATROL_SYSTEM, system.getStar(), 10f, strings.get("exiled_wander"), this);
 			} else {
 				WeightedRandomPicker<SectorEntityToken> picker = new WeightedRandomPicker<>();
 				for (MarketAPI market : Global.getSector().getEconomy().getMarkets(system)) {
@@ -685,14 +675,25 @@ public class SUN_ICE_ExileFleetFakeAI {
 					picker.add(market.getPrimaryEntity(), w);
 				}
 
+				boolean inMarket = true;
 				SectorEntityToken entity = picker.pick();
 				if (entity == null) {
-					fleet.addAssignment(FleetAssignment.PATROL_SYSTEM, system.getStar(), 10f, getString("exiled_wander"), this);
-					return;
+					for (PlanetAPI planet : system.getPlanets()) {
+						if (planet.isStar()) continue;
+						picker.add(planet);
+					}
+
+					inMarket = false;
+					entity = picker.pick();
+					if (entity == null) {
+						fleet.addAssignment(FleetAssignment.PATROL_SYSTEM, system.getStar(), 10f, strings.get("exiled_wander"), this);
+						return;
+					}
 				}
 
 				int days = 5 + (int) (Math.random() * 10);
-				fleet.addAssignment(FleetAssignment.RESUPPLY, entity, days, getString("exiled_wander"), this);
+				if (!inMarket) days *= 100;
+				fleet.addAssignment(FleetAssignment.RESUPPLY, entity, days, strings.get("exiled_wander"), this);
 			}
 		}
 	}
@@ -711,10 +712,12 @@ public class SUN_ICE_ExileFleetFakeAI {
 			fakeAI.manager.setFinishedSettle(true);
 			fakeAI.state = ExileState.FINISHED;
 
-			List<MarketConditionAPI> conditions = new ArrayList<>();
+			List<String> conditions = new ArrayList<>();
 			if (fakeAI.finalSettle.getMarket() != null) {
 				fakeAI.finalSettle.getMarket().setSurveyLevel(MarketAPI.SurveyLevel.FULL);
-				conditions.addAll(fakeAI.finalSettle.getMarket().getConditions());
+				for (MarketConditionAPI condition : fakeAI.finalSettle.getMarket().getConditions()) {
+					conditions.add(condition.getId());
+				}
 
 				if (!fakeAI.finalSettle.getMarket().isPlanetConditionMarketOnly()) {
 					SUN_ICE_IceUtils.decivilize(fakeAI.finalSettle.getMarket());
@@ -729,18 +732,20 @@ public class SUN_ICE_ExileFleetFakeAI {
 			exileMarket.setPrimaryEntity(fakeAI.finalSettle);
 			exileMarket.removeCondition("sun_ice_colony_fleet");
 
-			fakeAI.finalSettle.setName(getString("exiled_name_final"));
+			fakeAI.finalSettle.setName(strings.get("exiled_name_final"));
 			fakeAI.finalSettle.setMarket(exileMarket);
-			fakeAI.finalSettle.getMarket().setName(getString("exiled_name_final"));
+			fakeAI.finalSettle.getMarket().setName(strings.get("exiled_name_final"));
 			fakeAI.finalSettle.getMarket().setImmigrationClosed(false);
 			fakeAI.finalSettle.getMarket().setSurveyLevel(MarketAPI.SurveyLevel.FULL);
-			for (MarketConditionAPI cond : fakeAI.finalSettle.getMarket().getConditions()) {
-				cond.setSurveyed(true);
-			}
 
 			fakeAI.finalSettle.getMarket().addSubmarket(Submarkets.SUBMARKET_STORAGE);
-			for (MarketConditionAPI condition : conditions) {
-				fakeAI.finalSettle.getMarket().addCondition(condition);
+			for (String condition : conditions) {
+				if (!fakeAI.finalSettle.getMarket().hasCondition(condition)) {
+					fakeAI.finalSettle.getMarket().addCondition(condition);
+				}
+			}
+			for (MarketConditionAPI condition : fakeAI.finalSettle.getMarket().getConditions()) {
+				condition.setSurveyed(true);
 			}
 
 			fakeAI.finalSettle.getMarket().addIndustry("commerce");
@@ -760,15 +765,12 @@ public class SUN_ICE_ExileFleetFakeAI {
 
 				Global.getSector().addScript(new SUN_ICE_MissionManager(new SUN_ICE_GetJay()));
 			} else {
-				SectorEntityToken shalom_station = fakeAI.finalSettle.getStarSystem().addCustomEntity("sun_ice_shalom_station", getString("exiled_name_final"), "sun_ice_idoneus_shalom", "sun_ice");
-				shalom_station.setCircularOrbitPointingDown(fakeAI.finalSettle, 245, 500, 300);
-				shalom_station.setCustomDescriptionId("sun_ice_shalom_station");
+				SectorEntityToken shalomStation = fakeAI.finalSettle.getStarSystem().addCustomEntity("sun_ice_shalom_station", strings.get("exiled_name_final"), "sun_ice_idoneus_shalom", "sun_ice");
+				shalomStation.setCircularOrbitPointingDown(fakeAI.finalSettle, 245, 500, 300);
+				shalomStation.setCustomDescriptionId("sun_ice_shalom_station");
 
 				fakeAI.finalSettle.setFaction("sun_ice");
 				fakeAI.finalSettle.getMarket().setFactionId("sun_ice");
-				if (!fakeAI.finalSettle.getMarket().hasIndustry("battlestation_high")) {
-					fakeAI.finalSettle.getMarket().addIndustry("battlestation_high");
-				}
 
 				if (Global.getSettings().getModManager().isModEnabled("nexerelin")) {
 					ICEGenWhenNEX.spawnICEFactionForNEX();

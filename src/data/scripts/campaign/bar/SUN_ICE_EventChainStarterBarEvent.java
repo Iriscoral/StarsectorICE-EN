@@ -14,17 +14,16 @@ import com.fs.starfarer.api.impl.campaign.intel.bar.events.BaseBarEventWithPerso
 import com.fs.starfarer.api.impl.campaign.rulecmd.SUN_ICE_MissionManager;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import data.scripts.world.SUN_ICE_ExileFleetFakeAI;
 import data.scripts.world.SUN_ICE_ExileFleetManager;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Map;
 
 public class SUN_ICE_EventChainStarterBarEvent extends BaseBarEventWithPerson {
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_");
 
 	@Override
 	public boolean isAlwaysShow() {
@@ -71,10 +70,10 @@ public class SUN_ICE_EventChainStarterBarEvent extends BaseBarEventWithPerson {
 	public void addPromptAndOption(InteractionDialogAPI dialog, Map<String, MemoryAPI> memoryMap) {
 		regen(dialog.getInteractionTarget().getMarket());
 		TextPanelAPI text = dialog.getTextPanel();
-		text.addPara(String.format(getString("prompt"), getManOrWoman(), getHeOrShe()));
+		text.addPara(String.format(strings.get("prompt"), getManOrWoman(), getHeOrShe()));
 
 		Color c = Global.getSector().getFaction(getPersonFaction()).getColor();
-		dialog.getOptionPanel().addOption(String.format(getString("contact_act_1"), getManOrWoman()), this, c, null);
+		dialog.getOptionPanel().addOption(String.format(strings.get("contact_act_1"), getManOrWoman()), this, c, null);
 	}
 
 	@Override
@@ -89,36 +88,36 @@ public class SUN_ICE_EventChainStarterBarEvent extends BaseBarEventWithPerson {
 
 		switch (option) {
 			case AFTER_ACT_1:
-				text.addPara(getString("contact_response_1"));
-				options.addOption(getString("contact_act_2_progress_1"), OptionId.AFTER_ACT_2_A);
-				options.addOption(getString("contact_act_2_progress_2"), OptionId.AFTER_ACT_2_B);
-				options.addOption(getString("contact_act_2_leave"), OptionId.LEAVE);
+				text.addPara(strings.get("contact_response_1"));
+				options.addOption(strings.get("contact_act_2_progress_1"), OptionId.AFTER_ACT_2_A);
+				options.addOption(strings.get("contact_act_2_progress_2"), OptionId.AFTER_ACT_2_B);
+				options.addOption(strings.get("contact_act_2_leave"), OptionId.LEAVE);
 				break;
 			case AFTER_ACT_2_A:
 			case AFTER_ACT_2_B:
-				text.addPara(getString("contact_response_2"));
-				options.addOption(getString("contact_act_3_progress_1"), OptionId.AFTER_ACT_3_A);
-				options.addOption(getString("contact_act_3_progress_2"), OptionId.AFTER_ACT_3_B);
+				text.addPara(strings.get("contact_response_2"));
+				options.addOption(strings.get("contact_act_3_progress_1"), OptionId.AFTER_ACT_3_A);
+				options.addOption(strings.get("contact_act_3_progress_2"), OptionId.AFTER_ACT_3_B);
 				break;
 			case AFTER_ACT_3_A:
 			case AFTER_ACT_3_B:
-				text.addPara(getString("contact_response_3"));
-				options.addOption(getString("contact_act_4_progress_1"), OptionId.AFTER_ACT_4_A);
-				options.addOption(getString("contact_act_4_progress_2"), OptionId.AFTER_ACT_4_B);
-				options.addOption(getString("contact_act_4_progress_3"), OptionId.AFTER_ACT_4_C);
+				text.addPara(strings.get("contact_response_3"));
+				options.addOption(strings.get("contact_act_4_progress_1"), OptionId.AFTER_ACT_4_A);
+				options.addOption(strings.get("contact_act_4_progress_2"), OptionId.AFTER_ACT_4_B);
+				options.addOption(strings.get("contact_act_4_progress_3"), OptionId.AFTER_ACT_4_C);
 				break;
 			case AFTER_ACT_4_A:
 			case AFTER_ACT_4_B:
 			case AFTER_ACT_4_C:
 				person.getName().setFirst("Jay");
-				text.addPara(getString("contact_response_4"));
-				options.addOption(getString("contact_act_5_progress_1"), OptionId.AFTER_ACT_5_A);
-				options.addOption(getString("contact_act_5_progress_2"), OptionId.AFTER_ACT_5_B);
+				text.addPara(strings.get("contact_response_4"));
+				options.addOption(strings.get("contact_act_5_progress_1"), OptionId.AFTER_ACT_5_A);
+				options.addOption(strings.get("contact_act_5_progress_2"), OptionId.AFTER_ACT_5_B);
 				break;
 			case AFTER_ACT_5_A:
 			case AFTER_ACT_5_B:
-				text.addPara(getString("contact_response_5"));
-				options.addOption(getString("contact_act_end"), OptionId.END);
+				text.addPara(strings.get("contact_response_5"));
+				options.addOption(strings.get("contact_act_end"), OptionId.END);
 				break;
 			case END:
 				doConfirmActions();

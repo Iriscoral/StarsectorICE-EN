@@ -17,8 +17,9 @@ import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Random;
 import java.util.Set;
 
@@ -39,9 +40,7 @@ public class SUN_ICE_GoToFleetIntel extends BaseIntelPlugin {
 		Global.getSector().getIntelManager().addIntel(this, false, dialog.getTextPanel());
 	}
 
-	private String getString(String key) {
-		return Global.getSettings().getString("Intel", "SUN_ICE_fleet_call_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Intel", "SUN_ICE_fleet_call_");
 
 	private boolean isMissionValid() {
 		return market != null && market.isInEconomy() && market.getFaction().getId().contentEquals("sun_ice") && market.getFaction().isAtWorst(Global.getSector().getPlayerFaction(), RepLevel.NEUTRAL) && timeLeft > 0f;
@@ -100,14 +99,14 @@ public class SUN_ICE_GoToFleetIntel extends BaseIntelPlugin {
 				initPad = 0f;
 			} else if (isMissionValid()) {
 				if (mode != ListInfoMode.IN_DESC) {
-					info.addPara(getString("location"), initPad, tc, h, market.getContainingLocation().getName());
+					info.addPara(strings.get("location"), initPad, tc, h, market.getContainingLocation().getName());
 					initPad = 0f;
 				}
 
-				LabelAPI label = info.addPara(String.format(getString("brief"), market.getPrimaryEntity().getName()), initPad, tc, h);
+				LabelAPI label = info.addPara(String.format(strings.get("brief"), market.getPrimaryEntity().getName()), initPad, tc, h);
 				label.setHighlight(market.getPrimaryEntity().getName());
 				label.setHighlightColors(market.getFaction().getBaseUIColor());
-				addDays(info, getString("to_respond"), timeLeft, tc, 0f);
+				addDays(info, strings.get("to_respond"), timeLeft, tc, 0f);
 			}
 		}
 
@@ -135,11 +134,11 @@ public class SUN_ICE_GoToFleetIntel extends BaseIntelPlugin {
 		addBulletPoints(info, ListInfoMode.IN_DESC);
 
 		if (!isMissionValid()) {
-			info.addPara(getString("failed"), opad);
+			info.addPara(strings.get("failed"), opad);
 		} else if (isEnding()) {
-			info.addPara(getString("succeed"), opad);
+			info.addPara(strings.get("succeed"), opad);
 		} else {
-			info.addPara(getString("information_1"), opad, tc, h, market.getPrimaryEntity().getName());
+			info.addPara(strings.get("information_1"), opad, tc, h, market.getPrimaryEntity().getName());
 		}
 
 	}
@@ -164,13 +163,13 @@ public class SUN_ICE_GoToFleetIntel extends BaseIntelPlugin {
 
 	@Override
 	public String getSortString() {
-		return getString("title");
+		return strings.get("title");
 	}
 
 	@Override
 	public String getSmallDescriptionTitle() {
 		if (isEnded() || isEnding()) {
-			return getString("title_finished");
+			return strings.get("title_finished");
 		}
 		return getSortString();
 	}

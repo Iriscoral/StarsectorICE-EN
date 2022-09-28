@@ -1,9 +1,15 @@
-2022.5.4 0.4.4
+2022.6.8 0.4.4
+-插件/Hullmods
+召回传送器错误修复
+Fixed a bug about Recall Teleporter
+
 -其他/Others
 改善了任务线完全完成时的某些体验
 Improvement for planet selection in a certain story line stage
 修复了最终战役时敌人可能逃脱的问题
 Fixed issue about enemies may escape on final battle
+补全了汉化，其实有些文本一开始是用英语写的结果忘了翻译了
+Minor text fixes
 
 
 

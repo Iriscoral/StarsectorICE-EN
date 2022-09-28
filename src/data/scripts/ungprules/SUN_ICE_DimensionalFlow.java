@@ -3,7 +3,7 @@ package data.scripts.ungprules;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Stats;
-import data.scripts.campaign.specialist.UNGP_SpecialistSettings.*;
+import data.scripts.campaign.specialist.UNGP_SpecialistSettings.Difficulty;
 import data.scripts.ungprules.impl.UNGP_MemberBuffRuleEffect;
 
 public class SUN_ICE_DimensionalFlow extends UNGP_MemberBuffRuleEffect {

@@ -11,9 +11,6 @@ public class SUN_ICE_FissionDrillAutofireAIPlugin implements AutofireAIPlugin {
 	private WeaponAPI weapon;
 	private ShipAPI ship;
 
-	public SUN_ICE_FissionDrillAutofireAIPlugin() {
-	}
-
 	public SUN_ICE_FissionDrillAutofireAIPlugin(WeaponAPI weapon) {
 		this.weapon = weapon;
 		this.ship = weapon.getShip();

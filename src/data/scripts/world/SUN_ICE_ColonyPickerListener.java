@@ -1,6 +1,5 @@
 package data.scripts.world;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignEntityPickerListener;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.PlanetAPI;
@@ -11,16 +10,15 @@ import com.fs.starfarer.api.impl.campaign.ids.Sounds;
 import com.fs.starfarer.api.impl.campaign.rulecmd.SetStoryOption;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class SUN_ICE_ColonyPickerListener implements CampaignEntityPickerListener {
 	private final InteractionDialogAPI dialog;
 	private final SUN_ICE_ExileFleetFinalDialog plugin;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Misc", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Misc", "SUN_ICE_");
 
 	public SUN_ICE_ColonyPickerListener(InteractionDialogAPI dialog, SUN_ICE_ExileFleetFinalDialog plugin) {
 		this.dialog = dialog;
@@ -37,20 +35,20 @@ public class SUN_ICE_ColonyPickerListener implements CampaignEntityPickerListene
 		plugin.planetOverride = (PlanetAPI)entity;
 
 		Color h = Misc.getHighlightColor();
-		dialog.getTextPanel().addPara(getString("selectedplanet"), h, entity.getName());
+		dialog.getTextPanel().addPara(strings.get("selectedplanet"), h, entity.getName());
 
-		dialog.getOptionPanel().addOption(getString("agree"), SUN_ICE_ExileFleetFinalDialog.OptionID.AGREE);
-		dialog.getOptionPanel().addOption(getString("advice"), SUN_ICE_ExileFleetFinalDialog.OptionID.ADVICE);
-		dialog.getOptionPanel().addOption(getString("select"), SUN_ICE_ExileFleetFinalDialog.OptionID.SELECT);
-		dialog.getOptionPanel().addOption(getString("disagree"), SUN_ICE_ExileFleetFinalDialog.OptionID.DISAGREE);
+		dialog.getOptionPanel().addOption(strings.get("agree"), SUN_ICE_ExileFleetFinalDialog.OptionID.AGREE);
+		dialog.getOptionPanel().addOption(strings.get("advice"), SUN_ICE_ExileFleetFinalDialog.OptionID.ADVICE);
+		dialog.getOptionPanel().addOption(strings.get("select"), SUN_ICE_ExileFleetFinalDialog.OptionID.SELECT);
+		dialog.getOptionPanel().addOption(strings.get("disagree"), SUN_ICE_ExileFleetFinalDialog.OptionID.DISAGREE);
 		SetStoryOption.set(dialog, 2, SUN_ICE_ExileFleetFinalDialog.OptionID.ADVICE, "sun_ice_select", Sounds.STORY_POINT_SPEND, null);
 	}
 
 	@Override
 	public void cancelledEntityPicking() {
-		dialog.getOptionPanel().addOption(getString("agree"), SUN_ICE_ExileFleetFinalDialog.OptionID.AGREE);
-		dialog.getOptionPanel().addOption(getString("select"), SUN_ICE_ExileFleetFinalDialog.OptionID.SELECT);
-		dialog.getOptionPanel().addOption(getString("disagree"), SUN_ICE_ExileFleetFinalDialog.OptionID.DISAGREE);
+		dialog.getOptionPanel().addOption(strings.get("agree"), SUN_ICE_ExileFleetFinalDialog.OptionID.AGREE);
+		dialog.getOptionPanel().addOption(strings.get("select"), SUN_ICE_ExileFleetFinalDialog.OptionID.SELECT);
+		dialog.getOptionPanel().addOption(strings.get("disagree"), SUN_ICE_ExileFleetFinalDialog.OptionID.DISAGREE);
 	}
 
 	@Override
@@ -76,10 +74,10 @@ public class SUN_ICE_ColonyPickerListener implements CampaignEntityPickerListene
 		}
 
 		if (conditionsBuilder.length() == 0) {
-			conditionsBuilder.append(getString("none"));
+			conditionsBuilder.append(strings.get("none"));
 		}
 
-		info.addPara(String.format(getString("conditions"), conditionsBuilder.toString()), opad);
+		info.addPara(String.format(strings.get("conditions"), conditionsBuilder.toString()), opad);
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipAPI.HullSize;
 import data.scripts.tools.SUN_ICE_IceUtils;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import org.lazywizard.lazylib.combat.AIUtils;
 
 import java.util.HashMap;
@@ -13,6 +14,8 @@ import java.util.HashMap;
 public class SUN_ICE_TacticalAnsible extends BaseHullMod {
 
 	private static final String id = "sun_ice_tactical_ansible_mod";
+	public static final I18nSection strings = I18nSection.getInstance("HullMod", "SUN_ICE_");
+
 	private static final float DAMAGE_EFFECT = 20f;
 	private static final HashMap<HullSize, Float> DETECT_RADIUS = new HashMap<>();
 	static {
@@ -50,7 +53,7 @@ public class SUN_ICE_TacticalAnsible extends BaseHullMod {
 			engine.maintainStatusForPlayerShip(this,
 					Global.getSettings().getSpriteName("ui", "fleet_member_mothballed"),
 					Global.getSettings().getHullModSpec(id).getDisplayName(),
-					String.format(Global.getSettings().getString("HullMod", "SUN_ICE_TacticalAnsibleTEXT"), damageIncreased),
+					String.format(strings.get("TacticalAnsibleTEXT"), damageIncreased),
 						damageIncreased <= 0f);
 
 		// no break, thanks

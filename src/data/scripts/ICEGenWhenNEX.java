@@ -3,7 +3,7 @@ package data.scripts;
 import com.fs.starfarer.api.campaign.SectorAPI;
 import exerelin.campaign.SectorManager;
 
-public class ICEGenWhenNEX {
+public class ICEGenWhenNEX extends ICEGenNormal {
 
 	public static void spawnICEFactionForNEX() {
 		SectorManager.addLiveFactionId("sun_ice");
@@ -25,9 +25,12 @@ public class ICEGenWhenNEX {
 		return SectorManager.getManager().isCorvusMode();
 	}
 
-	public static void generateIfCorvus(SectorAPI sector) {
+	@Override
+	public void generate(SectorAPI sector) {
 		if (checkIfCorvus()) {
-			ICEGen.generateInNewGame(sector);
+			super.generate(sector);
 		}
+
+		setNotTransfer();
 	}
 }

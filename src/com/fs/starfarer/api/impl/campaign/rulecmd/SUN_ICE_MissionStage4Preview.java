@@ -8,8 +8,9 @@ import com.fs.starfarer.api.combat.EngagementResultAPI;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_GoToFleetIntel;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Map;
 
 public class SUN_ICE_MissionStage4Preview implements InteractionDialogPlugin {
@@ -23,9 +24,7 @@ public class SUN_ICE_MissionStage4Preview implements InteractionDialogPlugin {
 	private InteractionDialogAPI dialog;
 	private OptionPanelAPI options;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_");
 
 	public SUN_ICE_MissionStage4Preview() {
 		this.fleet = SUN_ICE_Data.getExileManager().getExiledFleet();
@@ -44,11 +43,11 @@ public class SUN_ICE_MissionStage4Preview implements InteractionDialogPlugin {
 		Color factionColor = fleet.getFaction().getBaseUIColor();
 
 		TextPanelAPI textPanel = dialog.getTextPanel();
-		textPanel.addPara(getString("income"), factionColor, fleet.getName());
-		textPanel.addPara(getString("mission4_preview"));
+		textPanel.addPara(strings.get("income"), factionColor, fleet.getName());
+		textPanel.addPara(strings.get("mission4_preview"));
 
-		options.addOption(getString("mission4_preview_next"), OptionID.NEXT);
-		options.addOption(getString("mission4_preview_cancel"), OptionID.CANCEL);
+		options.addOption(strings.get("mission4_preview_next"), OptionID.NEXT);
+		options.addOption(strings.get("mission4_preview_cancel"), OptionID.CANCEL);
 
 		Global.getSoundPlayer().playUISound("exiles_intel_call", 1f, 1f);
 	}
@@ -57,6 +56,7 @@ public class SUN_ICE_MissionStage4Preview implements InteractionDialogPlugin {
 	public void optionSelected(String optionText, Object optionData) {
 		options.clearOptions();
 		TextPanelAPI textPanel = dialog.getTextPanel();
+		textPanel.addPara(optionText, Misc.getButtonTextColor());
 
 		Color h = Misc.getHighlightColor();
 		Color factionColor = fleet.getFaction().getBaseUIColor();
@@ -64,11 +64,11 @@ public class SUN_ICE_MissionStage4Preview implements InteractionDialogPlugin {
 		OptionID selectedOption = (OptionID) optionData;
 		switch (selectedOption) {
 			case NEXT:
-				textPanel.addPara(getString("mission4_preview_detail"));
-				textPanel.addPara(getString("location"), factionColor, fleet.getName(), fleet.getContainingLocation().getName());
+				textPanel.addPara(strings.get("mission4_preview_detail"));
+				textPanel.addPara(strings.get("location"), factionColor, fleet.getName(), fleet.getContainingLocation().getName());
 
-				options.addOption(getString("mission4_preview_agree"), OptionID.AGREE);
-				options.addOption(getString("mission4_preview_cancel"), OptionID.CANCEL);
+				options.addOption(strings.get("mission4_preview_agree"), OptionID.AGREE);
+				options.addOption(strings.get("mission4_preview_cancel"), OptionID.CANCEL);
 				break;
 			case CANCEL:
 				SUN_ICE_Data.getExileManager().getFakeAI().increaseDaysToStay(DAYS_OF_WAIT_OF_FLEET);

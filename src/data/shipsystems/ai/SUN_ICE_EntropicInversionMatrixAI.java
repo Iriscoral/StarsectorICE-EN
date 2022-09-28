@@ -1,14 +1,10 @@
 package data.shipsystems.ai;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.ShipSystemAIScript;
-import com.fs.starfarer.api.combat.ShipSystemAPI;
-import com.fs.starfarer.api.combat.ShipwideAIFlags;
+import com.fs.starfarer.api.combat.*;
 import data.scripts.tools.SUN_ICE_IceUtils;
-import org.lwjgl.util.vector.Vector2f;
 import org.lazywizard.lazylib.combat.AIUtils;
+import org.lwjgl.util.vector.Vector2f;
 
 public class SUN_ICE_EntropicInversionMatrixAI implements ShipSystemAIScript {
 	private static final float REFRESH_FREQUENCY = 0.25f;

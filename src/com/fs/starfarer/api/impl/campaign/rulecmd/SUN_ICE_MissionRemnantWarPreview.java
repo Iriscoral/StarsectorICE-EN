@@ -1,12 +1,12 @@
 package com.fs.starfarer.api.impl.campaign.rulecmd;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.combat.EngagementResultAPI;
 import com.fs.starfarer.api.util.Misc;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Map;
 
 public class SUN_ICE_MissionRemnantWarPreview implements InteractionDialogPlugin {
@@ -19,9 +19,7 @@ public class SUN_ICE_MissionRemnantWarPreview implements InteractionDialogPlugin
 	private InteractionDialogAPI dialog;
 	private OptionPanelAPI options;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_");
 
 	public SUN_ICE_MissionRemnantWarPreview(CampaignFleetAPI fleet) {
 		this.fleet = fleet;
@@ -40,10 +38,10 @@ public class SUN_ICE_MissionRemnantWarPreview implements InteractionDialogPlugin
 		Color factionColor = fleet.getFaction().getBaseUIColor();
 
 		TextPanelAPI textPanel = dialog.getTextPanel();
-		textPanel.addPara(getString("war_preview"), factionColor, fleet.getName());
+		textPanel.addPara(strings.get("war_preview"), factionColor, fleet.getName());
 
-		options.addOption(getString("war_preview_next"), OptionID.NEXT);
-		options.addOption(getString("war_preview_cancel"), OptionID.CANCEL);
+		options.addOption(strings.get("war_preview_next"), OptionID.NEXT);
+		options.addOption(strings.get("war_preview_cancel"), OptionID.CANCEL);
 	}
 
 	@Override

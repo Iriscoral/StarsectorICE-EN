@@ -2,7 +2,6 @@ package data.scripts.campaign.intel;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.*;
-import com.fs.starfarer.api.campaign.CargoAPI.CargoItemType;
 import com.fs.starfarer.api.campaign.econ.CommodityOnMarketAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.CoreReputationPlugin;
@@ -17,22 +16,27 @@ import com.fs.starfarer.api.ui.LabelAPI;
 import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.*;
-import java.util.List;
 
 public class SUN_ICE_MissionGoodsProcurementIntel extends BaseIntelPlugin {
 
 	private final Map<String, Integer> requiredCommodity;
 	private final MarketAPI market;
 
+	private final Map<String, Integer> providedCommodity;
 	private float timeLeft;
 	private float repGot = 0f;
 	private int reward = 0;
 
 	public SUN_ICE_MissionGoodsProcurementIntel(InteractionDialogAPI dialog, Map<String, Integer> requiredCommodity, float timeOutDuration) {
 		this.requiredCommodity = new HashMap<>(requiredCommodity);
+		this.providedCommodity = new HashMap<>(requiredCommodity);
+		for (String key : this.providedCommodity.keySet()) {
+			this.providedCommodity.put(key, 0);
+		}
 
 		this.market = dialog.getInteractionTarget().getMarket();
 		for (String id : requiredCommodity.keySet()) {
@@ -47,9 +51,7 @@ public class SUN_ICE_MissionGoodsProcurementIntel extends BaseIntelPlugin {
 		Global.getSector().getIntelManager().addIntel(this, false, dialog.getTextPanel());
 	}
 
-	private String getString(String key) {
-		return Global.getSettings().getString("Intel", "SUN_ICE_goods_procurement_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Intel", "SUN_ICE_goods_procurement_");
 
 	private boolean isMissionValid() {
 		return market != null && market.isInEconomy() && market.getFaction().getId().contentEquals("sun_ice") && market.getFaction().isAtWorst(Global.getSector().getPlayerFaction(), RepLevel.NEUTRAL) && timeLeft > 0f;
@@ -67,15 +69,37 @@ public class SUN_ICE_MissionGoodsProcurementIntel extends BaseIntelPlugin {
 		}
 	}
 
+	public void deliver(String cargo, int amount) {
+		providedCommodity.put(cargo, providedCommodity.get(cargo) + amount);
+	}
+
+	public Set<String> getRequirements() {
+		return requiredCommodity.keySet();
+	}
+
+	public int getRequired(String cargo) {
+		return requiredCommodity.get(cargo);
+	}
+
+	public int getProvided(String cargo) {
+		return providedCommodity.get(cargo);
+	}
+
+	public int getShortage(String cargo) {
+		return getRequired(cargo) - getProvided(cargo);
+	}
+
+	public boolean isAllDelivered() {
+		for (String key : requiredCommodity.keySet()) {
+			if (getShortage(key) > 0) return false;
+		}
+
+		return true;
+	}
+
 	public void performDelivery(InteractionDialogAPI dialog, boolean extra) {
 		CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
 		CargoAPI cargo = playerFleet.getCargo();
-
-		for (String id : requiredCommodity.keySet()) {
-			int amount = requiredCommodity.get(id);
-			cargo.removeItems(CargoItemType.RESOURCES, id, amount);
-			AddRemoveCommodity.addCommodityLossText(id, amount, dialog.getTextPanel());
-		}
 
 		if (extra) {
 			reward /= 1.5f;
@@ -91,20 +115,6 @@ public class SUN_ICE_MissionGoodsProcurementIntel extends BaseIntelPlugin {
 
 		repGot = repAmount;
 		endAfterDelay();
-	}
-
-	public boolean hasEnough() {
-		CampaignFleetAPI playerFleet = Global.getSector().getPlayerFleet();
-		CargoAPI cargo = playerFleet.getCargo();
-
-		for (String id : requiredCommodity.keySet()) {
-			int amount = requiredCommodity.get(id);
-			if (cargo.getCommodityQuantity(id) < amount) {
-				return false;
-			}
-		}
-
-		return true;
 	}
 
 	private void createPenaltyResult() {
@@ -137,7 +147,7 @@ public class SUN_ICE_MissionGoodsProcurementIntel extends BaseIntelPlugin {
 			if (!isMissionValid()) {
 				return;
 			} else if (isEnding()) {
-				info.addPara(getString("received"), initPad, tc, h, Misc.getDGSCredits(reward));
+				info.addPara(strings.get("received"), initPad, tc, h, Misc.getDGSCredits(reward));
 				if (repGot > 0f) {
 					CoreReputationPlugin.addAdjustmentMessage(repGot, faction, null, null, null, info, tc, isUpdate, 0f);
 				}
@@ -145,27 +155,28 @@ public class SUN_ICE_MissionGoodsProcurementIntel extends BaseIntelPlugin {
 		} else {
 			// either in small description, or in tooltip/intel list
 			if (isEnding()) {
-				info.addPara(getString("received"), initPad, tc, h, Misc.getDGSCredits(reward));
+				info.addPara(strings.get("received"), initPad, tc, h, Misc.getDGSCredits(reward));
 				initPad = 0f;
 				if (repGot > 0f) {
 					CoreReputationPlugin.addAdjustmentMessage(repGot, faction, null, null, null, info, tc, isUpdate, initPad);
 				}
 			} else if (isMissionValid()) {
 				if (mode != ListInfoMode.IN_DESC) {
-					info.addPara(getString("faction"), initPad, tc, faction.getBaseUIColor(), faction.getDisplayName());
+					info.addPara(strings.get("faction"), initPad, tc, faction.getBaseUIColor(), faction.getDisplayName());
 					initPad = 0f;
 				}
 
-				LabelAPI label = info.addPara(String.format(getString("brief"), market.getName()), initPad, tc, h);
+				LabelAPI label = info.addPara(String.format(strings.get("brief"), market.getName()), initPad, tc, h);
 				label.setHighlight(market.getName());
 				label.setHighlightColors(market.getFaction().getBaseUIColor());
 				for (String id : requiredCommodity.keySet()) {
-					int amount = requiredCommodity.get(id);
-					info.addPara(getString("brief_sub"), 0f, tc, h, "" + amount, market.getCommodityData(id).getCommodity().getLowerCaseName());
+					int provided = getProvided(id);
+					int required = getRequired(id);
+					info.addPara(strings.get("brief_sub"), 0f, tc, h, String.valueOf(provided), String.valueOf(required), market.getCommodityData(id).getCommodity().getLowerCaseName());
 				}
 
-				info.addPara(getString("reward"), 0f, tc, h, Misc.getDGSCredits(reward));
-				addDays(info, getString("to_respond"), timeLeft, tc, 0f);
+				info.addPara(strings.get("reward"), 0f, tc, h, Misc.getDGSCredits(reward));
+				addDays(info, strings.get("to_respond"), timeLeft, tc, 0f);
 			}
 		}
 
@@ -182,13 +193,13 @@ public class SUN_ICE_MissionGoodsProcurementIntel extends BaseIntelPlugin {
 
 	@Override
 	public String getSortString() {
-		return getString("title");
+		return strings.get("title");
 	}
 
 	@Override
 	public String getSmallDescriptionTitle() {
 		if (isEnded() || isEnding()) {
-			return getString("title_finished");
+			return strings.get("title_finished");
 		}
 		return getSortString();
 	}
@@ -230,19 +241,24 @@ public class SUN_ICE_MissionGoodsProcurementIntel extends BaseIntelPlugin {
 			iconNames.add(com.getCommodity().getIconName());
 		}
 
-		String[] array = iconNames.toArray(new String[0]);
-		info.addImages(width, 80, opad, opad * 2f, market.getFaction().getCrest());
-		info.addImages(width, 80, opad, opad * 2f, array);
+		List<String> front = iconNames.subList(0, iconNames.size() / 2);
+		List<String> back = iconNames.subList(iconNames.size() / 2, iconNames.size());
 
-		info.addPara(getString("detail"), opad, faction.getBaseUIColor(), market.getName());
+		String[] arrayFront = front.toArray(new String[0]);
+		String[] arrayBack = back.toArray(new String[0]);
+		info.addImages(width, 80, opad, opad * 2f, market.getFaction().getCrest());
+		info.addImages(width, 80, opad, opad * 2f, arrayFront);
+		info.addImages(width, 80, opad, opad * 2f, arrayBack);
+
+		info.addPara(strings.get("detail"), opad, faction.getBaseUIColor(), market.getName());
 		if (!isMissionValid()) {
-			info.addPara(getString("failed"), opad);
+			info.addPara(strings.get("failed"), opad);
 		} else if (isEnding()) {
-			info.addPara(getString("succeed"), opad);
+			info.addPara(strings.get("succeed"), opad);
 		} else {
 			addBulletPoints(info, ListInfoMode.IN_DESC);
 
-			info.addPara(getString("information_1"), opad, faction.getBaseUIColor(), market.getName());
+			info.addPara(strings.get("information_1"), opad, faction.getBaseUIColor(), market.getName());
 		}
 	}
 

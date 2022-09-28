@@ -4,20 +4,19 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class SUN_ICE_FissionDrillStats extends BaseShipSystemScript {
 	//boolean within = false;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("ShipSystem", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("ShipSystem", "SUN_ICE_");
 
 	@Override
 	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -96,8 +95,8 @@ public class SUN_ICE_FissionDrillStats extends BaseShipSystemScript {
 
 	@Override
 	public StatusData getStatusData(int index, State state, float effectLevel) {
-		if (index == 0) return new StatusData(getString("FissionDrillStats1"), false);
-		if (index == 1) return new StatusData(getString("FissionDrillStats2"), false);
+		if (index == 0) return new StatusData(strings.get("FissionDrillStats1"), false);
+		if (index == 1) return new StatusData(strings.get("FissionDrillStats2"), false);
 		return null;
 	}
 }

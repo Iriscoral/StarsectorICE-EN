@@ -10,7 +10,7 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.EnumSet;
 
 public class SUN_ICE_TurbulenceValveVisual extends BaseCombatLayeredRenderingPlugin {

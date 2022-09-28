@@ -3,6 +3,7 @@ package data.shipsystems;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import data.scripts.util.MagicLensFlare;
 import org.lazywizard.lazylib.CollisionUtils;
 import org.lazywizard.lazylib.MathUtils;
@@ -19,15 +20,13 @@ public class SUN_ICE_LimiterControlStats extends BaseShipSystemScript {
 	private static final Color LIGHT_COLOR = new Color(255, 235, 100);
 	private static final Color EXP_COLOR = new Color(255, 255, 120, 80);
 	private static final Color GLOW_COLOR = new Color(255, 255, 120, 120);
-	private static final Vector2f ZERO = new Vector2f(0, 0);
+	private static final Vector2f ZERO = new Vector2f();
 	private static final String LC_KEY = "SUN_ICE_LimiterControl";
 
 	private ShipAPI target;
 	private float clock = 0f;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("ShipSystem", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("ShipSystem", "SUN_ICE_");
 
 	@Override
 	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -205,15 +204,15 @@ public class SUN_ICE_LimiterControlStats extends BaseShipSystemScript {
 			return "";
 		}
 		if (isDownshifted(ship)) {
-			return getString("LimiterControlStats1");
+			return strings.get("LimiterControlStats1");
 		}
 		if (ship.getShipTarget() == null) {
-			return getString("LimiterControlStats3");
+			return strings.get("LimiterControlStats3");
 		}
 		if (isUsable(system, ship)) {
-			return getString("LimiterControlStats2");
+			return strings.get("LimiterControlStats2");
 		}
-		return getString("LimiterControlStats4");
+		return strings.get("LimiterControlStats4");
 	}
 
 	private boolean isShipObstructingArea(Vector2f at, float range) {

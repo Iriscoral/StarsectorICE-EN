@@ -77,7 +77,7 @@ public class SUN_ICE_PhaseCloakStats extends SUN_ICE_PhaseStats {
 
 		float displayTimeMult = getTimeMult(playerShip);
 		ShipSystemAPI cloak = playerShip.getPhaseCloak();
-		Global.getCombatEngine().maintainStatusForPlayerShip(cloak, cloak.getSpecAPI().getIconSpriteName(), cloak.getDisplayName(), getString("PhaseCloakStats1") + processDecimal(displayTimeMult), false);
+		Global.getCombatEngine().maintainStatusForPlayerShip(cloak, cloak.getSpecAPI().getIconSpriteName(), cloak.getDisplayName(), strings.get("PhaseCloakStats1") + processDecimal(displayTimeMult), false);
 	}
 
 	@Override

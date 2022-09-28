@@ -26,9 +26,6 @@ public class SUN_ICE_MobiusRayAutofireAIPlugin implements AutofireAIPlugin {
 	private boolean isOn = false;
 	private final SUN_ICE_IntervalTracker timer = new SUN_ICE_IntervalTracker(UPDATE_FREQUENCY);
 
-	public SUN_ICE_MobiusRayAutofireAIPlugin() {
-	}
-
 	public SUN_ICE_MobiusRayAutofireAIPlugin(WeaponAPI weapon) {
 		this.weapon = weapon;
 		autofireMap.put(weapon, this);
@@ -53,7 +50,7 @@ public class SUN_ICE_MobiusRayAutofireAIPlugin implements AutofireAIPlugin {
 		float shortestDistance = Float.MAX_VALUE;
 
 		for (ShipAPI ship : CombatUtils.getShipsWithinRange(midPoint, halfRange * 1.3f)) {
-			if (ship.getOwner() == weapon.getShip().getOwner() || ship.isPhased()) {
+			if (!ship.isAlive() || ship.getOwner() == weapon.getShip().getOwner() || ship.isPhased()) {
 				continue;
 			}
 

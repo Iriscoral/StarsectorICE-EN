@@ -1,15 +1,13 @@
 package data.shipsystems;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 public class SUN_ICE_FluxDriveStats extends BaseShipSystemScript {
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("ShipSystem", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("ShipSystem", "SUN_ICE_");
 
 	@Override
 	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -36,7 +34,7 @@ public class SUN_ICE_FluxDriveStats extends BaseShipSystemScript {
 
 	@Override
 	public StatusData getStatusData(int index, State state, float effectLevel) {
-		if (index == 0) return new StatusData(getString("FluxDriveStats1"), false);
+		if (index == 0) return new StatusData(strings.get("FluxDriveStats1"), false);
 		return null;
 	}
 }

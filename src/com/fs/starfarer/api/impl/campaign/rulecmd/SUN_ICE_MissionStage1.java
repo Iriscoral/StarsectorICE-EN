@@ -9,8 +9,9 @@ import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_MissionSuppliesDeliveryIntel;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 
@@ -21,8 +22,12 @@ public class SUN_ICE_MissionStage1 extends SUN_ICE_MissionManager {
 	public static final int EXTRA_AMOUNT = 500;
 	public static final int TIME_OUT = 60;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_mission1_" + key);
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_mission1_");
+
+	public static void backdoor() { // runcode com.fs.starfarer.api.impl.campaign.rulecmd.SUN_ICE_MissionStage1.backdoor();
+		String id = REQUIRED_COMMODITY;
+		int amount = REQUIRED_AMOUNT + EXTRA_AMOUNT;
+		Global.getSector().getPlayerFleet().getCargo().addCommodity(id, amount);
 	}
 
 	@Override
@@ -52,40 +57,40 @@ public class SUN_ICE_MissionStage1 extends SUN_ICE_MissionManager {
 		switch (string) {
 			case "after_act_1_A":
 			case "after_act_1_B":
-				textPanel.addPara(getString("response_1"), Misc.getHighlightColor(), String.valueOf(REQUIRED_AMOUNT), String.valueOf(TIME_OUT));
-				optionPanel.addOption(getString("accept"), "accept");
-				optionPanel.addOption(getString("information"), "information");
-				optionPanel.addOption(getString("refuse"), "refuse");
+				textPanel.addPara(strings.get("response_1"), Misc.getHighlightColor(), String.valueOf(REQUIRED_AMOUNT), String.valueOf(TIME_OUT));
+				optionPanel.addOption(strings.get("accept"), "accept");
+				optionPanel.addOption(strings.get("information"), "information");
+				optionPanel.addOption(strings.get("refuse"), "refuse");
 				addCargoRequirementIcon(textPanel, REQUIRED_COMMODITY, REQUIRED_AMOUNT);
 				break;
 			case "accept":
-				textPanel.addPara(getString("response_accept"));
-				optionPanel.addOption(getString("get_hint"), "hint");
+				textPanel.addPara(strings.get("response_accept"));
+				optionPanel.addOption(strings.get("get_hint"), "hint");
 				setStage(MissionStage.STAGE_ONGOING_SUPPLIES);
 
 				startMission(TIME_OUT);
 				new SUN_ICE_MissionSuppliesDeliveryIntel(dialog, REQUIRED_COMMODITY, REQUIRED_AMOUNT, EXTRA_AMOUNT, TIME_OUT);
 				break;
 			case "information":
-				textPanel.addPara(getString("response_information"));
-				optionPanel.addOption(getString("accept"), "accept");
-				optionPanel.addOption(getString("refuse"), "refuse");
+				textPanel.addPara(strings.get("response_information"));
+				optionPanel.addOption(strings.get("accept"), "accept");
+				optionPanel.addOption(strings.get("refuse"), "refuse");
 				break;
 			case "refuse":
-				textPanel.addPara(getString("response_refuse"));
-				optionPanel.addOption(getCutLink(), "cutCommLink");
+				textPanel.addPara(strings.get("response_refuse"));
+				optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				SUN_ICE_MissionManager.doomStages();
 				break;
 			case "hint":
-				textPanel.addPara(getString("response_hint"), Misc.getHighlightColor(), String.valueOf(EXTRA_AMOUNT));
-				optionPanel.addOption(getCutLink(), "cutCommLink");
+				textPanel.addPara(strings.get("response_hint"), Misc.getHighlightColor(), String.valueOf(EXTRA_AMOUNT));
+				optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				break;
 			case "init_re":
 			case "init":
 			default:
-				textPanel.addPara(getString("init"));
-				optionPanel.addOption(getString("act_1_progress_1"), "after_act_1_A");
-				optionPanel.addOption(getString("act_1_progress_2"), "after_act_1_B");
+				textPanel.addPara(strings.get("init"));
+				optionPanel.addOption(strings.get("act_1_progress_1"), "after_act_1_A");
+				optionPanel.addOption(strings.get("act_1_progress_2"), "after_act_1_B");
 				setKey(AFTER_INIT_KEY);
 				break;
 		}
@@ -102,7 +107,7 @@ public class SUN_ICE_MissionStage1 extends SUN_ICE_MissionManager {
 		Color color = targetFaction.getColor();
 		Color bad = Misc.getNegativeHighlightColor();
 
-		ResourceCostPanelAPI cost = textPanel.addCostPanel(getString("item_list"), costHeight,
+		ResourceCostPanelAPI cost = textPanel.addCostPanel(strings.get("item_list"), costHeight,
 				color, playerFaction.getDarkUIColor());
 		cost.setNumberOnlyMode(true);
 		cost.setWithBorder(false);

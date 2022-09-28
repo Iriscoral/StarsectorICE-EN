@@ -7,16 +7,20 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
+import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_ExileFleetIntel;
 import data.scripts.tools.SUN_ICE_Data;
 import data.scripts.tools.SUN_ICE_IceUtils;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 public class SUN_ICE_ExileFleetManager implements EveryFrameScript {
 
 	private static final float AVG_UPDATE_INTERVAL = 0.3f;
 	public static final String EXILE_FLEET_KEY = "$SUN_ICE_ExileFleet";
+	public static final String PILGRIMS_FLEET_KEY = "$SUN_ICE_PilgrimsFleet";
+	public static final String EXILE_MARKET_KEY = "$SUN_ICE_ExileFleetMarket";
 
 	private float elapsedDays = 0f;
 	private float dayOfNextUpdate = 0f;
@@ -28,9 +32,7 @@ public class SUN_ICE_ExileFleetManager implements EveryFrameScript {
 	private SUN_ICE_ExileFleetFakeAI fakeAI;
 	private SUN_ICE_ExileFleetIntel newsIntel;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Misc", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Misc", "SUN_ICE_");
 
 	public SUN_ICE_ExileFleetManager() {
 		fakeAI = new SUN_ICE_ExileFleetFakeAI(this);
@@ -157,7 +159,7 @@ public class SUN_ICE_ExileFleetManager implements EveryFrameScript {
 	private void spawnColonyFleet(SectorEntityToken source) {
 		LocationAPI loc = source.getContainingLocation();
 
-		CampaignFleetAPI fleet = SUN_ICE_IceUtils.createFleet(300f, 50f, 40f, 40f, 30f, 30f, 30f, null, "sun_ice", "sun_ici", getString("exiled_name"), "Patrol", "$refugees", true);
+		CampaignFleetAPI fleet = SUN_ICE_IceUtils.createFleet(300f, 50f, 40f, 40f, 30f, 30f, 30f, null, "sun_ice", "sun_ici", strings.get("exiled_name"), "Patrol", "$refugees", true);
 		fleet.setTransponderOn(true);
 		fleet.setNoFactionInName(true);
 		fleet.setNoEngaging(99999f);
@@ -166,22 +168,24 @@ public class SUN_ICE_ExileFleetManager implements EveryFrameScript {
 		fleet.getStats().getSensorRangeMod().modifyMult("fleet", 10f);
 		fleet.getStats().getSensorProfileMod().modifyFlat("fleet", 1000000f);
 		fleet.getDetectedRangeMod().modifyFlat("fleet", 1000000f);
-		loc.spawnFleet(source, 0f, 0f, fleet);
 
 		fleet.setInteractionImage("illustrations", "cargo_loading");
 		SectorEntityToken fakeSource = applyMarketToColonyFleet(fleet);
 
-		Global.getLogger(this.getClass()).info("Exile fleet spawned.");
-		fleet.setInflater(new SUN_ICE_ExileFleetInflater());
+		fleet.getMemoryWithoutUpdate().set(EXILE_FLEET_KEY, true);
+		fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_IGNORES_OTHER_FLEETS, true);
+		fakeSource.getMemoryWithoutUpdate().set(EXILE_FLEET_KEY, true);
+		fakeSource.getMarket().getMemoryWithoutUpdate().set(EXILE_FLEET_KEY, true);
+
+		FleetInflater inflater = Global.getSector().getPluginPicker().pickFleetInflater(fleet, null);
+		fleet.setInflater(inflater);
 		fleet.forceSync();
 
 		fakeAI.initAI();
 		exiledFleet = fleet;
 
-		fleet.getMemoryWithoutUpdate().set(EXILE_FLEET_KEY, true);
-		fakeSource.getMemoryWithoutUpdate().set(EXILE_FLEET_KEY, true);
-		fakeSource.getMarket().getMemoryWithoutUpdate().set(EXILE_FLEET_KEY, true);
-
+		loc.spawnFleet(source, 0f, 0f, fleet);
+		Global.getLogger(this.getClass()).info("Exile fleet spawned.");
 		newsIntel = new SUN_ICE_ExileFleetIntel(this);
 	}
 
@@ -197,23 +201,28 @@ public class SUN_ICE_ExileFleetManager implements EveryFrameScript {
 			return;
 		}
 
-		CampaignFleetAPI pilgrims = SUN_ICE_IceUtils.createFleet(60f, 10f, 5f, 5f, 5f, 5f, 5f, null, "sun_ice", "sun_ici", getString("pilgrims_name"), "Patrol", "$pilgrims", false);
+		CampaignFleetAPI pilgrims = SUN_ICE_IceUtils.createFleet(60f, 10f, 5f, 5f, 5f, 5f, 5f, null, "sun_ice", "sun_ici", strings.get("pilgrims_name"), "Patrol", "$pilgrims", false);
 		pilgrims.setNoFactionInName(true);
 		pilgrims.setTransponderOn(true);
+		pilgrims.getMemoryWithoutUpdate().set(MemFlags.FLEET_IGNORES_OTHER_FLEETS, true);
+		pilgrims.getMemoryWithoutUpdate().set(PILGRIMS_FLEET_KEY, true);
+
+		FleetInflater inflater = Global.getSector().getPluginPicker().pickFleetInflater(pilgrims, null);
+		pilgrims.setInflater(inflater);
+		pilgrims.forceSync();
 
 		Global.getLogger(this.getClass()).info("Pilgrims fleet spawned.");
 		source.getContainingLocation().spawnFleet(source, 0f, 0f, pilgrims);
-		pilgrims.setInflater(new SUN_ICE_ExileFleetInflater());
-		pilgrims.forceSync();
 
-		pilgrims.addAssignment(FleetAssignment.GO_TO_LOCATION, target, 9999, getString("pilgrims_return"), new JoinMotherFleetScript(target, pilgrims));
+		pilgrims.addAssignment(FleetAssignment.GO_TO_LOCATION, target, 9999, strings.get("pilgrims_return"), new JoinMotherFleetScript(target, pilgrims));
 	}
 
 	private SectorEntityToken applyMarketToColonyFleet(CampaignFleetAPI fleet) {
 		int size = SUN_ICE_Data.getIdoneusCitadel().getMarket().getSize() - 3;
 		if (size > 4) size = 4;
 
-		MarketAPI newMarket = Global.getFactory().createMarket("sun_ice_colony_fleet_market" + Misc.genUID(), getString("exiled_name"), size);
+		MarketAPI newMarket = Global.getFactory().createMarket("sun_ice_colony_fleet_market" + Misc.genUID(), strings.get("exiled_name"), size);
+		newMarket.getMemoryWithoutUpdate().set(EXILE_MARKET_KEY, true);
 		newMarket.setFactionId("sun_ice");
 		newMarket.addSubmarket("open_market");
 		newMarket.addSubmarket("generic_military");
@@ -231,6 +240,7 @@ public class SUN_ICE_ExileFleetManager implements EveryFrameScript {
 		newMarket.addIndustry("highcommand");
 
 		newMarket.getTariff().modifyFlat("sun_ice_colony_fleet_market", 0.3f);
+		newMarket.setFreePort(true);
 
 		SectorEntityToken hack = SUN_ICE_Data.getFakeMarketEntity();
 		hack.setMarket(newMarket);

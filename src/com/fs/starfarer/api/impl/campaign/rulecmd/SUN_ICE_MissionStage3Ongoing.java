@@ -9,6 +9,7 @@ import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.ids.Sounds;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_MissionRecruitmentShipsIntel;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +22,7 @@ public class SUN_ICE_MissionStage3Ongoing extends SUN_ICE_MissionManager {
 	public static final int EXTRA_AMOUNT = 40;
 	public static final int EXTRA_CAP = 30;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_mission3_ongoing_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_mission3_ongoing_");
 
 	@Override
 	public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
@@ -60,7 +59,7 @@ public class SUN_ICE_MissionStage3Ongoing extends SUN_ICE_MissionManager {
 
 		switch (string) {
 			case "check":
-				dialog.showFleetMemberPickerDialog(getString("picker_title"), getString("picker_ensure"), getString("picker_cancle"),
+				dialog.showFleetMemberPickerDialog(strings.get("picker_title"), strings.get("picker_ensure"), strings.get("picker_cancle"),
 						5, 9, 96, // 3, 7, 58 or so
 						true, true, selectableMembers,
 						new FleetMemberPickerListener() {
@@ -73,17 +72,17 @@ public class SUN_ICE_MissionStage3Ongoing extends SUN_ICE_MissionManager {
 									break;
 								}
 								if (able) {
-									textPanel.addPara(getString("check_able"));
-									optionPanel.addOption(getString("check_continue"), "checked");
+									textPanel.addPara(strings.get("check_able"));
+									optionPanel.addOption(strings.get("check_continue"), "checked");
 								} else {
-									textPanel.addPara(getString("check_too_many"), Misc.getNegativeHighlightColor());
-									optionPanel.addOption(getString("check_return"), "checked");
+									textPanel.addPara(strings.get("check_too_many"), Misc.getNegativeHighlightColor());
+									optionPanel.addOption(strings.get("check_return"), "checked");
 								}
 							}
 
 							@Override
 							public void cancelledFleetMemberPicking() {
-								optionPanel.addOption(getString("check_return"), "checked");
+								optionPanel.addOption(strings.get("check_return"), "checked");
 							}
 						});
 				break;
@@ -102,17 +101,17 @@ public class SUN_ICE_MissionStage3Ongoing extends SUN_ICE_MissionManager {
 				}
 
 				if (extra) {
-					textPanel.addPara(getString("response_deliver_extra"));
-					optionPanel.addOption(getCutLink(), "cutCommLink");
+					textPanel.addPara(strings.get("response_deliver_extra"));
+					optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				} else {
-					textPanel.addPara(getString("response_deliver"));
-					optionPanel.addOption(getCutLink(), "cutCommLink");
+					textPanel.addPara(strings.get("response_deliver"));
+					optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				}
 
 				dialog.getVisualPanel().hideSecondPerson();
 				break;
 			case "deliver_extra":
-				dialog.showFleetMemberPickerDialog(getString("picker_title"), getString("picker_ensure"), getString("picker_cancle"),
+				dialog.showFleetMemberPickerDialog(strings.get("picker_title"), strings.get("picker_ensure"), strings.get("picker_cancle"),
 						5, 9, 96, // 3, 7, 58 or so
 						true, true, selectableMembers,
 						new FleetMemberPickerListener() {
@@ -125,42 +124,42 @@ public class SUN_ICE_MissionStage3Ongoing extends SUN_ICE_MissionManager {
 									break;
 								}
 								if (able) {
-									textPanel.addPara(getString("check_able"));
-									optionPanel.addOption(getString("check_continue"), "deliver");
+									textPanel.addPara(strings.get("check_able"));
+									optionPanel.addOption(strings.get("check_continue"), "deliver");
 								} else {
-									textPanel.addPara(getString("check_too_many"), Misc.getNegativeHighlightColor());
-									optionPanel.addOption(getString("check_return"), "checked");
+									textPanel.addPara(strings.get("check_too_many"), Misc.getNegativeHighlightColor());
+									optionPanel.addOption(strings.get("check_return"), "checked");
 								}
 							}
 
 							@Override
 							public void cancelledFleetMemberPicking() {
-								optionPanel.addOption(getString("check_return"), "checked");
+								optionPanel.addOption(strings.get("check_return"), "checked");
 							}
 						});
 				break;
 			case "extra_end":
 				dialog.getVisualPanel().hideSecondPerson();
 
-				textPanel.addPara(getString("extra_end"));
-				optionPanel.addOption(getString("act_bye_extra_end"), "hint");
+				textPanel.addPara(strings.get("extra_end"));
+				optionPanel.addOption(strings.get("act_bye_extra_end"), "hint");
 				break;
 			case "wait":
 				if (!memory.getBoolean(SPECIAL_ACTION_KEY)) {
-					textPanel.addPara(getString("response_wait_special"), Misc.getHighlightColor(), String.valueOf(DELAY_TIME));
-					optionPanel.addOption(getString("delay"), "delay");
+					textPanel.addPara(strings.get("response_wait_special"), Misc.getHighlightColor(), String.valueOf(DELAY_TIME));
+					optionPanel.addOption(strings.get("delay"), "delay");
 					SetStoryOption.set(dialog, 1, "delay", "sun_ice_delay", Sounds.STORY_POINT_SPEND, null);
 
-					optionPanel.addOption(getString("delay_refuse"), "wait2");
+					optionPanel.addOption(strings.get("delay_refuse"), "wait2");
 					break;
 				}
 			case "wait2":
-				textPanel.addPara(getString("response_wait"));
-				optionPanel.addOption(getCutLink(), "cutCommLink");
+				textPanel.addPara(strings.get("response_wait"));
+				optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				break;
 			case "delay":
-				textPanel.addPara(getString("response_delay"));
-				optionPanel.addOption(getCutLink(), "cutCommLink");
+				textPanel.addPara(strings.get("response_delay"));
+				optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				for (IntelInfoPlugin intel : Global.getSector().getIntelManager().getIntel(SUN_ICE_MissionRecruitmentShipsIntel.class)) {
 					SUN_ICE_MissionRecruitmentShipsIntel recruitmentShipsIntel = (SUN_ICE_MissionRecruitmentShipsIntel)intel;
 					recruitmentShipsIntel.delayLimit(DELAY_TIME);
@@ -171,24 +170,24 @@ public class SUN_ICE_MissionStage3Ongoing extends SUN_ICE_MissionManager {
 			case "init":
 			default:
 				dialog.getVisualPanel().showSecondPerson(getPriest());
-				textPanel.addPara(getString("init"));
+				textPanel.addPara(strings.get("init"));
 			case "checked":
 				boolean canWait = true;
 
 				for (IntelInfoPlugin intel : Global.getSector().getIntelManager().getIntel(SUN_ICE_MissionRecruitmentShipsIntel.class)) {
 					SUN_ICE_MissionRecruitmentShipsIntel recruitmentShipsIntel = (SUN_ICE_MissionRecruitmentShipsIntel)intel;
 					if (recruitmentShipsIntel.checkedShipReadyToDeliver()) {
-						optionPanel.addOption(getString("deliver"), "deliver");
-						optionPanel.addOption(getString("deliver_extra"), "deliver_extra", Misc.getPositiveHighlightColor(), null);
+						optionPanel.addOption(strings.get("deliver"), "deliver");
+						optionPanel.addOption(strings.get("deliver_extra"), "deliver_extra", Misc.getPositiveHighlightColor(), null);
 						canWait = false;
 					} else {
-						optionPanel.addOption(getString("check"), "check");
+						optionPanel.addOption(strings.get("check"), "check");
 					}
 
 					break;
 				}
 
-				if (canWait) optionPanel.addOption(getString("wait"), "wait");
+				if (canWait) optionPanel.addOption(strings.get("wait"), "wait");
 				break;
 		}
 

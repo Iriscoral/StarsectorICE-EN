@@ -6,10 +6,11 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import data.scripts.tools.SUN_ICE_IntervalTracker;
 import org.lazywizard.lazylib.combat.AIUtils;
 
-import java.awt.*;
+import java.awt.Point;
 import java.util.Random;
 
 public class SUN_ICE_RepairAoE extends BaseShipSystemScript {
@@ -21,9 +22,8 @@ public class SUN_ICE_RepairAoE extends BaseShipSystemScript {
 
 	private final SUN_ICE_IntervalTracker tracker = new SUN_ICE_IntervalTracker(0.05f);
 
-	private static String getString(String key) {//Still WIP
-		return Global.getSettings().getString("ShipSystem", "SUN_ICE_" + key);
-	}
+	//Still WIP
+	public static final I18nSection strings = I18nSection.getInstance("ShipSystem", "SUN_ICE_");
 
 	public static float getRange(ShipAPI ship) {
 		if (ship == null) {

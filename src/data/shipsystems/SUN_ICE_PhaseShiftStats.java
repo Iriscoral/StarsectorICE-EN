@@ -9,7 +9,7 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class SUN_ICE_PhaseShiftStats extends SUN_ICE_PhaseWarpStats {
 

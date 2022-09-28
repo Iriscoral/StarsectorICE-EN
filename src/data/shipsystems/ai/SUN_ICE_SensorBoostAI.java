@@ -1,10 +1,6 @@
 package data.shipsystems.ai;
 
-import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.ShipAPI;
-import com.fs.starfarer.api.combat.ShipSystemAIScript;
-import com.fs.starfarer.api.combat.ShipSystemAPI;
-import com.fs.starfarer.api.combat.ShipwideAIFlags;
+import com.fs.starfarer.api.combat.*;
 import org.lwjgl.util.vector.Vector2f;
 
 public class SUN_ICE_SensorBoostAI implements ShipSystemAIScript {

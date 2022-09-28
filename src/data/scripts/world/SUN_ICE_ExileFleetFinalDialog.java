@@ -7,14 +7,17 @@ import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.combat.EngagementResultAPI;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import org.lwjgl.input.Keyboard;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class SUN_ICE_ExileFleetFinalDialog implements InteractionDialogPlugin {
+
+	boolean displayOption = false;
 	public enum OptionID {
 		CONTINUE_1, CONTINUE_2, CONTINUE_3,
 		AGREE, SELECT, DISAGREE, LEAVE, ADVICE
@@ -31,9 +34,7 @@ public class SUN_ICE_ExileFleetFinalDialog implements InteractionDialogPlugin {
 	private TextPanelAPI textPanel;
 	private OptionPanelAPI options;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Misc", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Misc", "SUN_ICE_");
 
 	public SUN_ICE_ExileFleetFinalDialog(CampaignFleetAPI fleet, SUN_ICE_ExileFleetFakeAI fakeAI) {
 		this.fleet = fleet;
@@ -53,45 +54,48 @@ public class SUN_ICE_ExileFleetFinalDialog implements InteractionDialogPlugin {
 		Color h = Misc.getHighlightColor();
 		Color factionColor = fleet.getFaction().getBaseUIColor();
 
-		textPanel.addPara(getString("helpInfo1"), factionColor, fleet.getFaction().getDisplayNameLongWithArticle());
-		textPanel.addPara(getString("helpInfo2"));
-		options.addOption(getString("continue"), OptionID.CONTINUE_1);
+		textPanel.addPara(strings.get("helpInfo1"), factionColor, fleet.getFaction().getDisplayNameLongWithArticle());
+		textPanel.addPara(strings.get("helpInfo2"));
+		options.addOption(strings.get("continue"), OptionID.CONTINUE_1);
 
 		Global.getSoundPlayer().playUISound("exiles_intel_call", 1f, 1f);
 	}
 
 	@Override
 	public void optionSelected(String optionText, Object optionData) {
+
+		if (displayOption) {
+			textPanel.addPara(optionText, Misc.getButtonTextColor());
+		}
+
 		options.clearOptions();
 		OptionID selectedOption = (OptionID) optionData;
 		switch (selectedOption) {
 			case CONTINUE_1:
-				textPanel.addPara(getString("helpInfo3"));
-				options.addOption(getString("continue"), OptionID.CONTINUE_2);
+				textPanel.addPara(strings.get("helpInfo3"));
+				options.addOption(strings.get("continue"), OptionID.CONTINUE_2);
 				break;
 			case CONTINUE_2:
-				textPanel.addPara(getString("helpInfo4"));
-				options.addOption(getString("continue"), OptionID.CONTINUE_3);
+				textPanel.addPara(strings.get("helpInfo4"));
+				options.addOption(strings.get("continue"), OptionID.CONTINUE_3);
 				break;
 			case CONTINUE_3:
+				displayOption = true;
 				Color h = Misc.getHighlightColor();
-				textPanel.addPara(getString("helpInfo5"));
-				textPanel.addPara(getString("helpInfo6"), h, planet.getStarSystem().getName() + " " + planet.getName());
+				textPanel.addPara(strings.get("helpInfo5"));
+				textPanel.addPara(strings.get("helpInfo6"), h, planet.getStarSystem().getName() + " " + planet.getName());
 
-				options.addOption(getString("agree"), OptionID.AGREE);
-				options.addOption(getString("select"), OptionID.SELECT);
-				options.addOption(getString("disagree"), OptionID.DISAGREE);
+				options.addOption(strings.get("agree"), OptionID.AGREE);
+				options.addOption(strings.get("select"), OptionID.SELECT);
+				options.addOption(strings.get("disagree"), OptionID.DISAGREE);
 				options.setShortcut(OptionID.DISAGREE, Keyboard.KEY_ESCAPE, false, false, false, false);
 				break;
 			case AGREE:
-				textPanel.addPara(getString("agree"));
 				SUN_ICE_Data.put(EXILE_FLEET_FINAL_DIALOG_AGREE_KEY, true);
 				SUN_ICE_Data.put(EXILE_FLEET_FINAL_DIALOG_SELECTED_KEY, true);
 				dialog.dismiss();
 				break;
 			case SELECT:
-				textPanel.addPara(getString("select"));
-
 				List<SectorEntityToken> targetData = new ArrayList<>();
 				for (StarSystemAPI starSystem : Global.getSector().getStarSystems()) {
 					for (PlanetAPI planet : starSystem.getPlanets()) {
@@ -104,19 +108,17 @@ public class SUN_ICE_ExileFleetFinalDialog implements InteractionDialogPlugin {
 					}
 				}
 
-				dialog.showCampaignEntityPicker(getString("selectplanet"), getString("selected"), getString("confirm"),
+				dialog.showCampaignEntityPicker(strings.get("selectplanet"), strings.get("selected"), strings.get("confirm"),
 						Global.getSector().getPlayerFaction(), targetData,
 						new SUN_ICE_ColonyPickerListener(dialog, this));
 				break;
 			case ADVICE:
-				textPanel.addPara(getString("advice"));
 				fakeAI.tmpSettle = planetOverride;
 				SUN_ICE_Data.put(EXILE_FLEET_FINAL_DIALOG_AGREE_KEY, true);
 				SUN_ICE_Data.put(EXILE_FLEET_FINAL_DIALOG_SELECTED_KEY, true);
 				dialog.dismiss();
 				break;
 			case DISAGREE:
-				textPanel.addPara(getString("disagree"));
 				SUN_ICE_Data.put(EXILE_FLEET_FINAL_DIALOG_SELECTED_KEY, true);
 				dialog.dismiss();
 				break;

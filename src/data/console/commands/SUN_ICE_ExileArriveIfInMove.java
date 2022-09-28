@@ -42,15 +42,25 @@ public class SUN_ICE_ExileArriveIfInMove implements BaseCommand {
 					PlanetAPI star = (PlanetAPI)destination;
 					float distance = 2f * (star.getRadius() + star.getSpec().getCoronaSize()) + 200f;
 					Vector2f offset = MathUtils.getRandomPointOnCircumference(null, distance);
-					destination = target.createToken(offset.x, offset.y);
+					destination = target.createToken(offset.getX(), offset.getY());
 				}
 
 				exile.getContainingLocation().removeEntity(exile);
 				target.addEntity(exile);
-				exile.setLocation(destination.getLocation().x, destination.getLocation().y);
+				exile.setLocation(destination.getLocation().getX(), destination.getLocation().getY());
 				manager.getFakeAI().hasEnteredHyperspace = true;
 
 				Console.showMessage("Exile will teleport to next location.");
+				return CommandResult.SUCCESS;
+			} else if (manager.getCurrentState() == SUN_ICE_ExileFleetFakeAI.ExileState.SETTLE) {
+				SectorEntityToken destination = manager.getFinalSettle();
+				CampaignFleetAPI exile = manager.getExiledFleet();
+
+				exile.getContainingLocation().removeEntity(exile);
+				destination.getContainingLocation().addEntity(exile);
+				exile.setLocation(destination.getLocation().getX(), destination.getLocation().getY());
+
+				Console.showMessage("Exile will teleport to final location.");
 				return CommandResult.SUCCESS;
 			}
 

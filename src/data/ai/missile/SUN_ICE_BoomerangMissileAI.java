@@ -11,7 +11,7 @@ import org.lazywizard.lazylib.VectorUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class SUN_ICE_BoomerangMissileAI extends SUN_ICE_BaseMissileAI {
 	private static final Color PARTICLE_COLOR = new Color(175, 240, 165, 255);

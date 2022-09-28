@@ -8,8 +8,9 @@ import com.fs.starfarer.api.combat.EngagementResultAPI;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_GoToFleetIntel;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.Map;
 
 public class SUN_ICE_MissionStage2Preview implements InteractionDialogPlugin {
@@ -20,9 +21,7 @@ public class SUN_ICE_MissionStage2Preview implements InteractionDialogPlugin {
 	private InteractionDialogAPI dialog;
 	private OptionPanelAPI options;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_");
 
 	public SUN_ICE_MissionStage2Preview() {
 		this.fleet = SUN_ICE_Data.getExileManager().getExiledFleet();
@@ -41,10 +40,10 @@ public class SUN_ICE_MissionStage2Preview implements InteractionDialogPlugin {
 		Color factionColor = fleet.getFaction().getBaseUIColor();
 
 		TextPanelAPI textPanel = dialog.getTextPanel();
-		textPanel.addPara(getString("income"), factionColor, fleet.getName());
-		textPanel.addPara(getString("mission2_preview"), h, "" + DAYS_OF_WAIT_OF_FLEET);
-		textPanel.addPara(getString("location"), factionColor, fleet.getName(), fleet.getContainingLocation().getName());
-		options.addOption(getString("close"), null);
+		textPanel.addPara(strings.get("income"), factionColor, fleet.getName());
+		textPanel.addPara(strings.get("mission2_preview"), h, "" + DAYS_OF_WAIT_OF_FLEET);
+		textPanel.addPara(strings.get("location"), factionColor, fleet.getName(), fleet.getContainingLocation().getName());
+		options.addOption(strings.get("close"), null);
 
 		Global.getSoundPlayer().playUISound("exiles_intel_call", 1f, 1f);
 	}

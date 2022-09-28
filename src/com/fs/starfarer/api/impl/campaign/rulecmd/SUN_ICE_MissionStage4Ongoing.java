@@ -1,25 +1,22 @@
 package com.fs.starfarer.api.impl.campaign.rulecmd;
 
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.campaign.InteractionDialogAPI;
-import com.fs.starfarer.api.campaign.OptionPanelAPI;
-import com.fs.starfarer.api.campaign.TextPanelAPI;
+import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.comm.IntelInfoPlugin;
 import com.fs.starfarer.api.campaign.rules.MemKeys;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.util.Misc;
 import data.scripts.campaign.intel.SUN_ICE_MissionGoodsProcurementIntel;
+import data.scripts.campaign.intel.SUN_ICE_MissionGoodsProcurementPickerListener;
 import data.scripts.tools.SUN_ICE_Data;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 import java.util.List;
 import java.util.Map;
 
 public class SUN_ICE_MissionStage4Ongoing extends SUN_ICE_MissionManager {
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_mission4_ongoing_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_mission4_ongoing_");
 
 	@Override
 	public boolean execute(String ruleId, InteractionDialogAPI dialog, List<Misc.Token> params, Map<String, MemoryAPI> memoryMap) {
@@ -45,10 +42,27 @@ public class SUN_ICE_MissionStage4Ongoing extends SUN_ICE_MissionManager {
 		optionPanel.clearOptions();
 
 		switch (string) {
+			case "check":
+				CargoAPI toCheck = Global.getFactory().createCargo(false);
+				for (CargoStackAPI stack : playerFleet.getCargo().getStacksCopy()) {
+					if (stack.getCommodityId() == null) continue;
+					if (SUN_ICE_MissionStage4.REQUIRED_COMMODITY.containsKey(stack.getCommodityId())) {
+						toCheck.addCommodity(stack.getCommodityId(), stack.getSize());
+					}
+				}
+
+				for (IntelInfoPlugin intel : Global.getSector().getIntelManager().getIntel(SUN_ICE_MissionGoodsProcurementIntel.class)) {
+					SUN_ICE_MissionGoodsProcurementIntel goodsProcurementIntel = (SUN_ICE_MissionGoodsProcurementIntel)intel;
+					dialog.showCargoPickerDialog(strings.get("picker_title"), strings.get("picker_ensure"), strings.get("picker_cancle"),
+							false, 320f, toCheck, new SUN_ICE_MissionGoodsProcurementPickerListener(goodsProcurementIntel, dialog, dialog.getPlugin()));
+
+					break;
+				}
+				break;
 			case "deliver":
-				textPanel.addPara(getString("response_deliver"));
-				optionPanel.addOption(getString("act_bye_1"), "hint_A");
-				optionPanel.addOption(getString("act_bye_2"), "hint_B");
+				textPanel.addPara(strings.get("response_deliver"));
+				optionPanel.addOption(strings.get("act_bye_1"), "hint_A");
+				optionPanel.addOption(strings.get("act_bye_2"), "hint_B");
 				for (IntelInfoPlugin intel : Global.getSector().getIntelManager().getIntel(SUN_ICE_MissionGoodsProcurementIntel.class)) {
 					SUN_ICE_MissionGoodsProcurementIntel goodsProcurementIntel = (SUN_ICE_MissionGoodsProcurementIntel)intel;
 					goodsProcurementIntel.performDelivery(dialog, false);
@@ -61,10 +75,10 @@ public class SUN_ICE_MissionStage4Ongoing extends SUN_ICE_MissionManager {
 				SUN_ICE_Data.getExileManager().getFakeAI().setDaysToStay(60f);
 				break;
 			case "deliver_extra":
-				textPanel.addPara(getString("response_deliver_extra"));
-				optionPanel.addOption(getString("act_bye_extra_1"), "extra_end_A");
-				optionPanel.addOption(getString("act_bye_extra_2"), "extra_end_B");
-				optionPanel.addOption(getString("act_bye_extra_3"), "extra_end_C");
+				textPanel.addPara(strings.get("response_deliver_extra"));
+				optionPanel.addOption(strings.get("act_bye_extra_1"), "extra_end_A");
+				optionPanel.addOption(strings.get("act_bye_extra_2"), "extra_end_B");
+				optionPanel.addOption(strings.get("act_bye_extra_3"), "extra_end_C");
 				for (IntelInfoPlugin intel : Global.getSector().getIntelManager().getIntel(SUN_ICE_MissionGoodsProcurementIntel.class)) {
 					SUN_ICE_MissionGoodsProcurementIntel goodsProcurementIntel = (SUN_ICE_MissionGoodsProcurementIntel)intel;
 					goodsProcurementIntel.performDelivery(dialog, true);
@@ -83,33 +97,34 @@ public class SUN_ICE_MissionStage4Ongoing extends SUN_ICE_MissionManager {
 			case "extra_end_A":
 			case "extra_end_B":
 			case "extra_end_C":
-				textPanel.addPara(getString("extra_end"));
-				optionPanel.addOption(getString("act_bye_extra_end"), "hint_A");
+				textPanel.addPara(strings.get("extra_end"));
+				optionPanel.addOption(strings.get("act_bye_extra_end"), "hint_A");
 				break;
 			case "wait":
-				textPanel.addPara(getString("response_wait"));
-				optionPanel.addOption(getCutLink(), "cutCommLink");
+				textPanel.addPara(strings.get("response_wait"));
+				optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				break;
 			case "hint_A":
 			case "hint_B":
-				textPanel.addPara(getString("response_hint"));
-				optionPanel.addOption(getCutLink(), "cutCommLink");
+				textPanel.addPara(strings.get("response_hint"));
+				optionPanel.addOption(cutlinkStrings.get(), "cutCommLink");
 				break;
 			case "init":
 			default:
-				textPanel.addPara(getString("init"));
-				optionPanel.addOption(getString("deliver"), "deliver");
-				optionPanel.setEnabled("deliver", false);
+				textPanel.addPara(strings.get("init"));
+			case "checked":
 				for (IntelInfoPlugin intel : Global.getSector().getIntelManager().getIntel(SUN_ICE_MissionGoodsProcurementIntel.class)) {
 					SUN_ICE_MissionGoodsProcurementIntel goodsProcurementIntel = (SUN_ICE_MissionGoodsProcurementIntel)intel;
-					if (goodsProcurementIntel.hasEnough()) {
-						optionPanel.setEnabled("deliver", true);
-						optionPanel.addOption(getString("deliver_extra"), "deliver_extra", Misc.getPositiveHighlightColor(), null);
+					if (goodsProcurementIntel.isAllDelivered()) {
+						optionPanel.addOption(strings.get("deliver"), "deliver");
+						optionPanel.addOption(strings.get("deliver_extra"), "deliver_extra", Misc.getPositiveHighlightColor(), null);
+					} else {
+						optionPanel.addOption(strings.get("check"), "check");
 					}
 
 					break;
 				}
-				optionPanel.addOption(getString("wait"), "wait");
+				optionPanel.addOption(strings.get("wait"), "wait");
 				break;
 		}
 

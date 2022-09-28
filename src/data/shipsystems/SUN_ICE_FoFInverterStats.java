@@ -10,7 +10,7 @@ import data.scripts.plugins.SUN_ICE_RenderPlugin;
 import org.lazywizard.lazylib.MathUtils;
 import org.lazywizard.lazylib.combat.AIUtils;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.List;
 import java.util.Map;
 

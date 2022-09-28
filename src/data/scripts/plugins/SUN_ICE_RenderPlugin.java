@@ -6,7 +6,7 @@ import com.fs.starfarer.api.graphics.SpriteAPI;
 import data.shipsystems.SUN_ICE_FoFInverterStats;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;

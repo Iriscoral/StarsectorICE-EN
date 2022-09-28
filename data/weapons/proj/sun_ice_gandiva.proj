@@ -19,7 +19,7 @@
 					 "particleDuration":1,
 					 "particleCount":200,
 					 "particleColor":[255,180,50,255]},
-	"armingTime":1,
+	"armingTime":4,
 	"engineSpec":{"turnAcc":600,
 				  "turnRate":80,
 				  "acc":700,

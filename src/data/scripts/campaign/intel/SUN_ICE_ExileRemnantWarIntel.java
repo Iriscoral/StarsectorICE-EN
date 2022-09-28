@@ -20,10 +20,11 @@ import com.fs.starfarer.api.ui.LabelAPI;
 import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import data.scripts.world.SUN_ICE_ExileFleetManager;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -145,13 +146,13 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 
 	@Override
 	public String getSortString() {
-		return getString("title");
+		return strings.get("title");
 	}
 
 	@Override
 	public String getSmallDescriptionTitle() {
 		if (isEnded() || isEnding()) {
-			return getString("title_finished");
+			return strings.get("title_finished");
 		}
 		return getSortString();
 	}
@@ -193,18 +194,18 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 				}
 			} else if (isMissionValid()) {
 				if (mode != ListInfoMode.IN_DESC) {
-					info.addPara(getString("location"), initPad, tc, h, system.getNameWithLowercaseType());
+					info.addPara(strings.get("location"), initPad, tc, h, system.getNameWithLowercaseType());
 					initPad = 0f;
 				}
 
-				LabelAPI label = info.addPara(String.format(getString("brief"), system.getNameWithLowercaseType(), exiles.getName()), initPad, tc);
+				LabelAPI label = info.addPara(String.format(strings.get("brief"), system.getNameWithLowercaseType(), exiles.getName()), initPad, tc);
 				label.setHighlight(system.getNameWithLowercaseType(), exiles.getName());
 				label.setHighlightColors(h, exiles.getFaction().getBaseUIColor());
-				info.addPara(getString("hint"), tc, 0f);
+				info.addPara(strings.get("hint"), tc, 0f);
 
 				CampaignFleetAPI player = Global.getSector().getPlayerFleet();
 				if (player.getContainingLocation() != exiles.getContainingLocation()) {
-					addDays(info, getString("to_respond"), timeLeft, tc, 0f);
+					addDays(info, strings.get("to_respond"), timeLeft, tc, 0f);
 				}
 			}
 		}
@@ -232,20 +233,18 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 		addBulletPoints(info, ListInfoMode.IN_DESC);
 
 		if (!isMissionValid()) {
-			info.addPara(getString("failed"), opad);
+			info.addPara(strings.get("failed"), opad);
 		} else if (isEnding()) {
-			info.addPara(getString("succeed"), opad);
+			info.addPara(strings.get("succeed"), opad);
 		} else {
 
 			FactionAPI remnant = Global.getSector().getFaction(Factions.REMNANTS);
-			info.addPara(getString("information_1"), opad, tc, remnant.getBaseUIColor(), remnant.getDisplayName());
-			info.addPara(getString("information_2"), opad, tc, exiles.getFaction().getBaseUIColor(), exiles.getName());
+			info.addPara(strings.get("information_1"), opad, tc, remnant.getBaseUIColor(), remnant.getDisplayName());
+			info.addPara(strings.get("information_2"), opad, tc, exiles.getFaction().getBaseUIColor(), exiles.getName());
 		}
 	}
 
-	private String getString(String key) {
-		return Global.getSettings().getString("Intel", "SUN_ICE_remnant_war_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Intel", "SUN_ICE_remnant_war_");
 
 	@Override
 	public SectorEntityToken getMapLocation(SectorMapAPI map) {
@@ -268,20 +267,6 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 	@Override
 	public FactionAPI getFactionForUIColors() {
 		return exiles.getFaction();
-	}
-
-	private static float getSub(float x) {
-		float res = x;
-		if (x > 80) {
-			res += getSub(x * 0.7f);
-			res += getSub(x * 0.4f);
-		}
-		return res;
-	}
-
-	public static void maiin(String[] args) {
-		float x = 300f;
-		System.out.println(getSub(x));
 	}
 
 	private float spawnRemnantBattleGroup(CampaignFleetAPI victim, float fp) {
@@ -336,8 +321,7 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 			fleet.setLocation(loc.x, loc.y);
 
 			float timeForWait = 2f + (float)Math.random() * 2f;
-			fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, victim, timeForWait, new AttackTargetScript(fleet, victim));
-			fleet.addScript(new AttackTargetEveryFrameScript(fleet, victim));
+			fleet.addAssignment(FleetAssignment.ORBIT_AGGRESSIVE, victim, timeForWait, new AttackTargetScript(fleet, victim, this));
 
 			finalPoints += fleet.getFleetPoints();
 			remnantBattleGroup.add(fleet);
@@ -347,14 +331,39 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 		return finalPoints;
 	}
 
+	private BattleAPI b = null;
+	public void startBattle() {
+		if (b == null) {
+			b = Global.getFactory().createBattle(exiles, remnantBattleGroup.get(0));
+		}
+
+		for (CampaignFleetAPI remnant : remnantBattleGroup) {
+			if (!b.isInvolved(remnant)) {
+				b.join(remnant);
+			}
+		}
+
+		Global.getSector().addScript(new ShowEncounterScript(remnantBattleGroup.get(0)));
+	}
+
+	public void startBattle(CampaignFleetAPI attacker) {
+		if (b == null) {
+			b = Global.getFactory().createBattle(exiles, attacker);
+		} else {
+			b.join(attacker);
+		}
+	}
+
 	public static class AttackTargetScript implements Script {
 
 		private final CampaignFleetAPI fleet;
 		private final CampaignFleetAPI target;
+		private final SUN_ICE_ExileRemnantWarIntel intel;
 
-		public AttackTargetScript(CampaignFleetAPI fleet, CampaignFleetAPI target) {
+		public AttackTargetScript(CampaignFleetAPI fleet, CampaignFleetAPI target, SUN_ICE_ExileRemnantWarIntel intel) {
 			this.fleet = fleet;
 			this.target = target;
+			this.intel = intel;
 		}
 
 		@Override
@@ -363,31 +372,32 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 			if (target == null || !target.isAlive()) return;
 
 			fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_NON_AGGRESSIVE, false);
+			fleet.addAssignment(FleetAssignment.ATTACK_LOCATION, target, 10000f);
 
 			if (Global.getSector().getMemoryWithoutUpdate().getBoolean(REMNANT_WAR_UNFINISHED_KEY) &&
 					!Global.getSector().getMemoryWithoutUpdate().getBoolean(REMNANT_WAR_FINISHED_KEY)) {
 
 				Global.getSector().getMemoryWithoutUpdate().set(REMNANT_WAR_MUTED_KEY, true);
 				fleet.getFaction().setRelationship(target.getFaction().getId(), RepLevel.VENGEFUL);
+
+				intel.startBattle(fleet);
 			}
 		}
 	}
 
-	public static class AttackTargetEveryFrameScript implements EveryFrameScript {
+	private static class ShowEncounterScript implements EveryFrameScript {
 
-		private final CampaignFleetAPI fleet;
-		private final CampaignFleetAPI target;
+		private final SectorEntityToken target;
+		private boolean isDone;
 
-		public AttackTargetEveryFrameScript(CampaignFleetAPI fleet, CampaignFleetAPI target) {
-			this.fleet = fleet;
+		private ShowEncounterScript(SectorEntityToken target) {
+			this.isDone = false;
 			this.target = target;
 		}
 
 		@Override
 		public boolean isDone() {
-			if (fleet == null || !fleet.isAlive()) return true;
-			if (target == null || !target.isAlive()) return true;
-			return false;
+			return isDone;
 		}
 
 		@Override
@@ -397,27 +407,10 @@ public class SUN_ICE_ExileRemnantWarIntel extends BaseIntelPlugin {
 
 		@Override
 		public void advance(float amount) {
-
-			if (isDone()) return;
-			if (fleet.getBattle() != null) return;
-
-			boolean attacking = true;
-			if (fleet.getMemoryWithoutUpdate().getBoolean(MemFlags.MEMORY_KEY_MAKE_NON_AGGRESSIVE)) {
-				attacking = false;
-			}
-
-			if (attacking) {
-				fleet.clearAssignments();
-				fleet.addAssignment(FleetAssignment.ATTACK_LOCATION, target, 10000f);
-
-				fleet.setInteractionTarget(target);
-			}
-
-			SectorEntityToken action = fleet.getInteractionTarget();
-			if (action != null && action != target) {
-				if (fleet.getAI() != null) {
-					fleet.getAI().doNotAttack(action, 5f);
-				}
+			CampaignUIAPI ui = Global.getSector().getCampaignUI();
+			if (!isDone && !ui.isShowingDialog() && !ui.isShowingMenu()) {
+				ui.showInteractionDialog(target);
+				isDone = true;
 			}
 		}
 	}

@@ -1,22 +1,20 @@
 package data.missions.sun_ice_exodus;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.mission.FleetSide;
 import com.fs.starfarer.api.mission.MissionDefinitionAPI;
 import com.fs.starfarer.api.mission.MissionDefinitionPlugin;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 public class MissionDefinition implements MissionDefinitionPlugin {
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Misc", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Misc", "SUN_ICE_");
 
 	@Override
 	public void defineMission(MissionDefinitionAPI api) {
 		api.initFleet(FleetSide.ENEMY, "ICS", FleetGoal.ATTACK, true, 5);
-		api.setFleetTagline(FleetSide.ENEMY, getString("exodus_enemy_tagline"));
+		api.setFleetTagline(FleetSide.ENEMY, strings.get("exodus_enemy_tagline"));
 		api.addToFleet(FleetSide.ENEMY, "sun_ice_abraxas_Standard", FleetMemberType.SHIP, false);
 		api.addToFleet(FleetSide.ENEMY, "sun_ice_abraxas_Standard", FleetMemberType.SHIP, false);
 		api.addToFleet(FleetSide.ENEMY, "sun_ice_voidreaver_Standard", FleetMemberType.SHIP, false);
@@ -36,7 +34,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 		api.addToFleet(FleetSide.ENEMY, "sun_ice_flashghast_Standard", FleetMemberType.SHIP, false);
 
 		api.initFleet(FleetSide.PLAYER, "ICS", FleetGoal.ESCAPE, false);
-		api.setFleetTagline(FleetSide.PLAYER, getString("exodus_player_tagline"));
+		api.setFleetTagline(FleetSide.PLAYER, strings.get("exodus_player_tagline"));
 		api.addToFleet(FleetSide.PLAYER, "sun_ice_apocrypha_Standard", FleetMemberType.SHIP, "ICS Remorse", true);
 		api.addToFleet(FleetSide.PLAYER, "sun_ice_shalom_Standard", FleetMemberType.SHIP, "Progeny", false);
 		api.addToFleet(FleetSide.PLAYER, "sun_ice_eidolon_Standard", FleetMemberType.SHIP, false);
@@ -78,9 +76,9 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 
 		api.addAsteroidField(-(minY + height), minY + height, -45, 2000f, 20f, 70f, 100);
 
-		api.addBriefingItem(getString("exodus_bi_1"));
-		api.addBriefingItem(getString("exodus_bi_2"));
-		api.addBriefingItem(getString("exodus_bi_3"));
+		api.addBriefingItem(strings.get("exodus_bi_1"));
+		api.addBriefingItem(strings.get("exodus_bi_2"));
+		api.addBriefingItem(strings.get("exodus_bi_3"));
 		api.addPlugin(new MissionScript());
 	}
 }

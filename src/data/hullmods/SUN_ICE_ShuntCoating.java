@@ -8,7 +8,7 @@ import com.fs.starfarer.api.combat.listeners.DamageListener;
 import com.fs.starfarer.api.combat.listeners.DamageTakenModifier;
 import org.lwjgl.util.vector.Vector2f;
 
-import java.awt.*;
+import java.awt.Color;
 
 public class SUN_ICE_ShuntCoating extends BaseHullMod {
 	private static final Vector2f ZERO = new Vector2f();

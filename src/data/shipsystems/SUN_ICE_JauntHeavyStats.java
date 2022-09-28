@@ -6,6 +6,7 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipCommand;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 import data.scripts.tools.SUN_ICE_JauntSession;
 
 public class SUN_ICE_JauntHeavyStats extends BaseShipSystemScript {
@@ -13,9 +14,7 @@ public class SUN_ICE_JauntHeavyStats extends BaseShipSystemScript {
 
 	private SUN_ICE_JauntSession session;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("ShipSystem", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("ShipSystem", "SUN_ICE_");
 
 	public static float getRange(ShipAPI ship) {
 		if (ship == null) {
@@ -77,7 +76,7 @@ public class SUN_ICE_JauntHeavyStats extends BaseShipSystemScript {
 
 	@Override
 	public StatusData getStatusData(int index, State state, float effectLevel) {
-		if (index == 0) return new StatusData(getString("JauntHeavyStats1"), false);
+		if (index == 0) return new StatusData(strings.get("JauntHeavyStats1"), false);
 		return null;
 	}
 }

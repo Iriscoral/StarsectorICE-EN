@@ -8,6 +8,7 @@ import com.fs.starfarer.api.campaign.TextPanelAPI;
 import com.fs.starfarer.api.campaign.rules.MemoryAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.combat.EngagementResultAPI;
+import data.scripts.tools.SUN_ICE_IceUtils.I18nSection;
 
 import java.util.Map;
 
@@ -21,9 +22,7 @@ public class SUN_ICE_GetJay implements InteractionDialogPlugin {
 	private InteractionDialogAPI dialog;
 	private OptionPanelAPI options;
 
-	private static String getString(String key) {
-		return Global.getSettings().getString("Event", "SUN_ICE_" + key);
-	}
+	public static final I18nSection strings = I18nSection.getInstance("Event", "SUN_ICE_");
 
 	public SUN_ICE_GetJay() {
 		this.person = SUN_ICE_MissionManager.getMissionGiver();
@@ -39,9 +38,9 @@ public class SUN_ICE_GetJay implements InteractionDialogPlugin {
 		dialog.getVisualPanel().showPersonInfo(person);
 
 		TextPanelAPI textPanel = dialog.getTextPanel();
-		textPanel.addPara(String.format(getString("income"), person.getNameString()));
-		options.addOption(getString("jay_act_1"), OptionID.AGREE);
-		options.addOption(getString("jay_act_2"), OptionID.CANCEL);
+		textPanel.addPara(String.format(strings.get("income"), person.getNameString()));
+		options.addOption(strings.get("jay_act_1"), OptionID.AGREE);
+		options.addOption(strings.get("jay_act_2"), OptionID.CANCEL);
 	}
 
 	@Override
@@ -52,15 +51,15 @@ public class SUN_ICE_GetJay implements InteractionDialogPlugin {
 		OptionID selectedOption = (OptionID) optionData;
 		switch (selectedOption) {
 			case AGREE:
-				textPanel.addPara(getString("jay_response_1"));
-				options.addOption(getString("cutlink"), OptionID.LEAVE);
+				textPanel.addPara(strings.get("jay_response_1"));
+				options.addOption(strings.get("cutlink"), OptionID.LEAVE);
 
 				Global.getSector().getCharacterData().addAdmin(person);
 				AddRemoveCommodity.addAdminGainText(person, dialog.getTextPanel());
 				break;
 			case CANCEL:
-				textPanel.addPara(getString("jay_response_2"));
-				options.addOption(getString("cutlink"), OptionID.LEAVE);
+				textPanel.addPara(strings.get("jay_response_2"));
+				options.addOption(strings.get("cutlink"), OptionID.LEAVE);
 				break;
 			case LEAVE:
 				dialog.dismiss();

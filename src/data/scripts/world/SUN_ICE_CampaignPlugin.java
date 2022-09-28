@@ -7,8 +7,6 @@ import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl;
 import data.scripts.ICEModPlugin;
 import data.scripts.tools.SUN_ICE_Data;
 
-import java.util.List;
-
 public class SUN_ICE_CampaignPlugin extends BaseCampaignPlugin {
 
 	@Override
@@ -23,36 +21,13 @@ public class SUN_ICE_CampaignPlugin extends BaseCampaignPlugin {
 
 	@Override
 	public PluginPick<BattleAutoresolverPlugin> pickBattleAutoresolverPlugin(BattleAPI battle) {
-		List<CampaignFleetAPI> one = battle.getSideOne();
-		List<CampaignFleetAPI> two = battle.getSideTwo();
 
 		CampaignFleetAPI exiledFleet = SUN_ICE_Data.getExileManager().getExiledFleet();
 		if (exiledFleet == null) return null;
 
-		boolean hasExiles = false;
-		boolean hasPlayer = false;
-
-		for (CampaignFleetAPI tmp : one) {
-			if (tmp == exiledFleet) {
-				hasExiles = true;
-			} else if (tmp == Global.getSector().getPlayerFleet()) {
-				hasPlayer = true;
-			}
-		}
-
-		for (CampaignFleetAPI tmp : two) {
-			if (tmp == exiledFleet) {
-				hasExiles = true;
-			} else if (tmp == Global.getSector().getPlayerFleet()) {
-				hasPlayer = true;
-			}
-		}
-
-		if (hasExiles && hasPlayer) {
-			battle.leave(Global.getSector().getPlayerFleet(), false);
-			battle.finish(BattleAPI.BattleSide.NO_JOIN, false);
+		if (battle.isInvolved(exiledFleet) && !battle.isPlayerInvolved()) {
 			Global.getLogger(this.getClass()).info("ICE resolve fake called.");
-			//return new PluginPick<BattleAutoresolverPlugin>(new SUN_ICE_BattleResolver(battle), PickPriority.MOD_SPECIFIC);
+			//return new PluginPick<BattleAutoresolverPlugin>(new SUN_ICE_ExileFleetBattleResolver(battle), PickPriority.MOD_SPECIFIC);
 		}
 
 		return null;
@@ -68,6 +43,14 @@ public class SUN_ICE_CampaignPlugin extends BaseCampaignPlugin {
 				return new PluginPick<InteractionDialogPlugin>(new SUN_ICE_ExileFleetMarketInteractionDialog(), PickPriority.MOD_SPECIFIC);
 			}
 		}
+		return null;
+	}
+
+	@Override
+	public PluginPick<FleetInflater> pickFleetInflater(CampaignFleetAPI fleet, Object params) {
+		if (fleet.getMemoryWithoutUpdate().getBoolean(SUN_ICE_ExileFleetManager.EXILE_FLEET_KEY)) return new PluginPick<FleetInflater>(new SUN_ICE_ExileFleetInflater(), PickPriority.MOD_SPECIFIC);
+		if (fleet.getMemoryWithoutUpdate().getBoolean(SUN_ICE_ExileFleetManager.PILGRIMS_FLEET_KEY)) return new PluginPick<FleetInflater>(new SUN_ICE_ExileFleetInflater(), PickPriority.MOD_SPECIFIC);
+
 		return null;
 	}
 
