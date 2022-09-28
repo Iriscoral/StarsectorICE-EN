@@ -54,11 +54,10 @@ Beam's EMP per second also contribute to the increase by %s.
 [Only compatible with ICS ships]",Turns incoming beam damage into flux dissipation,graphics/sun_ice/hullmods/shunt_coating.png
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
-湍流滑阀,sun_ice_turbulence_valve_mod,3,,ICS,"defensive, special, merc",特殊,6000,,,,6,12,18,30,data.hullmods.SUN_ICE_TurbulenceValve,"在相位线圈冷却时释放大量亚空间湍流，对附近的敌方单位每秒造成最多 %s/%s/%s/%s 能量伤害，伤害与范围随相位线圈冷却而线性减弱。
-对于安装了 Progressive Phase 的舰船，时流倍率达到{%s}后才可触发效果。
-只能安装于拥有相位线圈的舰船上。
+Turbulence Valve,sun_ice_turbulence_valve_mod,3,,ICS,"defensive, special, merc",Special,6000,,,,6,12,18,30,data.hullmods.SUN_ICE_TurbulenceValve,"Release a huge amount of sub-space turbulence when the phase coil cools, deals up to %s/%s/%s/%s energy damage to nearby enemy units per second, damage and range decrease linearly with the cooling of the phase coil.
+For ships equipped with Progressive Phase, the effect can be triggered only after the time-flow rate reaches %s.
 
-[Only compatible with ICS phase ships]",反小型目标,graphics/sun_ice/hullmods/turbulence_valve.png
+[Only compatible with ICS phase ships]",Anti Strikecraft,graphics/sun_ice/hullmods/turbulence_valve.png
 ,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,
 Munitions AutoFac,sun_ice_munitions_autofac_mod,2,,ICS,"offensive, special, merc",Special,5000,,,,8,12,20,32,data.hullmods.SUN_ICE_MunitionsAutoFac,"Minor autofactory, increases ammo regen rate of all weapons that auto-regen ammo. The increase is positively correlated with the ratio of max ammo to weapon's OP cost.
