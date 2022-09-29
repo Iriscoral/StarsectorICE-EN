@@ -7,15 +7,6 @@
     <list default="true" id="6127ca9e-f6f7-41db-b5cd-fc9644f6ce7f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/campaign/rules.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/campaign/rules.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/campaign/rules_CN.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/campaign/rules_CN.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hullmods/hull_mods.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/hullmods/hull_mods.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hullmods/hull_mods_ENG.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hulls/ship_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/hulls/ship_data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/hulls/ship_data_ENG.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/strings/descriptions_ENG.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/strings/strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/strings/strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/strings/strings_ENG.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,12 +59,20 @@
       <option name="project" value="LOCAL" />
       <updated>1652172188156</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="UNGP Fix">
+      <created>1664367990020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664367990020</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="small edit in hopes it doesn't break" />
     <MESSAGE value="final fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="final fix" />
+    <MESSAGE value="UNGP Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="UNGP Fix" />
   </component>
 </project>

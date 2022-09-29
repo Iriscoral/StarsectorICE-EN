@@ -1,10 +1,10 @@
 {
 	"id":"nbj_ice",
-	"name":"ICE",
-	"author":"\nCurrent Maintainers:\nAnyIDElse\n\nSound Design:\nShadowLight\n\nGraphic Support:\nShadowLight\nJaylyn\nA_PIAO_JUN\nR.U.A\nfire_turtle\n\nIcon:game-icons.net\n\nFormal Maintainers:\nSundog\nHistidine\nCycerin\nDeathfly\n\nTranslation:\nScarlet-MagicianX26\nZeroXenon",
+	"name":"伊甸流亡舰队 [I.C.E.]",
+	"author":"\n现任维护者:\nAnyIDElse\n\n主要音效:\n影之光\n\n贴图辅助:\n影之光\nJaylyn\n阿朴君\n雨洛\n乌龟在坐锅观天\n\n图标:game-icons.net\n\n\n前任维护者们:\nSundog\nHistidine\nCycerin\nDeathfly",
 	"version":{"major":0, "minor":4, "patch":3},
 	"gameVersion":"0.95.1a-RC6",
-	"description":"Adds the Idoneus Citadel Exiles faction to the game.\nICE ships and weapons feature unconventional gimmicks centered around mobility, phase cloaks, armor repair, and ammo regeneration.",
+	"description":"为游戏增加伊甸流亡者势力.\nICE 武器舰船功能新异，涉及机动性、相位系统、护甲修复和弹药重装.",
 	"dependencies": [
 		{
 			"id": "lw_lazylib",

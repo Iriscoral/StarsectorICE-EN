@@ -59,13 +59,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\data\hullmods\hull_mods_ENG.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\data\hulls\ship_data.csv">
           <value>
             <Attribute>
@@ -74,13 +67,6 @@
           </value>
         </entry>
         <entry key="\data\hulls\ship_data_CN.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\data\hulls\ship_data_ENG.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -129,7 +115,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\data\strings\descriptions_ENG.csv">
+        <entry key="\data\weapons\weapon_data.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
